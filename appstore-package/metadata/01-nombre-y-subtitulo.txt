@@ -1,0 +1,16 @@
+CAMPO: Nombre (máx. 30 caracteres)
+====================================
+Oikos — Aprende Economía
+
+(28 caracteres. Alternativas si estuviera tomado:
+- Oikos: Microeconomía
+- Oikos · Economía Interactiva)
+
+
+CAMPO: Subtítulo (máx. 30 caracteres)
+====================================
+Microeconomía paso a paso
+
+(25 caracteres. Alternativas:
+- Lecciones y ejercicios
+- Economía con ejercicios)

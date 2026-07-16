@@ -1,0 +1,34 @@
+CAMPO: Categoría principal
+====================================
+Educación
+
+CAMPO: Categoría secundaria (opcional)
+====================================
+Referencia
+
+
+CAMPO: Copyright
+====================================
+© 2026 Rodrigo Cornejo
+
+
+CAMPO: Precio
+====================================
+Gratis (Tier 0)
+
+
+CAMPO: Disponibilidad
+====================================
+Todos los países/regiones (o restringe a los que prefieras)
+
+
+CUESTIONARIO: Clasificación por edades
+====================================
+Responde "No" a todas las preguntas (violencia, contenido sexual, apuestas,
+material médico, etc.) → resultado: 4+
+
+
+CUESTIONARIO: Derechos de contenido
+====================================
+"No, no contiene, muestra ni accede a contenido de terceros"
+(todo el contenido es original)

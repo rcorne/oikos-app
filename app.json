@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "oikos-app",
+    "name": "Oikos",
     "slug": "oikos-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -8,9 +8,16 @@
     "scheme": "oikosapp",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/images/ios-icon.png",
+      "bundleIdentifier": "com.rcorne.oikos",
+      "buildNumber": "1",
+      "infoPlist": {
+        "CFBundleDevelopmentRegion": "es",
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
+      "package": "com.rcorne.oikos",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -28,9 +35,17 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
+          "backgroundColor": "#151233",
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 76
+        }
+      ],
+      "expo-font",
+      [
+        "expo-speech-recognition",
+        {
+          "microphonePermission": "Oikos usa el micrófono para escuchar tus respuestas de desarrollo.",
+          "speechRecognitionPermission": "Oikos convierte tu voz en texto para calificar tus respuestas."
         }
       ]
     ],

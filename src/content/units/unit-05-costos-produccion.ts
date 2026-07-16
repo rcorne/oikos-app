@@ -1,0 +1,429 @@
+import type { Unit } from '@/content/types';
+
+export const unit05: Unit = {
+  id: 'u5',
+  index: 5,
+  title: 'Costos de producción',
+  subtitle: 'Qué cuesta producir, y cómo cambia según cuánto produces',
+  description:
+    'Cómo las empresas miden lo que les cuesta fabricar cada unidad adicional, y por qué ese costo por unidad cambia según la escala en la que operan, desde un pequeño taller hasta una fábrica que multiplica su producción.',
+  icon: 'construct-outline',
+  color: '#6C5FD1',
+  source: 'mankiw',
+  lessons: [
+    {
+      id: 'u5-l1',
+      title: 'Costos fijos, variables y totales',
+      summary: 'Qué gastos se mantienen sin importar cuánto produces, cuáles cambian, y cómo se suman.',
+      estimatedMinutes: 6,
+      content: [
+        {
+          type: 'heading',
+          text: 'Costo fijo y costo variable',
+        },
+        {
+          type: 'paragraph',
+          text: 'Cuando una empresa recién está operando, hay decisiones que no puede cambiar de un día para otro: el tamaño de su local, la maquinaria que ya instaló, los contratos que firmó. Mientras esas decisiones sigan fijas —lo que llamamos el corto plazo— conviene dividir los costos de la empresa en dos grupos, según si dependen o no de cuánto produce.',
+        },
+        {
+          type: 'paragraph',
+          text: 'El costo fijo (CF) es la parte del gasto que la empresa debe cubrir sin importar cuánto produzca, incluso si un día decide no producir nada. Nace de compromisos que ya están tomados y que no se pueden deshacer de inmediato.',
+        },
+        {
+          type: 'list',
+          items: [
+            'El arriendo mensual del local o la bodega.',
+            'El sueldo fijo de la administración, aunque ese mes se venda poco.',
+            'El seguro contra incendios o robos.',
+            'La cuota de un crédito pedido para comprar maquinaria.',
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'El costo variable (CV), en cambio, sí depende de la cantidad producida: sube cuando se produce más y baja —incluso hasta cero— cuando se produce menos. Aquí entran los insumos que se consumen unidad por unidad, como la materia prima, la energía usada en la línea de producción, el pago por hora a trabajadores contratados según la demanda, o el empaque de cada producto.',
+        },
+        {
+          type: 'formula',
+          label: 'Costo total',
+          text: 'CT = CF + CV',
+        },
+        {
+          type: 'example',
+          title: 'Ejemplo: un puesto de empanadas',
+          text: 'Un puesto de empanadas paga $10.000 diarios de arriendo del local, sin importar cuántas empanadas venda ese día: ese es su costo fijo. El costo variable —la masa, el relleno y el gas— crece con la cantidad producida: 10 empanadas cuestan $8.000 en insumos, 20 cuestan $15.000, 30 cuestan $24.000, 40 cuestan $36.000 y 50 cuestan $50.000. Sumando el arriendo fijo a cada uno de esos costos variables, el costo total del día pasa de $18.000 (con 10 empanadas) a $60.000 (con 50 empanadas).',
+        },
+        {
+          type: 'callout',
+          tone: 'tip',
+          title: 'Un caso especial: producir cero',
+          text: 'Cuando la cantidad producida es cero, el costo variable también es cero, así que el costo total se reduce exactamente al costo fijo. Ese es el costo de simplemente mantener el negocio abierto, aunque no venda nada ese día.',
+        },
+      ],
+      exercises: [
+        {
+          id: 'u5-l1-e1',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: '¿Cuál de los siguientes es un ejemplo de costo fijo para una fábrica de zapatos?',
+          options: [
+            { id: 'a', text: 'El cuero usado para fabricar cada par de zapatos' },
+            { id: 'b', text: 'El arriendo mensual de la planta, que se paga aunque no se fabrique ningún zapato' },
+            { id: 'c', text: 'El pago por hora a los operarios contratados solo cuando hay pedidos grandes' },
+            { id: 'd', text: 'El pegamento y los cordones de cada par' },
+          ],
+          correctOptionId: 'b',
+          explanation:
+            'El arriendo se paga todos los meses independientemente de cuántos zapatos se fabriquen, por lo que es un costo fijo. El cuero, el pegamento y la mano de obra contratada por pedido cambian según la cantidad producida, así que son costos variables.',
+        },
+        {
+          id: 'u5-l1-e2',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Un taller de reparación de bicicletas paga $150.000 al mes de arriendo fijo, sin importar cuántas bicicletas repare. Si el costo variable de repuestos y mano de obra para reparar 8 bicicletas en el mes es $90.000, ¿cuál es el costo total de operar el taller ese mes?',
+          unitLabel: '$',
+          answer: 240000,
+          explanation: 'CT = CF + CV = 150.000 + 90.000 = 240.000.',
+        },
+        {
+          id: 'u5-l1-e3',
+          type: 'case_study',
+          difficulty: 'media',
+          xp: 15,
+          scenario:
+            'Una fábrica de muebles paga $500.000 mensuales de arriendo por su bodega, cifra que no cambia sin importar cuántas mesas fabrique. Además, por cada mesa que produce, compra madera y herrajes.',
+          question: 'Si la fábrica decide producir el doble de mesas este mes que el mes pasado, ¿qué debería pasar con sus costos?',
+          options: [
+            { id: 'a', text: 'El costo fijo se mantiene igual y el costo variable aumenta' },
+            { id: 'b', text: 'Tanto el costo fijo como el costo variable se mantienen exactamente iguales' },
+            { id: 'c', text: 'El costo fijo también se duplica, porque toda la fábrica produce más' },
+            { id: 'd', text: 'El costo variable se mantiene igual y solo sube el costo fijo' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El arriendo de la bodega es un compromiso fijo que no depende del nivel de producción, así que se mantiene igual. La madera y los herrajes, en cambio, se compran en proporción a la cantidad de mesas fabricadas, por lo que el costo variable sube.',
+        },
+        {
+          id: 'u5-l1-e4',
+          type: 'open_ended_audio',
+          difficulty: 'dificil',
+          xp: 20,
+          prompt:
+            'Explica la diferencia entre un costo fijo y un costo variable, y da un ejemplo de cada uno usando un negocio que tú elijas.',
+          keyPoints: [
+            {
+              id: 'fixed_definition',
+              label: 'Explica que el costo fijo no cambia con la cantidad producida, ni siquiera si la producción es cero',
+              synonyms: [
+                'costo fijo',
+                'no cambia con la produccion',
+                'aunque no produzca nada',
+                'independiente de cuanto produce',
+                'siempre el mismo monto',
+                'se paga igual',
+              ],
+            },
+            {
+              id: 'variable_definition',
+              label: 'Explica que el costo variable cambia según cuánto se produce',
+              synonyms: [
+                'costo variable',
+                'depende de la produccion',
+                'cambia con la cantidad',
+                'mas insumos si produce mas',
+                'sube si produce mas',
+              ],
+            },
+            {
+              id: 'concrete_example',
+              label: 'Da un ejemplo concreto de un negocio con al menos un costo fijo y un costo variable',
+              synonyms: ['arriendo', 'materia prima', 'sueldo fijo', 'pago por unidad', 'ejemplo de un negocio'],
+            },
+          ],
+          minPointsToPass: 2,
+          sampleAnswer:
+            'El costo fijo es el que una empresa paga sin importar cuánto produzca, como el arriendo de un local, que se paga igual aunque un mes se venda poco. El costo variable, en cambio, depende de la cantidad producida: en una panadería, por ejemplo, la harina y el gas del horno aumentan si se hornea más pan y bajan si se hornea menos.',
+          explanation:
+            'Se espera que la respuesta distinga claramente que el costo fijo no depende del nivel de producción mientras que el variable sí, y que ilustre ambos con un ejemplo concreto y coherente.',
+        },
+      ],
+    },
+    {
+      id: 'u5-l2',
+      title: 'Costo marginal y costo medio',
+      summary: 'Cuánto cuesta producir una unidad más, cuánto cuesta cada unidad en promedio, y cómo se relacionan ambos.',
+      estimatedMinutes: 7,
+      content: [
+        {
+          type: 'heading',
+          text: 'Costo marginal: el precio de una unidad más',
+        },
+        {
+          type: 'paragraph',
+          text: 'El costo marginal (CMg) mide cuánto aumenta el costo total de una empresa al producir exactamente una unidad adicional. No es el costo promedio de todo lo que ya se produjo, sino el costo específico de esa última unidad extra.',
+        },
+        {
+          type: 'formula',
+          label: 'Costo marginal',
+          text: 'CMg = ΔCT / ΔQ',
+        },
+        {
+          type: 'heading',
+          text: 'Costo medio total: el costo por unidad',
+        },
+        {
+          type: 'paragraph',
+          text: 'El costo medio total (CTMe) es el costo total repartido entre todas las unidades producidas: cuánto le cuesta a la empresa, en promedio, cada unidad. Es distinto del costo marginal, que solo mira el costo de la última unidad.',
+        },
+        {
+          type: 'formula',
+          label: 'Costo medio total',
+          text: 'CTMe = CT / Q',
+        },
+        {
+          type: 'example',
+          title: 'Ejemplo: un taller de sillas de madera',
+          text: 'Un taller tiene un costo fijo de $100.000 al mes. Su costo total según cuántas sillas produce es: 1 silla, $140.000; 2 sillas, $170.000; 3 sillas, $195.000; 4 sillas, $230.000; 5 sillas, $280.000; 6 sillas, $348.000. El costo marginal de cada silla adicional es, en orden: $40.000, $30.000, $25.000, $35.000, $50.000 y $68.000. El costo medio total, en cambio, baja de $140.000 (con 1 silla) a un mínimo de $56.000 (con 5 sillas), y luego sube a $58.000 (con 6 sillas).',
+        },
+        {
+          type: 'callout',
+          tone: 'info',
+          title: 'Por qué el costo marginal cruza al costo medio en su punto mínimo',
+          text: 'Mientras el costo marginal sea menor que el costo medio total, cada unidad nueva "tira hacia abajo" el promedio, así que el costo medio sigue cayendo. En el ejemplo, esto ocurre hasta la quinta silla. Cuando el costo marginal supera al costo medio total —como pasa con la sexta silla, cuyo costo marginal de $68.000 es mayor al promedio anterior de $56.000— cada unidad nueva "tira hacia arriba" el promedio, y el costo medio empieza a subir.',
+        },
+      ],
+      exercises: [
+        {
+          id: 'u5-l2-e1',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Un taller que fabrica sillas de madera tiene un costo total de $280.000 al producir 5 sillas, y de $348.000 al producir 6 sillas. ¿Cuál es el costo marginal de la sexta silla?',
+          unitLabel: '$',
+          answer: 68000,
+          explanation: 'CMg = ΔCT/ΔQ = (348.000 − 280.000) / (6 − 5) = 68.000.',
+        },
+        {
+          id: 'u5-l2-e2',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'Si el costo marginal de producir la siguiente unidad es menor que el costo medio total actual, ¿qué le pasa al costo medio total al producir esa unidad más?',
+          options: [
+            { id: 'a', text: 'Disminuye' },
+            { id: 'b', text: 'Aumenta' },
+            { id: 'c', text: 'Se mantiene exactamente igual' },
+            { id: 'd', text: 'Se vuelve negativo' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Cuando la unidad adicional cuesta menos que el promedio vigente, esa unidad "tira hacia abajo" el promedio, así que el costo medio total disminuye.',
+        },
+        {
+          id: 'u5-l2-e3',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'Una fábrica de zapatos calcula que fabricar 100 pares le cuesta en total $1.500.000 (un costo medio de $15.000 por par). El costo marginal del par número 101 es de $12.000.',
+          question: '¿Qué debería pasar con el costo medio total de la fábrica si decide fabricar ese par número 101?',
+          options: [
+            { id: 'a', text: 'Disminuye levemente, porque el costo marginal de esa unidad es menor al costo medio anterior' },
+            { id: 'b', text: 'Aumenta, porque cualquier unidad adicional sube el costo medio' },
+            { id: 'c', text: 'Se mantiene exactamente en $15.000' },
+            { id: 'd', text: 'No se puede saber nada sin conocer el costo fijo' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Como el costo marginal ($12.000) es menor que el costo medio total antes de esa unidad ($15.000), producir el par número 101 reduce —aunque sea levemente— el costo medio total de la fábrica.',
+        },
+        {
+          id: 'u5-l2-e4',
+          type: 'open_ended_audio',
+          difficulty: 'dificil',
+          xp: 25,
+          prompt:
+            'Explica por qué la curva de costo marginal cruza a la curva de costo medio total exactamente en el punto mínimo de esta última.',
+          keyPoints: [
+            {
+              id: 'marginal_definition',
+              label: 'Explica qué es el costo marginal (el costo de producir una unidad adicional)',
+              synonyms: ['costo marginal', 'una unidad mas', 'costo de la ultima unidad', 'producir una unidad adicional'],
+            },
+            {
+              id: 'average_definition',
+              label: 'Explica qué es el costo medio total (el costo total dividido por la cantidad producida)',
+              synonyms: ['costo medio total', 'costo promedio', 'costo total dividido', 'costo por unidad'],
+            },
+            {
+              id: 'crossing_logic',
+              label:
+                'Explica que cuando el marginal es menor al medio, el medio baja, y cuando el marginal es mayor, el medio sube, cruzándose en el mínimo',
+              synonyms: [
+                'marginal menor al medio',
+                'el promedio baja',
+                'marginal mayor al medio',
+                'el promedio sube',
+                'se cruzan en el minimo',
+                'punto minimo del costo medio',
+              ],
+            },
+          ],
+          minPointsToPass: 2,
+          sampleAnswer:
+            'El costo marginal es lo que cuesta producir una unidad más, y el costo medio total es el costo total repartido entre todas las unidades. Cuando el costo marginal es menor que el costo medio, cada unidad nueva baja el promedio; cuando el costo marginal es mayor, cada unidad nueva lo sube. Por eso, justo en el punto donde ambas curvas se cruzan, el costo medio total deja de bajar y empieza a subir: ese cruce es su mínimo.',
+          explanation:
+            'La respuesta debe explicar ambos conceptos y conectar la comparación entre marginal y medio con el punto mínimo del costo medio total.',
+        },
+      ],
+    },
+    {
+      id: 'u5-l3',
+      title: 'Costos en el largo plazo y economías de escala',
+      summary: 'Por qué en el largo plazo todo cuesta cambiar, y por qué crecer a veces abarata y a veces encarece cada unidad.',
+      estimatedMinutes: 7,
+      content: [
+        {
+          type: 'heading',
+          text: 'En el largo plazo, ya no hay costos fijos',
+        },
+        {
+          type: 'paragraph',
+          text: 'Todo lo que vimos hasta ahora describe el corto plazo: un período en el que la empresa tiene al menos una decisión ya tomada, como el tamaño de su planta. En el largo plazo, en cambio, la empresa tiene tiempo para ajustar absolutamente todo: puede construir una planta más grande, achicarse, cambiar de tecnología o incluso salir del mercado. Por eso, en el largo plazo todos los costos son variables: no queda ningún compromiso fijo que la empresa no pueda modificar.',
+        },
+        {
+          type: 'formula',
+          label: 'Costo medio de largo plazo',
+          text: 'CMeLP = CTLP / Q',
+        },
+        {
+          type: 'heading',
+          text: 'Economías de escala',
+        },
+        {
+          type: 'paragraph',
+          text: 'Se dice que una empresa tiene economías de escala cuando su costo medio de largo plazo disminuye a medida que aumenta su nivel de producción. Esto ocurre, por ejemplo, porque una planta más grande permite que los trabajadores se especialicen en tareas específicas, porque comprar insumos en mayor volumen suele traer mejores precios, o porque una maquinaria costosa se reparte entre muchas más unidades producidas.',
+        },
+        {
+          type: 'heading',
+          text: 'Deseconomías de escala',
+        },
+        {
+          type: 'paragraph',
+          text: 'Pero crecer no siempre abarata el costo por unidad. Se habla de deseconomías de escala cuando el costo medio de largo plazo empieza a subir a medida que la empresa produce más. Esto suele aparecer cuando una organización se vuelve tan grande que coordinar a todos sus equipos se vuelve lento y costoso, cuando se necesitan más niveles de jefaturas intermedias solo para mantener el control, o cuando la comunicación entre áreas se empieza a perder.',
+        },
+        {
+          type: 'example',
+          title: 'Ejemplo: eligiendo el tamaño de una planta embotelladora',
+          text: 'Una embotelladora evalúa tres tamaños de planta. Una planta pequeña produce 1.000 botellas diarias con un costo total de $500.000, es decir, $500 por botella. Una planta mediana produce 3.000 botellas diarias con un costo total de $1.140.000, o $380 por botella: crecer le permitió aprovechar mejores precios de insumos y especializar a su personal. Pero una planta grande, que produce 6.000 botellas diarias con un costo total de $2.520.000, cuesta $420 por botella: a ese tamaño, coordinar turnos, líneas de producción y logística empieza a ser más caro de lo que ahorra por comprar en mayor volumen.',
+        },
+        {
+          type: 'callout',
+          tone: 'info',
+          title: 'La curva de costo medio de largo plazo',
+          text: 'Cuando se dibuja el costo medio de largo plazo para distintos tamaños de planta, suele tener forma de U: primero cae por las economías de escala, alcanza un mínimo en lo que se llama la "escala eficiente", y luego sube por las deseconomías de escala.',
+        },
+      ],
+      exercises: [
+        {
+          id: 'u5-l3-e1',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: '¿Qué describe mejor el concepto de "economías de escala"?',
+          options: [
+            { id: 'a', text: 'El costo medio de largo plazo disminuye a medida que la empresa produce más' },
+            { id: 'b', text: 'El costo fijo aumenta junto con la producción' },
+            { id: 'c', text: 'El costo marginal siempre es igual al costo medio total' },
+            { id: 'd', text: 'El costo total se mantiene constante sin importar cuánto se produzca' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Las economías de escala ocurren cuando producir más le permite a la empresa reducir su costo medio de largo plazo, por ejemplo gracias a la especialización o a comprar insumos en mayor volumen.',
+        },
+        {
+          id: 'u5-l3-e2',
+          type: 'case_study',
+          difficulty: 'media',
+          xp: 15,
+          scenario:
+            'Una cadena de restaurantes creció de 5 a 200 locales en pocos años. A medida que se expandió, necesitó cada vez más niveles de gerencia intermedia para supervisar a todos los locales, y empezó a tener problemas para mantener la misma calidad y coordinación en todas partes. Su costo medio de largo plazo, que había bajado al principio, comenzó a subir.',
+          question: '¿Qué concepto describe mejor lo que le está ocurriendo a la cadena de restaurantes en esta etapa?',
+          options: [
+            { id: 'a', text: 'Deseconomías de escala' },
+            { id: 'b', text: 'Economías de escala' },
+            { id: 'c', text: 'Un aumento del costo fijo de corto plazo' },
+            { id: 'd', text: 'Una caída del costo marginal' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Cuando crecer más allá de cierto tamaño hace subir el costo medio de largo plazo —por ejemplo, por dificultades de coordinación y más niveles de gerencia— se habla de deseconomías de escala.',
+        },
+        {
+          id: 'u5-l3-e3',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          question:
+            'Una embotelladora tiene dos opciones de planta: una pequeña, que produce 1.000 botellas diarias con un costo total de $500.000, y una mediana, que produce 3.000 botellas diarias con un costo total de $1.140.000. ¿Cuántos pesos menos gasta la planta mediana por cada botella, comparado con la planta pequeña?',
+          unitLabel: '$',
+          answer: 120,
+          explanation:
+            'CMe planta pequeña = 500.000 / 1.000 = 500 por botella. CMe planta mediana = 1.140.000 / 3.000 = 380 por botella. La diferencia es 500 − 380 = 120 pesos menos por botella.',
+        },
+        {
+          id: 'u5-l3-e4',
+          type: 'open_ended_audio',
+          difficulty: 'dificil',
+          xp: 20,
+          prompt:
+            'Explica por qué en el largo plazo todos los costos de una empresa son variables, y describe la diferencia entre economías y deseconomías de escala.',
+          keyPoints: [
+            {
+              id: 'all_variable_long_run',
+              label: 'Explica que en el largo plazo no quedan costos fijos porque la empresa puede ajustar todo, incluido el tamaño de la planta',
+              synonyms: [
+                'en el largo plazo todo es variable',
+                'no hay costos fijos en el largo plazo',
+                'puede cambiar el tamaño de la planta',
+                'ajustar todo en el largo plazo',
+                'no queda nada fijo',
+              ],
+            },
+            {
+              id: 'economies_of_scale',
+              label: 'Explica que las economías de escala son cuando el costo medio de largo plazo baja al producir más',
+              synonyms: [
+                'economias de escala',
+                'el costo medio baja',
+                'especializacion',
+                'comprar en mayor volumen',
+                'mejores precios por comprar mas',
+              ],
+            },
+            {
+              id: 'diseconomies_of_scale',
+              label: 'Explica que las deseconomías de escala son cuando el costo medio de largo plazo sube al producir más',
+              synonyms: [
+                'deseconomias de escala',
+                'el costo medio sube',
+                'dificultad para coordinar',
+                'problemas de gestion',
+                'demasiados niveles de jefatura',
+              ],
+            },
+          ],
+          minPointsToPass: 2,
+          sampleAnswer:
+            'En el largo plazo la empresa puede cambiar absolutamente todo, incluso el tamaño de su planta, así que ya no existe ningún costo comprometido de antemano: todos los costos pasan a ser variables. Las economías de escala aparecen cuando producir más permite bajar el costo medio de largo plazo, por ejemplo gracias a la especialización o a comprar insumos más baratos por volumen. Las deseconomías de escala son lo contrario: cuando la empresa crece tanto que coordinar todo se vuelve más difícil y el costo medio de largo plazo empieza a subir.',
+          explanation:
+            'Se espera que la respuesta explique por qué no hay costos fijos en el largo plazo y distinga con claridad economías de deseconomías de escala, idealmente con una razón para cada una.',
+        },
+      ],
+    },
+  ],
+};

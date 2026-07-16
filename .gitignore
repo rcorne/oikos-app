@@ -41,3 +41,7 @@ example
 # generated native folders
 /ios
 /android
+
+# desktop (Electron) build artifacts — regenerate with desktop/README steps
+desktop/release/
+desktop/build/icon.iconset/

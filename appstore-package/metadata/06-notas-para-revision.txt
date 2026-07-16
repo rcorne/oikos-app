@@ -1,0 +1,25 @@
+CAMPO: Notas para el equipo de revisión de Apple (App Review Information → Notes)
+====================================
+Oikos is an educational app for learning microeconomics in Spanish. Key points for review:
+
+1. NO ACCOUNT NEEDED: the app works fully offline with no sign-in. All progress (XP, streaks, completed lessons) is stored locally on-device via AsyncStorage.
+
+2. MICROPHONE / SPEECH RECOGNITION: one of the four exercise types lets students answer open-ended questions by voice. The app uses Apple's on-device/system speech recognition (SFSpeechRecognizer via expo-speech-recognition) solely to transcribe the student's answer, which is then graded locally against expected key concepts. No audio or transcript ever leaves the device. If the permission is denied, the exercise gracefully falls back to a text field — the feature is not required to use the app.
+
+3. NO DATA COLLECTION: there are no analytics, no ads, no third-party SDKs that collect data, and no backend servers.
+
+4. ORIGINAL CONTENT: all lesson texts and exercises are original writing. The app's curriculum is *inspired by* the standard topics of classic economics textbooks (they are referenced by name only, e.g. "inspired by the classic syllabus of Mankiw's Principles of Economics"), but no copyrighted text is reproduced.
+
+How to test the voice exercise: open any lesson → "Comenzar ejercicios" → the last exercise of each lesson is the voice one → tap the microphone button and speak in Spanish (or type in the text field).
+
+
+CAMPO: Información de contacto del revisor (App Review Information)
+====================================
+Nombre: Rodrigo Cornejo
+Email: rodrigocornejo.z@gmail.com
+Teléfono: (completa tu número con código de país, ej. +56 9 XXXX XXXX)
+
+
+CAMPO: Credenciales de demostración
+====================================
+No se requieren — la app no tiene inicio de sesión.

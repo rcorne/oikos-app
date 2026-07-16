@@ -1,0 +1,17 @@
+CAMPO: URL de soporte (obligatoria)
+====================================
+https://github.com/rcorne/oikos-app
+
+(Puede ser el repositorio de GitHub; Apple solo exige que sea una página real donde el usuario pueda encontrar ayuda o contacto.)
+
+
+CAMPO: URL de política de privacidad (obligatoria)
+====================================
+https://github.com/rcorne/oikos-app/blob/main/appstore-package/politica-privacidad.md
+
+(El texto ya está publicado en el repositorio. Si prefieres una página más formal, activa GitHub Pages en el repositorio y usa esa URL.)
+
+
+CAMPO: URL de marketing (opcional)
+====================================
+(dejar vacío, o usar la misma del repositorio)

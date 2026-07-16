@@ -1,0 +1,3 @@
+CAMPO: Texto promocional (máx. 170 caracteres, editable sin nueva revisión)
+====================================
+Aprende microeconomía con lecciones cortas y ejercicios interactivos: opción múltiple, cálculos con el dedo, casos reales y respuestas por voz. Sin cuentas ni anuncios.

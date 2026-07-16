@@ -1,56 +1,70 @@
-# Welcome to your Expo app 👋
+# Oikos
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+App móvil (iOS + Android, React Native / Expo) para aprender microeconomía a partir de lecciones cortas, ejemplos concretos y ejercicios interactivos. El contenido está inspirado en el temario clásico de *Principios de Economía* (Mankiw) y *Microeconomía y Conducta* (Frank), pero todo el texto de la app es de elaboración propia — no reproduce fragmentos de esos libros.
 
-## Get started
+## Qué incluye
 
-1. Install dependencies
+- **8 unidades / 24 lecciones**: principios básicos, oferta y demanda, elasticidad, comportamiento del consumidor, costos de producción, estructuras de mercado, fallas de mercado, y economía de políticas públicas.
+- **4 tipos de ejercicio** por lección: opción múltiple, numérico (teclado táctil en pantalla), caso de estudio, y desarrollo por voz (se transcribe a texto y se califica en el dispositivo).
+- **Calificación 100% local**: las respuestas de desarrollo se comparan contra una lista de conceptos clave (palabras/frases sinónimas) — no se envía audio ni texto a ningún servidor.
+- **Progreso persistente**: XP, racha diaria y lecciones completadas, guardados en el dispositivo (AsyncStorage).
+- **Diseño propio**: tipografía Sora + Manrope, paleta índigo/dorado, modo claro y oscuro.
 
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## Cómo correrla
 
 ```bash
-npm run reset-project
+npm install
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Desde ahí puedes abrir la app en:
 
-### Other setup steps
+- **Web** (`w` en la terminal, o `npx expo start --web`) — la forma más rápida de ver la interfaz. El reconocimiento de voz funciona aquí solo si el navegador soporta la Web Speech API (Chrome/Edge); si no, el ejercicio de audio cae automáticamente a un campo de texto.
+- **Expo Go** (escaneando el QR) — funciona para navegar toda la app, **excepto** el reconocimiento de voz nativo (ver abajo).
+- **Development build** (`npx expo run:ios` / `npx expo run:android`) — necesario para probar el reconocimiento de voz nativo en un dispositivo o simulador real.
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+### Reconocimiento de voz nativo
 
-## Learn more
+El ejercicio de audio usa [`expo-speech-recognition`](https://www.npmjs.com/package/expo-speech-recognition), que es un módulo nativo. **No funciona en Expo Go.** Para probarlo en iOS/Android real:
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+npx expo run:ios     # o
+npx expo run:android
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Esto genera un development build con el módulo compilado. En todos los casos (web sin soporte, Expo Go, o permiso de micrófono denegado), el ejercicio degrada automáticamente a un campo de texto editable — la calificación funciona igual sobre el texto, venga de voz o de teclado.
 
-## Join the community
+## Estructura del contenido
 
-Join our community of developers creating universal apps.
+Todo el contenido pedagógico vive como datos tipados en `src/content/`:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```
+src/content/
+  types.ts              # esquema: Unit, Lesson, ContentBlock, Exercise (4 variantes)
+  index.ts               # agrega todas las unidades en un solo array `units`
+  units/
+    unit-01-principios.ts
+    unit-02-oferta-demanda.ts
+    ...
+```
+
+Para agregar una lección o unidad nueva, solo hay que escribir un archivo más siguiendo el tipo `Unit` de `types.ts` — no se toca ninguna pantalla ni componente. Cada ejercicio de tipo `open_ended_audio` define `keyPoints` (conceptos esperados, cada uno con sinónimos en español) y `minPointsToPass`; el motor de calificación en `src/lib/grading.ts` normaliza el texto (minúsculas, sin tildes) y busca esos sinónimos.
+
+## Versión de escritorio (macOS)
+
+`desktop/` contiene un empaquetado Electron de la app para macOS (útil para probarla como app de escritorio sin un simulador de iOS/Android). Es un envoltorio de la build web de Expo — no una app nativa de macOS/Catalyst.
+
+```bash
+npx expo export --platform web --output-dir desktop/dist   # regenerar la build web
+cd desktop
+npm install
+npm run dist    # genera desktop/release/Oikos-<version>-arm64.dmg
+```
+
+El `.dmg` no está firmado ni notarizado (requeriría una cuenta de Apple Developer). Al abrirlo en este Mac funciona sin problema; si se copia a otro Mac, Gatekeeper lo bloqueará al no reconocer al desarrollador — hay que abrirlo con clic derecho → "Abrir", o permitirlo en Ajustes del Sistema → Privacidad y Seguridad.
+
+## Pendiente / fuera de alcance de esta versión
+
+- Ícono de app y splash screen personalizados (quedan los placeholders de Expo).
+- Publicación en App Store / Play Store (requiere cuentas de desarrollador y `eas build`).
+- Contenido adicional más allá de las 8 unidades iniciales.

@@ -1,0 +1,5 @@
+CAMPO: Palabras clave (máx. 100 caracteres, separadas por coma, sin espacios tras la coma)
+====================================
+economia,microeconomia,mankiw,aprender,curso,estudiar,universidad,quiz,ejercicios,finanzas
+
+(97 caracteres. No repitas palabras que ya están en el nombre/subtítulo — "oikos" y "economía" del nombre ya indexan solas, pero "economia" sin tilde cubre esa variante de búsqueda.)
