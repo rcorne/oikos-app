@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oikos — Aprende Economía</title>
+  <meta name="description" content="Aprende microeconomía con lecciones cortas y ejercicios interactivos: opción múltiple, cálculos, casos de estudio y respuestas por voz. Gratis, sin cuentas ni anuncios." />
+  <link rel="icon" type="image/png" href="./app-icon.png" />
+  <meta property="og:title" content="Oikos — Aprende Economía" />
+  <meta property="og:description" content="Microeconomía paso a paso: 8 unidades, 24 lecciones, ejercicios interactivos y respuestas por voz. Gratis y sin cuentas." />
+  <meta property="og:image" content="https://rcorne.github.io/oikos-app/app-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --indigo-900: #151233;
+      --indigo-700: #332C87;
+      --indigo-500: #4F42C4;
+      --indigo-300: #8B80DE;
+      --indigo-soft: #EEEDFB;
+      --gold-500: #FFB020;
+      --gold-600: #E8951A;
+      --paper: #FAF8F4;
+      --ink-900: #1C1930;
+      --ink-700: #4A4568;
+      --ink-500: #8B87A8;
+      --white: #FFFFFF;
+      --teal-500: #14B8A6;
+      --red-500: #E5484D;
+      --green-500: #1FAA59;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Manrope', system-ui, sans-serif;
+      background: var(--paper);
+      color: var(--ink-900);
+      line-height: 1.6;
+    }
+    h1, h2, h3 { font-family: 'Sora', system-ui, sans-serif; }
+
+    .hero {
+      background: linear-gradient(150deg, var(--indigo-500) 0%, var(--indigo-700) 60%, var(--indigo-900) 100%);
+      color: var(--white);
+      padding: 72px 24px 88px;
+      text-align: center;
+    }
+    .hero img.icon {
+      width: 112px; height: 112px;
+      border-radius: 26px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+      margin-bottom: 24px;
+    }
+    .hero h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); font-weight: 800; letter-spacing: -0.02em; }
+    .hero p.tagline {
+      font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+      color: #DDD9F5;
+      max-width: 640px;
+      margin: 16px auto 36px;
+    }
+    .cta {
+      display: inline-block;
+      background: var(--gold-500);
+      color: var(--indigo-900);
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      padding: 16px 44px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 8px 28px rgba(255, 176, 32, 0.35);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .cta:hover { transform: translateY(-2px); box-shadow: 0 12px 34px rgba(255, 176, 32, 0.45); }
+    .cta-sub { margin-top: 14px; font-size: 0.9rem; color: #B9B4D0; }
+    .cta-sub a { color: #DDD9F5; }
+
+    main { max-width: 980px; margin: 0 auto; padding: 64px 24px; }
+    section + section { margin-top: 72px; }
+    h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 28px; text-align: center; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .card {
+      background: var(--white);
+      border: 1px solid #E7E2D5;
+      border-radius: 20px;
+      padding: 26px 22px;
+      box-shadow: 0 4px 12px rgba(28,25,48,0.06);
+    }
+    .card .emoji { font-size: 1.9rem; }
+    .card h3 { font-size: 1.05rem; margin: 12px 0 6px; }
+    .card p { font-size: 0.92rem; color: var(--ink-700); }
+
+    .units { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+    .unit {
+      display: flex; align-items: center; gap: 14px;
+      background: var(--white);
+      border: 1px solid #E7E2D5;
+      border-radius: 16px;
+      padding: 16px 18px;
+      font-size: 0.95rem;
+    }
+    .unit .num {
+      flex: none;
+      width: 34px; height: 34px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.9rem;
+      color: var(--white);
+    }
+    .unit span.title { font-weight: 600; }
+
+    .privacy {
+      background: var(--indigo-soft);
+      border-radius: 24px;
+      padding: 36px 32px;
+      text-align: center;
+    }
+    .privacy h2 { margin-bottom: 12px; }
+    .privacy p { max-width: 620px; margin: 0 auto; color: var(--ink-700); }
+    .privacy a { color: var(--indigo-500); font-weight: 600; }
+
+    footer {
+      border-top: 1px solid #E7E2D5;
+      padding: 36px 24px 48px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--ink-500);
+    }
+    footer a { color: var(--indigo-500); text-decoration: none; font-weight: 600; }
+    footer .links { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
+
+    @media (prefers-color-scheme: dark) {
+      body { background: var(--indigo-900); color: #F5F3FF; }
+      .card, .unit { background: #211D44; border-color: #332E5E; }
+      .card p { color: #B9B4D0; }
+      .privacy { background: #211D44; }
+      .privacy p { color: #B9B4D0; }
+      .privacy a { color: var(--indigo-300); }
+      footer { border-color: #332E5E; color: #8B87A8; }
+      footer a { color: var(--indigo-300); }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <img class="icon" src="./app-icon.png" alt="Ícono de Oikos" />
+    <h1>Oikos</h1>
+    <p class="tagline">Aprende microeconomía con lecciones cortas, ejemplos concretos y ejercicios interactivos. Gratis, sin cuentas y sin anuncios.</p>
+    <a class="cta" href="./app/">Abrir la app&nbsp;→</a>
+    <p class="cta-sub">Funciona en tu navegador, en celular o computador.<br />¿Mac con Apple Silicon? <a href="https://github.com/rcorne/oikos-app/releases/latest">Descarga la app de escritorio (.dmg)</a></p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Cuatro formas de poner a prueba lo aprendido</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="emoji">✅</div>
+          <h3>Opción múltiple</h3>
+          <p>Preguntas conceptuales con retroalimentación inmediata que explica el porqué de cada respuesta.</p>
+        </div>
+        <div class="card">
+          <div class="emoji">🔢</div>
+          <h3>Ejercicios numéricos</h3>
+          <p>Resuelve cálculos de elasticidad, costos o equilibrio con un teclado táctil pensado para el dedo.</p>
+        </div>
+        <div class="card">
+          <div class="emoji">💼</div>
+          <h3>Casos de estudio</h3>
+          <p>Situaciones concretas — una sequía, un impuesto, una negociación — para aplicar la teoría.</p>
+        </div>
+        <div class="card">
+          <div class="emoji">🎙️</div>
+          <h3>Respuestas por voz</h3>
+          <p>Explica un concepto hablando: la app transcribe tu respuesta y te dice qué conceptos te faltaron.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>8 unidades, 24 lecciones</h2>
+      <div class="units">
+        <div class="unit"><span class="num" style="background:#4F42C4">1</span><span class="title">Principios y pensamiento económico</span></div>
+        <div class="unit"><span class="num" style="background:#14B8A6">2</span><span class="title">Oferta y demanda</span></div>
+        <div class="unit"><span class="num" style="background:#E8951A">3</span><span class="title">Elasticidad</span></div>
+        <div class="unit"><span class="num" style="background:#E5484D">4</span><span class="title">Comportamiento del consumidor</span></div>
+        <div class="unit"><span class="num" style="background:#6C5FD1">5</span><span class="title">Costos de producción</span></div>
+        <div class="unit"><span class="num" style="background:#158A47">6</span><span class="title">Estructuras de mercado</span></div>
+        <div class="unit"><span class="num" style="background:#0E9488">7</span><span class="title">Fallas de mercado</span></div>
+        <div class="unit"><span class="num" style="background:#B9740F">8</span><span class="title">Economía y políticas públicas</span></div>
+      </div>
+    </section>
+
+    <section class="privacy">
+      <h2>Tu progreso es solo tuyo</h2>
+      <p>Oikos no tiene cuentas, servidores ni rastreadores. Tu progreso, tus respuestas y tu voz se procesan y guardan únicamente en tu dispositivo. <a href="./privacidad.html">Lee la política de privacidad</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="links">
+      <a href="./app/">Abrir la app</a>
+      <a href="https://github.com/rcorne/oikos-app">Código en GitHub</a>
+      <a href="https://github.com/rcorne/oikos-app/releases/latest">Descargar para macOS</a>
+      <a href="./privacidad.html">Privacidad</a>
+    </div>
+    <p>Contenido original inspirado en el temario clásico de <em>Principios de Economía</em> (Mankiw) y <em>Microeconomía y Conducta</em> (Frank).</p>
+    <p>© 2026 Rodrigo Cornejo</p>
+  </footer>
+</body>
+</html>
