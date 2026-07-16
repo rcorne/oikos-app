@@ -9,10 +9,29 @@
   <meta property="og:title" content="Oikos — Aprende Economía" />
   <meta property="og:description" content="Microeconomía paso a paso: 8 unidades, 24 lecciones, ejercicios interactivos y respuestas por voz. Gratis y sin cuentas." />
   <meta property="og:image" content="https://rcorne.github.io/oikos-app/app-icon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" href="./fonts/Sora-800.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="./fonts/Manrope-400.ttf" as="font" type="font/ttf" crossorigin />
   <style>
+    @font-face {
+      font-family: 'Sora'; font-weight: 700; font-display: swap;
+      src: url('./fonts/Sora-700.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Sora'; font-weight: 800; font-display: swap;
+      src: url('./fonts/Sora-800.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Manrope'; font-weight: 400; font-display: swap;
+      src: url('./fonts/Manrope-400.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Manrope'; font-weight: 600; font-display: swap;
+      src: url('./fonts/Manrope-600.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Manrope'; font-weight: 700; font-display: swap;
+      src: url('./fonts/Manrope-700.ttf') format('truetype');
+    }
     :root {
       --indigo-900: #151233;
       --indigo-700: #332C87;
