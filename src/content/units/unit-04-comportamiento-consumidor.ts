@@ -8,7 +8,7 @@ export const unit04: Unit = {
   description:
     'Un recorrido por cómo las personas realmente deciden qué consumir: desde la lógica de la utilidad marginal hasta los sesgos de la economía del comportamiento y la trampa de comparar nuestro consumo con el de los demás.',
   icon: 'person-outline',
-  color: '#E5484D',
+  color: '#C25A3B',
   source: 'frank',
   lessons: [
     {

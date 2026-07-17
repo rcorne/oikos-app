@@ -8,7 +8,7 @@ export const unit05: Unit = {
   description:
     'Cómo las empresas miden lo que les cuesta fabricar cada unidad adicional, y por qué ese costo por unidad cambia según la escala en la que operan, desde un pequeño taller hasta una fábrica que multiplica su producción.',
   icon: 'construct-outline',
-  color: '#6C5FD1',
+  color: '#0B3B4D',
   source: 'mankiw',
   lessons: [
     {

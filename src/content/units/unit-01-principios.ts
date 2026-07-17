@@ -8,7 +8,7 @@ export const unit01: Unit = {
   description:
     'Las ideas fundacionales de la economía: por qué existen los trade-offs, cómo piensan los economistas en el margen, y por qué el comercio beneficia a todos los que participan en él.',
   icon: 'compass-outline',
-  color: '#4F42C4',
+  color: '#0F566E',
   source: 'ambos',
   lessons: [
     {

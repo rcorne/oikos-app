@@ -2,27 +2,32 @@
  * Oikos design tokens — the single source of truth for color, type, spacing,
  * and radii. Everything in components/ should read from here rather than
  * hardcoding values.
+ *
+ * Palette and typography follow the Oikos brand manual (branding/LEEME.txt):
+ *   Egeo profundo #0B3B4D · Egeo #0F566E · Egeo claro #128099
+ *   Terracota #E0704F · Mármol #F6F1E7 · Tinta #13242C
+ *   Wordmark/display: Outfit · Body: Manrope
  */
 
 export const palette = {
-  // Brand — "Oikos indigo", a scholarly violet-blue with warmth
-  indigo50: '#EEEDFB',
-  indigo100: '#D9D6F5',
-  indigo200: '#B3ACEB',
-  indigo300: '#8B80DE',
-  indigo400: '#6C5FD1',
-  indigo500: '#4F42C4',
-  indigo600: '#4038A8',
-  indigo700: '#332C87',
-  indigo800: '#241F5E',
-  indigo900: '#151233',
+  // Brand — "Egeo", the deep Aegean teal of the manual
+  egeo50: '#E8F1F4',
+  egeo100: '#CDE2E9',
+  egeo200: '#9CC6D3',
+  egeo300: '#5FA5BA',
+  egeo400: '#2E8AA6',
+  egeo500: '#128099', // Egeo claro
+  egeo600: '#0F566E', // Egeo
+  egeo700: '#0C4759',
+  egeo800: '#0B3B4D', // Egeo profundo
+  egeo900: '#082C3A',
 
-  // Accent — warm gold for XP, streaks, highlights
-  gold300: '#FFD98C',
-  gold400: '#FFC55C',
-  gold500: '#FFB020',
-  gold600: '#E8951A',
-  gold700: '#B9740F',
+  // Accent — Terracota, for XP, streaks, highlights
+  terracota300: '#F0A98F',
+  terracota400: '#E88A67',
+  terracota500: '#E0704F', // Terracota
+  terracota600: '#C25A3B',
+  terracota700: '#9E4830',
 
   // Feedback
   green300: '#8FE0B0',
@@ -30,27 +35,22 @@ export const palette = {
   green600: '#158A47',
   green700: '#0F6E39',
   red300: '#F5B3B6',
-  red500: '#E5484D',
-  red600: '#C93A3F',
-  red700: '#9E2C30',
+  red500: '#D64545',
+  red600: '#B93A3A',
+  red700: '#942E2E',
 
-  // Secondary accent — teal, used for graphs/diagrams & info states
-  teal300: '#8FE3D8',
-  teal500: '#14B8A6',
-  teal600: '#0E9488',
-
-  // Neutrals — warm paper tone in light mode, deep indigo-black in dark mode
-  paper: '#FAF8F4',
-  paper2: '#F2EFE7',
-  sand: '#E7E2D5',
-  ink50: '#F5F3FF',
-  ink100: '#E3E0F0',
-  ink300: '#B9B4D0',
-  ink500: '#8B87A8',
-  ink700: '#4A4568',
-  ink800: '#2B2748',
-  ink900: '#1C1930',
-  black: '#0F0D1E',
+  // Neutrals — Mármol (marble) paper tones and Tinta (ink)
+  marmol: '#F6F1E7', // Mármol
+  marmol2: '#EFE8D9',
+  arena: '#E4DBC8',
+  tinta50: '#F2F6F8',
+  tinta100: '#DCE5EA',
+  tinta300: '#A9BBC5',
+  tinta500: '#6E8491',
+  tinta700: '#3A505C',
+  tinta800: '#22353F',
+  tinta900: '#13242C', // Tinta
+  black: '#0B161C',
   white: '#FFFFFF',
 } as const;
 
@@ -87,78 +87,78 @@ export interface ThemeColors {
 }
 
 export const lightColors: ThemeColors = {
-  background: palette.paper,
-  backgroundAlt: palette.paper2,
+  background: palette.marmol,
+  backgroundAlt: palette.marmol2,
   surface: palette.white,
-  surfaceMuted: palette.paper2,
-  surfaceSunken: palette.sand,
-  border: palette.sand,
-  borderStrong: palette.ink100,
+  surfaceMuted: palette.marmol2,
+  surfaceSunken: palette.arena,
+  border: palette.arena,
+  borderStrong: palette.tinta100,
 
-  textPrimary: palette.ink900,
-  textSecondary: palette.ink700,
-  textMuted: palette.ink500,
+  textPrimary: palette.tinta900,
+  textSecondary: palette.tinta700,
+  textMuted: palette.tinta500,
   textOnBrand: palette.white,
-  textOnGold: palette.indigo900,
+  textOnGold: palette.white,
 
-  brand: palette.indigo500,
-  brandStrong: palette.indigo700,
-  brandSoft: palette.indigo50,
-  brandSoftBorder: palette.indigo100,
+  brand: palette.egeo600,
+  brandStrong: palette.egeo800,
+  brandSoft: palette.egeo50,
+  brandSoftBorder: palette.egeo100,
 
-  accent: palette.gold500,
-  accentStrong: palette.gold600,
-  accentSoft: '#FFF4DF',
+  accent: palette.terracota500,
+  accentStrong: palette.terracota600,
+  accentSoft: '#FAEAE3',
 
   success: palette.green500,
   successStrong: palette.green700,
   successSoft: '#E8F8EF',
   danger: palette.red500,
   dangerStrong: palette.red700,
-  dangerSoft: '#FDEAEA',
-  info: palette.teal500,
-  infoSoft: '#E6FAF7',
+  dangerSoft: '#FBE9E9',
+  info: palette.egeo500,
+  infoSoft: '#E4F4F7',
 
   tabBar: palette.white,
-  overlay: 'rgba(28, 25, 48, 0.55)',
-} as const;
+  overlay: 'rgba(19, 36, 44, 0.55)',
+};
 
 export const darkColors: ThemeColors = {
-  background: palette.indigo900,
-  backgroundAlt: '#1A1638',
-  surface: '#211D44',
-  surfaceMuted: '#282456',
-  surfaceSunken: '#171331',
-  border: '#332E5E',
-  borderStrong: '#413A73',
+  background: palette.tinta900,
+  backgroundAlt: '#182B34',
+  surface: '#1C323D',
+  surfaceMuted: '#233C48',
+  surfaceSunken: '#0E1C23',
+  border: '#2C4653',
+  borderStrong: '#3A5765',
 
-  textPrimary: palette.ink50,
-  textSecondary: palette.ink100,
-  textMuted: palette.ink300,
+  textPrimary: palette.tinta50,
+  textSecondary: palette.tinta100,
+  textMuted: palette.tinta300,
   textOnBrand: palette.white,
-  textOnGold: palette.indigo900,
+  textOnGold: palette.tinta900,
 
-  brand: palette.indigo300,
-  brandStrong: palette.indigo100,
-  brandSoft: '#2A2557',
-  brandSoftBorder: '#3B356E',
+  brand: palette.egeo300,
+  brandStrong: palette.egeo100,
+  brandSoft: '#16394A',
+  brandSoftBorder: '#1F4C60',
 
-  accent: palette.gold400,
-  accentStrong: palette.gold300,
-  accentSoft: '#3A2E14',
+  accent: palette.terracota400,
+  accentStrong: palette.terracota300,
+  accentSoft: '#3C271E',
 
   success: palette.green300,
   successStrong: palette.green300,
   successSoft: '#163826',
   danger: palette.red300,
   dangerStrong: palette.red300,
-  dangerSoft: '#3B1A1C',
-  info: palette.teal300,
-  infoSoft: '#123632',
+  dangerSoft: '#3B1E1E',
+  info: palette.egeo300,
+  infoSoft: '#123540',
 
-  tabBar: '#1A1638',
+  tabBar: '#182B34',
   overlay: 'rgba(0, 0, 0, 0.6)',
-} as const;
+};
 
 export const spacing = {
   xxs: 2,
@@ -180,10 +180,10 @@ export const radius = {
 } as const;
 
 export const fontFamily = {
-  display: 'Sora_700Bold',
-  displaySemi: 'Sora_600SemiBold',
-  displayMedium: 'Sora_500Medium',
-  displayRegular: 'Sora_400Regular',
+  display: 'Outfit_700Bold',
+  displaySemi: 'Outfit_600SemiBold',
+  displayMedium: 'Outfit_500Medium',
+  displayRegular: 'Outfit_400Regular',
   body: 'Manrope_400Regular',
   bodyMedium: 'Manrope_500Medium',
   bodySemi: 'Manrope_600SemiBold',
@@ -191,11 +191,11 @@ export const fontFamily = {
 } as const;
 
 export const fontsToLoad = {
-  Sora_400Regular: require('@expo-google-fonts/sora/400Regular/Sora_400Regular.ttf'),
-  Sora_500Medium: require('@expo-google-fonts/sora/500Medium/Sora_500Medium.ttf'),
-  Sora_600SemiBold: require('@expo-google-fonts/sora/600SemiBold/Sora_600SemiBold.ttf'),
-  Sora_700Bold: require('@expo-google-fonts/sora/700Bold/Sora_700Bold.ttf'),
-  Sora_800ExtraBold: require('@expo-google-fonts/sora/800ExtraBold/Sora_800ExtraBold.ttf'),
+  Outfit_400Regular: require('@expo-google-fonts/outfit/400Regular/Outfit_400Regular.ttf'),
+  Outfit_500Medium: require('@expo-google-fonts/outfit/500Medium/Outfit_500Medium.ttf'),
+  Outfit_600SemiBold: require('@expo-google-fonts/outfit/600SemiBold/Outfit_600SemiBold.ttf'),
+  Outfit_700Bold: require('@expo-google-fonts/outfit/700Bold/Outfit_700Bold.ttf'),
+  Outfit_800ExtraBold: require('@expo-google-fonts/outfit/800ExtraBold/Outfit_800ExtraBold.ttf'),
   Manrope_400Regular: require('@expo-google-fonts/manrope/400Regular/Manrope_400Regular.ttf'),
   Manrope_500Medium: require('@expo-google-fonts/manrope/500Medium/Manrope_500Medium.ttf'),
   Manrope_600SemiBold: require('@expo-google-fonts/manrope/600SemiBold/Manrope_600SemiBold.ttf'),
@@ -204,14 +204,14 @@ export const fontsToLoad = {
 
 export const shadow = {
   card: {
-    shadowColor: palette.ink900,
+    shadowColor: palette.tinta900,
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.08,
     shadowRadius: 12,
     elevation: 3,
   },
   raised: {
-    shadowColor: palette.ink900,
+    shadowColor: palette.tinta900,
     shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 0.14,
     shadowRadius: 20,

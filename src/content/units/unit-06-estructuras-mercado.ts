@@ -8,7 +8,7 @@ export const unit06: Unit = {
   description:
     'Cómo cambia el comportamiento de una empresa según cuántas rivales tenga y cuánto poder sobre el precio pueda ejercer: desde el productor que solo puede aceptar el precio de mercado hasta el monopolista que fija su propio precio, pasando por la rivalidad estratégica del oligopolio.',
   icon: 'business-outline',
-  color: '#158A47',
+  color: '#2E8AA6',
   source: 'ambos',
   lessons: [
     {

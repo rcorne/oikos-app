@@ -8,7 +8,7 @@ export const unit03: Unit = {
   description:
     'La elasticidad mide qué tan sensibles son la cantidad demandada y la cantidad ofrecida ante cambios en el precio, el ingreso o el precio de otros bienes, y por qué esa sensibilidad importa para las decisiones de precio.',
   icon: 'trending-up-outline',
-  color: '#E8951A',
+  color: '#E0704F',
   source: 'mankiw',
   lessons: [
     {

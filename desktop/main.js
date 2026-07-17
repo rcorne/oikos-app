@@ -80,7 +80,7 @@ function createWindow() {
     maxWidth: 480,
     minHeight: 700,
     title: 'Oikos',
-    backgroundColor: '#151233',
+    backgroundColor: '#13242C',
     icon: path.join(__dirname, 'build', 'icon.icns'),
     webPreferences: {
       contextIsolation: true,

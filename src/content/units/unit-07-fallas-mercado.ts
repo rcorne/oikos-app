@@ -8,7 +8,7 @@ export const unit07: Unit = {
   description:
     'Externalidades, bienes públicos, recursos comunes e información asimétrica: los casos en que dejar que el mercado actúe solo no reparte los recursos de la manera más conveniente para la sociedad, y qué herramientas existen para corregirlo.',
   icon: 'leaf-outline',
-  color: '#0E9488',
+  color: '#0C4759',
   source: 'mankiw',
   lessons: [
     {

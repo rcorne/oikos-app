@@ -8,7 +8,7 @@ export const unit02: Unit = {
   description:
     'Cómo compradores y vendedores interactúan a través de los precios: la ley de la demanda, la ley de la oferta, y cómo ambas fuerzas determinan el equilibrio de mercado.',
   icon: 'swap-horizontal-outline',
-  color: '#14B8A6',
+  color: '#128099',
   source: 'mankiw',
   lessons: [
     {

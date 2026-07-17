@@ -1,0 +1,22 @@
+OIKOS — KIT DE LOGO E ÍCONOS · V2 (julio 2026)
+================================================
+Símbolo: la economía dentro de la casa — el contorno es el oikos (la casa);
+las tres barras ascendentes en negativo son la nomía (la medida, la
+administración). Economía, literalmente.
+
+/vector    Maestros en SVG (escalables, texto convertido a trazados):
+           glifo en 4 colores, logo horizontal y vertical (claro/oscuro),
+           tile de app, variante pixel-fit para favicon, maestros de
+           Android adaptativo, maskable y macOS.
+/ios       AppIcon 20–1024 px (el de 1024 sin canal alfa, listo para App Store).
+/android   ic_launcher por densidad (mdpi–xxxhdpi), ícono adaptativo
+           (foreground + background 432 px) y playstore-512.
+/web       favicon 16/32/48 + favicon.ico, apple-touch-icon-180,
+           icon-192/512, maskable-192/512 y safari-pinned-tab.svg.
+           El favicon de 16 px usa una variante pixel-fit de dos barras.
+/macos     iconset 16–1024 px (plantilla Big Sur, listo para compilar .icns).
+/windows   Square 44/71/150/310 y StoreLogo-50.
+
+Paleta: Egeo profundo #0B3B4D · Egeo #0F566E · Egeo claro #128099
+        Terracota #E0704F · Mármol #F6F1E7 · Tinta #13242C
+Tipografía del wordmark: Outfit Bold (SIL Open Font License).

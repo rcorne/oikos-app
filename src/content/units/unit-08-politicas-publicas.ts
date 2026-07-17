@@ -8,7 +8,7 @@ export const unit08: Unit = {
   description:
     'La unidad que cierra el curso: usa las herramientas de oferta y demanda para medir el bienestar que genera un mercado, entender cómo los impuestos alteran ese bienestar, y aplicar el mismo razonamiento para evaluar políticas públicas reales.',
   icon: 'flag-outline',
-  color: '#B9740F',
+  color: '#9E4830',
   source: 'ambos',
   lessons: [
     {
