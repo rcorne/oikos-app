@@ -15,7 +15,7 @@ export const unit01: Unit = {
       id: 'u1-l1',
       title: 'Escasez, incentivos y pensar en el margen',
       summary: 'Por qué todo tiene un costo y cómo los economistas toman decisiones "un poco a la vez".',
-      estimatedMinutes: 8,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -165,13 +165,73 @@ export const unit01: Unit = {
           explanation:
             'El cobro cambió el incentivo: usar una bolsa plástica ahora tiene un costo marginal explícito de $300, así que muchas personas ajustan su comportamiento y prefieren la alternativa reutilizable. Es un ejemplo directo de que los incentivos importan.',
         },
+        {
+          id: 'u1-l1-e7',
+          type: 'numeric',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'Un lavado de autos cobra $8.000 por vehículo. Ya cubrió sus costos fijos del día y lavar un auto adicional le cuesta $3.500 en agua, insumos y tiempo. ¿Cuál es la ganancia marginal, en pesos, de atender un auto más?',
+          unitLabel: '$',
+          answer: 4500,
+          explanation:
+            'La decisión de atender un auto más solo depende del margen: ingreso marginal ($8.000) menos costo marginal ($3.500) = $4.500. Los costos fijos ya pagados no entran en el cálculo.',
+        },
+        {
+          id: 'u1-l1-e8',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Una economía produce solo automóviles y computadoras. Sobre su frontera de posibilidades, el punto A corresponde a 600 automóviles y 2.200 computadoras. El punto D, en cambio, corresponde a 300 automóviles y 1.000 computadoras. ¿Qué describe mejor al punto D?',
+          options: [
+            { id: 'a', text: 'Es un punto ineficiente: queda dentro de la frontera, quizá por desempleo de recursos, y podrían producirse más de ambos bienes' },
+            { id: 'b', text: 'Es un punto inalcanzable, porque exige más recursos de los que la economía tiene' },
+            { id: 'c', text: 'Es más eficiente que A, porque usa menos recursos para producir' },
+            { id: 'd', text: 'Es imposible de comparar con A sin conocer los precios de venta' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El punto D produce menos de ambos bienes que un punto sobre la frontera como A, así que queda dentro de ella. Representa un uso ineficiente de los recursos (por ejemplo, por desempleo): eliminando la causa, la economía podría aumentar la producción de autos y de computadoras a la vez.',
+        },
+        {
+          id: 'u1-l1-e9',
+          type: 'case_study',
+          difficulty: 'media',
+          xp: 15,
+          scenario:
+            'Una empresa de reparto empieza a pagar a cada repartidor un bono fijo por cada entrega adicional que complete en el día. A las pocas semanas, el número promedio de entregas por repartidor sube de forma notable, sin que la empresa haya contratado más personal.',
+          question: '¿Qué principio económico explica mejor este resultado?',
+          options: [
+            { id: 'a', text: 'Las personas responden a incentivos: el bono elevó el beneficio marginal de cada entrega extra, así que conviene hacer más' },
+            { id: 'b', text: 'La ventaja comparativa: los repartidores se especializaron en entregar' },
+            { id: 'c', text: 'Los costos hundidos: el sueldo ya pagado motiva a trabajar más' },
+            { id: 'd', text: 'La escasez desapareció al aumentar la cantidad de entregas' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El bono cambió el incentivo de cada repartidor: ahora una entrega adicional tiene un beneficio marginal mayor, así que muchos ajustan su comportamiento y completan más entregas. Es un ejemplo directo de que las personas responden a los incentivos.',
+        },
+        {
+          id: 'u1-l1-e10',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          question:
+            'Un taller arma bicicletas y vende cada una a $90.000. Sus costos marginales son crecientes: la 3ª bicicleta del día cuesta $60.000, la 4ª cuesta $85.000, la 5ª cuesta $95.000 y la 6ª cuesta $110.000 (las primeras dos cuestan aún menos). Siguiendo la regla marginal (producir mientras el ingreso marginal sea mayor o igual al costo marginal), ¿cuántas bicicletas en total conviene armar en el día?',
+          unitLabel: 'bicicletas',
+          answer: 4,
+          hint: 'Cada bicicleta aporta $90.000 de ingreso. Compáralo, una por una, con el costo marginal creciente.',
+          explanation:
+            'El ingreso marginal es $90.000 por bicicleta. La 4ª conviene ($90.000 ≥ $85.000), pero la 5ª ya no ($90.000 < $95.000). Por lo tanto, la producción óptima es 4 bicicletas.',
+        },
       ],
     },
     {
       id: 'u1-l2',
       title: 'Costo de oportunidad: el verdadero precio de elegir',
       summary: 'Por qué el costo de una decisión es lo que dejas de hacer, y por qué el pasado no debería importar.',
-      estimatedMinutes: 8,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -324,13 +384,64 @@ export const unit01: Unit = {
           explanation:
             'Los $30.000 son un costo hundido y quedan fuera del cálculo. El beneficio futuro es $65.000 y el costo futuro es el sueldo al que renuncia: $40.000. Beneficio neto = 65.000 − 40.000 = 25.000, así que sí le conviene terminar.',
         },
+        {
+          id: 'u1-l2-e7',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'El sábado por la tarde, Sebastián puede dar 2 clases particulares que le pagan $12.000 cada una, o ir a un partido cuya entrada cuesta $9.000. Si elige ir al partido, ¿cuál es su costo de oportunidad total, en pesos?',
+          unitLabel: '$',
+          answer: 33000,
+          hint: 'Suma lo que gasta directamente y el ingreso al que renuncia por no trabajar.',
+          explanation:
+            'El costo de oportunidad incluye el gasto directo de la entrada ($9.000) más el ingreso al que renuncia: 2 clases × $12.000 = $24.000. En total, $24.000 + $9.000 = $33.000.',
+        },
+        {
+          id: 'u1-l2-e8',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'Andrea compró hace un mes un pase anual de gimnasio de $120.000 no reembolsable. Ahora se mudará lejos y evalúa si vale la pena seguir yendo las pocas semanas que le quedan. ¿Cuál de estos elementos es un costo hundido, irrelevante para esa decisión?',
+          options: [
+            { id: 'a', text: 'Los $120.000 del pase anual, que ya pagó y no recuperará vaya o no vaya' },
+            { id: 'b', text: 'El tiempo de traslado hasta el gimnasio en las semanas que le quedan' },
+            { id: 'c', text: 'El beneficio de salud que obtendría si sigue asistiendo' },
+            { id: 'd', text: 'El costo de oportunidad de las horas que dedicaría a entrenar' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Los $120.000 ya se pagaron y no se recuperan decida Andrea ir o no: son un costo hundido y no deben influir en la decisión. En cambio, el tiempo de traslado, el beneficio de salud y el costo de oportunidad de esas horas son costos y beneficios futuros, que sí son relevantes.',
+        },
+        {
+          id: 'u1-l2-e9',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'A Rodrigo le dicen que reparar su auto viejo costará $400.000, y que una vez reparado el auto le prestaría una utilidad de uso equivalente a unos $300.000 para él. Además, el mes pasado ya gastó $150.000 en otra reparación que no resolvió el problema.',
+          question: 'Según la regla costo-beneficio, ¿qué debería hacer Rodrigo y por qué?',
+          options: [
+            {
+              id: 'a',
+              text: 'No reparar: el costo futuro ($400.000) supera al beneficio futuro ($300.000), y los $150.000 ya gastados son un costo hundido irrelevante',
+            },
+            { id: 'b', text: 'Reparar, porque ya invirtió $150.000 y no puede desperdiciar ese dinero' },
+            { id: 'c', text: 'Reparar, porque sumando las dos reparaciones el auto le habrá costado menos que uno nuevo' },
+            { id: 'd', text: 'No reparar, porque los $150.000 ya gastados hacen que el proyecto deje de ser rentable' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'La decisión racional compara solo lo que viene hacia adelante: el costo futuro de reparar ($400.000) contra el beneficio futuro ($300.000). Como el costo supera al beneficio, no conviene reparar. Los $150.000 del mes pasado son un costo hundido y no cambian el cálculo (por eso la opción d, aunque acierta la acción, usa un razonamiento equivocado).',
+        },
       ],
     },
     {
       id: 'u1-l3',
       title: 'Ventaja comparativa y las ganancias del comercio',
       summary: 'Por qué comerciar beneficia a ambas partes, incluso cuando una es mejor produciendo todo.',
-      estimatedMinutes: 9,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -471,6 +582,57 @@ export const unit01: Unit = {
           hint: 'Calcula primero el costo de oportunidad de 1 polera para cada uno: gorros a los que renuncia ÷ poleras que gana.',
           explanation:
             'El costo de oportunidad de 1 polera es 3 ÷ 6 = 0,5 gorros para Pía y 2 ÷ 2 = 1 gorro para Tomás. Pía tiene ventaja comparativa en poleras y se especializa en ellas (6 poleras), mientras Tomás se dedica solo a gorros (0 poleras). Total: 6 poleras al día.',
+        },
+        {
+          id: 'u1-l3-e7',
+          type: 'numeric',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'En un día, Camila puede hornear 12 panes o 4 pasteles. ¿Cuál es su costo de oportunidad de producir 1 pastel, expresado en panes?',
+          unitLabel: 'panes',
+          answer: 3,
+          decimals: 0,
+          explanation:
+            'Costo de oportunidad = unidades de pan a las que renuncia ÷ unidades de pasteles ganadas = 12 ÷ 4 = 3 panes por cada pastel.',
+        },
+        {
+          id: 'u1-l3-e8',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'En un día, el país X puede producir 40 autos u 80 televisores, y el país Y puede producir 10 autos o 40 televisores. ¿Quién tiene ventaja comparativa en televisores?',
+          options: [
+            { id: 'a', text: 'El país Y, porque su costo de oportunidad de 1 televisor (0,25 autos) es menor que el de X (0,5 autos)' },
+            { id: 'b', text: 'El país X, porque produce más televisores en total y tiene ventaja absoluta' },
+            { id: 'c', text: 'Ninguno, porque X es más productivo que Y en ambos bienes' },
+            { id: 'd', text: 'El país Y, porque tiene ventaja absoluta en televisores' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El costo de oportunidad de 1 televisor para X es 40/80 = 0,5 autos; para Y es 10/40 = 0,25 autos. Como Y renuncia a menos autos por cada televisor, Y tiene ventaja comparativa en televisores, aunque X tenga ventaja absoluta en ambos bienes.',
+        },
+        {
+          id: 'u1-l3-e9',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'En una hora, Marcos puede cosechar 10 kg de tomates o 5 kg de papas. En una hora, Lucía puede cosechar 4 kg de tomates u 8 kg de papas. Quieren repartirse el trabajo para aprovechar las ganancias del comercio.',
+          question: '¿Quién debería especializarse en papas y por qué?',
+          options: [
+            {
+              id: 'a',
+              text: 'Lucía, porque su costo de oportunidad de 1 kg de papas (0,5 kg de tomate) es menor que el de Marcos (2 kg de tomate)',
+            },
+            { id: 'b', text: 'Marcos, porque puede cosechar más tomates por hora que Lucía' },
+            { id: 'c', text: 'Marcos, porque tiene ventaja absoluta en tomates' },
+            { id: 'd', text: 'Ninguno, porque Lucía cosecha menos tomates por hora que Marcos' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El costo de oportunidad de 1 kg de papas para Marcos es 10/5 = 2 kg de tomate; para Lucía es 4/8 = 0,5 kg de tomate. Como Lucía renuncia a menos tomate por cada kg de papas, tiene ventaja comparativa en papas y debe especializarse en ellas, mientras Marcos se concentra en tomates.',
         },
       ],
     },

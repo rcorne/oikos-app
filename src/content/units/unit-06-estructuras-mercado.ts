@@ -15,7 +15,7 @@ export const unit06: Unit = {
       id: 'u6-l1',
       title: 'Competencia perfecta: muchas empresas, un solo precio',
       summary: 'Por qué ninguna empresa individual puede influir en el precio, y qué implica eso para su producción y sus beneficios.',
-      estimatedMinutes: 9,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -191,13 +191,78 @@ export const unit06: Unit = {
           explanation:
             'El beneficio económico descuenta los costos de oportunidad: el valor del tiempo del dueño y el rendimiento que su capital obtendría en otro uso. Un beneficio económico de cero significa que la empresa cubre exactamente todos esos costos, así que a sus dueños les va tan bien como en su mejor alternativa. En términos contables, la empresa sigue mostrando una ganancia normal; simplemente no hay un premio extra que atraiga a nuevos competidores.',
         },
+        {
+          id: 'u6-l1-e7',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Una fábrica de tornillos opera en un mercado perfectamente competitivo y vende cada caja al precio de mercado de $35. Produce 150 cajas, con un costo total medio (CTMe) de $28 por caja. ¿Cuál es su beneficio económico total?',
+          unitLabel: '$',
+          answer: 1050,
+          explanation: 'Beneficio = (P − CTMe) × Q = (35 − 28) × 150 = 7 × 150 = 1050.',
+        },
+        {
+          id: 'u6-l1-e8',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'El precio de mercado de un bien sube de $20 a $26. Para una empresa precio-aceptante cuyo costo marginal crece con la producción, ¿qué le conviene hacer?',
+          options: [
+            {
+              id: 'a',
+              text: 'Aumentar su producción hasta que su costo marginal vuelva a igualar el nuevo precio de $26',
+            },
+            { id: 'b', text: 'Mantener la misma cantidad, porque una empresa precio-aceptante no reacciona al precio' },
+            { id: 'c', text: 'Reducir su producción para no saturar el mercado y hacer caer el precio' },
+            { id: 'd', text: 'Subir su propio precio por encima de $26 para aprovechar el alza' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'La empresa produce donde P = CMg. Si el precio sube y el costo marginal es creciente, el punto en que CMg iguala al precio se alcanza a una cantidad mayor, así que le conviene expandir la producción hasta que su costo marginal alcance los $26. No puede fijar su propio precio: como precio-aceptante, toma el precio de mercado como un dato.',
+        },
+        {
+          id: 'u6-l1-e9',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'En un puerto pesquero, decenas de botes venden un pescado prácticamente idéntico al mismo precio de mercado. Durante varios meses, ese precio se ubica por debajo del costo total medio de la mayoría de los pescadores, que acumulan pérdidas económicas.',
+          question: '¿Qué predice el modelo de competencia perfecta que ocurrirá en este mercado en el largo plazo?',
+          options: [
+            {
+              id: 'a',
+              text: 'Algunos pescadores abandonan la actividad, la oferta de mercado se desplaza hacia la izquierda y el precio sube hasta que el beneficio económico de los que quedan vuelve a cero',
+            },
+            { id: 'b', text: 'Todos los pescadores seguirán operando con pérdidas de forma indefinida, porque en competencia perfecta nadie puede salir del mercado' },
+            { id: 'c', text: 'Entrarán aún más pescadores, atraídos por los precios bajos, hasta que las pérdidas desaparezcan' },
+            { id: 'd', text: 'El precio seguirá cayendo indefinidamente, porque la salida de empresas no afecta la oferta de mercado' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'La libre salida es la contracara de la libre entrada. Ante pérdidas económicas sostenidas, algunas empresas abandonan el mercado; eso reduce la oferta total, desplazándola hacia la izquierda, y el precio sube hasta que las empresas que permanecen vuelven a obtener un beneficio económico de cero en el largo plazo.',
+        },
+        {
+          id: 'u6-l1-e10',
+          type: 'numeric',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'En el largo plazo, el precio de un mercado perfectamente competitivo tiende al mínimo del costo total medio de las empresas. Si ese mínimo del CTMe es de $18 por unidad, ¿a qué precio tenderá el mercado en el largo plazo?',
+          unitLabel: '$',
+          answer: 18,
+          hint: 'En el equilibrio de largo plazo, el beneficio económico es cero, así que el precio iguala al costo total medio en su punto mínimo.',
+          explanation:
+            'Con libre entrada y salida, el beneficio económico converge a cero en el largo plazo, y eso ocurre cuando el precio iguala al mínimo del costo total medio. Si ese mínimo es $18, el precio de largo plazo tenderá a $18.',
+        },
       ],
     },
     {
       id: 'u6-l2',
       title: 'Monopolio y poder de mercado',
       summary: 'Qué significa ser el único vendedor, por qué el ingreso marginal cae más rápido que el precio, y qué costo tiene eso para la eficiencia del mercado.',
-      estimatedMinutes: 9,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -369,13 +434,65 @@ export const unit06: Unit = {
           explanation:
             'Como la empresa es un monopolio, su ingreso marginal es menor que el precio y la regla P = CMg no maximiza su beneficio. La condición correcta es IMg = CMg: elegir la cantidad donde el ingreso marginal iguala al costo marginal, y luego fijar el precio subiendo hasta lo que la curva de demanda del mercado permite para esa cantidad. Producir "lo máximo posible" reduciría el beneficio, porque las últimas unidades aportarían menos ingreso del que cuestan.',
         },
+        {
+          id: 'u6-l2-e7',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Un monopolista vende 80 unidades a un precio de $60 cada una. Su costo total medio (CTMe) es de $45 por unidad. ¿Cuál es su beneficio total?',
+          unitLabel: '$',
+          answer: 1200,
+          explanation: 'Beneficio = (P − CTMe) × Q = (60 − 45) × 80 = 15 × 80 = 1200.',
+        },
+        {
+          id: 'u6-l2-e8',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Comparado con el resultado que se obtendría si el mismo mercado fuera perfectamente competitivo, un monopolista que maximiza su beneficio tiende a...',
+          options: [
+            {
+              id: 'a',
+              text: 'Producir una cantidad menor y cobrar un precio más alto, con un precio que queda por encima del costo marginal',
+            },
+            { id: 'b', text: 'Producir una cantidad mayor y cobrar un precio más bajo, gracias a su poder de mercado' },
+            { id: 'c', text: 'Producir la misma cantidad y cobrar el mismo precio, porque toda empresa iguala ingreso marginal y costo marginal' },
+            { id: 'd', text: 'Cobrar un precio exactamente igual al costo marginal, igual que en competencia perfecta' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Como el monopolista maximiza donde IMg = CMg y su ingreso marginal es menor que el precio, termina en una cantidad menor y un precio más alto que los del óptimo competitivo (donde sería P = CMg). Además, su precio queda por encima del costo marginal, algo que no ocurre en competencia perfecta; esa brecha es la raíz de la pérdida de eficiencia del monopolio.',
+        },
+        {
+          id: 'u6-l2-e9',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'Una empresa de televisión por cable es la única proveedora en una ciudad y ya produce la cantidad en que su ingreso marginal iguala a su costo marginal. Un consultor le propone ampliar la producción un 30% "para capturar más mercado", argumentando que más suscriptores siempre significan más beneficio.',
+          question: 'Según la teoría del monopolio, ¿qué debería responder la empresa a esta propuesta?',
+          options: [
+            {
+              id: 'a',
+              text: 'No conviene ampliar: sobre esas unidades adicionales el ingreso marginal sería menor que el costo marginal, así que cada nueva unidad restaría beneficio en lugar de sumarlo',
+            },
+            { id: 'b', text: 'Conviene ampliar siempre, porque en un monopolio más cantidad vendida se traduce automáticamente en más beneficio' },
+            { id: 'c', text: 'Conviene ampliar hasta que el precio iguale al costo marginal, como haría una empresa perfectamente competitiva' },
+            { id: 'd', text: 'Conviene ampliar solo si el ingreso total deja de crecer, sin mirar el costo de las unidades nuevas' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'La empresa ya está en su óptimo (IMg = CMg). Producir más la lleva a una zona donde el ingreso marginal de cada unidad adicional cae por debajo de su costo marginal, porque para vender esas unidades tendría que bajar el precio de todas. Vender más no es lo mismo que ganar más: por encima del punto IMg = CMg, cada unidad extra reduce el beneficio.',
+        },
       ],
     },
     {
       id: 'u6-l3',
       title: 'Oligopolio, competencia monopolística y teoría de juegos',
       summary: 'Qué pasa cuando las empresas se diferencian un poco, y qué pasa cuando son tan pocas que cada decisión depende de lo que haga la rival.',
-      estimatedMinutes: 10,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -546,6 +663,59 @@ export const unit06: Unit = {
           correctOptionId: 'b',
           explanation:
             'La marca distintiva del oligopolio es la interdependencia estratégica: como los competidores son pocos y grandes, la decisión de cada empresa afecta directamente los resultados de las demás, y por eso cada una debe anticipar la reacción de sus rivales. Un único vendedor describe al monopolio, los productos diferenciados con muchas empresas a la competencia monopolística, y la incapacidad individual de mover el precio a la competencia perfecta.',
+        },
+        {
+          id: 'u6-l3-e7',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Dos empresas rivales, C y D, deciden cada mes si lanzan una campaña de publicidad agresiva. Si ninguna la lanza, cada una gana $90 millones. Si ambas la lanzan, se neutralizan y suben sus costos, así que cada una gana $60 millones. Si solo una la lanza, esa gana $110 millones y la otra $40 millones. Si D decide no hacer publicidad agresiva, ¿cuántos millones más gana C lanzando la campaña en lugar de no lanzarla?',
+          unitLabel: '$ millones',
+          answer: 20,
+          hint: 'Fija la decisión de D (no hacer publicidad) y compara los dos resultados posibles para C: lanzar la campaña o no lanzarla.',
+          explanation:
+            'Si D no hace publicidad, C gana $110 millones lanzando la campaña (es la única que hace publicidad) frente a $90 millones si no la lanza (ninguna hace publicidad). La diferencia es 110 − 90 = $20 millones a favor de lanzar. Como lanzar la campaña también le conviene a C cuando D sí la lanza (60 frente a 40), hacer publicidad es una estrategia dominante, y ambas terminan gastando en ella y ganando $60 millones en vez de los $90 millones que obtendrían si ninguna lo hiciera: un dilema del prisionero.',
+        },
+        {
+          id: 'u6-l3-e8',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: '¿Cuál de las siguientes combinaciones de rasgos describe a un mercado de competencia monopolística?',
+          options: [
+            {
+              id: 'a',
+              text: 'Muchas empresas y libre entrada y salida, pero cada una vende un producto ligeramente diferenciado y por eso enfrenta una demanda con pendiente negativa',
+            },
+            { id: 'b', text: 'Un único vendedor de un bien sin sustitutos cercanos, protegido por barreras de entrada' },
+            { id: 'c', text: 'Unas pocas empresas grandes cuyas decisiones son interdependientes entre sí' },
+            { id: 'd', text: 'Muchas empresas que venden un producto homogéneo y son todas precio-aceptantes' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'La competencia monopolística combina la multiplicidad de empresas y la libre entrada y salida de la competencia perfecta con la diferenciación de producto, que le da a cada empresa algo de poder de mercado y una curva de demanda con pendiente negativa. La opción del único vendedor describe al monopolio; la de pocas empresas interdependientes, al oligopolio; y la del producto homogéneo con empresas precio-aceptantes, a la competencia perfecta.',
+        },
+        {
+          id: 'u6-l3-e9',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'Una peluquería de barrio cobra por cada corte un precio bastante mayor que el costo de atender a un cliente más (su costo marginal). Aun así, con los años abren varias peluquerías nuevas en la zona y, en el largo plazo, el negocio termina obteniendo un beneficio económico de cero.',
+          question: '¿Cómo se explica que el precio quede por encima del costo marginal y, a la vez, el beneficio económico sea cero en el largo plazo?',
+          options: [
+            {
+              id: 'a',
+              text: 'La diferenciación le da a la peluquería algo de poder de mercado, así que fija un precio por encima del costo marginal; pero la libre entrada de nuevas peluquerías erosiona la demanda de cada una hasta que el precio solo alcanza a cubrir el costo total medio, dejando el beneficio económico en cero',
+            },
+            { id: 'b', text: 'Es imposible: si el precio supera al costo marginal, el beneficio económico siempre tiene que ser positivo' },
+            { id: 'c', text: 'Ocurre porque la peluquería es un monopolio y no enfrenta ninguna competencia' },
+            { id: 'd', text: 'Ocurre porque el precio termina siendo igual al costo marginal, como en competencia perfecta' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'En competencia monopolística, la diferenciación permite cobrar un precio superior al costo marginal (hay poder de mercado). Pero la libre entrada hace que, mientras haya beneficios positivos, entren nuevos rivales que le restan clientela a cada empresa, hasta que el precio apenas cubre el costo total medio. En ese equilibrio de largo plazo coexisten P > CMg y beneficio económico de cero, con empresas que operan por debajo de su escala de mínimo costo (capacidad ociosa).',
         },
       ],
     },

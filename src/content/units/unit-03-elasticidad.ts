@@ -15,7 +15,7 @@ export const unit03: Unit = {
       id: 'u3-l1',
       title: 'Elasticidad precio de la demanda',
       summary: 'Cómo medir cuán sensible es la cantidad demandada ante cambios en el precio, y qué la hace más o menos sensible.',
-      estimatedMinutes: 9,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -201,13 +201,76 @@ export const unit03: Unit = {
           explanation:
             'Mientras más específica es la definición del bien, más sustitutos cercanos tiene: si sube el precio del yogur de una marca, es fácil cambiarse a otra marca u otro sabor. Los bienes definidos de forma amplia (alimentos, electricidad) y las necesidades (medicamentos) tienden a tener demandas mucho más inelásticas.',
         },
+        {
+          id: 'u3-l1-e7',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'El precio de un bien de primera necesidad sube de $90 a $110, y la cantidad demandada cae de 105 a 95 unidades por semana. Usando la fórmula del punto medio, ¿cuál es la elasticidad precio de la demanda, en valor absoluto?',
+          answer: 0.5,
+          decimals: 1,
+          tolerance: 0.05,
+          hint: 'Divide cada cambio por el promedio entre el valor inicial y el final. Fíjate si el resultado es mayor o menor a 1.',
+          explanation:
+            'Cambio porcentual en la cantidad: (95 − 105) ÷ ((105 + 95) / 2) = −10 ÷ 100 = −10%. Cambio porcentual en el precio: (110 − 90) ÷ ((90 + 110) / 2) = 20 ÷ 100 = 20%. Elasticidad = 10 ÷ 20 = 0,5. Como es menor a 1, la demanda es inelástica: típico de un bien de primera necesidad.',
+        },
+        {
+          id: 'u3-l1-e8',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            '¿Por qué la demanda de bencina tiende a ser MÁS elástica en el largo plazo que en el corto plazo?',
+          options: [
+            { id: 'a', text: 'Porque en el largo plazo el precio de la bencina siempre baja' },
+            { id: 'b', text: 'Porque con más tiempo los consumidores encuentran alternativas, como cambiar de auto, mudarse más cerca del trabajo o usar transporte público' },
+            { id: 'c', text: 'Porque la bencina deja de ser una necesidad en el largo plazo' },
+            { id: 'd', text: 'Porque en el largo plazo desaparecen los sustitutos' },
+          ],
+          correctOptionId: 'b',
+          explanation:
+            'El horizonte de tiempo es un determinante clave de la elasticidad: en el corto plazo, ante un alza de precio, el consumidor casi no puede ajustar su consumo de bencina. Con más tiempo puede tomar decisiones que reducen su dependencia (auto más eficiente, otra ubicación, transporte público), así que la cantidad demandada responde más y la demanda se vuelve más elástica.',
+        },
+        {
+          id: 'u3-l1-e9',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          question:
+            'Una tienda sube el precio de un juego de mesa de $22 a $28, y la cantidad vendida cae de 130 a 70 unidades por mes. Usando la fórmula del punto medio, ¿cuál es la elasticidad precio de la demanda, en valor absoluto?',
+          answer: 2.5,
+          decimals: 1,
+          tolerance: 0.05,
+          explanation:
+            'Cambio porcentual en la cantidad: (70 − 130) ÷ ((130 + 70) / 2) = −60 ÷ 100 = −60%. Cambio porcentual en el precio: (28 − 22) ÷ ((22 + 28) / 2) = 6 ÷ 25 = 24%. Elasticidad = 60 ÷ 24 = 2,5. Como es mucho mayor a 1, la demanda es marcadamente elástica: se trata de un bien prescindible con muchos sustitutos.',
+        },
+        {
+          id: 'u3-l1-e10',
+          type: 'case_study',
+          difficulty: 'media',
+          xp: 15,
+          scenario:
+            'Una agencia vende cruceros de lujo de dos semanas. Son un gasto totalmente prescindible y compiten con muchísimas otras formas de usar ese dinero y ese tiempo libre: otros viajes, remodelar la casa, ahorrar, etc.',
+          question:
+            'Según los determinantes de la elasticidad, ¿qué esperarías sobre la elasticidad precio de la demanda de estos cruceros?',
+          options: [
+            { id: 'a', text: 'Sería inelástica, porque los cruceros son caros' },
+            { id: 'b', text: 'Sería elástica, porque es un bien de lujo prescindible y con muchos sustitutos' },
+            { id: 'c', text: 'Sería unitaria, porque todos los servicios turísticos tienen Ed = 1' },
+            { id: 'd', text: 'Sería perfectamente inelástica, porque nadie deja de viajar por el precio' },
+          ],
+          correctOptionId: 'b',
+          explanation:
+            'Los bienes de lujo, prescindibles y con muchas alternativas de uso del dinero tienden a tener demanda elástica: si sube el precio, es fácil postergar el crucero o gastar en otra cosa, así que la cantidad demandada cae en una proporción mayor que el alza de precio.',
+        },
       ],
     },
     {
       id: 'u3-l2',
       title: 'Elasticidad e ingreso total',
       summary: 'Por qué subir el precio no siempre significa recaudar más plata en total, y cómo lo decide la elasticidad.',
-      estimatedMinutes: 8,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -384,13 +447,62 @@ export const unit03: Unit = {
           explanation:
             'Con una elasticidad de 1,8 (mayor a 1), la demanda es elástica: domina el efecto cantidad. Al bajar el precio, la cantidad vendida aumenta en una proporción mayor que la caída del precio, así que el ingreso total (P × Q) sube. Subir el precio tendría el efecto contrario.',
         },
+        {
+          id: 'u3-l2-e7',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Una tostaduría vende bolsas de café a $3.000 y vende 500 bolsas al mes (ingreso total = $1.500.000). Sube el precio a $3.600 y la cantidad demandada cae a 450 bolsas al mes. ¿Cuál es el nuevo ingreso total mensual, en miles de pesos?',
+          unitLabel: 'miles de $',
+          answer: 1620,
+          hint: 'El ingreso total es el precio nuevo multiplicado por la cantidad nueva.',
+          explanation:
+            'El nuevo ingreso total es $3.600 × 450 = $1.620.000, es decir, 1.620 miles de pesos. Como el ingreso total subió (de $1.500.000 a $1.620.000) a pesar del alza de precio, la demanda es inelástica en ese tramo.',
+        },
+        {
+          id: 'u3-l2-e8',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'Si la demanda de un bien es inelástica (Ed < 1) y la empresa que lo vende BAJA el precio, ¿qué le ocurre al ingreso total?',
+          options: [
+            { id: 'a', text: 'Baja, porque con demanda inelástica el precio y el ingreso total se mueven en la misma dirección' },
+            { id: 'b', text: 'Sube, porque bajar el precio siempre aumenta el ingreso total' },
+            { id: 'c', text: 'Se mantiene igual, porque la demanda inelástica nunca reacciona' },
+            { id: 'd', text: 'Baja, porque la cantidad vendida cae cuando baja el precio' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Con demanda inelástica domina el efecto precio: la cantidad vendida sube muy poco al bajar el precio, no lo suficiente para compensar el menor precio por unidad. Por eso precio e ingreso total se mueven en la misma dirección, y bajar el precio hace caer el ingreso total.',
+        },
+        {
+          id: 'u3-l2-e9',
+          type: 'case_study',
+          difficulty: 'media',
+          xp: 15,
+          scenario:
+            'Una editorial estima que la elasticidad precio de la demanda de una de sus revistas es de aproximadamente 1,0 (elasticidad unitaria). Está evaluando un pequeño ajuste al precio de tapa.',
+          question:
+            'Según la relación entre elasticidad e ingreso total, ¿qué debería esperar la editorial con su ingreso total si hace un pequeño cambio de precio?',
+          options: [
+            { id: 'a', text: 'Que suba mucho si sube el precio' },
+            { id: 'b', text: 'Que el ingreso total se mantenga prácticamente igual, porque los efectos precio y cantidad se compensan' },
+            { id: 'c', text: 'Que baje siempre, sin importar la dirección del cambio de precio' },
+            { id: 'd', text: 'Que el ingreso total se duplique' },
+          ],
+          correctOptionId: 'b',
+          explanation:
+            'Con elasticidad unitaria (Ed = 1), el cambio porcentual en la cantidad es igual al cambio porcentual en el precio, así que el efecto precio y el efecto cantidad se compensan casi exactamente. El ingreso total (P × Q) prácticamente no cambia ante una pequeña variación de precio.',
+        },
       ],
     },
     {
       id: 'u3-l3',
       title: 'Elasticidad de la oferta, del ingreso y cruzada',
       summary: 'Cómo responden los vendedores a los precios, y cómo el ingreso de los consumidores y el precio de otros bienes mueven la demanda.',
-      estimatedMinutes: 9,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -569,6 +681,50 @@ export const unit03: Unit = {
           correctOptionId: 'a',
           explanation:
             'La posibilidad de almacenar el bien y la flexibilidad del proceso productivo son determinantes clave de la elasticidad de la oferta. Las flores frescas son perecibles y su producción no se ajusta rápido, así que su oferta es más inelástica; las poleras pueden guardarse y producirse con más turnos, lo que hace su oferta más elástica.',
+        },
+        {
+          id: 'u3-l3-e7',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Cuando el precio de mercado sube de $10 a $14 por unidad, una fábrica con capacidad ociosa aumenta la cantidad ofrecida de 300 a 500 unidades. Usando la fórmula del punto medio, ¿cuál es la elasticidad precio de la oferta, en valor absoluto?',
+          answer: 1.5,
+          decimals: 1,
+          tolerance: 0.05,
+          explanation:
+            'Cambio porcentual en la cantidad ofrecida: (500 − 300) ÷ ((300 + 500) / 2) = 200 ÷ 400 = 50%. Cambio porcentual en el precio: (14 − 10) ÷ ((10 + 14) / 2) = 4 ÷ 12 ≈ 33,3%. Elasticidad de la oferta = 50 ÷ 33,3 = 1,5. Como es mayor a 1, la oferta es elástica: la capacidad ociosa le permite a la fábrica reaccionar con fuerza al alza de precio.',
+        },
+        {
+          id: 'u3-l3-e8',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Si la elasticidad cruzada de la demanda entre dos bienes es positiva, esos dos bienes son...',
+          options: [
+            { id: 'a', text: 'Complementos' },
+            { id: 'b', text: 'Sustitutos' },
+            { id: 'c', text: 'Ambos bienes inferiores' },
+            { id: 'd', text: 'Ambos bienes de lujo' },
+          ],
+          correctOptionId: 'b',
+          explanation:
+            'Una elasticidad cruzada positiva significa que, al subir el precio de un bien, la cantidad demandada del otro aumenta. Ese es el comportamiento de dos sustitutos: si uno se encarece, la gente se cambia al otro. Si fuera negativa, serían complementos.',
+        },
+        {
+          id: 'u3-l3-e9',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          question:
+            'Cuando el ingreso mensual de un grupo de hogares sube de $500.000 a $700.000, la cantidad de entradas de cine que consumen al mes sube de 40 a 60. Usando cambios porcentuales de punto medio, ¿cuál es la elasticidad ingreso de la demanda? (Considera el signo).',
+          answer: 1.2,
+          decimals: 1,
+          tolerance: 0.05,
+          hint: 'Divide el cambio porcentual en la cantidad por el cambio porcentual en el ingreso, usando promedios como base. El signo importa para interpretar el resultado.',
+          explanation:
+            'Cambio porcentual en la cantidad: (60 − 40) ÷ ((40 + 60) / 2) = 20 ÷ 50 = 40%. Cambio porcentual en el ingreso: (700.000 − 500.000) ÷ ((500.000 + 700.000) / 2) = 200.000 ÷ 600.000 ≈ 33,3%. Elasticidad ingreso = 40 ÷ 33,3 = 1,2. Como es positiva, el cine es un bien normal; y como además es mayor a 1, se comporta como un bien de lujo para este grupo.',
         },
       ],
     },

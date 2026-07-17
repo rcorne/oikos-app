@@ -16,7 +16,7 @@ export const unit04: Unit = {
       title: 'Utilidad marginal y elección racional',
       summary:
         'Cómo modelamos la satisfacción que entrega consumir, y la regla para repartir un presupuesto limitado entre distintos bienes.',
-      estimatedMinutes: 9,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -196,6 +196,59 @@ export const unit04: Unit = {
           explanation:
             'No basta con comparar utilidades marginales a secas cuando los precios difieren: hay que dividir cada una por su precio. La empanada rinde 90 ÷ 600 = 0,15 utils por peso, mientras que el jugo rinde 40 ÷ 200 = 0,20 utils por peso. Cada peso gastado en jugo entrega más satisfacción, así que a Camila le conviene el jugo, aunque la empanada tenga mayor utilidad marginal total.',
         },
+        {
+          id: 'u4-l1-e7',
+          type: 'numeric',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'Ignacio anota la utilidad total (en utils) que le entrega comer porciones de sushi en un almuerzo: 1 porción → 40; 2 porciones → 70; 3 porciones → 90; 4 porciones → 100; 5 porciones → 105. ¿Cuál es la utilidad marginal de la tercera porción de sushi?',
+          unitLabel: 'utils',
+          answer: 20,
+          explanation:
+            'La utilidad marginal de la tercera porción es la utilidad total con 3 porciones menos la utilidad total con 2 porciones: 90 − 70 = 20. Nota que las utilidades marginales (30, 20, 10, 5) van cayendo porción a porción: es la utilidad marginal decreciente.',
+        },
+        {
+          id: 'u4-l1-e8',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Un consumidor gasta todo su ingreso mensual de $10.000 en pizzas ($1.000 cada una) y latas de bebida ($200 cada una). Si compra 7 pizzas, ¿cuántas latas de bebida puede comprar con el dinero que le queda?',
+          unitLabel: 'latas',
+          answer: 15,
+          explanation:
+            'En 7 pizzas gasta 7 × $1.000 = $7.000, de modo que le quedan $10.000 − $7.000 = $3.000. Con eso compra $3.000 ÷ $200 = 15 latas de bebida. Esa canasta (7 pizzas y 15 latas) es uno de los puntos de su restricción presupuestaria: agota exactamente los $10.000.',
+        },
+        {
+          id: 'u4-l1-e9',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          question:
+            'Con el mismo consumidor del problema anterior (pizza a $1.000, bebida a $200), en el óptimo la utilidad marginal por peso se iguala entre ambos bienes. Si la última pizza que compra le entrega una utilidad marginal de 300 utils, ¿qué utilidad marginal debe tener la última lata de bebida para que el consumidor esté en su óptimo?',
+          unitLabel: 'utils',
+          answer: 60,
+          explanation:
+            'En el óptimo se cumple UMg_pizza / Precio_pizza = UMg_bebida / Precio_bebida. La utilidad marginal por peso de la pizza es 300 ÷ 1.000 = 0,3. Para igualarla, la bebida debe rendir 0,3 utils por peso, es decir UMg_bebida = 0,3 × $200 = 60 utils.',
+        },
+        {
+          id: 'u4-l1-e10',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Un consumidor reparte su ingreso entre pizza ($1.000 cada una) y latas de bebida ($200 cada una). ¿Cuál es el costo de oportunidad, medido en latas de bebida, de comprar una pizza adicional?',
+          options: [
+            { id: 'a', text: '5 latas de bebida, porque una pizza cuesta 5 veces lo que cuesta una lata' },
+            { id: 'b', text: '1 lata de bebida, porque cada compra adicional equivale a una unidad' },
+            { id: 'c', text: '200 latas de bebida, porque ese es el precio de la bebida' },
+            { id: 'd', text: 'No se puede saber sin conocer la utilidad marginal de cada bien' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'La pendiente de la restricción presupuestaria es igual al precio relativo de los dos bienes. Como la pizza ($1.000) cuesta 5 veces lo que cuesta una lata de bebida ($200), para financiar una pizza más hay que resignar 5 latas: ese es su costo de oportunidad, con independencia de las utilidades marginales.',
+        },
       ],
     },
     {
@@ -203,7 +256,7 @@ export const unit04: Unit = {
       title: 'Sesgos de decisión: pérdidas, anclas y statu quo',
       summary:
         'Tres patrones sistemáticos que alejan nuestras decisiones del ideal racional: la aversión a la pérdida, el anclaje y el apego al statu quo.',
-      estimatedMinutes: 9,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -383,6 +436,53 @@ export const unit04: Unit = {
           explanation:
             'Marcela no está confundida ni le falta información: ella misma reconoce que el plan nuevo es mejor. Lo que la frena es que quedarse igual no exige ninguna acción, mientras que cambiarse sí. Esa inercia a favor de la opción vigente es el sesgo del statu quo. Nota que la aversión a la pérdida no calza: quedarse en el plan antiguo es justamente lo que le hace perder $6.000 cada mes.',
         },
+        {
+          id: 'u4-l2-e7',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Los estudios de economía del comportamiento suelen encontrar que, para muchas personas, el malestar de perder cierta cantidad de dinero se siente tan intenso como el placer de ganar aproximadamente el doble. Si a Rodrigo el dolor de perder $25.000 le pesa lo mismo que la alegría de ganar $50.000, ¿cuántas veces más pesa psicológicamente una pérdida que una ganancia del mismo monto para él?',
+          unitLabel: 'veces',
+          answer: 2,
+          explanation:
+            'Una pérdida de $25.000 le duele lo mismo que ganar $50.000. Para igualar el efecto de una pérdida se necesita una ganancia del doble de tamaño: $50.000 ÷ $25.000 = 2. Es decir, la pérdida pesa 2 veces más que una ganancia del mismo monto. Ese peso extra que le damos a las pérdidas es la aversión a la pérdida.',
+        },
+        {
+          id: 'u4-l2-e8',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'Un restaurante incluye en su carta un plato muy caro de $45.000 que casi nadie pide. Su verdadero efecto es que, al lado, un plato de $18.000 empieza a parecer "moderado", y muchos clientes terminan eligiéndolo. ¿Qué sesgo está aprovechando el restaurante?',
+          options: [
+            { id: 'a', text: 'El anclaje: el precio muy alto funciona como referencia y hace ver los demás precios como razonables' },
+            { id: 'b', text: 'La aversión a la pérdida, porque no pedir el plato caro se siente como perder algo' },
+            { id: 'c', text: 'El sesgo del statu quo, porque los clientes siempre piden lo mismo' },
+            { id: 'd', text: 'La utilidad marginal decreciente del plato caro' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El plato de $45.000 casi no se vende, pero cumple otra función: instala un número alto como punto de referencia. Frente a esa ancla, un plato de $18.000 parece moderado, aunque por sí solo no lo pareciera. Eso es anclaje: una cifra inicial que arrastra la percepción de lo que viene después.',
+        },
+        {
+          id: 'u4-l2-e9',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'A Antonia le regalaron una entrada para un concierto muy esperado. Antes del evento, una conocida le ofrece comprarle la entrada en $80.000, bastante más que su valor original. Antonia se niega: no piensa venderla. Sin embargo, cuando le preguntan si ella habría pagado $80.000 por comprar esa misma entrada de no tenerla, reconoce con sinceridad que no, que le habría parecido demasiado cara.',
+          question: '¿Qué concepto de la lección explica mejor esta inconsistencia en la valoración de Antonia?',
+          options: [
+            { id: 'a', text: 'La aversión a la pérdida: desprenderse de algo que ya siente como propio pesa más que la satisfacción de haberlo comprado por ese mismo precio' },
+            { id: 'b', text: 'El anclaje, porque los $80.000 son una cifra redonda que sirve de referencia' },
+            { id: 'c', text: 'El sesgo del statu quo, porque Antonia prefiere no ir al concierto' },
+            { id: 'd', text: 'La utilidad marginal decreciente de las entradas de concierto' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Antonia valora más la entrada por el solo hecho de ya tenerla: venderla se siente como una pérdida, y las pérdidas pesan psicológicamente más que las ganancias equivalentes. Por eso exige más para desprenderse de ella de lo que habría estado dispuesta a pagar para adquirirla. Esta brecha entre lo que pedimos por algo que tenemos y lo que pagaríamos por conseguirlo es una manifestación directa de la aversión a la pérdida.',
+        },
       ],
     },
     {
@@ -390,7 +490,7 @@ export const unit04: Unit = {
       title: 'Bienes posicionales y la carrera de gastos',
       summary:
         'Por qué algunos bienes se valoran por comparación con los demás, y cómo eso puede desatar una competencia de gastos que no deja a nadie mejor.',
-      estimatedMinutes: 9,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -552,6 +652,55 @@ export const unit04: Unit = {
           correctOptionId: 'a',
           explanation:
             'El descanso de un buen sueño entrega satisfacción por sí mismo: que otra persona duerma más o menos no le quita valor. Las otras tres alternativas dependen explícitamente de la comparación con los demás ("el más caro", "más grande que", "la más lujosa"), que es justamente lo que define a un bien posicional.',
+        },
+        {
+          id: 'u4-l3-e7',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'En un grupo de amistades, el gasto promedio en el regalo de cumpleaños es de $12.000. Para no quedar como "el que regaló menos", Pablo gasta $18.000 en su regalo. ¿En qué porcentaje supera el gasto de Pablo al gasto promedio del grupo?',
+          unitLabel: '%',
+          answer: 50,
+          explanation:
+            'La diferencia es $18.000 − $12.000 = $6.000. Como porcentaje del gasto promedio: $6.000 ÷ $12.000 = 0,50, es decir, 50%. Pablo gasta un 50% más que el promedio solo para no perder posición dentro del grupo; si todos hacen lo mismo, el promedio sube y nadie mejora su posición relativa: es el motor de una cascada de gastos.',
+        },
+        {
+          id: 'u4-l3-e8',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: '¿Cuál de las siguientes alternativas es el mejor ejemplo de un bien posicional?',
+          options: [
+            { id: 'a', text: 'Tener el auto más lujoso del estacionamiento de la oficina' },
+            { id: 'b', text: 'Beber suficiente agua durante el día' },
+            { id: 'c', text: 'Respirar aire limpio en el lugar donde uno vive' },
+            { id: 'd', text: 'Dormir las horas necesarias para descansar bien' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Tener "el auto más lujoso del estacionamiento" depende por completo de la comparación con los demás: si alguien llega con uno mejor, el propio pierde su gracia aunque sea exactamente el mismo auto. Eso es un bien posicional. Beber agua, respirar aire limpio o dormir bien entregan satisfacción absoluta, independiente de cuánto tengan los demás: son bienes no posicionales.',
+        },
+        {
+          id: 'u4-l3-e9',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'En un grupo de familias que se comparan entre sí, cada una destina cada vez más dinero a cosas muy visibles —autos más caros, ampliaciones de la casa— para no quedar atrás de las demás. Para financiarlo, van recortando cosas menos visibles: vacaciones, tiempo libre y horas de descanso. Al cabo de unos años, todas las familias tienen autos y casas más imponentes, pero su posición relativa dentro del grupo es la misma de antes, y varias reconocen sentirse más cansadas y con menos tiempo para lo que disfrutan.',
+          question: '¿Qué idea de la lección describe mejor lo que ocurrió con estas familias?',
+          options: [
+            {
+              id: 'a',
+              text: 'Una cascada de gastos: la competencia por la posición relativa las llevó a gastar de más en bienes posicionales y de menos en bienes no posicionales, sin mejorar el bienestar promedio',
+            },
+            { id: 'b', text: 'Una ganancia mutua del comercio entre las familias del grupo' },
+            { id: 'c', text: 'El sesgo del statu quo, porque prefieren no cambiar de barrio' },
+            { id: 'd', text: 'La utilidad marginal decreciente de las vacaciones' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Como el auto y el tamaño de la casa son bienes posicionales, cuando todas las familias gastan más a la vez, ninguna gana posición relativa: la carrera se anula en el agregado. Peor aún, para financiar esa carrera sacrificaron bienes no posicionales —descanso, tiempo libre, vacaciones— que sí entregaban bienestar real. Esa es la trampa de una cascada de gastos: mucho esfuerzo colectivo que deja a todos, en promedio, igual o peor.',
         },
       ],
     },

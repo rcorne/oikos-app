@@ -15,7 +15,7 @@ export const unit05: Unit = {
       id: 'u5-l1',
       title: 'Costos fijos, variables y totales',
       summary: 'Qué gastos se mantienen sin importar cuánto produces, cuáles cambian, y cómo se suman.',
-      estimatedMinutes: 8,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -178,13 +178,74 @@ export const unit05: Unit = {
           explanation:
             'Con producción cero, el costo variable (pan, ingredientes, gas) es cero, pero los compromisos fijos siguen vigentes: CT = CF + CV = (80.000 + 20.000) + 0 = 100.000. Ese es el costo de mantener el negocio, aunque no opere.',
         },
+        {
+          id: 'u5-l1-e7',
+          type: 'numeric',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'Una panadería paga $200.000 mensuales de arriendo, sin importar cuánto hornee. En un mes en que produce 500 panes, el costo variable de harina, levadura y gas suma $350.000. ¿Cuál es su costo total ese mes?',
+          unitLabel: '$',
+          answer: 550000,
+          explanation: 'CT = CF + CV = 200.000 + 350.000 = 550.000.',
+        },
+        {
+          id: 'u5-l1-e8',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question: 'En un servicio de reparto a domicilio, ¿cuál de los siguientes es un costo variable?',
+          options: [
+            { id: 'a', text: 'El seguro anual del vehículo, que se paga igual haya o no repartos' },
+            { id: 'b', text: 'La bencina que consume el vehículo según los kilómetros recorridos en cada reparto' },
+            { id: 'c', text: 'El arriendo mensual de la bodega donde se guardan los paquetes' },
+            { id: 'd', text: 'El sueldo fijo del gerente de operaciones' },
+          ],
+          correctOptionId: 'b',
+          explanation:
+            'La bencina depende directamente de cuántos repartos y kilómetros se hagan: sube cuando hay más entregas y baja cuando hay menos, así que es un costo variable. El seguro, el arriendo y el sueldo fijo se pagan igual sin importar el nivel de actividad, por lo que son costos fijos.',
+        },
+        {
+          id: 'u5-l1-e9',
+          type: 'case_study',
+          difficulty: 'media',
+          xp: 15,
+          scenario:
+            'Una fábrica de velas paga $100.000 mensuales de arriendo, que no cambia con la producción. Cuando fabrica 200 velas al mes, su costo variable de cera y mecha es $60.000; cuando fabrica 400 velas, ese costo variable sube a $120.000. El dueño cree que, al duplicar la producción de 200 a 400 velas, su costo total también se duplicará.',
+          question: '¿Está en lo correcto el dueño?',
+          options: [
+            {
+              id: 'a',
+              text: 'No: el costo total sube de $160.000 a $220.000, pero no se duplica, porque el costo fijo de $100.000 se mantiene igual y solo aumenta el costo variable',
+            },
+            { id: 'b', text: 'Sí: al duplicar la producción, el costo total siempre se duplica' },
+            { id: 'c', text: 'No: el costo total se mantiene igual, porque el costo fijo no cambia' },
+            { id: 'd', text: 'Sí, porque tanto el costo fijo como el costo variable se duplican' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Con 200 velas, CT = 100.000 + 60.000 = 160.000; con 400 velas, CT = 100.000 + 120.000 = 220.000. El costo total sube, pero no llega al doble ($320.000) porque solo el costo variable se duplicó: el costo fijo de $100.000 sigue igual.',
+        },
+        {
+          id: 'u5-l1-e10',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          question:
+            'Una imprenta tiene un costo fijo de $600.000 mensuales por el arriendo y las cuotas de sus máquinas. Este mes su costo total fue de $1.500.000. Si el próximo mes cierra por completo y no imprime absolutamente nada, ¿cuál será su costo total ese mes?',
+          unitLabel: '$',
+          answer: 600000,
+          hint: 'Cuando la producción es cero, el costo variable es cero, así que CT = CF.',
+          explanation:
+            'Al no imprimir nada, el costo variable cae a cero, pero los compromisos fijos siguen vigentes: CT = CF + CV = 600.000 + 0 = 600.000. El costo total del mes pasado ($1.500.000) no importa para este cálculo.',
+        },
       ],
     },
     {
       id: 'u5-l2',
       title: 'Costo marginal y costo medio',
       summary: 'Cuánto cuesta producir una unidad más, cuánto cuesta cada unidad en promedio, y cómo se relacionan ambos.',
-      estimatedMinutes: 9,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -342,13 +403,57 @@ export const unit05: Unit = {
           explanation:
             'El costo marginal de la décima caja es CMg = 104.000 − 90.000 = 14.000, mayor que el costo medio anterior de $10.000, así que esa caja "tira hacia arriba" el promedio. El nuevo costo medio total es 104.000 / 10 = 10.400 por caja: sube, pero no salta hasta el valor del marginal.',
         },
+        {
+          id: 'u5-l2-e7',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Una confitería tiene un costo total de $520.000 al producir 40 tortas y de $535.000 al producir 41 tortas. ¿Cuál es el costo marginal de la torta número 41?',
+          unitLabel: '$',
+          answer: 15000,
+          explanation: 'CMg = ΔCT/ΔQ = (535.000 − 520.000) / (41 − 40) = 15.000.',
+        },
+        {
+          id: 'u5-l2-e8',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'Un taller que fabrica mochilas produce 10 unidades al día con un costo total de $200.000, es decir, un costo medio total de $20.000 por mochila. El dueño calcula que producir una mochila más (la número 11) elevaría el costo total del día a $220.000.',
+          question: 'Si el taller fabrica esa mochila número 11, ¿qué ocurre con su costo medio total?',
+          options: [
+            {
+              id: 'a',
+              text: 'Se mantiene en $20.000 por mochila, porque el costo marginal de esa unidad ($20.000) es igual al costo medio total anterior',
+            },
+            { id: 'b', text: 'Baja, porque repartir el costo entre más unidades siempre reduce el promedio' },
+            { id: 'c', text: 'Sube a $22.000 por mochila, porque el costo total aumentó a $220.000' },
+            { id: 'd', text: 'No se puede saber sin conocer el costo fijo del taller' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El costo marginal de la mochila número 11 es CMg = 220.000 − 200.000 = 20.000, exactamente igual al costo medio total anterior ($20.000). Cuando el marginal iguala al medio, el promedio no se mueve: el nuevo costo medio total es 220.000 / 11 = 20.000. Ese es justamente el punto donde el costo medio deja de bajar, su mínimo.',
+        },
+        {
+          id: 'u5-l2-e9',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Una zapatería fabrica 250 pares de zapatos en el mes con un costo total de $3.000.000, sumando lo fijo y lo variable. ¿Cuál es su costo medio total por par?',
+          unitLabel: '$',
+          answer: 12000,
+          hint: 'El costo medio total es el costo total repartido entre todas las unidades: CTMe = CT / Q.',
+          explanation: 'CTMe = CT / Q = 3.000.000 / 250 = 12.000 por par.',
+        },
       ],
     },
     {
       id: 'u5-l3',
       title: 'Costos en el largo plazo y economías de escala',
       summary: 'Por qué en el largo plazo todo cuesta cambiar, y por qué crecer a veces abarata y a veces encarece cada unidad.',
-      estimatedMinutes: 9,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -513,6 +618,56 @@ export const unit05: Unit = {
           correctOptionId: 'a',
           explanation:
             'Comprar insumos en mayor volumen suele conseguir mejores precios, lo que reduce el costo medio de largo plazo al producir más: una fuente clásica de economías de escala. Los niveles extra de jefatura son una fuente de deseconomías, y las otras dos opciones describen conceptos de corto plazo.',
+        },
+        {
+          id: 'u5-l3-e7',
+          type: 'case_study',
+          difficulty: 'media',
+          xp: 15,
+          scenario:
+            'Una plataforma de streaming pasó de 10.000 a 100.000 usuarios en un año. El costo de sus servidores y del equipo que desarrolla la aplicación se reparte ahora entre muchos más usuarios, de modo que su costo medio de largo plazo por usuario bajó de forma notoria.',
+          question: '¿Qué concepto describe mejor lo que le ocurre a la plataforma?',
+          options: [
+            { id: 'a', text: 'Economías de escala' },
+            { id: 'b', text: 'Deseconomías de escala' },
+            { id: 'c', text: 'Un aumento del costo fijo de corto plazo' },
+            { id: 'd', text: 'Una caída del costo marginal de corto plazo' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Al crecer, la plataforma reparte costos como los servidores y el desarrollo entre muchas más unidades, bajando su costo medio de largo plazo. Cuando producir más reduce el costo medio de largo plazo, se habla de economías de escala.',
+        },
+        {
+          id: 'u5-l3-e8',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          question:
+            'Una fábrica de jugos compara dos tamaños de planta. La planta mediana produce 8.000 litros diarios con un costo total de $3.200.000; la planta grande produce 10.000 litros diarios con un costo total de $4.500.000. ¿Cuántos pesos MÁS gasta la planta grande por cada litro, comparada con la planta mediana?',
+          unitLabel: '$',
+          answer: 50,
+          hint: 'Calcula el costo medio (CT / Q) de cada planta y réstalos.',
+          explanation:
+            'CMe planta mediana = 3.200.000 / 8.000 = 400 por litro. CMe planta grande = 4.500.000 / 10.000 = 450 por litro. La planta grande gasta 450 − 400 = 50 pesos más por litro: a ese tamaño aparecen deseconomías de escala.',
+        },
+        {
+          id: 'u5-l3-e9',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: 'En el largo plazo, ¿por qué se dice que todos los costos de una empresa son variables?',
+          options: [
+            {
+              id: 'a',
+              text: 'Porque la empresa tiene tiempo para ajustar todos sus factores, incluido el tamaño de la planta, así que no queda ningún compromiso fijo',
+            },
+            { id: 'b', text: 'Porque el arriendo del local sube automáticamente todos los meses' },
+            { id: 'c', text: 'Porque el costo marginal siempre termina siendo igual al costo medio total' },
+            { id: 'd', text: 'Porque en el largo plazo la empresa deja de tener costos variables' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'En el largo plazo la empresa puede modificar absolutamente todo, incluso construir o cambiar el tamaño de su planta. Como ya no queda ninguna decisión comprometida de antemano, no hay costos fijos: todos los costos pasan a ser variables.',
         },
       ],
     },

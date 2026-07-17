@@ -15,7 +15,7 @@ export const unit08: Unit = {
       id: 'u8-l1',
       title: 'Excedente del consumidor y del productor',
       summary: 'Cómo medir las ganancias que compradores y vendedores obtienen al participar en el mercado, y por qué su suma indica eficiencia.',
-      estimatedMinutes: 9,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -194,13 +194,76 @@ export const unit08: Unit = {
           explanation:
             'La cantidad de equilibrio es exactamente la que maximiza el excedente total. Más allá de ella, cada unidad adicional cuesta producirla más de lo que algún comprador está dispuesto a pagar por ella: esas transacciones destruyen excedente en vez de crearlo. Por eso, tanto quedarse corto como pasarse de la cantidad de equilibrio reduce el excedente total del mercado.',
         },
+        {
+          id: 'u8-l1-e7',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'En un mercado, la curva de demanda es P = 60 − Q (P en dólares, Q en unidades). En el equilibrio, el precio es $20 y la cantidad transada es 40 unidades. ¿Cuál es el excedente del consumidor, en dólares?',
+          unitLabel: '$',
+          answer: 800,
+          hint: 'El excedente del consumidor es un triángulo: su base es la cantidad transada y su altura es la disposición máxima a pagar (el intercepto de la demanda) menos el precio de equilibrio.',
+          explanation:
+            'El excedente del consumidor es el área del triángulo entre la curva de demanda y el precio de equilibrio: la base es la cantidad transada (40) y la altura es la disposición máxima a pagar menos el precio pagado (60 − 20 = 40). Excedente = 0,5 × 40 × 40 = 800.',
+        },
+        {
+          id: 'u8-l1-e8',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: '¿Por qué los economistas usan el excedente total (consumidor más productor) como medida de la eficiencia de un mercado?',
+          options: [
+            {
+              id: 'a',
+              text: 'Porque mide el bienestar total que genera el mercado, y alcanza su máximo justamente en la cantidad de equilibrio competitivo',
+            },
+            { id: 'b', text: 'Porque mide la recaudación que el gobierno puede obtener gravando ese mercado' },
+            { id: 'c', text: 'Porque siempre es mayor cuanto más alto sea el precio de equilibrio del bien' },
+            { id: 'd', text: 'Porque equivale al ingreso total de las empresas que participan en el mercado' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El excedente total es la suma de las ganancias netas de compradores y vendedores, es decir, el bienestar que genera el mercado para quienes participan en él. En un mercado competitivo sin fallas, ese excedente total se maximiza exactamente en la cantidad de equilibrio, y por eso se usa como vara para medir la eficiencia y evaluar el efecto de impuestos o políticas.',
+        },
+        {
+          id: 'u8-l1-e9',
+          type: 'case_study',
+          difficulty: 'media',
+          xp: 15,
+          scenario:
+            'En el mercado de entradas de cine, el precio de equilibrio es $5.000 y se venden 300 entradas por función. Una espectadora estaba dispuesta a pagar hasta $8.000 por su entrada, pero termina comprándola al precio de mercado.',
+          question: '¿Cuánto excedente del consumidor obtiene esta espectadora en particular por su entrada?',
+          options: [
+            { id: 'a', text: '$3.000, la diferencia entre lo máximo que estaba dispuesta a pagar y el precio que efectivamente pagó' },
+            { id: 'b', text: '$8.000, porque ese era el valor que le asignaba a la entrada' },
+            { id: 'c', text: '$5.000, el precio de mercado que pagó por la entrada' },
+            { id: 'd', text: '$0, porque pagó exactamente el precio de mercado como todos los demás' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El excedente del consumidor de una unidad específica es la diferencia entre la disposición a pagar del comprador ($8.000) y el precio que efectivamente paga ($5.000): 8.000 − 5.000 = $3.000. Aunque pagó el mismo precio que los demás, su ganancia neta depende de cuánto más valoraba la entrada por encima de ese precio.',
+        },
+        {
+          id: 'u8-l1-e10',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          question:
+            'En un mercado, la demanda es P = 120 − 2Q y la oferta es P = 20 + 3Q (P en dólares, Q en unidades). En el equilibrio, la cantidad transada es 20 unidades y el precio es $80. ¿Cuál es el excedente total del mercado (consumidor más productor), en dólares?',
+          unitLabel: '$',
+          answer: 1000,
+          hint: 'Calcula por separado el triángulo del excedente del consumidor (bajo la demanda, sobre el precio) y el del productor (sobre la oferta, bajo el precio), y súmalos. Ambos comparten la misma base: la cantidad transada.',
+          explanation:
+            'El excedente del consumidor es 0,5 × 20 × (120 − 80) = 0,5 × 20 × 40 = 400. El excedente del productor es 0,5 × 20 × (80 − 20) = 0,5 × 20 × 60 = 600. El excedente total es la suma de ambos: 400 + 600 = 1.000.',
+        },
       ],
     },
     {
       id: 'u8-l2',
       title: 'Impuestos, incidencia tributaria y pérdida de eficiencia',
       summary: 'Quién termina pagando realmente un impuesto, y por qué introduce una pérdida de eficiencia en el mercado.',
-      estimatedMinutes: 10,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -376,13 +439,62 @@ export const unit08: Unit = {
           explanation:
             'El impuesto abre una cuña entre el precio que pagan los compradores (Pc) y el que reciben los vendedores (Pv), de modo que Pc − Pv es igual al monto del impuesto: 30 − 8 = $22. Los $8 restantes por unidad van al gobierno como recaudación.',
         },
+        {
+          id: 'u8-l2-e7',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'El gobierno aplica un impuesto específico de $5 por unidad en un mercado donde antes se transaban 100 unidades. Con el impuesto, la cantidad transada cae a 90 unidades. ¿Cuánto recauda el gobierno con este impuesto, en dólares?',
+          unitLabel: '$',
+          answer: 450,
+          hint: 'La recaudación se calcula sobre las unidades que efectivamente se transan una vez aplicado el impuesto, no sobre la cantidad que se transaba antes.',
+          explanation:
+            'La recaudación es el impuesto por unidad multiplicado por la cantidad transada después del impuesto: 5 × 90 = $450. Usar la cantidad original (100 unidades) sería un error, porque el gobierno solo recauda sobre las transacciones que ocurren con el impuesto vigente.',
+        },
+        {
+          id: 'u8-l2-e8',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'Una municipalidad establece un impuesto anual sobre la tenencia de terrenos urbanos. La oferta de suelo dentro de la ciudad es prácticamente fija —no se puede fabricar más terreno—, es decir, extremadamente inelástica, mientras que la demanda de terrenos responde con relativa facilidad al precio.',
+          question:
+            '¿Quién termina soportando la mayor parte de la carga de este impuesto, sin importar sobre quién recaiga legalmente?',
+          options: [
+            { id: 'a', text: 'Los propietarios del suelo, porque la oferta de terrenos es el lado mucho más inelástico del mercado' },
+            { id: 'b', text: 'Los compradores de terrenos, porque los impuestos siempre se trasladan íntegramente al comprador' },
+            { id: 'c', text: 'La municipalidad, porque es quien diseña y cobra el impuesto' },
+            { id: 'd', text: 'Se reparte exactamente por mitades, porque toda carga tributaria se divide en partes iguales' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'La carga de un impuesto recae principalmente sobre el lado más inelástico del mercado, porque es el que menos puede ajustar su comportamiento ante el cambio de precios. Como la oferta de suelo es casi perfectamente inelástica, son los propietarios quienes absorben casi toda la carga, en forma de un menor precio recibido, sin importar quién esté legalmente obligado a pagar el impuesto.',
+        },
+        {
+          id: 'u8-l2-e9',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Dos mercados reciben un impuesto específico del mismo monto por unidad. En el mercado A la cantidad transada apenas cae, mientras que en el mercado B cae bastante. ¿En cuál de los dos es mayor la pérdida de eficiencia (pérdida irrecuperable) del impuesto?',
+          options: [
+            { id: 'a', text: 'En el mercado B, porque la pérdida de eficiencia crece cuanto más se reduce la cantidad transada' },
+            { id: 'b', text: 'En el mercado A, porque una caída pequeña de la cantidad concentra toda la pérdida en menos unidades' },
+            { id: 'c', text: 'En ambos es igual, porque el monto del impuesto por unidad es el mismo' },
+            { id: 'd', text: 'En ninguno, porque la pérdida de eficiencia solo depende de la recaudación, no de la cantidad' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'La pérdida de eficiencia es el triángulo cuya área es 0,5 × (reducción en la cantidad) × (monto del impuesto). Con el mismo impuesto por unidad, mientras más cae la cantidad transada —como en el mercado B, típicamente más elástico— mayor es la base del triángulo y, por tanto, mayor la pérdida irrecuperable. Por eso gravar mercados muy inelásticos genera menos pérdida de eficiencia.',
+        },
       ],
     },
     {
       id: 'u8-l3',
       title: 'Análisis costo-beneficio de una política pública',
       summary: 'Cómo evaluar si una política pública conviene a la sociedad, comparando beneficios y costos, y distinguiendo eficiencia de equidad.',
-      estimatedMinutes: 9,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -570,6 +682,60 @@ export const unit08: Unit = {
           correctOptionId: 'a',
           explanation:
             'Un beneficio social neto positivo indica que la política es eficiente en el agregado, pero no dice cómo se reparten sus costos y beneficios. En este caso el impuesto es regresivo: pesa proporcionalmente más sobre los hogares de menores ingresos. Un buen análisis debe reportar ambas dimensiones —eficiencia y distribución— para que quien decide pueda ponderar el resultado agregado contra sus efectos de equidad. La opción c confunde los criterios: una política con efectos distributivos desiguales puede seguir siendo eficiente.',
+        },
+        {
+          id: 'u8-l3-e7',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Un municipio evalúa una campaña de vacunación. Los beneficios sociales anuales estimados son: $90.000 en ahorros del sistema de salud y $40.000 por menor ausentismo laboral. El costo total anual de la campaña, incluido el costo de oportunidad de los fondos, es de $110.000. ¿Cuál es el beneficio social neto anual de la campaña, en dólares?',
+          unitLabel: '$',
+          answer: 20000,
+          hint: 'Suma primero todos los beneficios sociales y luego réstale el costo total de la campaña.',
+          explanation:
+            'Los beneficios sociales totales son 90.000 + 40.000 = $130.000 al año. Restando el costo total anual: 130.000 − 110.000 = $20.000 de beneficio social neto. Como el resultado es positivo, el criterio de eficiencia del análisis costo-beneficio indica que la campaña conviene a la sociedad en su conjunto.',
+        },
+        {
+          id: 'u8-l3-e8',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'En el análisis costo-beneficio se dice que una política es eficiente cuando "los ganadores podrían compensar a los perdedores y aun así quedar mejor". ¿Qué significa exactamente esa idea?',
+          options: [
+            {
+              id: 'a',
+              text: 'Que la política aumenta el excedente total, aunque esa compensación entre ganadores y perdedores no necesariamente ocurra en la práctica',
+            },
+            { id: 'b', text: 'Que la política beneficia por igual a todos los grupos involucrados' },
+            { id: 'c', text: 'Que el gobierno está legalmente obligado a compensar a quienes pierden con la política' },
+            { id: 'd', text: 'Que la política es injusta y por tanto debería rechazarse siempre' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'La frase describe un criterio de eficiencia: si el excedente total aumenta, las ganancias de los ganadores superan las pérdidas de los perdedores, de modo que en principio los primeros podrían compensar a los segundos y aun así salir ganando. Es una posibilidad teórica sobre el tamaño total del beneficio, no una compensación que efectivamente se realice; por eso una política eficiente puede seguir generando perdedores concretos y objeciones de equidad.',
+        },
+        {
+          id: 'u8-l3-e9',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'Un país decide abrir la importación de un alimento básico que antes solo se producía localmente. Con la apertura, el precio para los consumidores cae fuertemente y los importadores prosperan, de modo que el excedente total de la economía aumenta. Sin embargo, miles de pequeños productores locales, que no pueden competir con el precio importado, ven caer sus ingresos y algunos deben cerrar.',
+          question: 'Desde la lógica del análisis costo-beneficio, ¿cuál afirmación describe mejor esta política?',
+          options: [
+            {
+              id: 'a',
+              text: 'Es eficiente, porque las ganancias de consumidores e importadores superan las pérdidas de los productores locales; pero genera perdedores concretos, lo que plantea una legítima cuestión de equidad y de eventual compensación',
+            },
+            { id: 'b', text: 'Como hay productores que pierden, la política necesariamente reduce el excedente total de la economía' },
+            { id: 'c', text: 'Al aumentar el excedente total, todos los grupos involucrados quedan mejor que antes' },
+            { id: 'd', text: 'El análisis costo-beneficio no permite decir nada sobre políticas que crean ganadores y perdedores' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Que el excedente total aumente significa que la política es eficiente: la suma de las ganancias supera la suma de las pérdidas. Pero eso no implica que todos ganen; aquí los consumidores e importadores ganan y los productores locales pierden. Un buen análisis reporta tanto el efecto agregado (eficiencia) como la distribución de ganancias y pérdidas (equidad), y reconoce que la compensación a los perdedores es posible en teoría, pero no ocurre de forma automática.',
         },
       ],
     },

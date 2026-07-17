@@ -15,7 +15,7 @@ export const unit02: Unit = {
       id: 'u2-l1',
       title: 'La demanda: la ley y sus determinantes',
       summary: 'Qué hace que compremos más o menos de algo, y qué mueve la curva completa.',
-      estimatedMinutes: 8,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -157,13 +157,73 @@ export const unit02: Unit = {
           explanation:
             'Consola y videojuegos son complementos: cuando sube el precio de uno, cae la demanda del otro. Como el cambio no proviene del precio de los propios videojuegos sino de un bien relacionado, la curva de demanda de videojuegos se desplaza completa hacia la izquierda.',
         },
+        {
+          id: 'u2-l1-e7',
+          type: 'numeric',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'La demanda del mercado es la suma horizontal de las demandas individuales. A un precio de $1.50 por vaso, Ana demanda 6 vasos de helado y Beto demanda 4. ¿Cuál es la cantidad demandada del mercado a ese precio?',
+          unitLabel: 'vasos',
+          answer: 10,
+          explanation:
+            'La cantidad demandada del mercado a cada precio es la suma de las cantidades individuales: 6 + 4 = 10 vasos a $1.50.',
+        },
+        {
+          id: 'u2-l1-e8',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'El té y el café son sustitutos para muchas personas. Si sube fuertemente el precio del té, ¿qué le ocurre a la curva de demanda de café?',
+          options: [
+            { id: 'a', text: 'Se desplaza hacia la derecha: al encarecerse el sustituto, se demanda más café a cualquier precio' },
+            { id: 'b', text: 'Se desplaza hacia la izquierda: el café se vuelve menos atractivo' },
+            { id: 'c', text: 'No cambia: el precio del té no afecta al mercado del café' },
+            { id: 'd', text: 'Solo hay un movimiento a lo largo de la curva de demanda de café' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Cuando dos bienes son sustitutos, un alza en el precio de uno aumenta la demanda del otro. Al encarecerse el té, algunos compradores lo reemplazan por café, así que a cualquier precio del café se demanda más: la curva de demanda de café se desplaza hacia la derecha.',
+        },
+        {
+          id: 'u2-l1-e9',
+          type: 'case_study',
+          difficulty: 'media',
+          xp: 15,
+          scenario:
+            'Para la mayoría de los hogares, la carne de res es un bien normal. Tras varios años de crecimiento económico, el ingreso promedio de las familias de una ciudad aumenta de forma sostenida.',
+          question: '¿Qué debería ocurrir con la curva de demanda de carne de res en esa ciudad?',
+          options: [
+            { id: 'a', text: 'Se desplaza hacia la derecha, porque en un bien normal un mayor ingreso eleva la demanda a cada precio' },
+            { id: 'b', text: 'Se desplaza hacia la izquierda, porque la gente ahora ahorra en lugar de consumir' },
+            { id: 'c', text: 'No se desplaza; solo hay un movimiento a lo largo de la curva' },
+            { id: 'd', text: 'No cambia, porque el ingreso no influye en la demanda de alimentos' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Un bien normal es aquel cuya demanda aumenta cuando sube el ingreso. Como el cambio proviene del ingreso —un determinante distinto del precio del propio bien— toda la curva de demanda se desplaza hacia la derecha.',
+        },
+        {
+          id: 'u2-l1-e10',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          question:
+            'La demanda de un bien está dada por Qd = 120 − 5P. ¿A qué precio P la cantidad demandada es exactamente 45 unidades?',
+          unitLabel: '$',
+          answer: 15,
+          hint: 'Iguala la ecuación de demanda a 45 y despeja P.',
+          explanation:
+            'Planteamos 45 = 120 − 5P → 5P = 120 − 45 = 75 → P = 15. Verificación: Qd = 120 − 5(15) = 120 − 75 = 45 unidades.',
+        },
       ],
     },
     {
       id: 'u2-l2',
       title: 'La oferta: qué mueve a los productores',
       summary: 'Qué hace que las empresas produzcan más o menos, y qué desplaza la curva completa.',
-      estimatedMinutes: 8,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -304,13 +364,60 @@ export const unit02: Unit = {
           explanation:
             'Un subsidio a la producción actúa como lo contrario de un impuesto: reduce el costo marginal efectivo de cada unidad. A cualquier precio de venta, ahora es rentable ofrecer más paneles, así que la curva de oferta completa se desplaza hacia la derecha. Como el precio del propio bien no cambió, no se trata de un movimiento a lo largo de la curva.',
         },
+        {
+          id: 'u2-l2-e7',
+          type: 'numeric',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'La oferta del mercado es la suma horizontal de las ofertas individuales. A un precio de $2.50 por vaso, Ben ofrece 4 vasos de helado y Jerry ofrece 6. ¿Cuál es la cantidad ofrecida del mercado a ese precio?',
+          unitLabel: 'vasos',
+          answer: 10,
+          explanation:
+            'La cantidad ofrecida del mercado a cada precio es la suma de las cantidades individuales: 4 + 6 = 10 vasos a $2.50.',
+        },
+        {
+          id: 'u2-l2-e8',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Una fábrica de conservas espera que el precio de venta de su producto suba con fuerza el próximo mes. ¿Cómo afecta esa expectativa a la cantidad que ofrece hoy?',
+          options: [
+            { id: 'a', text: 'Reduce lo que ofrece hoy y almacena inventario: la curva de oferta actual se desplaza a la izquierda' },
+            { id: 'b', text: 'Aumenta lo que ofrece hoy para vender antes de la subida' },
+            { id: 'c', text: 'No cambia nada, porque el precio de hoy no ha cambiado' },
+            { id: 'd', text: 'Solo se mueve a lo largo de la curva de oferta actual' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Si una empresa espera un precio más alto en el futuro, le conviene guardar parte de su producción para venderla luego. Eso reduce la cantidad que ofrece hoy a cada precio y desplaza la curva de oferta actual hacia la izquierda; las expectativas son un determinante, no el precio vigente.',
+        },
+        {
+          id: 'u2-l2-e9',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'El mercado de helado artesanal de una ciudad se vuelve muy rentable y, atraídas por ello, numerosas heladerías nuevas abren durante el verano. El precio de mercado del helado aún no se ha ajustado.',
+          question: '¿Cuál es el efecto directo de la entrada de nuevos vendedores sobre la curva de oferta del mercado?',
+          options: [
+            { id: 'a', text: 'Se desplaza hacia la derecha, porque con más vendedores se ofrece mayor cantidad a cada precio' },
+            { id: 'b', text: 'Se desplaza hacia la izquierda, porque hay más competencia por los insumos' },
+            { id: 'c', text: 'No cambia; solo hay un movimiento a lo largo de la curva existente' },
+            { id: 'd', text: 'Cambia la demanda, no la oferta' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El número de vendedores es un determinante de la oferta del mercado. Al sumar la oferta de más empresas, la cantidad total ofrecida a cada precio aumenta, de modo que la curva de oferta del mercado se desplaza hacia la derecha. Como el precio del bien no ha cambiado, no es un movimiento a lo largo de la curva.',
+        },
       ],
     },
     {
       id: 'u2-l3',
       title: 'Equilibrio de mercado y estática comparativa',
       summary: 'Cómo se encuentran oferta y demanda, y cómo predecir el efecto de un evento sobre precio y cantidad.',
-      estimatedMinutes: 9,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -455,6 +562,49 @@ export const unit02: Unit = {
           correctOptionId: 'b',
           explanation:
             'A un precio menor que el de equilibrio, la cantidad demandada supera a la ofrecida: hay escasez. Los compradores que se quedan sin el bien están dispuestos a pagar más, y esa competencia entre compradores empuja el precio hacia arriba, hasta llegar al equilibrio donde la escasez desaparece.',
+        },
+        {
+          id: 'u2-l3-e7',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          question:
+            'Dado Qd = 90 − 3P y Qs = −30 + 3P, ¿cuál es el precio de equilibrio P?',
+          unitLabel: '$',
+          answer: 20,
+          hint: 'Iguala Qd = Qs y despeja P.',
+          explanation:
+            'Igualando: 90 − 3P = −30 + 3P → 120 = 6P → P = 20. Verificación: Qd = 90 − 3(20) = 30 y Qs = −30 + 3(20) = 30 coinciden, así que el equilibrio es P = 20, Q = 30.',
+        },
+        {
+          id: 'u2-l3-e8',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'En un mercado con Qd = 80 − 2P y Qs = −40 + 4P, el equilibrio está en P = 20. Si por un control de precios el precio se fija en P = 15 (por debajo del equilibrio), ¿de qué tamaño es la escasez resultante?',
+          unitLabel: 'unidades',
+          answer: 30,
+          hint: 'La escasez es la cantidad demandada menos la cantidad ofrecida al precio fijado.',
+          explanation:
+            'A P = 15: Qd = 80 − 2(15) = 50 y Qs = −40 + 4(15) = 20. Como Qd > Qs, hay escasez = 50 − 20 = 30 unidades.',
+        },
+        {
+          id: 'u2-l3-e9',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Sube el precio de un insumo clave, lo que desplaza la curva de oferta hacia la izquierda. La demanda no cambia. Según el método de estática comparativa, ¿qué ocurre con el precio y la cantidad de equilibrio?',
+          options: [
+            { id: 'a', text: 'El precio sube y la cantidad baja' },
+            { id: 'b', text: 'El precio baja y la cantidad sube' },
+            { id: 'c', text: 'Ambos suben' },
+            { id: 'd', text: 'Ambos bajan' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Con la demanda constante, un desplazamiento de la oferta hacia la izquierda genera un exceso de demanda al precio anterior: el precio de equilibrio sube y, a lo largo de la curva de demanda, la cantidad de equilibrio baja.',
         },
       ],
     },

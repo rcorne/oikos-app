@@ -15,7 +15,7 @@ export const unit07: Unit = {
       id: 'u7-l1',
       title: 'Externalidades: costos y beneficios que el precio no refleja',
       summary: 'Por qué la contaminación tiende a sobreproducirse y la vacunación tiende a subproducirse, y cómo corregirlo con impuestos o subsidios.',
-      estimatedMinutes: 9,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -165,13 +165,76 @@ export const unit07: Unit = {
           explanation:
             'Con una externalidad negativa, el costo social de cada unidad —costo privado más costo externo— es mayor que el costo privado que la empresa efectivamente paga. Como la empresa produce mientras el precio cubra su costo privado, sigue produciendo unidades cuyo costo social ya supera lo que valen para los consumidores: hay sobreproducción respecto al óptimo social. Por eso el remedio clásico es un impuesto pigouviano que "sume" el costo externo al costo privado.',
         },
+        {
+          id: 'u7-l1-e7',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Una planta de asfalto tiene un costo marginal privado de $80.000 por metro cúbico producido. Sumando el daño que su polvo y sus gases imponen a la población cercana, un estudio concluye que el costo marginal social de cada metro cúbico es $110.000. ¿De cuánto debería ser el impuesto pigouviano por metro cúbico, en pesos, para que el costo que enfrenta la planta iguale el costo social?',
+          unitLabel: '$',
+          answer: 30000,
+          hint: 'El impuesto pigouviano llena exactamente la brecha entre el costo marginal social y el costo marginal privado.',
+          explanation:
+            'El impuesto pigouviano debe igualar el costo marginal externo, que es la diferencia entre el costo social y el privado: $110.000 − $80.000 = $30.000 por metro cúbico. Con ese impuesto, el costo privado sube de $80.000 a $110.000 y coincide con el costo social, llevando la producción al nivel eficiente.',
+        },
+        {
+          id: 'u7-l1-e8',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'La investigación científica básica genera conocimiento que otras empresas y personas pueden aprovechar sin pagar por él, es decir, produce un beneficio externo. Dejado solo al mercado privado, ¿qué cabe esperar de la cantidad de investigación básica?',
+          options: [
+            { id: 'a', text: 'Se produce menos de la cantidad socialmente óptima, porque quien investiga solo considera su beneficio privado y no el beneficio que derrama sobre los demás' },
+            { id: 'b', text: 'Se produce más de la cantidad socialmente óptima, porque el beneficio externo incentiva a investigar de más' },
+            { id: 'c', text: 'Se produce exactamente la cantidad óptima, porque los beneficios externos no afectan las decisiones' },
+            { id: 'd', text: 'No se produce nada, porque nadie puede lucrar con la investigación' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'La investigación básica tiene una externalidad positiva: su beneficio social supera el beneficio privado de quien la financia. Como cada agente decide mirando solo lo que gana él, se investiga menos de lo socialmente conveniente. Por eso suele apoyarse con subsidios, fondos concursables o financiamiento público.',
+        },
+        {
+          id: 'u7-l1-e9',
+          type: 'case_study',
+          difficulty: 'media',
+          xp: 15,
+          scenario:
+            'Una central termoeléctrica quema carbón para generar electricidad. Cada MWh que produce le cuesta $40.000 en insumos y operación, pero además emite gases que dañan la salud de la población vecina, con un costo externo estimado en $18.000 por MWh que nadie le cobra. La empresa decide cuánto generar mirando únicamente sus $40.000 de costo privado.',
+          question:
+            '¿Qué medida propondría un economista para que la central internalice el daño y su producción se acerque al óptimo social?',
+          options: [
+            { id: 'a', text: 'Aplicar un impuesto de $18.000 por MWh, igual al costo externo, para que el costo que enfrenta la central suba a $58.000 y coincida con el costo social' },
+            { id: 'b', text: 'Entregar un subsidio de $18.000 por MWh a la central, para abaratar su producción' },
+            { id: 'c', text: 'No intervenir, porque el mercado eléctrico ya alcanza por sí solo el óptimo social' },
+            { id: 'd', text: 'Fijar un precio máximo a la electricidad, para que la central produzca más y baje el precio' },
+          ],
+          correctOptionId: 'a',
+          hint: 'El impuesto pigouviano debe igualar el costo externo por unidad, no reducir el costo de contaminar.',
+          explanation:
+            'La central genera una externalidad negativa: su costo social por MWh ($40.000 + $18.000 = $58.000) supera el costo privado que efectivamente paga. Un impuesto pigouviano igual al costo externo ($18.000) eleva su costo privado hasta el costo social, reduce la sobreproducción y la lleva hacia el nivel eficiente. Un subsidio o un precio máximo agravarían el problema al incentivar más generación contaminante.',
+        },
+        {
+          id: 'u7-l1-e10',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          question:
+            'Una fundición produce 90 toneladas de metal al mes. Un estudio ambiental estima que el costo externo total que sus emisiones imponen a la comunidad es de $6.300.000 al mes. Si el gobierno quiere fijar un impuesto pigouviano por tonelada igual al costo externo marginal, ¿de cuánto debería ser ese impuesto por tonelada, en pesos?',
+          unitLabel: '$',
+          answer: 70000,
+          hint: 'Reparte el costo externo total entre las toneladas producidas para obtener el costo externo por tonelada.',
+          explanation:
+            'El costo externo por tonelada es el costo externo total dividido por la producción: $6.300.000 ÷ 90 = $70.000. Ese es el impuesto pigouviano por tonelada que iguala el costo privado al costo social de cada tonelada, empujando la producción hacia el nivel socialmente eficiente.',
+        },
       ],
     },
     {
       id: 'u7-l2',
       title: 'Bienes públicos y recursos comunes',
       summary: 'Por qué nadie quiere ser el primero en pagar un bien público, y por qué un recurso compartido tiende a sobreexplotarse.',
-      estimatedMinutes: 9,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -327,13 +390,63 @@ export const unit07: Unit = {
           explanation:
             'El muro es un bien público: no excluible y no rival. Cada vecino sabe que, si el muro se construye, quedará protegido haya aportado o no, así que su mejor jugada individual es esperar que paguen los demás. Cuando muchos razonan igual, la colecta fracasa aunque el bien valga más que su costo. Por eso los bienes públicos suelen financiarse con impuestos u otros aportes obligatorios, que eliminan la opción de viajar gratis.',
         },
+        {
+          id: 'u7-l2-e7',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Un banco de pesca de acceso libre puede reponer de forma sostenible hasta 8.000 toneladas de merluza al año. Como nadie es dueño del banco y cada tripulación decide cuánto pescar pensando solo en su propia captura, sin coordinarse, la captura conjunta llega a 12.500 toneladas al año. ¿Cuántas toneladas por sobre el nivel sostenible se están extrayendo cada año?',
+          unitLabel: 'toneladas',
+          answer: 4500,
+          hint: 'Compara la captura efectiva con la que el banco puede reponer sin agotarse.',
+          explanation:
+            'El exceso es la diferencia entre lo que efectivamente se pesca y lo que el recurso puede reponer: 12.500 − 8.000 = 4.500 toneladas al año. Ese sobreuso es la tragedia de los comunes: como el banco es rival pero no excluible, ninguna tripulación asume el costo total de agotar el recurso para todas, y en conjunto se extrae más de lo sostenible.',
+        },
+        {
+          id: 'u7-l2-e8',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'Una playa pública gratuita se llena tanto en verano que el espacio, la sombra y el estacionamiento escasean: lo que ocupa un bañista deja de estar disponible para otro, y nadie puede ser excluido de entrar. ¿Qué tipo de bien es en esas condiciones?',
+          options: [
+            { id: 'a', text: 'Un recurso común: no excluible pero rival, porque el uso de cada persona reduce lo disponible para las demás' },
+            { id: 'b', text: 'Un bien público puro: no excluible y no rival, sin ningún problema de congestión' },
+            { id: 'c', text: 'Un bien de club: excluible y no rival, como un cine con butacas libres' },
+            { id: 'd', text: 'Un bien privado: excluible y rival, como una entrada numerada' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Al ser gratuita y abierta, la playa no es excluible; pero cuando se congestiona, el espacio se vuelve rival: lo que usa uno se lo quita a otro. Esa combinación —no excluible y rival— es la de un recurso común, propensa a la sobreexplotación por congestión, y suele gestionarse con cupos, reservas o tarifas en temporada alta.',
+        },
+        {
+          id: 'u7-l2-e9',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'Una comunidad rural evalúa instalar una red de internet inalámbrico que cubriría a todo el pueblo: una vez encendida la antena, cualquier vecino puede conectarse y que uno lo haga no reduce apreciablemente la señal de los demás. Se propone financiarla con aportes voluntarios, pero muchos vecinos declaran en privado que planean no aportar y conectarse igual cuando esté lista.',
+          question:
+            '¿Qué problema anticipa esta situación y qué solución suele recomendarse para bienes con estas características?',
+          options: [
+            { id: 'a', text: 'El problema del polizón: como no se puede excluir a quien no paga, cada vecino prefiere que financien los demás; la solución habitual es financiar la red con un aporte obligatorio, como una cuota municipal o un impuesto local' },
+            { id: 'b', text: 'La tragedia de los comunes: la red se agotará por sobreuso, y la solución es fijar cuotas de conexión por persona' },
+            { id: 'c', text: 'La selección adversa: solo se conectarán los vecinos de peor calidad, y la solución es cobrar más caro' },
+            { id: 'd', text: 'Una externalidad negativa: la antena daña a terceros, y la solución es un impuesto pigouviano a quien la use' },
+          ],
+          correctOptionId: 'a',
+          hint: 'La red es no excluible y no rival: ¿qué incentivo tiene cada vecino para aportar si igual podrá conectarse?',
+          explanation:
+            'La red de internet comunitaria es un bien público local: no excluible y no rival dentro de su capacidad. Como nadie puede ser dejado sin señal por no pagar, cada vecino tiene incentivos a comportarse como polizón y esperar que otros financien la antena, lo que hace fracasar la colecta voluntaria. La solución típica es un aporte obligatorio —cuota o impuesto local— que elimine la opción de viajar gratis.',
+        },
       ],
     },
     {
       id: 'u7-l3',
       title: 'Información asimétrica: selección adversa y riesgo moral',
       summary: 'Qué pasa cuando una parte de un trato sabe más que la otra, antes de firmarlo y después de firmarlo.',
-      estimatedMinutes: 9,
+      estimatedMinutes: 12,
       content: [
         {
           type: 'heading',
@@ -481,6 +594,56 @@ export const unit07: Unit = {
           hint: 'La selección adversa es un problema de información oculta antes de cerrar el trato: busca la medida que revela calidad antes de la compra.',
           explanation:
             'La selección adversa nace de que el comprador no puede conocer la calidad antes de comprar. Una garantía y un informe de revisión mecánica son señales que solo un vendedor de un auto bueno puede ofrecer a bajo costo, así que revelan calidad antes del trato. El deducible y el GPS atacan el riesgo moral —comportamiento después del contrato—, y el impuesto pigouviano corrige una externalidad, no un problema de información.',
+        },
+        {
+          id: 'u7-l3-e7',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'En un mercado de notebooks usados, el 40% de los equipos en venta son "limones" con fallas ocultas que valen $70.000 para su dueño, y el 60% restante están en buen estado y valen $170.000 para su dueño. Como los compradores no pueden distinguir la calidad antes de comprar, están dispuestos a pagar el valor esperado de un equipo elegido al azar. ¿Cuál es ese valor esperado, en pesos?',
+          unitLabel: '$',
+          answer: 130000,
+          hint: 'Pondera el valor de cada tipo por su proporción en el mercado y suma.',
+          explanation:
+            'El valor esperado pondera cada calidad por su probabilidad: (70.000 × 0,4) + (170.000 × 0,6) = 28.000 + 102.000 = $130.000. Como $130.000 queda por debajo de los $170.000 que vale un equipo bueno para su dueño, los vendedores de notebooks buenos tienden a retirarse, sube la proporción de limones y el precio sigue cayendo: la selección adversa de Akerlof.',
+        },
+        {
+          id: 'u7-l3-e8',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'Un banco no puede observar cómo usará realmente el dinero cada persona a la que le presta. Después de recibir el crédito, algunos clientes lo destinan a proyectos mucho más riesgosos de lo que declararon, porque si el proyecto fracasa buena parte de la pérdida la absorbe el banco. Este cambio de conducta después de firmado el préstamo es un ejemplo de...',
+          options: [
+            { id: 'a', text: 'Riesgo moral, porque el cliente cambia su comportamiento después de firmar, al no asumir por completo las consecuencias de su riesgo' },
+            { id: 'b', text: 'Selección adversa, porque el banco no conocía la calidad del cliente antes de prestar' },
+            { id: 'c', text: 'Un bien público, porque el crédito beneficia a toda la economía' },
+            { id: 'd', text: 'Una externalidad positiva, porque invertir genera empleo para terceros' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El riesgo moral ocurre después de cerrado el trato: una vez con el crédito en la mano, el cliente asume más riesgo porque parte del costo de un fracaso recae sobre el banco. Se combate con garantías, monitoreo o exigiendo que el deudor ponga capital propio en juego, de modo que conserve incentivos a cuidar el resultado.',
+        },
+        {
+          id: 'u7-l3-e9',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'Una empresa paga a sus vendedores un sueldo fijo mensual, sin ninguna parte variable ligada a resultados. El gerente no puede observar cuánto esfuerzo pone realmente cada vendedor en la calle: como el sueldo llega igual trabajen mucho o poco, varios reducen sus visitas y su empeño una vez contratados.',
+          question:
+            '¿Qué fenómeno describe esta situación y qué diseño de contrato ayudaría a corregirlo?',
+          options: [
+            { id: 'a', text: 'Riesgo moral: el esfuerzo no observable cae tras la contratación; atarlo a una parte variable (comisiones o bonos por resultados) hace que el vendedor asuma parte de las consecuencias de su esfuerzo' },
+            { id: 'b', text: 'Selección adversa: la empresa contrató sin conocer la calidad de los vendedores; la solución es subir el sueldo fijo para todos' },
+            { id: 'c', text: 'Tragedia de los comunes: los vendedores sobreexplotan a los clientes, y la solución es fijar cuotas de visitas' },
+            { id: 'd', text: 'Externalidad positiva: el esfuerzo de un vendedor beneficia a los demás, y la solución es un subsidio' },
+          ],
+          correctOptionId: 'a',
+          hint: 'El problema aparece después de firmar el contrato, cuando la conducta que la empresa no puede observar cambia.',
+          explanation:
+            'Es riesgo moral: el esfuerzo del vendedor no es observable y, con un sueldo puramente fijo, cae después de la contratación porque el trabajador no asume las consecuencias de esforzarse menos. Ligar parte del pago a resultados —comisiones o bonos— alinea sus incentivos con los de la empresa, ya que ahora parte del costo de rendir poco recae sobre él. La selección adversa, en cambio, sería un problema de calidad oculta antes de contratar.',
         },
       ],
     },
