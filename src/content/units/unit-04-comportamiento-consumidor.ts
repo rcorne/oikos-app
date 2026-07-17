@@ -16,7 +16,7 @@ export const unit04: Unit = {
       title: 'Utilidad marginal y elección racional',
       summary:
         'Cómo modelamos la satisfacción que entrega consumir, y la regla para repartir un presupuesto limitado entre distintos bienes.',
-      estimatedMinutes: 7,
+      estimatedMinutes: 9,
       content: [
         {
           type: 'heading',
@@ -162,6 +162,40 @@ export const unit04: Unit = {
           explanation:
             'Una buena respuesta explica que la utilidad marginal cae unidad a unidad, describe la regla de igualar la utilidad marginal por peso entre bienes, y aporta un ejemplo propio distinto al de la lección.',
         },
+        {
+          id: 'u4-l1-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Diego está decidiendo si comprar una bebida más en el kiosco. La próxima bebida le entregaría una utilidad marginal de 60 utils y cuesta $400. ¿Cuál es la utilidad marginal por peso de esa bebida (utils por cada peso gastado)?',
+          unitLabel: 'utils/$',
+          answer: 0.15,
+          decimals: 2,
+          explanation:
+            'La utilidad marginal por peso se obtiene dividiendo la utilidad marginal del bien por su precio: 60 ÷ 400 = 0,15 utils por cada peso gastado. Es esta medida —y no la utilidad marginal a secas— la que hay que comparar entre bienes de distinto precio.',
+        },
+        {
+          id: 'u4-l1-e6',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'Camila está en una feria de comida con su presupuesto ya casi agotado y le alcanza para una sola compra más. La próxima empanada le entregaría una utilidad marginal de 90 utils y cuesta $600; el próximo jugo le entregaría una utilidad marginal de 40 utils y cuesta $200.',
+          question: 'Si Camila quiere sacarle el máximo provecho a su dinero, ¿qué debería considerar y qué le conviene comprar?',
+          options: [
+            {
+              id: 'a',
+              text: 'Comparar la utilidad marginal por peso: el jugo rinde 0,20 utils por peso y la empanada solo 0,15, así que le conviene el jugo',
+            },
+            { id: 'b', text: 'Comprar la empanada, porque su utilidad marginal (90) es mayor que la del jugo (40)' },
+            { id: 'c', text: 'Comprar el jugo, porque siempre conviene el bien más barato' },
+            { id: 'd', text: 'Es indiferente: ambos bienes entregan utilidad positiva, así que cualquier compra da lo mismo' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'No basta con comparar utilidades marginales a secas cuando los precios difieren: hay que dividir cada una por su precio. La empanada rinde 90 ÷ 600 = 0,15 utils por peso, mientras que el jugo rinde 40 ÷ 200 = 0,20 utils por peso. Cada peso gastado en jugo entrega más satisfacción, así que a Camila le conviene el jugo, aunque la empanada tenga mayor utilidad marginal total.',
+        },
       ],
     },
     {
@@ -169,7 +203,7 @@ export const unit04: Unit = {
       title: 'Sesgos de decisión: pérdidas, anclas y statu quo',
       summary:
         'Tres patrones sistemáticos que alejan nuestras decisiones del ideal racional: la aversión a la pérdida, el anclaje y el apego al statu quo.',
-      estimatedMinutes: 7,
+      estimatedMinutes: 9,
       content: [
         {
           type: 'heading',
@@ -319,6 +353,36 @@ export const unit04: Unit = {
           explanation:
             'Una buena respuesta identifica correctamente uno de los tres sesgos, explica el mecanismo psicológico detrás de él, y lo ilustra con un ejemplo propio y concreto.',
         },
+        {
+          id: 'u4-l2-e5',
+          type: 'numeric',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'Una tienda de ropa exhibe una chaqueta con un precio "antes" de $40.000 tachado y un precio "ahora" de $28.000. Ese precio tachado funciona como ancla para que el descuento parezca atractivo. ¿Qué porcentaje de descuento aparenta la oferta respecto del precio tachado?',
+          unitLabel: '%',
+          answer: 30,
+          explanation:
+            'El descuento aparente es la rebaja dividida por el precio de referencia: ($40.000 − $28.000) ÷ $40.000 = $12.000 ÷ $40.000 = 0,30, es decir, 30%. Ojo: si el precio tachado nunca fue el precio real de venta, el ancla hace ver como gran oferta algo que quizás no lo es.',
+        },
+        {
+          id: 'u4-l2-e6',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'Marcela contrató hace cinco años un plan de telefonía. Hoy existe otro plan, de la misma compañía, con más gigas y $6.000 más barato al mes, y cambiarse solo requiere llenar un formulario en línea de cinco minutos. Marcela lo sabe, reconoce que el plan nuevo es mejor, pero cada mes lo posterga y sigue pagando el plan antiguo: "después lo veo, total el mío funciona".',
+          question: '¿Qué sesgo de la lección describe mejor el comportamiento de Marcela?',
+          options: [
+            { id: 'a', text: 'El sesgo del statu quo: mantiene su opción actual solo porque cambiarla exige una decisión activa, aunque cambiarse le convenga' },
+            { id: 'b', text: 'La aversión a la pérdida, porque cambiarse implicaría perder $6.000 al mes' },
+            { id: 'c', text: 'El anclaje, porque el precio de su plan antiguo es su número de referencia' },
+            { id: 'd', text: 'La utilidad marginal decreciente, porque los gigas adicionales le entregan cada vez menos satisfacción' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Marcela no está confundida ni le falta información: ella misma reconoce que el plan nuevo es mejor. Lo que la frena es que quedarse igual no exige ninguna acción, mientras que cambiarse sí. Esa inercia a favor de la opción vigente es el sesgo del statu quo. Nota que la aversión a la pérdida no calza: quedarse en el plan antiguo es justamente lo que le hace perder $6.000 cada mes.',
+        },
       ],
     },
     {
@@ -326,7 +390,7 @@ export const unit04: Unit = {
       title: 'Bienes posicionales y la carrera de gastos',
       summary:
         'Por qué algunos bienes se valoran por comparación con los demás, y cómo eso puede desatar una competencia de gastos que no deja a nadie mejor.',
-      estimatedMinutes: 7,
+      estimatedMinutes: 9,
       content: [
         {
           type: 'heading',
@@ -460,6 +524,34 @@ export const unit04: Unit = {
             'Un bien posicional es aquel que se valora principalmente por comparación con lo que tienen los demás, como el tamaño de una casa o lo lujosa que es una fiesta de matrimonio: si todos los vecinos suben el estándar, la posición relativa de cada uno no cambia aunque todos gasten más. Un bien no posicional, en cambio, entrega satisfacción independiente de cuánto tengan los demás, como dormir bien o tener tiempo libre para descansar: que otra persona duerma más no le resta valor a mi propio descanso.',
           explanation:
             'Una buena respuesta distingue con claridad ambos tipos de bienes —posicional depende de la comparación relativa, no posicional no depende de ella— y entrega un ejemplo propio de cada uno.',
+        },
+        {
+          id: 'u4-l3-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'En una ciudad, el gasto promedio en fiestas de graduación era de $250.000 hace una década. Empujado por una cascada de gastos —cada familia intenta no quedar atrás de las celebraciones recientes—, hoy el gasto promedio llega a $400.000. ¿En qué porcentaje aumentó el gasto promedio en ese período?',
+          unitLabel: '%',
+          answer: 60,
+          explanation:
+            'El aumento es $400.000 − $250.000 = $150.000. Como porcentaje del gasto inicial: $150.000 ÷ $250.000 = 0,60, es decir, 60%. Y como todas las familias subieron su gasto a la vez, la posición relativa de cada celebración quedó, en promedio, igual que antes: gastaron 60% más sin ganar posición.',
+        },
+        {
+          id: 'u4-l3-e6',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: '¿Cuál de las siguientes alternativas es el mejor ejemplo de un bien no posicional?',
+          options: [
+            { id: 'a', text: 'Dormir ocho horas de sueño reparador cada noche' },
+            { id: 'b', text: 'Tener el auto más caro del estacionamiento de la oficina' },
+            { id: 'c', text: 'Que la casa propia sea más grande que las del resto del barrio' },
+            { id: 'd', text: 'Organizar la fiesta de cumpleaños más lujosa del grupo de amistades' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El descanso de un buen sueño entrega satisfacción por sí mismo: que otra persona duerma más o menos no le quita valor. Las otras tres alternativas dependen explícitamente de la comparación con los demás ("el más caro", "más grande que", "la más lujosa"), que es justamente lo que define a un bien posicional.',
         },
       ],
     },

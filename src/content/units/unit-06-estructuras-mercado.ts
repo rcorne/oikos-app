@@ -15,7 +15,7 @@ export const unit06: Unit = {
       id: 'u6-l1',
       title: 'Competencia perfecta: muchas empresas, un solo precio',
       summary: 'Por qué ninguna empresa individual puede influir en el precio, y qué implica eso para su producción y sus beneficios.',
-      estimatedMinutes: 7,
+      estimatedMinutes: 9,
       content: [
         {
           type: 'heading',
@@ -158,13 +158,46 @@ export const unit06: Unit = {
           explanation:
             'Se espera que la respuesta conecte la regla P = CMg con la condición de precio-aceptante, y explique el mecanismo de entrada y salida que lleva el beneficio económico a cero en el largo plazo.',
         },
+        {
+          id: 'u6-l1-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Una productora de miel en un mercado perfectamente competitivo puede vender cada frasco al precio de mercado de $22. Su costo marginal por frasco crece con la producción: el primer frasco cuesta $10, el segundo $14, el tercero $18, el cuarto $22 y el quinto $26. ¿Cuántos frascos debe producir para maximizar su beneficio?',
+          unitLabel: 'frascos',
+          answer: 4,
+          hint: 'Le conviene producir cada frasco cuyo costo marginal no supere el precio, y detenerse justo donde el costo marginal alcanza el precio.',
+          explanation:
+            'La regla es producir hasta el punto en que P = CMg. Los frascos 1 a 3 cuestan menos que el precio ($10, $14 y $18 frente a $22), el cuarto cuesta exactamente $22 (el punto óptimo) y el quinto ya costaría $26, más que el ingreso que aporta. Por eso la cantidad que maximiza el beneficio es 4 frascos.',
+        },
+        {
+          id: 'u6-l1-e6',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'En el largo plazo, las empresas de un mercado perfectamente competitivo obtienen un beneficio económico igual a cero. ¿Qué significa esto para sus dueños?',
+          options: [
+            { id: 'a', text: 'Que pierden dinero y deberían cerrar el negocio cuanto antes' },
+            {
+              id: 'b',
+              text: 'Que cubren todos sus costos, incluido el costo de oportunidad de su tiempo y su capital, aunque no ganen más de lo que obtendrían en su mejor alternativa',
+            },
+            { id: 'c', text: 'Que sus ingresos totales son cero porque el precio cayó hasta el nivel del costo marginal' },
+            { id: 'd', text: 'Que el gobierno les cobra impuestos equivalentes a todo su beneficio contable' },
+          ],
+          correctOptionId: 'b',
+          explanation:
+            'El beneficio económico descuenta los costos de oportunidad: el valor del tiempo del dueño y el rendimiento que su capital obtendría en otro uso. Un beneficio económico de cero significa que la empresa cubre exactamente todos esos costos, así que a sus dueños les va tan bien como en su mejor alternativa. En términos contables, la empresa sigue mostrando una ganancia normal; simplemente no hay un premio extra que atraiga a nuevos competidores.',
+        },
       ],
     },
     {
       id: 'u6-l2',
       title: 'Monopolio y poder de mercado',
       summary: 'Qué significa ser el único vendedor, por qué el ingreso marginal cae más rápido que el precio, y qué costo tiene eso para la eficiencia del mercado.',
-      estimatedMinutes: 7,
+      estimatedMinutes: 9,
       content: [
         {
           type: 'heading',
@@ -302,13 +335,47 @@ export const unit06: Unit = {
           explanation:
             'La respuesta debe conectar IMg < P, la regla IMg = CMg, y la consecuencia de menor cantidad y mayor precio con la pérdida de eficiencia frente al óptimo competitivo.',
         },
+        {
+          id: 'u6-l2-e5',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          question:
+            'Un monopolista vende actualmente 10 unidades a $40 cada una. Para vender una unidad más, debe bajar el precio de todas las unidades a $38. ¿Cuál es el ingreso marginal de esa unidad número 11?',
+          unitLabel: '$',
+          answer: 18,
+          hint: 'Compara el ingreso total vendiendo 10 unidades con el ingreso total vendiendo 11: la diferencia es el ingreso marginal.',
+          explanation:
+            'Con 10 unidades a $40, el ingreso total es $400. Con 11 unidades a $38, el ingreso total es $418. El ingreso marginal de la unidad 11 es 418 − 400 = $18: mucho menor que su precio de $38, porque vender esa unidad obligó a rebajar en $2 cada una de las 10 unidades anteriores (−$20), lo que se descuenta de los $38 que aporta la unidad nueva.',
+        },
+        {
+          id: 'u6-l2-e6',
+          type: 'case_study',
+          difficulty: 'media',
+          xp: 15,
+          scenario:
+            'Una empresa es la única proveedora de agua embotellada en una isla remota, sin sustitutos cercanos ni competidores a la vista. Su gerenta sabe que, si quiere vender más botellas, tendrá que bajar el precio de todas las que vende, y quiere elegir la cantidad de producción que maximice el beneficio de la empresa.',
+          question: '¿Qué regla debería seguir la gerenta para elegir la cantidad de producción, y cómo se determina luego el precio?',
+          options: [
+            {
+              id: 'a',
+              text: 'Producir la cantidad donde el ingreso marginal iguala al costo marginal, y cobrar el precio más alto que la curva de demanda permite para esa cantidad',
+            },
+            { id: 'b', text: 'Producir la cantidad donde el precio iguala al costo marginal, como haría una empresa perfectamente competitiva' },
+            { id: 'c', text: 'Producir la mayor cantidad posible, porque a más ventas siempre corresponde más beneficio' },
+            { id: 'd', text: 'Producir la cantidad donde el costo medio total es mínimo, sin importar la demanda' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Como la empresa es un monopolio, su ingreso marginal es menor que el precio y la regla P = CMg no maximiza su beneficio. La condición correcta es IMg = CMg: elegir la cantidad donde el ingreso marginal iguala al costo marginal, y luego fijar el precio subiendo hasta lo que la curva de demanda del mercado permite para esa cantidad. Producir "lo máximo posible" reduciría el beneficio, porque las últimas unidades aportarían menos ingreso del que cuestan.',
+        },
       ],
     },
     {
       id: 'u6-l3',
       title: 'Oligopolio, competencia monopolística y teoría de juegos',
       summary: 'Qué pasa cuando las empresas se diferencian un poco, y qué pasa cuando son tan pocas que cada decisión depende de lo que haga la rival.',
-      estimatedMinutes: 8,
+      estimatedMinutes: 10,
       content: [
         {
           type: 'heading',
@@ -446,6 +513,39 @@ export const unit06: Unit = {
             'En un oligopolio, cada empresa sabe que su ganancia depende de la decisión de su rival, no solo de la propia. Aunque a ambas les convendría mantener el precio alto y repartirse un beneficio mayor, cada una tiene un incentivo individual a bajar su precio: si el rival mantiene el precio alto, bajar el propio precio le permite quedarse con más clientes y ganar más; y si el rival ya bajó el precio, conviene bajarlo también para no quedar en la peor posición. Como las dos razonan igual, ambas terminan bajando el precio y ganando menos que si hubieran cooperado: ese es el dilema del prisionero aplicado a la colusión.',
           explanation:
             'Se espera que la respuesta identifique la interdependencia entre las empresas, el incentivo individual a desviarse del acuerdo (bajar el precio) sin importar la acción del rival, y la conclusión de que el resultado no cooperativo es peor para ambas que la colusión.',
+        },
+        {
+          id: 'u6-l3-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Dos cadenas de supermercados, A y B, deciden si mantienen sus precios altos o los bajan. Si ambas los mantienen altos, cada una gana $80 millones. Si ambas los bajan, cada una gana $50 millones. Si solo una los baja, la que baja gana $120 millones y la que los mantuvo altos gana apenas $30 millones. Supón que B ya decidió bajar sus precios. ¿Cuántos millones más gana A si también baja sus precios, en lugar de mantenerlos altos?',
+          unitLabel: '$ millones',
+          answer: 20,
+          hint: 'Compara los dos resultados posibles para A dado que B ya bajó sus precios: bajar también, o mantenerlos altos.',
+          explanation:
+            'Si B baja sus precios, A gana $50 millones bajando también los suyos (ambas bajan) y solo $30 millones si los mantiene altos (queda como la única con precio alto). La diferencia es 50 − 30 = $20 millones a favor de bajar. Como bajar el precio también le conviene a A cuando B mantiene el precio alto (120 frente a 80), bajar es su estrategia dominante: el corazón del dilema del prisionero.',
+        },
+        {
+          id: 'u6-l3-e6',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            '¿Cuál es el rasgo que distingue al oligopolio de las demás estructuras de mercado, como la competencia perfecta o la competencia monopolística?',
+          options: [
+            { id: 'a', text: 'Que existe un único vendedor de un bien sin sustitutos cercanos' },
+            {
+              id: 'b',
+              text: 'Que las empresas son tan pocas que cada una debe anticipar cómo reaccionarán sus rivales antes de decidir su precio, cantidad o publicidad',
+            },
+            { id: 'c', text: 'Que todas las empresas venden productos ligeramente diferenciados entre sí' },
+            { id: 'd', text: 'Que hay tantas empresas que ninguna puede influir en el precio de mercado' },
+          ],
+          correctOptionId: 'b',
+          explanation:
+            'La marca distintiva del oligopolio es la interdependencia estratégica: como los competidores son pocos y grandes, la decisión de cada empresa afecta directamente los resultados de las demás, y por eso cada una debe anticipar la reacción de sus rivales. Un único vendedor describe al monopolio, los productos diferenciados con muchas empresas a la competencia monopolística, y la incapacidad individual de mover el precio a la competencia perfecta.',
         },
       ],
     },

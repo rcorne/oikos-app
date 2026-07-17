@@ -15,7 +15,7 @@ export const unit02: Unit = {
       id: 'u2-l1',
       title: 'La demanda: la ley y sus determinantes',
       summary: 'Qué hace que compremos más o menos de algo, y qué mueve la curva completa.',
-      estimatedMinutes: 6,
+      estimatedMinutes: 8,
       content: [
         {
           type: 'heading',
@@ -127,13 +127,43 @@ export const unit02: Unit = {
           explanation:
             'Se espera que la respuesta distinga claramente ambos conceptos y asocie cada uno a su causa correcta (precio propio vs. otros determinantes).',
         },
+        {
+          id: 'u2-l1-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'La demanda de un bien está dada por Qd = 80 − 4P. ¿A qué precio P la cantidad demandada es exactamente 20 unidades?',
+          unitLabel: '$',
+          answer: 15,
+          hint: 'Iguala la ecuación de demanda a 20 y despeja P.',
+          explanation: 'Planteamos 20 = 80 − 4P → 4P = 80 − 20 = 60 → P = 15. Verificación: Qd = 80 − 4(15) = 80 − 60 = 20 unidades.',
+        },
+        {
+          id: 'u2-l1-e6',
+          type: 'case_study',
+          difficulty: 'facil',
+          xp: 10,
+          scenario:
+            'Los videojuegos físicos de una consola solo funcionan con esa consola: son bienes complementarios. El fabricante anuncia un alza importante en el precio de la consola.',
+          question: '¿Qué debería ocurrir con la curva de demanda de los videojuegos de esa consola?',
+          options: [
+            { id: 'a', text: 'Se desplaza hacia la derecha, porque los videojuegos ahora parecen más baratos en comparación' },
+            { id: 'b', text: 'Se desplaza hacia la izquierda, porque al encarecerse el complemento se demandan menos videojuegos a cualquier precio' },
+            { id: 'c', text: 'No cambia, porque el precio que subió es el de la consola, no el de los videojuegos' },
+            { id: 'd', text: 'Solo hay un movimiento a lo largo de la curva de demanda de videojuegos' },
+          ],
+          correctOptionId: 'b',
+          explanation:
+            'Consola y videojuegos son complementos: cuando sube el precio de uno, cae la demanda del otro. Como el cambio no proviene del precio de los propios videojuegos sino de un bien relacionado, la curva de demanda de videojuegos se desplaza completa hacia la izquierda.',
+        },
       ],
     },
     {
       id: 'u2-l2',
       title: 'La oferta: qué mueve a los productores',
       summary: 'Qué hace que las empresas produzcan más o menos, y qué desplaza la curva completa.',
-      estimatedMinutes: 6,
+      estimatedMinutes: 8,
       content: [
         {
           type: 'heading',
@@ -245,13 +275,42 @@ export const unit02: Unit = {
           explanation:
             'La respuesta debe distinguir el precio del insumo (determinante) del precio del bien, y concluir que esto desplaza la curva completa porque cambia la cantidad ofrecida a cada nivel de precio.',
         },
+        {
+          id: 'u2-l2-e5',
+          type: 'numeric',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'La oferta de un bien está dada por Qs = −12 + 4P. ¿Cuál es la cantidad ofrecida cuando el precio es P = 10?',
+          unitLabel: 'unidades',
+          answer: 28,
+          explanation: 'Qs = −12 + 4(10) = −12 + 40 = 28 unidades.',
+        },
+        {
+          id: 'u2-l2-e6',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'Para fomentar la energía limpia, el gobierno entrega a los fabricantes de paneles solares un subsidio fijo por cada panel producido. Al mismo tiempo, el precio de venta de los paneles en el mercado no ha cambiado todavía.',
+          question: 'Según los determinantes de la oferta, ¿cuál es el efecto directo del subsidio sobre la curva de oferta de paneles solares?',
+          options: [
+            { id: 'a', text: 'Se desplaza hacia la derecha, porque el subsidio reduce el costo efectivo de producir cada panel' },
+            { id: 'b', text: 'Se desplaza hacia la izquierda, porque el subsidio distorsiona el mercado' },
+            { id: 'c', text: 'Hay un movimiento a lo largo de la curva, porque cambia la rentabilidad' },
+            { id: 'd', text: 'No cambia la oferta: los subsidios solo afectan la demanda de los consumidores' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Un subsidio a la producción actúa como lo contrario de un impuesto: reduce el costo marginal efectivo de cada unidad. A cualquier precio de venta, ahora es rentable ofrecer más paneles, así que la curva de oferta completa se desplaza hacia la derecha. Como el precio del propio bien no cambió, no se trata de un movimiento a lo largo de la curva.',
+        },
       ],
     },
     {
       id: 'u2-l3',
       title: 'Equilibrio de mercado y estática comparativa',
       summary: 'Cómo se encuentran oferta y demanda, y cómo predecir el efecto de un evento sobre precio y cantidad.',
-      estimatedMinutes: 7,
+      estimatedMinutes: 9,
       content: [
         {
           type: 'heading',
@@ -366,6 +425,36 @@ export const unit02: Unit = {
             'Primero identifico si el evento mueve la oferta, la demanda o ambas. Segundo, determino la dirección del desplazamiento. Tercero, dibujo el nuevo cruce de curvas para hallar el nuevo equilibrio. Cuarto, comparo el nuevo precio y cantidad con los originales. Por ejemplo, si baja el precio de un insumo clave, la oferta se desplaza a la derecha, y el nuevo equilibrio tiene un precio menor y una cantidad mayor que antes.',
           explanation:
             'Se espera que la respuesta mencione los cuatro pasos —identificar la curva afectada, la dirección, el nuevo cruce y la comparación— aplicados a un caso concreto.',
+        },
+        {
+          id: 'u2-l3-e5',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          question:
+            'Dado Qd = 60 − 3P y Qs = −20 + 5P, ¿cuál es la cantidad de equilibrio Q?',
+          unitLabel: 'unidades',
+          answer: 30,
+          hint: 'Primero encuentra el precio de equilibrio igualando Qd = Qs, y luego reemplázalo en cualquiera de las dos ecuaciones.',
+          explanation:
+            'Igualando: 60 − 3P = −20 + 5P → 80 = 8P → P = 10. Reemplazando: Qd = 60 − 3(10) = 30, que coincide con Qs = −20 + 5(10) = 30. La cantidad de equilibrio es 30 unidades.',
+        },
+        {
+          id: 'u2-l3-e6',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'En un mercado, el precio vigente está por debajo del precio de equilibrio. ¿Qué situación se genera y hacia dónde tiende a moverse el precio?',
+          options: [
+            { id: 'a', text: 'Hay excedente, y el precio tiende a bajar por la competencia entre vendedores' },
+            { id: 'b', text: 'Hay escasez, y el precio tiende a subir por la competencia entre compradores' },
+            { id: 'c', text: 'Hay escasez, pero el precio tiende a bajar hasta eliminar la escasez' },
+            { id: 'd', text: 'El mercado ya está en equilibrio, así que el precio no se mueve' },
+          ],
+          correctOptionId: 'b',
+          explanation:
+            'A un precio menor que el de equilibrio, la cantidad demandada supera a la ofrecida: hay escasez. Los compradores que se quedan sin el bien están dispuestos a pagar más, y esa competencia entre compradores empuja el precio hacia arriba, hasta llegar al equilibrio donde la escasez desaparece.',
         },
       ],
     },

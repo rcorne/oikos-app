@@ -15,7 +15,7 @@ export const unit01: Unit = {
       id: 'u1-l1',
       title: 'Escasez, incentivos y pensar en el margen',
       summary: 'Por qué todo tiene un costo y cómo los economistas toman decisiones "un poco a la vez".',
-      estimatedMinutes: 6,
+      estimatedMinutes: 8,
       content: [
         {
           type: 'heading',
@@ -135,13 +135,43 @@ export const unit01: Unit = {
           explanation:
             'Una buena respuesta identifica que el análisis marginal mira cambios pequeños (una unidad, una hora) y que la regla de decisión es comparar beneficio marginal contra costo marginal, ilustrado con un ejemplo propio.',
         },
+        {
+          id: 'u1-l1-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Un food truck vende cada sándwich a $2.000. Sus costos marginales son crecientes: los primeros 5 sándwiches cuestan menos de $1.400 cada uno, el sexto cuesta $1.400, el séptimo $1.900 y el octavo $2.300. Si sigue la regla marginal (producir mientras el beneficio marginal sea mayor o igual al costo marginal), ¿cuántos sándwiches en total le conviene producir?',
+          unitLabel: 'sándwiches',
+          answer: 7,
+          hint: 'Compara el ingreso de cada sándwich adicional ($2.000) con su costo marginal, uno por uno.',
+          explanation:
+            'Cada sándwich extra aporta $2.000 de ingreso. El sexto conviene ($2.000 ≥ $1.400) y el séptimo también ($2.000 ≥ $1.900), pero el octavo no ($2.000 < $2.300). Por lo tanto, la producción óptima es 7 sándwiches.',
+        },
+        {
+          id: 'u1-l1-e6',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'Una municipalidad empieza a cobrar $300 por cada bolsa plástica en los supermercados, y a las pocas semanas la mayoría de la gente lleva bolsas reutilizables. ¿Qué principio económico ilustra mejor este resultado?',
+          options: [
+            { id: 'a', text: 'Las personas responden a incentivos: el cobro elevó el costo marginal de usar bolsas plásticas' },
+            { id: 'b', text: 'Los costos hundidos deben ignorarse al tomar decisiones' },
+            { id: 'c', text: 'La ventaja comparativa determina quién debe producir cada bien' },
+            { id: 'd', text: 'Los recursos dejan de ser escasos cuando sube su precio' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El cobro cambió el incentivo: usar una bolsa plástica ahora tiene un costo marginal explícito de $300, así que muchas personas ajustan su comportamiento y prefieren la alternativa reutilizable. Es un ejemplo directo de que los incentivos importan.',
+        },
       ],
     },
     {
       id: 'u1-l2',
       title: 'Costo de oportunidad: el verdadero precio de elegir',
       summary: 'Por qué el costo de una decisión es lo que dejas de hacer, y por qué el pasado no debería importar.',
-      estimatedMinutes: 6,
+      estimatedMinutes: 8,
       content: [
         {
           type: 'heading',
@@ -260,13 +290,47 @@ export const unit01: Unit = {
           explanation:
             'Se espera que la respuesta explique que el costo hundido es irrecuperable, que la decisión racional mira solo el futuro, y que ilustre la falacia con un ejemplo.',
         },
+        {
+          id: 'u1-l2-e5',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'Valentina abrió una cafetería en un local que es de su propiedad, así que "no paga arriendo". Al final del año calcula sus ganancias restando solo los gastos en insumos y sueldos, y concluye que el negocio es un éxito. Una vecina le comenta que otro comerciante estaría dispuesto a arrendarle ese mismo local por $600.000 al mes.',
+          question: '¿Qué está omitiendo Valentina en su cálculo, según el razonamiento económico?',
+          options: [
+            {
+              id: 'a',
+              text: 'El costo de oportunidad del local: los $600.000 mensuales de arriendo a los que renuncia por usarlo ella misma',
+            },
+            { id: 'b', text: 'Nada: como el local es suyo, usarlo efectivamente no tiene ningún costo' },
+            { id: 'c', text: 'El precio que pagó por el local hace años, que debería restar cada mes de sus ganancias' },
+            { id: 'd', text: 'Los costos hundidos de los insumos que ya compró durante el año' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Aunque no desembolsa arriendo, Valentina renuncia cada mes a los $600.000 que podría obtener arrendando el local. Ese ingreso no percibido es un costo de oportunidad real de su negocio, y un cálculo económico correcto debe incluirlo. El precio pagado por el local en el pasado, en cambio, es un costo hundido.',
+        },
+        {
+          id: 'u1-l2-e6',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Renata pagó $30.000 no reembolsables por un curso online que ya no le entusiasma. Terminarlo le exige dedicar horas en las que podría ganar $40.000 trabajando, y ella estima que el certificado le reportará beneficios de $65.000. Ignorando el costo hundido, ¿cuál es el beneficio neto futuro de terminar el curso, en pesos?',
+          unitLabel: '$',
+          answer: 25000,
+          hint: 'Los $30.000 ya se pagaron y no se recuperan: compara solo beneficios y costos futuros.',
+          explanation:
+            'Los $30.000 son un costo hundido y quedan fuera del cálculo. El beneficio futuro es $65.000 y el costo futuro es el sueldo al que renuncia: $40.000. Beneficio neto = 65.000 − 40.000 = 25.000, así que sí le conviene terminar.',
+        },
       ],
     },
     {
       id: 'u1-l3',
       title: 'Ventaja comparativa y las ganancias del comercio',
       summary: 'Por qué comerciar beneficia a ambas partes, incluso cuando una es mejor produciendo todo.',
-      estimatedMinutes: 7,
+      estimatedMinutes: 9,
       content: [
         {
           type: 'heading',
@@ -376,6 +440,37 @@ export const unit01: Unit = {
             'Aunque un país sea más productivo en todo (ventaja absoluta), lo relevante para el comercio es la ventaja comparativa: quién tiene menor costo de oportunidad en cada bien. Si cada país se especializa en el bien donde renuncia a menos del otro bien y luego comercian, la producción total de ambos bienes aumenta y los dos países terminan con más de lo que tendrían produciendo todo por su cuenta.',
           explanation:
             'Una buena respuesta distingue ventaja absoluta de comparativa, explica que la comparativa depende del costo de oportunidad relativo, y concluye que la especialización según esa ventaja genera ganancias mutuas.',
+        },
+        {
+          id: 'u1-l3-e5',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'En una hora, Valeria puede producir 8 kg de queso o 16 kg de pan, así que su costo de oportunidad de 1 kg de queso es 2 kg de pan. Andrés puede producir 2 kg de queso u 8 kg de pan, así que su costo de oportunidad de 1 kg de queso es 4 kg de pan. Valeria se especializa en queso, Andrés en pan, y acuerdan intercambiar queso por pan.',
+          question: '¿A qué "precio" de intercambio ganan ambos con el comercio?',
+          options: [
+            { id: 'a', text: '3 kg de pan por cada kg de queso, porque está entre los costos de oportunidad de ambos (2 y 4)' },
+            { id: 'b', text: '1 kg de pan por cada kg de queso, porque el precio más bajo siempre beneficia a los dos' },
+            { id: 'c', text: '5 kg de pan por cada kg de queso, porque conviene superar el costo de oportunidad más alto' },
+            { id: 'd', text: '2 kg de pan por cada kg de queso, porque iguala exactamente el costo de oportunidad de Valeria' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Para que ambos ganen, el precio debe quedar entre los dos costos de oportunidad. A 3 kg de pan por kg de queso, Valeria recibe más pan (3) del que le cuesta producir cada queso (2), y Andrés paga menos pan (3) del que le costaría producir su propio queso (4). A 2 kg de pan, Valeria no gana nada, y fuera del rango 2–4 una de las partes pierde.',
+        },
+        {
+          id: 'u1-l3-e6',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'En un día, Pía puede fabricar 6 poleras o 3 gorros, y Tomás puede fabricar 2 poleras o 2 gorros. Si cada uno se especializa por completo en el bien en que tiene ventaja comparativa, ¿cuántas poleras se producen en total por día?',
+          unitLabel: 'poleras',
+          answer: 6,
+          hint: 'Calcula primero el costo de oportunidad de 1 polera para cada uno: gorros a los que renuncia ÷ poleras que gana.',
+          explanation:
+            'El costo de oportunidad de 1 polera es 3 ÷ 6 = 0,5 gorros para Pía y 2 ÷ 2 = 1 gorro para Tomás. Pía tiene ventaja comparativa en poleras y se especializa en ellas (6 poleras), mientras Tomás se dedica solo a gorros (0 poleras). Total: 6 poleras al día.',
         },
       ],
     },

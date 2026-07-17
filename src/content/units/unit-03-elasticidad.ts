@@ -15,7 +15,7 @@ export const unit03: Unit = {
       id: 'u3-l1',
       title: 'Elasticidad precio de la demanda',
       summary: 'Cómo medir cuán sensible es la cantidad demandada ante cambios en el precio, y qué la hace más o menos sensible.',
-      estimatedMinutes: 7,
+      estimatedMinutes: 9,
       content: [
         {
           type: 'heading',
@@ -170,13 +170,44 @@ export const unit03: Unit = {
           explanation:
             'Se espera que la respuesta defina correctamente el concepto, justifique el uso del punto medio y mencione al menos uno de los determinantes vistos en la lección.',
         },
+        {
+          id: 'u3-l1-e5',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          question:
+            'El precio de un pase mensual de gimnasio sube de $20 a $30, y la cantidad de pases vendidos cae de 150 a 90 por mes. Usando la fórmula del punto medio, ¿cuál es la elasticidad precio de la demanda, en valor absoluto?',
+          answer: 1.25,
+          decimals: 2,
+          tolerance: 0.05,
+          hint: 'Divide cada cambio por el promedio entre el valor inicial y el final, no por el valor inicial.',
+          explanation:
+            'Cambio porcentual en la cantidad: (90 − 150) ÷ ((150 + 90) / 2) = −60 ÷ 120 = −50%. Cambio porcentual en el precio: (30 − 20) ÷ ((20 + 30) / 2) = 10 ÷ 25 = 40%. Elasticidad = 50 ÷ 40 = 1,25. Como es mayor a 1, la demanda de estos pases es elástica.',
+        },
+        {
+          id: 'u3-l1-e6',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            '¿Cuál de las siguientes demandas esperarías que fuera la MÁS elástica, según los determinantes vistos en la lección?',
+          options: [
+            { id: 'a', text: 'La demanda de alimentos en general' },
+            { id: 'b', text: 'La demanda de un yogur de frutilla de una marca específica' },
+            { id: 'c', text: 'La demanda de medicamentos básicos' },
+            { id: 'd', text: 'La demanda de electricidad residencial en el corto plazo' },
+          ],
+          correctOptionId: 'b',
+          explanation:
+            'Mientras más específica es la definición del bien, más sustitutos cercanos tiene: si sube el precio del yogur de una marca, es fácil cambiarse a otra marca u otro sabor. Los bienes definidos de forma amplia (alimentos, electricidad) y las necesidades (medicamentos) tienden a tener demandas mucho más inelásticas.',
+        },
       ],
     },
     {
       id: 'u3-l2',
       title: 'Elasticidad e ingreso total',
       summary: 'Por qué subir el precio no siempre significa recaudar más plata en total, y cómo lo decide la elasticidad.',
-      estimatedMinutes: 6,
+      estimatedMinutes: 8,
       content: [
         {
           type: 'heading',
@@ -321,13 +352,45 @@ export const unit03: Unit = {
           explanation:
             'Se espera que la respuesta identifique el ingreso total como precio por cantidad y explique correctamente ambos casos (elástico e inelástico) en términos de qué efecto domina.',
         },
+        {
+          id: 'u3-l2-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Un carrito de completos baja el precio de $5.000 a $4.000 por unidad, y la cantidad vendida sube de 200 a 300 completos al día. ¿Cuál es el nuevo ingreso total diario, en miles de pesos?',
+          unitLabel: 'miles de $',
+          answer: 1200,
+          hint: 'El ingreso total es el precio nuevo multiplicado por la cantidad nueva.',
+          explanation:
+            'El nuevo ingreso total es $4.000 × 300 = $1.200.000, es decir, 1.200 miles de pesos. Antes era $5.000 × 200 = $1.000.000, así que bajar el precio AUMENTÓ el ingreso total: eso es exactamente lo que ocurre cuando la demanda es elástica en ese tramo.',
+        },
+        {
+          id: 'u3-l2-e6',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'Una cafetería de especialidad estima que la elasticidad precio de la demanda de su café es de aproximadamente 1,8: en su barrio hay muchas otras cafeterías y sus clientes comparan precios con facilidad. La dueña quiere aumentar el ingreso total del local y está evaluando qué hacer con el precio del café.',
+          question:
+            'Según la relación entre elasticidad e ingreso total, ¿cuál de las siguientes estrategias es la más coherente con su objetivo?',
+          options: [
+            { id: 'a', text: 'Subir el precio, porque un precio mayor siempre aumenta el ingreso total' },
+            { id: 'b', text: 'Bajar el precio, porque con demanda elástica la cantidad vendida sube proporcionalmente más de lo que baja el precio' },
+            { id: 'c', text: 'Mantener el precio, porque con Ed = 1,8 el ingreso total no puede cambiar' },
+            { id: 'd', text: 'Subir el precio, porque la demanda elástica hace que la cantidad vendida no cambie' },
+          ],
+          correctOptionId: 'b',
+          explanation:
+            'Con una elasticidad de 1,8 (mayor a 1), la demanda es elástica: domina el efecto cantidad. Al bajar el precio, la cantidad vendida aumenta en una proporción mayor que la caída del precio, así que el ingreso total (P × Q) sube. Subir el precio tendría el efecto contrario.',
+        },
       ],
     },
     {
       id: 'u3-l3',
       title: 'Elasticidad de la oferta, del ingreso y cruzada',
       summary: 'Cómo responden los vendedores a los precios, y cómo el ingreso de los consumidores y el precio de otros bienes mueven la demanda.',
-      estimatedMinutes: 7,
+      estimatedMinutes: 9,
       content: [
         {
           type: 'heading',
@@ -473,6 +536,39 @@ export const unit03: Unit = {
             'Que la elasticidad cruzada entre dos bienes sea positiva significa que son sustitutos: si sube el precio de uno, la cantidad demandada del otro aumenta, como pasa entre la mantequilla y la margarina. Que la elasticidad ingreso de un bien sea negativa significa que es un bien inferior: cuando el ingreso de los consumidores sube, compran menos de ese bien, como puede pasar con los fideos instantáneos, que muchas familias reemplazan por otras opciones apenas mejora su ingreso.',
           explanation:
             'Se espera que la respuesta interprete correctamente ambos signos (cruzada positiva como sustitutos, ingreso negativa como bien inferior) y entregue al menos un ejemplo concreto y razonable.',
+        },
+        {
+          id: 'u3-l3-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'El precio del café de grano sube de $8 a $12 por bolsa, y la cantidad demandada de té sube de 90 a 110 cajas por semana. Usando cambios porcentuales de punto medio, ¿cuál es la elasticidad cruzada de la demanda del té respecto al precio del café?',
+          answer: 0.5,
+          decimals: 1,
+          tolerance: 0.05,
+          hint: 'Divide el cambio porcentual en la cantidad de té por el cambio porcentual en el precio del café, usando promedios como base.',
+          explanation:
+            'Cambio porcentual en la cantidad de té: (110 − 90) ÷ ((90 + 110) / 2) = 20 ÷ 100 = 20%. Cambio porcentual en el precio del café: (12 − 8) ÷ ((8 + 12) / 2) = 4 ÷ 10 = 40%. Elasticidad cruzada = 20 ÷ 40 = 0,5. Como es positiva, café y té se comportan como sustitutos.',
+        },
+        {
+          id: 'u3-l3-e6',
+          type: 'case_study',
+          difficulty: 'facil',
+          xp: 10,
+          scenario:
+            'Una florista vende ramos de flores frescas que se marchitan en pocos días y no pueden almacenarse. Un fabricante de poleras estampadas, en cambio, puede guardar su producto en bodega por meses y contratar más turnos si hace falta.',
+          question:
+            'En el corto plazo, ¿qué esperarías sobre la elasticidad precio de la oferta de cada uno?',
+          options: [
+            { id: 'a', text: 'La oferta de flores frescas sería más inelástica, porque no se pueden almacenar y hay poco margen para ajustar la cantidad' },
+            { id: 'b', text: 'La oferta de flores frescas sería más elástica, porque las flores son más baratas que las poleras' },
+            { id: 'c', text: 'Ambas ofertas serían igual de elásticas, porque la elasticidad de la oferta solo depende del precio' },
+            { id: 'd', text: 'La oferta de poleras sería más inelástica, porque la ropa es un bien necesario' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'La posibilidad de almacenar el bien y la flexibilidad del proceso productivo son determinantes clave de la elasticidad de la oferta. Las flores frescas son perecibles y su producción no se ajusta rápido, así que su oferta es más inelástica; las poleras pueden guardarse y producirse con más turnos, lo que hace su oferta más elástica.',
         },
       ],
     },

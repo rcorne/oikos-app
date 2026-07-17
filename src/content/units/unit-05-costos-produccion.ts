@@ -15,7 +15,7 @@ export const unit05: Unit = {
       id: 'u5-l1',
       title: 'Costos fijos, variables y totales',
       summary: 'Qué gastos se mantienen sin importar cuánto produces, cuáles cambian, y cómo se suman.',
-      estimatedMinutes: 6,
+      estimatedMinutes: 8,
       content: [
         {
           type: 'heading',
@@ -148,13 +148,43 @@ export const unit05: Unit = {
           explanation:
             'Se espera que la respuesta distinga claramente que el costo fijo no depende del nivel de producción mientras que el variable sí, y que ilustre ambos con un ejemplo concreto y coherente.',
         },
+        {
+          id: 'u5-l1-e5',
+          type: 'numeric',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'Una pastelería registró un costo total de $320.000 en el mes. Si su costo fijo —el arriendo del local— es de $120.000 mensuales, ¿cuál fue su costo variable ese mes?',
+          unitLabel: '$',
+          answer: 200000,
+          hint: 'Si CT = CF + CV, entonces CV = CT − CF.',
+          explanation: 'Despejando de CT = CF + CV: CV = CT − CF = 320.000 − 120.000 = 200.000.',
+        },
+        {
+          id: 'u5-l1-e6',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'Un food truck de sándwiches paga $80.000 mensuales por el permiso municipal para estacionar y $20.000 mensuales por el seguro del vehículo, montos que debe cubrir aunque no abra ni un solo día. El pan, los ingredientes y el gas de la plancha, en cambio, solo se gastan cuando cocina. En febrero, el dueño decide cerrar todo el mes por vacaciones y no produce nada.',
+          question: '¿Cuál será el costo total del food truck durante febrero?',
+          options: [
+            { id: 'a', text: '$100.000, porque al no producir nada el costo total queda igual al costo fijo' },
+            { id: 'b', text: '$0, porque si no produce nada no tiene ningún costo' },
+            { id: 'c', text: '$80.000, porque el seguro deja de pagarse cuando el negocio no opera' },
+            { id: 'd', text: 'No se puede calcular sin saber cuántos sándwiches vendía antes' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Con producción cero, el costo variable (pan, ingredientes, gas) es cero, pero los compromisos fijos siguen vigentes: CT = CF + CV = (80.000 + 20.000) + 0 = 100.000. Ese es el costo de mantener el negocio, aunque no opere.',
+        },
       ],
     },
     {
       id: 'u5-l2',
       title: 'Costo marginal y costo medio',
       summary: 'Cuánto cuesta producir una unidad más, cuánto cuesta cada unidad en promedio, y cómo se relacionan ambos.',
-      estimatedMinutes: 7,
+      estimatedMinutes: 9,
       content: [
         {
           type: 'heading',
@@ -279,13 +309,46 @@ export const unit05: Unit = {
           explanation:
             'La respuesta debe explicar ambos conceptos y conectar la comparación entre marginal y medio con el punto mínimo del costo medio total.',
         },
+        {
+          id: 'u5-l2-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Una imprenta produce 400 libros en el mes con un costo total de $2.000.000, sumando lo fijo y lo variable. ¿Cuál es su costo medio total por libro?',
+          unitLabel: '$',
+          answer: 5000,
+          hint: 'El costo medio total es el costo total repartido entre todas las unidades: CTMe = CT / Q.',
+          explanation: 'CTMe = CT / Q = 2.000.000 / 400 = 5.000 por libro.',
+        },
+        {
+          id: 'u5-l2-e6',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'Una fábrica de mermeladas artesanales produce 9 cajas al día con un costo total de $90.000, es decir, un costo medio total de $10.000 por caja. Su dueña calcula que producir una décima caja elevaría el costo total del día a $104.000.',
+          question: 'Si la fábrica produce esa décima caja, ¿qué ocurre con su costo medio total y por qué?',
+          options: [
+            {
+              id: 'a',
+              text: 'Sube a $10.400 por caja, porque el costo marginal de la décima caja ($14.000) supera al costo medio anterior',
+            },
+            { id: 'b', text: 'Baja, porque repartir el costo entre más cajas siempre reduce el promedio' },
+            { id: 'c', text: 'Se mantiene en $10.000, porque el costo medio no depende del costo marginal' },
+            { id: 'd', text: 'Sube a $14.000 por caja, porque el costo medio pasa a ser igual al costo marginal' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El costo marginal de la décima caja es CMg = 104.000 − 90.000 = 14.000, mayor que el costo medio anterior de $10.000, así que esa caja "tira hacia arriba" el promedio. El nuevo costo medio total es 104.000 / 10 = 10.400 por caja: sube, pero no salta hasta el valor del marginal.',
+        },
       ],
     },
     {
       id: 'u5-l3',
       title: 'Costos en el largo plazo y economías de escala',
       summary: 'Por qué en el largo plazo todo cuesta cambiar, y por qué crecer a veces abarata y a veces encarece cada unidad.',
-      estimatedMinutes: 7,
+      estimatedMinutes: 9,
       content: [
         {
           type: 'heading',
@@ -422,6 +485,34 @@ export const unit05: Unit = {
             'En el largo plazo la empresa puede cambiar absolutamente todo, incluso el tamaño de su planta, así que ya no existe ningún costo comprometido de antemano: todos los costos pasan a ser variables. Las economías de escala aparecen cuando producir más permite bajar el costo medio de largo plazo, por ejemplo gracias a la especialización o a comprar insumos más baratos por volumen. Las deseconomías de escala son lo contrario: cuando la empresa crece tanto que coordinar todo se vuelve más difícil y el costo medio de largo plazo empieza a subir.',
           explanation:
             'Se espera que la respuesta explique por qué no hay costos fijos en el largo plazo y distinga con claridad economías de deseconomías de escala, idealmente con una razón para cada una.',
+        },
+        {
+          id: 'u5-l3-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Una fábrica de jugos evalúa construir una planta que produciría 8.000 litros diarios con un costo total de $3.200.000 al día. ¿Cuál sería el costo medio de largo plazo por litro con esa planta?',
+          unitLabel: '$',
+          answer: 400,
+          hint: 'El costo medio de largo plazo se calcula como CMeLP = CTLP / Q.',
+          explanation: 'CMeLP = CTLP / Q = 3.200.000 / 8.000 = 400 por litro.',
+        },
+        {
+          id: 'u5-l3-e6',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: '¿Cuál de las siguientes situaciones es una fuente típica de economías de escala para una empresa que crece?',
+          options: [
+            { id: 'a', text: 'Obtener descuentos por comprar sus insumos en volúmenes mucho mayores' },
+            { id: 'b', text: 'Necesitar más niveles de jefaturas intermedias que encarecen la coordinación' },
+            { id: 'c', text: 'Pagar el mismo arriendo mensual sin importar cuánto produzca' },
+            { id: 'd', text: 'Que el costo marginal de la última unidad sea mayor que el costo medio' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Comprar insumos en mayor volumen suele conseguir mejores precios, lo que reduce el costo medio de largo plazo al producir más: una fuente clásica de economías de escala. Los niveles extra de jefatura son una fuente de deseconomías, y las otras dos opciones describen conceptos de corto plazo.',
         },
       ],
     },

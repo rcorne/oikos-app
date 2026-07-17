@@ -15,7 +15,7 @@ export const unit07: Unit = {
       id: 'u7-l1',
       title: 'Externalidades: costos y beneficios que el precio no refleja',
       summary: 'Por qué la contaminación tiende a sobreproducirse y la vacunación tiende a subproducirse, y cómo corregirlo con impuestos o subsidios.',
-      estimatedMinutes: 7,
+      estimatedMinutes: 9,
       content: [
         {
           type: 'heading',
@@ -134,13 +134,44 @@ export const unit07: Unit = {
           explanation:
             'Una buena respuesta define la externalidad como un efecto no compensado sobre terceros, explica que esto aleja la cantidad de mercado del óptimo social, y aporta un ejemplo propio.',
         },
+        {
+          id: 'u7-l1-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Un curso técnico de electricidad entrega a cada estudiante un beneficio privado de $90.000 —mayores ingresos futuros—, pero además genera un beneficio externo de $35.000, porque los técnicos capacitados reducen accidentes eléctricos que afectan a terceros. El curso cuesta $110.000 por estudiante. ¿De cuánto debería ser el subsidio pigouviano por estudiante, en pesos, para que el costo que enfrenta cada uno incorpore el beneficio externo de su capacitación?',
+          unitLabel: '$',
+          answer: 35000,
+          hint: 'El subsidio pigouviano óptimo iguala el beneficio marginal externo, así como el impuesto pigouviano iguala el costo marginal externo.',
+          explanation:
+            'El subsidio pigouviano debe ser igual al beneficio marginal externo: $35.000 por estudiante. Con ese subsidio, el costo privado del curso baja de $110.000 a $110.000 − $35.000 = $75.000, que es menor que el beneficio privado de $90.000: ahora al estudiante sí le conviene inscribirse, tal como conviene socialmente, ya que el beneficio social ($90.000 + $35.000 = $125.000) supera el costo de $110.000.',
+        },
+        {
+          id: 'u7-l1-e6',
+          type: 'multiple_choice',
+          difficulty: 'dificil',
+          xp: 20,
+          question:
+            'En un mercado con externalidad negativa en la producción —por ejemplo, una curtiembre que contamina un estero—, ¿cómo se compara la cantidad de equilibrio que produce el mercado por sí solo con la cantidad socialmente óptima, y por qué?',
+          options: [
+            { id: 'a', text: 'El mercado produce más que el óptimo social, porque los productores deciden mirando solo su costo privado, que es menor que el costo social' },
+            { id: 'b', text: 'El mercado produce menos que el óptimo social, porque el costo externo desincentiva la producción' },
+            { id: 'c', text: 'El mercado produce exactamente el óptimo social, porque los compradores castigan a las empresas contaminantes' },
+            { id: 'd', text: 'No se puede comparar, porque el óptimo social solo existe cuando hay impuestos' },
+          ],
+          correctOptionId: 'a',
+          hint: 'Pregúntate qué costo mira la empresa al decidir cuánto producir: ¿el suyo, o el de toda la sociedad?',
+          explanation:
+            'Con una externalidad negativa, el costo social de cada unidad —costo privado más costo externo— es mayor que el costo privado que la empresa efectivamente paga. Como la empresa produce mientras el precio cubra su costo privado, sigue produciendo unidades cuyo costo social ya supera lo que valen para los consumidores: hay sobreproducción respecto al óptimo social. Por eso el remedio clásico es un impuesto pigouviano que "sume" el costo externo al costo privado.',
+        },
       ],
     },
     {
       id: 'u7-l2',
       title: 'Bienes públicos y recursos comunes',
       summary: 'Por qué nadie quiere ser el primero en pagar un bien público, y por qué un recurso compartido tiende a sobreexplotarse.',
-      estimatedMinutes: 7,
+      estimatedMinutes: 9,
       content: [
         {
           type: 'heading',
@@ -263,13 +294,46 @@ export const unit07: Unit = {
           explanation:
             'Una buena respuesta distingue las dos propiedades (exclusión y rivalidad) para cada tipo de bien, y explica que la falta de exclusión genera problemas distintos según haya o no rivalidad: subproducción en bienes públicos, sobreexplotación en recursos comunes.',
         },
+        {
+          id: 'u7-l2-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Un pueblo quiere financiar el show de fuegos artificiales de su aniversario, que cuesta $1.200.000 en total. Como nadie puede ser excluido de mirar el cielo, la junta de vecinos pide aportes voluntarios: de las 120 familias del pueblo, solo 40 deciden cooperar —las otras 80 actúan como polizones— y el costo se divide en partes iguales entre las familias que sí aportan. ¿Cuánto paga cada familia cooperadora, en pesos?',
+          unitLabel: '$',
+          answer: 30000,
+          hint: 'Divide el costo total solo entre las familias que efectivamente aportan.',
+          explanation:
+            'El costo total se reparte solo entre quienes cooperan: $1.200.000 ÷ 40 = $30.000 por familia. Nota que si las 120 familias hubieran aportado, cada una habría pagado apenas $1.200.000 ÷ 120 = $10.000. El problema del polizón triplica la carga de quienes sí pagan, y en muchos casos hace que el bien público directamente no se financie: por eso suele proveerse con impuestos obligatorios.',
+        },
+        {
+          id: 'u7-l2-e6',
+          type: 'case_study',
+          difficulty: 'media',
+          xp: 15,
+          scenario:
+            'Un pueblo costero necesita construir un muro de contención contra marejadas que protegería por igual a todas las casas del borde costero: una vez construido, es imposible excluir de la protección a quien no haya aportado, y que una casa esté protegida no reduce la protección de las demás. Se abrió una colecta voluntaria, pero tras seis meses solo se ha reunido el 15% del costo, aunque casi todos los vecinos declaran que el muro les parece muy valioso.',
+          question:
+            '¿Por qué la colecta voluntaria recauda tan poco, y qué solución suele recomendarse para bienes con estas características?',
+          options: [
+            { id: 'a', text: 'Es el problema del polizón: como nadie puede ser excluido del beneficio, cada vecino prefiere que otros paguen; la solución habitual es financiar el muro con recursos públicos obligatorios, como impuestos o contribuciones' },
+            { id: 'b', text: 'Es la tragedia de los comunes: los vecinos están sobreexplotando el muro, y la solución es fijar cuotas de uso' },
+            { id: 'c', text: 'Es riesgo moral: los vecinos se volvieron descuidados después de aportar a la colecta' },
+            { id: 'd', text: 'Es un problema de precios: basta con subir el monto sugerido de la donación para completar el financiamiento' },
+          ],
+          correctOptionId: 'a',
+          hint: 'El muro es no excluible y no rival: ¿qué incentivo tiene cada vecino para aportar si igual quedará protegido?',
+          explanation:
+            'El muro es un bien público: no excluible y no rival. Cada vecino sabe que, si el muro se construye, quedará protegido haya aportado o no, así que su mejor jugada individual es esperar que paguen los demás. Cuando muchos razonan igual, la colecta fracasa aunque el bien valga más que su costo. Por eso los bienes públicos suelen financiarse con impuestos u otros aportes obligatorios, que eliminan la opción de viajar gratis.',
+        },
       ],
     },
     {
       id: 'u7-l3',
       title: 'Información asimétrica: selección adversa y riesgo moral',
       summary: 'Qué pasa cuando una parte de un trato sabe más que la otra, antes de firmarlo y después de firmarlo.',
-      estimatedMinutes: 7,
+      estimatedMinutes: 9,
       content: [
         {
           type: 'heading',
@@ -386,6 +450,37 @@ export const unit07: Unit = {
             'La selección adversa ocurre antes de cerrar el trato, cuando una parte conoce información que la otra no: por ejemplo, el dueño de un auto usado sabe si tiene fallas ocultas que el comprador no puede ver, lo que puede sacar del mercado a los vendedores de buena calidad. El riesgo moral, en cambio, ocurre después de firmado el contrato: por ejemplo, alguien maneja con menos cuidado una vez que contrata un seguro automotriz, porque ya no asume completo el costo de un choque.',
           explanation:
             'Una buena respuesta distingue el momento en que ocurre cada problema —antes o después del contrato— y da un ejemplo concreto para cada uno: información oculta sobre calidad o riesgo en la selección adversa, cambio de comportamiento por estar protegido en el riesgo moral.',
+        },
+        {
+          id: 'u7-l3-e5',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          question:
+            'En un mercado de celulares usados, el 30% de los equipos en venta son "limones" con fallas ocultas que valen $60.000, y el 70% restante son equipos en buen estado que valen $180.000. Los compradores no pueden distinguir la calidad antes de comprar, así que están dispuestos a pagar el valor esperado de un celular elegido al azar. ¿Cuál es ese valor esperado, en pesos?',
+          unitLabel: '$',
+          answer: 144000,
+          hint: 'Multiplica el valor de cada tipo por su proporción en el mercado y suma los resultados.',
+          explanation:
+            'El valor esperado pondera cada calidad por su proporción: (60.000 × 0,3) + (180.000 × 0,7) = 18.000 + 126.000 = $144.000. Como $144.000 está por debajo de los $180.000 que vale un equipo bueno para su dueño, los vendedores de celulares buenos tienden a retirarse, la proporción de limones sube, y el valor esperado —y con él el precio— sigue cayendo: la espiral de selección adversa.',
+        },
+        {
+          id: 'u7-l3-e6',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            '¿Cuál de las siguientes medidas apunta a reducir la selección adversa —y no el riesgo moral— en el mercado de autos usados?',
+          options: [
+            { id: 'a', text: 'Que el vendedor ofrezca una garantía de seis meses y un informe de revisión mecánica, señales creíbles de calidad que el comprador puede ver antes de cerrar el trato' },
+            { id: 'b', text: 'Que el seguro automotriz incluya un deducible a cargo del conductor en caso de choque' },
+            { id: 'c', text: 'Que la aseguradora exija instalar un GPS en el auto después de firmada la póliza' },
+            { id: 'd', text: 'Que el gobierno cobre un impuesto pigouviano por las emisiones contaminantes de cada auto' },
+          ],
+          correctOptionId: 'a',
+          hint: 'La selección adversa es un problema de información oculta antes de cerrar el trato: busca la medida que revela calidad antes de la compra.',
+          explanation:
+            'La selección adversa nace de que el comprador no puede conocer la calidad antes de comprar. Una garantía y un informe de revisión mecánica son señales que solo un vendedor de un auto bueno puede ofrecer a bajo costo, así que revelan calidad antes del trato. El deducible y el GPS atacan el riesgo moral —comportamiento después del contrato—, y el impuesto pigouviano corrige una externalidad, no un problema de información.',
         },
       ],
     },

@@ -15,7 +15,7 @@ export const unit08: Unit = {
       id: 'u8-l1',
       title: 'Excedente del consumidor y del productor',
       summary: 'Cómo medir las ganancias que compradores y vendedores obtienen al participar en el mercado, y por qué su suma indica eficiencia.',
-      estimatedMinutes: 7,
+      estimatedMinutes: 9,
       content: [
         {
           type: 'heading',
@@ -160,13 +160,47 @@ export const unit08: Unit = {
           explanation:
             'Se espera que la respuesta defina ambos excedentes por separado y explique la idea de que su suma —el excedente total— es una medida de eficiencia que se maximiza en el equilibrio de mercado.',
         },
+        {
+          id: 'u8-l1-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'En un mercado, la curva de oferta es P = 20 + 2Q (P en dólares, Q en unidades). En el equilibrio, el precio es $80 y la cantidad transada es 30 unidades. ¿Cuál es el excedente del productor, en dólares?',
+          unitLabel: '$',
+          answer: 900,
+          hint: 'El excedente del productor es un triángulo: su base es la cantidad transada y su altura es el precio de equilibrio menos el costo mínimo de la primera unidad (el intercepto de la oferta).',
+          explanation:
+            'El excedente del productor es el área del triángulo sobre la curva de oferta y bajo el precio de equilibrio: la base es la cantidad transada (30) y la altura es el precio de equilibrio menos el precio mínimo al que se ofrecería la primera unidad (80 − 20 = 60). Excedente = 0,5 × 30 × 60 = 900.',
+        },
+        {
+          id: 'u8-l1-e6',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'En la feria de una comuna, el mercado de frutas alcanza su equilibrio en 500 kilos vendidos por día. La municipalidad, buscando "dinamizar el comercio", propone un programa que incentive a los feriantes a vender 600 kilos diarios, es decir, 100 kilos más que la cantidad de equilibrio.',
+          question: '¿Qué efecto tendría sobre el excedente total del mercado forzar la cantidad transada por encima del equilibrio?',
+          options: [
+            {
+              id: 'a',
+              text: 'El excedente total caería, porque en esas unidades adicionales el costo de producirlas supera la disposición a pagar de los compradores',
+            },
+            { id: 'b', text: 'El excedente total aumentaría, porque más transacciones siempre significan más bienestar' },
+            { id: 'c', text: 'El excedente total no cambiaría, porque las ganancias de los feriantes compensan exactamente las pérdidas de los compradores' },
+            { id: 'd', text: 'Solo aumentaría el excedente del consumidor, sin ningún efecto sobre el excedente del productor' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'La cantidad de equilibrio es exactamente la que maximiza el excedente total. Más allá de ella, cada unidad adicional cuesta producirla más de lo que algún comprador está dispuesto a pagar por ella: esas transacciones destruyen excedente en vez de crearlo. Por eso, tanto quedarse corto como pasarse de la cantidad de equilibrio reduce el excedente total del mercado.',
+        },
       ],
     },
     {
       id: 'u8-l2',
       title: 'Impuestos, incidencia tributaria y pérdida de eficiencia',
       summary: 'Quién termina pagando realmente un impuesto, y por qué introduce una pérdida de eficiencia en el mercado.',
-      estimatedMinutes: 8,
+      estimatedMinutes: 10,
       content: [
         {
           type: 'heading',
@@ -312,13 +346,43 @@ export const unit08: Unit = {
           explanation:
             'La respuesta debe mencionar la cuña de precios, la caída en la cantidad transada y la idea de que las transacciones perdidas generan una pérdida de eficiencia que no beneficia a nadie.',
         },
+        {
+          id: 'u8-l2-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'El gobierno establece un impuesto específico de $6 por unidad en un mercado. Antes del impuesto se transaban 120 unidades; con el impuesto, la cantidad transada cae a 100 unidades. ¿Cuánto recauda el gobierno con este impuesto, en dólares?',
+          unitLabel: '$',
+          answer: 600,
+          hint: 'La recaudación es el monto del impuesto por unidad multiplicado por la cantidad que efectivamente se transa una vez aplicado el impuesto, no por la cantidad original.',
+          explanation:
+            'La recaudación del gobierno es el impuesto por unidad multiplicado por la cantidad transada después del impuesto: 6 × 100 = $600. Un error común es usar la cantidad original (120 unidades), pero el gobierno solo recauda sobre las transacciones que efectivamente ocurren con el impuesto vigente.',
+        },
+        {
+          id: 'u8-l2-e6',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'En un mercado con un impuesto específico de $8 por unidad, los compradores pagan un precio de $30 por unidad. ¿Cuánto reciben efectivamente los vendedores por cada unidad?',
+          options: [
+            { id: 'a', text: '$22, porque el impuesto abre una cuña de $8 entre el precio que pagan los compradores y el que reciben los vendedores' },
+            { id: 'b', text: '$30, porque los vendedores siempre reciben el precio completo que pagan los compradores' },
+            { id: 'c', text: '$38, porque los vendedores suman el impuesto al precio de venta' },
+            { id: 'd', text: '$8, porque los vendedores solo se quedan con el monto del impuesto' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El impuesto abre una cuña entre el precio que pagan los compradores (Pc) y el que reciben los vendedores (Pv), de modo que Pc − Pv es igual al monto del impuesto: 30 − 8 = $22. Los $8 restantes por unidad van al gobierno como recaudación.',
+        },
       ],
     },
     {
       id: 'u8-l3',
       title: 'Análisis costo-beneficio de una política pública',
       summary: 'Cómo evaluar si una política pública conviene a la sociedad, comparando beneficios y costos, y distinguiendo eficiencia de equidad.',
-      estimatedMinutes: 7,
+      estimatedMinutes: 9,
       content: [
         {
           type: 'heading',
@@ -472,6 +536,40 @@ export const unit08: Unit = {
             'Una política puede ser eficiente porque, sumando todas las ganancias y pérdidas de todos los agentes, el excedente total de la economía aumenta. Pero esa suma agregada no dice nada sobre quién gana y quién pierde: si los beneficios se concentran en un grupo pequeño y los costos recaen sobre otro grupo —muchas veces más vulnerable— la política puede generar rechazo aunque sea eficiente en el agregado. Por ejemplo, liberalizar el uso de un recurso natural puede aumentar el excedente total del país, pero si eso significa que comunidades locales pierden su acceso al recurso sin ninguna compensación, la política será vista como injusta pese a ser eficiente.',
           explanation:
             'La respuesta debe distinguir el concepto de eficiencia (excedente total) del de equidad (distribución entre grupos), y aplicar esa distinción a un ejemplo concreto de política pública.',
+        },
+        {
+          id: 'u8-l3-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Una ciudad evalúa construir una red de ciclovías. El proyecto costaría $80.000 al año (incluido el costo de oportunidad de los fondos). Los beneficios anuales estimados son: mejoras en salud pública por $45.000, menor congestión vehicular por $30.000 y mayor actividad del comercio local por $25.000. ¿Cuál es el beneficio social neto anual del proyecto, en dólares?',
+          unitLabel: '$',
+          answer: 20000,
+          hint: 'Suma primero todos los beneficios sociales y luego réstale el costo total del proyecto.',
+          explanation:
+            'Los beneficios sociales totales son 45.000 + 30.000 + 25.000 = $100.000 al año. Restando el costo anual del proyecto: 100.000 − 80.000 = $20.000 de beneficio social neto. Como el resultado es positivo, el criterio de eficiencia del análisis costo-beneficio indica que el proyecto conviene a la sociedad en su conjunto.',
+        },
+        {
+          id: 'u8-l3-e6',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'Un país implementa un impuesto a las bebidas azucaradas. El análisis costo-beneficio arroja un beneficio social neto positivo: los ahorros en salud pública y la recaudación superan la pérdida de excedente en el mercado. Sin embargo, los hogares de menores ingresos destinan una fracción mayor de su presupuesto a estas bebidas, por lo que el impuesto pesa proporcionalmente más sobre ellos que sobre los hogares de altos ingresos.',
+          question: '¿Qué debería incluir un buen informe de evaluación de esta política, según lo visto en la lección?',
+          options: [
+            {
+              id: 'a',
+              text: 'Tanto el beneficio social neto agregado como la distribución de los costos entre grupos, señalando que la carga recae proporcionalmente más sobre los hogares de menores ingresos',
+            },
+            { id: 'b', text: 'Solo el beneficio social neto agregado, porque si es positivo la política es deseable para todos los grupos' },
+            { id: 'c', text: 'Recomendar eliminar el impuesto, porque toda política con efectos distributivos desiguales es ineficiente' },
+            { id: 'd', text: 'Solo la recaudación esperada, porque el objetivo de todo impuesto es financiar al Estado' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Un beneficio social neto positivo indica que la política es eficiente en el agregado, pero no dice cómo se reparten sus costos y beneficios. En este caso el impuesto es regresivo: pesa proporcionalmente más sobre los hogares de menores ingresos. Un buen análisis debe reportar ambas dimensiones —eficiencia y distribución— para que quien decide pueda ponderar el resultado agregado contra sus efectos de equidad. La opción c confunde los criterios: una política con efectos distributivos desiguales puede seguir siendo eficiente.',
         },
       ],
     },
