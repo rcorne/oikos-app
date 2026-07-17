@@ -61,7 +61,15 @@ npm install
 npm run dist    # genera desktop/release/Oikos-<version>-arm64.dmg
 ```
 
-El `.dmg` no está firmado ni notarizado (requeriría una cuenta de Apple Developer). Al abrirlo en este Mac funciona sin problema; si se copia a otro Mac, Gatekeeper lo bloqueará al no reconocer al desarrollador — hay que abrirlo con clic derecho → "Abrir", o permitirlo en Ajustes del Sistema → Privacidad y Seguridad.
+El build hace una firma **ad-hoc profunda** de la app (`codesign --force --deep --sign -`), pero no está firmada con Developer ID ni notarizada (eso requeriría una cuenta de Apple Developer de pago). Por eso, al descargar el `.dmg` en otro Mac, Gatekeeper puede mostrar **"Oikos está dañado y no puede abrirse"** — es la marca de cuarentena que macOS pone a las descargas, no un daño real.
+
+Para instalarla en otro Mac, después de arrastrarla a Aplicaciones:
+
+```bash
+xattr -cr /Applications/Oikos.app
+```
+
+Ese comando quita la cuarentena sin modificar la app. Alternativa sin Terminal: clic derecho sobre la app → **Abrir** → **Abrir**. La única forma de que abra con doble clic directo desde una descarga es firmar con Developer ID y notarizar con Apple.
 
 ## Pendiente / fuera de alcance de esta versión
 
