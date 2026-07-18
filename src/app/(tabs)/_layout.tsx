@@ -1,7 +1,10 @@
+import { View } from 'react-native';
 import { Tabs } from 'expo-router';
+import { BottomTabBar } from 'expo-router/build/react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import { SupportBanner } from '@/components/ui/SupportBanner';
 import { useTheme } from '@/theme/ThemeProvider';
 
 export default function TabsLayout() {
@@ -10,6 +13,17 @@ export default function TabsLayout() {
 
   return (
     <Tabs
+      tabBar={(props) => (
+        <View style={{ backgroundColor: theme.colors.tabBar }}>
+          <SupportBanner
+            style={{
+              marginHorizontal: theme.spacing.md,
+              marginBottom: theme.spacing.sm,
+            }}
+          />
+          <BottomTabBar {...props} />
+        </View>
+      )}
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: theme.colors.brand,

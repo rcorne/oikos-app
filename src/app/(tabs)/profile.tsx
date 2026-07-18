@@ -70,10 +70,10 @@ export default function ProfileScreen() {
         <Text variant="h3">Acerca de Oikos</Text>
         <Card style={{ gap: theme.spacing.sm }}>
           <Text variant="body" color="secondary">
-            Oikos es una app para aprender los fundamentos de la microeconomía a través de lecciones cortas, ejemplos
-            concretos y ejercicios interactivos. Su contenido está inspirado en el temario clásico de "Principios de
-            Economía" de N. Gregory Mankiw y "Microeconomía y Conducta" de Robert Frank, aunque todo el texto de la
-            app es de elaboración propia y no reproduce fragmentos de esos libros.
+            Oikos es una app para aprender los fundamentos de la microeconomía y la macroeconomía a través de
+            lecciones cortas, ejemplos concretos y ejercicios interactivos. Su contenido está inspirado en el temario
+            clásico de Mankiw, Frank y Larraín-Sachs, aunque todo el texto de la app es de elaboración propia y no
+            reproduce fragmentos de esos libros.
           </Text>
           <Text variant="caption" color="muted">
             Las respuestas de desarrollo se califican en el dispositivo, comparando conceptos clave contra tu

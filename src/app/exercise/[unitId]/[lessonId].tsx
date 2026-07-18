@@ -12,6 +12,7 @@ import { ExerciseHeader } from '@/components/exercises/ExerciseHeader';
 import { NumericKeypadCard } from '@/components/exercises/NumericKeypadCard';
 import { OpenEndedAudioCard } from '@/components/exercises/OpenEndedAudioCard';
 import { FeedbackBanner } from '@/components/ui/FeedbackBanner';
+import { SupportBanner } from '@/components/ui/SupportBanner';
 import { getLesson } from '@/content';
 import type { ExerciseGrade } from '@/content/types';
 import { gradeExercise, type ExerciseResponse } from '@/lib/grading';
@@ -197,7 +198,9 @@ export default function ExerciseScreen() {
             padding: theme.spacing.lg,
             paddingBottom: insets.bottom + theme.spacing.md,
             backgroundColor: theme.colors.background,
+            gap: theme.spacing.md,
           }}>
+          <SupportBanner />
           <Button label="Comprobar" onPress={handleCheck} disabled={!canSubmit} />
         </View>
       )}
