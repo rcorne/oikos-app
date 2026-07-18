@@ -18,6 +18,7 @@ function RootStack() {
       <StatusBar style={theme.scheme === 'dark' ? 'light' : 'dark'} />
       <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: theme.colors.background } }}>
         <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="subject/[subject]" options={{ presentation: 'card' }} />
         <Stack.Screen name="unit/[unitId]" options={{ presentation: 'card' }} />
         <Stack.Screen name="lesson/[unitId]/[lessonId]" options={{ presentation: 'card' }} />
         <Stack.Screen name="exercise/[unitId]/[lessonId]" options={{ presentation: 'card', gestureEnabled: false }} />

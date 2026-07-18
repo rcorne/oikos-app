@@ -9,8 +9,7 @@ import { ProgressRing } from '@/components/ui/ProgressRing';
 import { Screen } from '@/components/ui/Screen';
 import { Text } from '@/components/ui/Text';
 import { StreakBadge, XPPill } from '@/components/ui/XPPill';
-import { units, unitsBySubject, totalLessonCount } from '@/content';
-import type { Subject } from '@/content/types';
+import { SUBJECTS, units, unitsBySubject, totalLessonCount } from '@/content';
 import { useProgress } from '@/lib/progress';
 import { useTheme } from '@/theme/ThemeProvider';
 
@@ -22,11 +21,6 @@ function findNextLesson(isLessonCompleted: (id: string) => boolean) {
   }
   return null;
 }
-
-const subjectSummary: { subject: Subject; title: string; icon: keyof typeof Ionicons.glyphMap; color: string }[] = [
-  { subject: 'microeconomia', title: 'Microeconomía', icon: 'people-outline', color: '#0F566E' },
-  { subject: 'macroeconomia', title: 'Macroeconomía', icon: 'earth-outline', color: '#B14E33' },
-];
 
 export default function HomeScreen() {
   const theme = useTheme();
@@ -107,13 +101,13 @@ export default function HomeScreen() {
 
       <View style={{ gap: theme.spacing.md }}>
         <Text variant="h3">Tu progreso por materia</Text>
-        {subjectSummary.map((s) => {
+        {SUBJECTS.map((s) => {
           const subjectUnits = unitsBySubject(s.subject);
           if (subjectUnits.length === 0) return null;
           const lessonIds = subjectUnits.flatMap((u) => u.lessons.map((l) => l.id));
           const progress = getUnitProgress(lessonIds);
           return (
-            <Card key={s.subject} onPress={() => router.push('/units')}>
+            <Card key={s.subject} onPress={() => router.push({ pathname: '/subject/[subject]', params: { subject: s.subject } })}>
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: theme.spacing.md }}>
                 <ProgressRing
                   progress={progress}
