@@ -3,6 +3,7 @@ import type { Unit } from '@/content/types';
 export const unit04: Unit = {
   id: 'u4',
   index: 4,
+  subject: 'microeconomia',
   title: 'Comportamiento del consumidor',
   subtitle: "Cómo elegimos de verdad, y por qué no siempre 'racionalmente'",
   description:

@@ -3,6 +3,7 @@ import type { Unit } from '@/content/types';
 export const unit03: Unit = {
   id: 'u3',
   index: 3,
+  subject: 'microeconomia',
   title: 'Elasticidad',
   subtitle: 'Cuánto responden compradores y vendedores a los precios',
   description:

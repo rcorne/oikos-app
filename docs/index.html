@@ -20,12 +20,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oikos — Aprende Economía</title>
-  <meta name="description" content="Aprende microeconomía con lecciones cortas y ejercicios interactivos: opción múltiple, cálculos, casos de estudio y respuestas por voz. Gratis, sin cuentas ni anuncios." />
+  <meta name="description" content="Aprende microeconomía y macroeconomía con lecciones cortas y ejercicios interactivos: opción múltiple, cálculos, casos de estudio y respuestas por voz. Gratis, sin cuentas ni anuncios." />
   <link rel="icon" href="./favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="./app-icon.png" sizes="512x512" />
   <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
   <meta property="og:title" content="Oikos — Aprende Economía" />
-  <meta property="og:description" content="Microeconomía paso a paso: 8 unidades, 24 lecciones, ejercicios interactivos y respuestas por voz. Gratis y sin cuentas." />
+  <meta property="og:description" content="Economía paso a paso: 16 unidades de micro y macro, 48 lecciones, ejercicios interactivos y respuestas por voz. Gratis y sin cuentas." />
   <meta property="og:image" content="https://rcorne.github.io/oikos-app/app-icon.png" />
   <link rel="preload" href="./fonts/Outfit-800.ttf" as="font" type="font/ttf" crossorigin />
   <link rel="preload" href="./fonts/Manrope-400.ttf" as="font" type="font/ttf" crossorigin />
@@ -130,6 +130,8 @@
     .card h3 { font-size: 1.05rem; margin: 12px 0 6px; }
     .card p { font-size: 0.92rem; color: var(--tinta-70); }
 
+    .units-subhead { font-size: 1.05rem; font-weight: 700; margin: 22px 0 12px; opacity: 0.75; }
+    .units-subhead:first-of-type { margin-top: 4px; }
     .units { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
     .unit {
       display: flex; align-items: center; gap: 14px;
@@ -187,7 +189,7 @@
   <!-- End Google Tag Manager (noscript) -->
   <header class="hero">
     <img class="logo" src="./logo-vertical-blanco.svg" alt="Oikos — la economía dentro de la casa" />
-    <p class="tagline">Aprende microeconomía con lecciones cortas, ejemplos concretos y ejercicios interactivos. Gratis, sin cuentas y sin anuncios.</p>
+    <p class="tagline">Aprende microeconomía y macroeconomía con lecciones cortas, ejemplos concretos y ejercicios interactivos. Gratis, sin cuentas y sin anuncios.</p>
     <a class="cta" href="./app/">Abrir la app&nbsp;→</a>
     <p class="cta-sub">Funciona en tu navegador, en celular o computador.<br />¿Mac con Apple Silicon? <a href="https://github.com/rcorne/oikos-app/releases/latest">Descarga la app de escritorio (.dmg)</a></p>
   </header>
@@ -220,7 +222,8 @@
     </section>
 
     <section>
-      <h2>8 unidades, 24 lecciones</h2>
+      <h2>16 unidades, 48 lecciones</h2>
+      <h3 class="units-subhead">Microeconomía</h3>
       <div class="units">
         <div class="unit"><span class="num" style="background:#0F566E">1</span><span class="title">Principios y pensamiento económico</span></div>
         <div class="unit"><span class="num" style="background:#128099">2</span><span class="title">Oferta y demanda</span></div>
@@ -230,6 +233,17 @@
         <div class="unit"><span class="num" style="background:#2E8AA6">6</span><span class="title">Estructuras de mercado</span></div>
         <div class="unit"><span class="num" style="background:#0C4759">7</span><span class="title">Fallas de mercado</span></div>
         <div class="unit"><span class="num" style="background:#9E4830">8</span><span class="title">Economía y políticas públicas</span></div>
+      </div>
+      <h3 class="units-subhead">Macroeconomía</h3>
+      <div class="units">
+        <div class="unit"><span class="num" style="background:#15586E">9</span><span class="title">Medición de la macroeconomía</span></div>
+        <div class="unit"><span class="num" style="background:#0E6E82">10</span><span class="title">Ahorro, inversión y el sistema financiero</span></div>
+        <div class="unit"><span class="num" style="background:#D9784A">11</span><span class="title">Dinero, bancos e inflación</span></div>
+        <div class="unit"><span class="num" style="background:#0A4256">12</span><span class="title">Crecimiento económico de largo plazo</span></div>
+        <div class="unit"><span class="num" style="background:#B14E33">13</span><span class="title">Fluctuaciones de corto plazo: oferta y demanda agregada</span></div>
+        <div class="unit"><span class="num" style="background:#1F7A93">14</span><span class="title">Política monetaria y fiscal</span></div>
+        <div class="unit"><span class="num" style="background:#0D5266">15</span><span class="title">Economía abierta: tipo de cambio y balanza de pagos</span></div>
+        <div class="unit"><span class="num" style="background:#8A3C28">16</span><span class="title">Crisis económicas y el sistema financiero global</span></div>
       </div>
     </section>
 

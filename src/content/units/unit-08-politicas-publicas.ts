@@ -3,6 +3,7 @@ import type { Unit } from '@/content/types';
 export const unit08: Unit = {
   id: 'u8',
   index: 8,
+  subject: 'microeconomia',
   title: 'Economía y políticas públicas',
   subtitle: 'Excedentes, impuestos y el análisis costo-beneficio de una política',
   description:

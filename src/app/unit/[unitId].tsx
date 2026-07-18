@@ -9,10 +9,18 @@ import { ProgressBar } from '@/components/ui/ProgressBar';
 import { Screen } from '@/components/ui/Screen';
 import { Text } from '@/components/ui/Text';
 import { getUnit } from '@/content';
+import type { Unit } from '@/content/types';
 import { useProgress } from '@/lib/progress';
 import { useTheme } from '@/theme/ThemeProvider';
 
-const sourceLabel = { mankiw: 'Mankiw', frank: 'Frank', ambos: 'Mankiw + Frank' } as const;
+const sourceLabel: Record<Unit['source'], string> = {
+  mankiw: 'Mankiw',
+  frank: 'Frank',
+  ambos: 'Mankiw + Frank',
+  'mankiw-macro': 'Mankiw',
+  'larrain-sachs': 'Larraín & Sachs',
+  'ambos-macro': 'Mankiw + Larraín-Sachs',
+};
 
 export default function UnitScreen() {
   const { unitId } = useLocalSearchParams<{ unitId: string }>();

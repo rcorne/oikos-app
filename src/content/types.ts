@@ -12,17 +12,28 @@ export type IoniconName =
   | 'construct-outline'
   | 'business-outline'
   | 'leaf-outline'
-  | 'flag-outline';
+  | 'flag-outline'
+  | 'stats-chart-outline'
+  | 'wallet-outline'
+  | 'cash-outline'
+  | 'rocket-outline'
+  | 'pulse-outline'
+  | 'settings-outline'
+  | 'globe-outline'
+  | 'warning-outline';
+
+export type Subject = 'microeconomia' | 'macroeconomia';
 
 export type Unit = {
   id: string;
   index: number;
+  subject: Subject;
   title: string;
   subtitle: string;
   description: string;
   icon: IoniconName;
   color: string;
-  source: 'mankiw' | 'frank' | 'ambos';
+  source: 'mankiw' | 'frank' | 'ambos' | 'mankiw-macro' | 'larrain-sachs' | 'ambos-macro';
   lessons: Lesson[];
 };
 

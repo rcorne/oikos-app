@@ -3,6 +3,7 @@ import type { Unit } from '@/content/types';
 export const unit07: Unit = {
   id: 'u7',
   index: 7,
+  subject: 'microeconomia',
   title: 'Fallas de mercado',
   subtitle: 'Cuándo el mercado no llega solo al mejor resultado',
   description:

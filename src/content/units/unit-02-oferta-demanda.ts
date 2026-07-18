@@ -3,6 +3,7 @@ import type { Unit } from '@/content/types';
 export const unit02: Unit = {
   id: 'u2',
   index: 2,
+  subject: 'microeconomia',
   title: 'Oferta y demanda',
   subtitle: 'El motor que fija precios y cantidades en un mercado',
   description:

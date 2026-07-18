@@ -3,6 +3,7 @@ import type { Unit } from '@/content/types';
 export const unit06: Unit = {
   id: 'u6',
   index: 6,
+  subject: 'microeconomia',
   title: 'Estructuras de mercado',
   subtitle: 'De la competencia perfecta al monopolio, pasando por la estrategia',
   description:

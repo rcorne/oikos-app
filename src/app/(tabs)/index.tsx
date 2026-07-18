@@ -9,7 +9,8 @@ import { ProgressRing } from '@/components/ui/ProgressRing';
 import { Screen } from '@/components/ui/Screen';
 import { Text } from '@/components/ui/Text';
 import { StreakBadge, XPPill } from '@/components/ui/XPPill';
-import { units, totalLessonCount } from '@/content';
+import { units, unitsBySubject, totalLessonCount } from '@/content';
+import type { Subject } from '@/content/types';
 import { useProgress } from '@/lib/progress';
 import { useTheme } from '@/theme/ThemeProvider';
 
@@ -21,6 +22,11 @@ function findNextLesson(isLessonCompleted: (id: string) => boolean) {
   }
   return null;
 }
+
+const subjectSummary: { subject: Subject; title: string; icon: keyof typeof Ionicons.glyphMap; color: string }[] = [
+  { subject: 'microeconomia', title: 'Microeconomía', icon: 'people-outline', color: '#0F566E' },
+  { subject: 'macroeconomia', title: 'Macroeconomía', icon: 'earth-outline', color: '#B14E33' },
+];
 
 export default function HomeScreen() {
   const theme = useTheme();
@@ -100,23 +106,26 @@ export default function HomeScreen() {
       </View>
 
       <View style={{ gap: theme.spacing.md }}>
-        <Text variant="h3">Tus unidades</Text>
-        {units.map((unit) => {
-          const progress = getUnitProgress(unit.lessons.map((l) => l.id));
+        <Text variant="h3">Tu progreso por materia</Text>
+        {subjectSummary.map((s) => {
+          const subjectUnits = unitsBySubject(s.subject);
+          if (subjectUnits.length === 0) return null;
+          const lessonIds = subjectUnits.flatMap((u) => u.lessons.map((l) => l.id));
+          const progress = getUnitProgress(lessonIds);
           return (
-            <Card key={unit.id} onPress={() => router.push(`/unit/${unit.id}`)}>
+            <Card key={s.subject} onPress={() => router.push('/units')}>
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: theme.spacing.md }}>
                 <ProgressRing
                   progress={progress}
                   size={48}
                   strokeWidth={5}
-                  color={unit.color}
-                  centerContent={<Ionicons name={unit.icon} size={20} color={unit.color} />}
+                  color={s.color}
+                  centerContent={<Ionicons name={s.icon} size={20} color={s.color} />}
                 />
                 <View style={{ flex: 1, gap: 2 }}>
-                  <Text variant="bodyBold">{unit.title}</Text>
+                  <Text variant="bodyBold">{s.title}</Text>
                   <Text variant="caption" color="muted">
-                    {unit.lessons.length} lecciones · {Math.round(progress * 100)}%
+                    {subjectUnits.length} unidades · {Math.round(progress * 100)}%
                   </Text>
                 </View>
                 <Ionicons name="chevron-forward" size={18} color={theme.colors.textMuted} />

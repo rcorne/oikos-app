@@ -3,6 +3,7 @@ import type { Unit } from '@/content/types';
 export const unit01: Unit = {
   id: 'u1',
   index: 1,
+  subject: 'microeconomia',
   title: 'Principios y pensamiento económico',
   subtitle: 'Escasez, márgenes y ventaja comparativa',
   description:

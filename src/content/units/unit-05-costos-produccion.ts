@@ -3,6 +3,7 @@ import type { Unit } from '@/content/types';
 export const unit05: Unit = {
   id: 'u5',
   index: 5,
+  subject: 'microeconomia',
   title: 'Costos de producción',
   subtitle: 'Qué cuesta producir, y cómo cambia según cuánto produces',
   description:
