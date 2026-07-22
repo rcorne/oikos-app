@@ -162,6 +162,43 @@ export const unit12: Unit = {
           explanation:
             'Una buena respuesta define el estado estacionario, señala que ahí inversión y depreciación se igualan, y explica el mecanismo de convergencia hacia ese punto desde niveles más altos o más bajos de capital.',
         },
+        {
+          id: 'u12-l1-e5',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Capital por trabajador (k)',
+            yLabel: 'Producto por trabajador (y)',
+            xMax: 9,
+            yMax: 80,
+            lines: [{ points: [{ x: 0, y: 0 }, { x: 2, y: 40 }, { x: 5, y: 60 }, { x: 8, y: 70 }], color: 'brand', label: 'f(k)' }],
+            caption: 'Función de producción por trabajador en el modelo de Solow.',
+          },
+          question: 'La curva f(k) se va aplanando a medida que aumenta el capital por trabajador. ¿Qué propiedad económica refleja esa forma?',
+          options: [
+            { id: 'a', text: 'Rendimientos decrecientes del capital: cada unidad adicional de capital aporta cada vez menos producto extra' },
+            { id: 'b', text: 'Rendimientos crecientes: más capital rinde cada vez más' },
+            { id: 'c', text: 'Que el capital no afecta la producción' },
+            { id: 'd', text: 'Que la tecnología empeora con el tiempo' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Las pendientes de los tramos son 20, 6,7 y 2,3: cada unidad extra de capital agrega cada vez menos producto. Esos rendimientos decrecientes del capital explican por qué la acumulación de capital, por sí sola, no puede sostener el crecimiento para siempre.',
+        },
+        {
+          id: 'u12-l1-e6',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'En una economía de Solow, la inversión por trabajador es de $12.000 y la depreciación por trabajador es de $9.000. ¿En cuánto aumenta el capital por trabajador este período?',
+          unitLabel: '$',
+          answer: 3000,
+          hint: 'El cambio en el capital es la inversión menos la depreciación.',
+          explanation:
+            'Δk = inversión − depreciación = $12.000 − $9.000 = $3.000. Mientras la inversión supere a la depreciación, el capital por trabajador sigue creciendo; cuando se igualan, la economía llega a su estado estacionario.',
+        },
       ],
     },
     {
@@ -314,6 +351,59 @@ export const unit12: Unit = {
           explanation:
             'Se espera que la respuesta defina la regla de oro como el nivel que maximiza el consumo de largo plazo y explique los dos extremos —ahorro insuficiente y ahorro excesivo— que reducen el consumo disponible.',
         },
+        {
+          id: 'u12-l2-e5',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'Capital por trabajador (k)',
+            yLabel: 'Inversión / Depreciación',
+            xMax: 13,
+            yMax: 7,
+            lines: [
+              { points: [{ x: 0, y: 0 }, { x: 3, y: 3 }, { x: 8, y: 4 }, { x: 12, y: 4.4 }], color: 'brand', label: 'sf(k)' },
+              { points: [{ x: 0, y: 0 }, { x: 12, y: 6 }], color: 'accent', label: 'δk' },
+            ],
+            markers: [{ x: 8, y: 4, label: 'k*', guides: true }],
+            caption: 'Inversión sf(k) y depreciación δk: el estado estacionario está en su cruce.',
+          },
+          question: 'Observa el gráfico de Solow. ¿Cuál es el capital por trabajador de estado estacionario (k*)?',
+          unitLabel: 'unidades',
+          answer: 8,
+          hint: 'El estado estacionario es donde la curva de inversión cruza a la recta de depreciación.',
+          explanation:
+            'En k* la inversión iguala exactamente a la depreciación (ambas valen 4), así que el capital por trabajador deja de cambiar. El gráfico marca ese cruce en k* = 8. Antes de ese punto la inversión supera a la depreciación y k crece; después, la depreciación gana y k caería.',
+        },
+        {
+          id: 'u12-l2-e6',
+          type: 'case_study',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Capital por trabajador (k)',
+            yLabel: 'Inversión / Depreciación',
+            xMax: 13,
+            yMax: 7,
+            lines: [
+              { points: [{ x: 0, y: 0 }, { x: 2, y: 2.4 }, { x: 6, y: 3 }, { x: 12, y: 3.6 }], color: 'muted', dashed: true, label: 's₁f(k)' },
+              { points: [{ x: 0, y: 0 }, { x: 2, y: 3 }, { x: 10, y: 5 }, { x: 12, y: 5.2 }], color: 'brand', label: 's₂f(k)' },
+              { points: [{ x: 0, y: 0 }, { x: 12, y: 6 }], color: 'accent', label: 'δk' },
+            ],
+            caption: 'Un aumento de la tasa de ahorro desplaza la curva de inversión de s₁f(k) a s₂f(k).',
+          },
+          scenario: 'Un país logra aumentar en forma permanente su tasa de ahorro, y su curva de inversión sube de s₁f(k) a s₂f(k).',
+          question: 'Según el gráfico, ¿qué ocurre con el capital por trabajador de estado estacionario?',
+          options: [
+            { id: 'a', text: 'Aumenta: la nueva curva de inversión cruza a la depreciación en un k* mayor (de 6 a 10)' },
+            { id: 'b', text: 'Disminuye, porque ahorrar más deja menos para invertir' },
+            { id: 'c', text: 'No cambia: el estado estacionario no depende del ahorro' },
+            { id: 'd', text: 'Se vuelve cero' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Con más ahorro, a cada nivel de capital se invierte más, así que la curva de inversión se desplaza hacia arriba. El cruce con la recta de depreciación δk ocurre ahora en un capital mayor: k* sube de 6 a 10. El país transita hacia un nuevo estado estacionario con más capital y más producto por trabajador (aunque, a la larga, la tasa de crecimiento vuelve a depender de la tecnología).',
+        },
       ],
     },
     {
@@ -462,6 +552,35 @@ export const unit12: Unit = {
             'La acumulación de capital choca con los rendimientos decrecientes: cada unidad adicional de capital por trabajador aporta cada vez menos producción extra, mientras que la depreciación a reponer crece junto con el capital. Por eso, sin cambios tecnológicos, la economía converge a un estado estacionario en el que la producción por trabajador deja de crecer. El progreso tecnológico es distinto porque no depende de acumular más capital: permite producir más con la misma cantidad de capital y trabajo, desplazando hacia arriba toda la función de producción. Por eso es la única fuente capaz de sostener el crecimiento en el muy largo plazo.',
           explanation:
             'Una buena respuesta menciona los rendimientos decrecientes y la convergencia al estado estacionario como límite de la acumulación de capital, y explica que el progreso tecnológico desplaza la función de producción, evitando ese límite.',
+        },
+        {
+          id: 'u12-l3-e5',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question: 'En el modelo de Solow, ¿por qué el progreso tecnológico —y no la acumulación de capital— es el motor último del crecimiento de largo plazo?',
+          options: [
+            { id: 'a', text: 'Porque el capital sufre rendimientos decrecientes y su acumulación se agota en el estado estacionario, mientras la tecnología desplaza la función de producción y permite crecer indefinidamente' },
+            { id: 'b', text: 'Porque el capital se deprecia y la tecnología no cuesta nada' },
+            { id: 'c', text: 'Porque la tecnología reduce la tasa de ahorro necesaria a cero' },
+            { id: 'd', text: 'Porque sin tecnología no existe depreciación' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Acumular capital eleva el nivel de producto, pero por los rendimientos decrecientes el efecto se agota al llegar al estado estacionario. El progreso tecnológico, en cambio, desplaza hacia arriba la función de producción completa: con el mismo capital se produce más, y ese desplazamiento puede repetirse período tras período, sosteniendo el crecimiento del producto por trabajador en el largo plazo.',
+        },
+        {
+          id: 'u12-l3-e6',
+          type: 'numeric',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'El PIB por persona de un país crece al 2% anual gracias al progreso tecnológico. Usando la regla del 70, ¿en cuántos años aproximadamente se duplicará su PIB por persona?',
+          unitLabel: 'años',
+          answer: 35,
+          hint: 'Regla del 70: años para duplicar ≈ 70 ÷ tasa de crecimiento anual.',
+          explanation:
+            'La regla del 70 aproxima el tiempo de duplicación: 70 ÷ 2 = 35 años. Pequeñas diferencias sostenidas en la tasa de crecimiento generan enormes diferencias de nivel de vida entre generaciones: a 1% tomaría 70 años; a 4%, solo 17,5.',
         },
       ],
     },

@@ -183,6 +183,59 @@ export const unit13: Unit = {
           explanation:
             'Una buena respuesta explica la relación negativa entre nivel de precios y cantidad demandada, identifica al menos uno de los tres mecanismos de transmisión, y distingue el equilibrio de corto plazo (donde el producto puede desviarse del potencial) del de largo plazo (donde vuelve a él).',
         },
+        {
+          id: 'u13-l1-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'PIB real (Y)',
+            yLabel: 'Nivel de precios (P)',
+            xMax: 145,
+            yMax: 145,
+            lines: [
+              { points: [{ x: 30, y: 120 }, { x: 130, y: 20 }], color: 'brand', label: 'DA' },
+              { points: [{ x: 50, y: 20 }, { x: 130, y: 100 }], color: 'accent', label: 'OACP' },
+            ],
+            markers: [{ x: 90, y: 60, label: 'E', guides: true }],
+            caption: 'Demanda agregada (DA) y oferta agregada de corto plazo (OACP).',
+          },
+          question: 'Observa el modelo OA-DA. ¿Cuál es el PIB real de equilibrio de corto plazo?',
+          unitLabel: 'unidades',
+          answer: 90,
+          hint: 'Lee la coordenada horizontal del punto E, donde se cruzan DA y OACP.',
+          explanation:
+            'El equilibrio macroeconómico de corto plazo está donde la demanda agregada se cruza con la oferta agregada de corto plazo: el punto E, con PIB real Y = 90 y nivel de precios P = 60.',
+        },
+        {
+          id: 'u13-l1-e6',
+          type: 'multiple_choice',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'PIB real (Y)',
+            yLabel: 'Nivel de precios (P)',
+            xMax: 145,
+            yMax: 145,
+            lines: [
+              { points: [{ x: 70, y: 10 }, { x: 70, y: 130 }], color: 'muted', label: 'OALP' },
+              { points: [{ x: 30, y: 120 }, { x: 130, y: 20 }], color: 'brand', label: 'DA' },
+              { points: [{ x: 50, y: 20 }, { x: 130, y: 100 }], color: 'accent', label: 'OACP' },
+            ],
+            markers: [{ x: 90, y: 60, label: 'E' }],
+            caption: 'El PIB potencial (OALP, vertical) está en Y = 70; el equilibrio de corto plazo E, en Y = 90.',
+          },
+          question: 'La línea vertical OALP marca el PIB potencial (70) y el equilibrio de corto plazo E está en Y = 90. ¿Cómo se describe esta situación?',
+          options: [
+            { id: 'a', text: 'Una brecha positiva del producto: la economía opera por sobre su potencial (sobrecalentada), lo que presiona los precios al alza' },
+            { id: 'b', text: 'Una recesión: la economía produce menos que su potencial' },
+            { id: 'c', text: 'Pleno empleo exacto, sin ninguna brecha' },
+            { id: 'd', text: 'Una deflación garantizada' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Cuando el equilibrio de corto plazo (Y = 90) queda a la DERECHA del PIB potencial (Y = 70), la economía produce por encima de su capacidad sostenible: hay una brecha positiva. Trabajadores y máquinas operan más allá de su nivel normal, y esa presión tiende a acelerar salarios y precios hasta que la economía regresa a su potencial.',
+        },
       ],
     },
     {
@@ -332,6 +385,53 @@ export const unit13: Unit = {
           explanation:
             'Se espera que la respuesta explique la cadena de gasto que se convierte en ingreso, mencione el rol de la propensión marginal a consumir en cuánto se gasta en cada ronda, y concluya que el efecto total sobre el producto supera al gasto inicial.',
         },
+        {
+          id: 'u13-l2-e5',
+          type: 'case_study',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'PIB real (Y)',
+            yLabel: 'Nivel de precios (P)',
+            xMax: 145,
+            yMax: 145,
+            lines: [
+              { points: [{ x: 30, y: 120 }, { x: 130, y: 20 }], color: 'muted', dashed: true, label: 'DA₁' },
+              { points: [{ x: 10, y: 100 }, { x: 110, y: 0 }], color: 'brand', label: 'DA₂' },
+              { points: [{ x: 50, y: 20 }, { x: 130, y: 100 }], color: 'accent', label: 'OACP' },
+            ],
+            markers: [
+              { x: 90, y: 60, label: 'E₁' },
+              { x: 80, y: 50, label: 'E₂' },
+            ],
+            caption: 'Una caída de la confianza desplaza la demanda agregada de DA₁ a DA₂.',
+          },
+          scenario:
+            'Una crisis de confianza hace que hogares y empresas recorten su gasto: la demanda agregada se desplaza de DA₁ a DA₂.',
+          question: 'Comparando E₁ y E₂ en el gráfico, ¿qué ocurre con la economía en el corto plazo?',
+          options: [
+            { id: 'a', text: 'El PIB cae (de 90 a 80) y el nivel de precios baja (de 60 a 50): una recesión por contracción de demanda' },
+            { id: 'b', text: 'El PIB sube y los precios suben' },
+            { id: 'c', text: 'El PIB cae pero los precios suben (estanflación)' },
+            { id: 'd', text: 'Nada cambia, porque la oferta agregada no se movió' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Verificación de E₂: DA₂ (P = 100 − Y... en el gráfico pasa por (80,50) ya que de (10,100) a (110,0) la pendiente es −1) y OACP pasa por (80,50) también (de (50,20) con pendiente 1: 20 + 30 = 50). El nuevo equilibrio tiene menos producto y precios más bajos: la contracción de demanda genera una recesión con desinflación, como en el gráfico.',
+        },
+        {
+          id: 'u13-l2-e6',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'La propensión marginal a consumir de una economía es 0,75. Si el gobierno aumenta su gasto en $40.000 millones, ¿cuál es el aumento total del PIB según el efecto multiplicador?',
+          unitLabel: '$ millones',
+          answer: 160000,
+          hint: 'Multiplicador = 1 ÷ (1 − PMC). Multiplícalo por el gasto inicial.',
+          explanation:
+            'Multiplicador = 1 ÷ (1 − 0,75) = 1 ÷ 0,25 = 4. El efecto total sobre el PIB es 4 × $40.000 = $160.000 millones: el gasto inicial se convierte en ingreso de alguien, que consume el 75%, y así sucesivamente en rondas cada vez menores.',
+        },
       ],
     },
     {
@@ -475,6 +575,52 @@ export const unit13: Unit = {
             'En el corto plazo existe una relación negativa entre inflación y desempleo: cuando la demanda agregada empuja el desempleo hacia abajo, la inflación tiende a subir. Pero esa disyuntiva no se mantiene en el largo plazo porque trabajadores y empresas ajustan sus expectativas de inflación con el tiempo, incorporándolas en salarios y precios futuros; cuando eso ocurre, se necesita cada vez más inflación para sostener el mismo nivel de desempleo, y a la larga el desempleo converge a su tasa natural, determinada por factores estructurales y no por la inflación.',
           explanation:
             'Una buena respuesta describe la relación negativa de corto plazo, explica el rol del ajuste de expectativas de inflación, y concluye que en el largo plazo el desempleo converge a su tasa natural, independiente de la inflación.',
+        },
+        {
+          id: 'u13-l3-e5',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Desempleo (%)',
+            yLabel: 'Inflación (%)',
+            xMax: 11,
+            yMax: 11,
+            lines: [{ points: [{ x: 2, y: 9 }, { x: 10, y: 1 }], color: 'brand', label: 'CP' }],
+            markers: [
+              { x: 4, y: 7, label: 'A' },
+              { x: 8, y: 3, label: 'B' },
+            ],
+            caption: 'Curva de Phillips de corto plazo (CP).',
+          },
+          question: 'La economía está en el punto A (4% desempleo, 7% inflación). Si se mueve al punto B sobre la misma curva de Phillips, ¿qué disyuntiva ilustra ese movimiento?',
+          options: [
+            { id: 'a', text: 'Reducir la inflación (de 7% a 3%) tiene como costo de corto plazo un mayor desempleo (de 4% a 8%)' },
+            { id: 'b', text: 'Es posible bajar la inflación y el desempleo al mismo tiempo sin ningún costo' },
+            { id: 'c', text: 'El desempleo baja cuando baja la inflación' },
+            { id: 'd', text: 'La inflación no tiene relación con el desempleo' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'La curva de Phillips de corto plazo tiene pendiente negativa: moverse hacia menos inflación implica, transitoriamente, más desempleo. Pasar de A a B baja la inflación 4 puntos al costo de subir el desempleo 4 puntos. En el largo plazo, con expectativas ajustadas, esta disyuntiva desaparece y el desempleo vuelve a su tasa natural.',
+        },
+        {
+          id: 'u13-l3-e6',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'Un alza mundial abrupta del petróleo encarece los costos de producción de casi toda la economía: la oferta agregada de corto plazo se desplaza hacia la izquierda, subiendo los precios y reduciendo el producto a la vez.',
+          question: '¿Por qué este "shock de oferta" es especialmente incómodo para el banco central?',
+          options: [
+            { id: 'a', text: 'Porque genera inflación y recesión al mismo tiempo: combatir la inflación con política contractiva agrava la caída del producto, y estimular el producto agrava la inflación' },
+            { id: 'b', text: 'Porque los shocks de oferta solo afectan a los precios y no al empleo' },
+            { id: 'c', text: 'Porque el banco central no puede modificar la tasa de interés' },
+            { id: 'd', text: 'Porque siempre reduce la inflación automáticamente' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Un shock negativo de oferta produce estanflación: precios más altos con producto más bajo. A diferencia de un shock de demanda —donde estabilizar precios y producto van de la mano—, aquí las dos metas del banco central entran en conflicto directo: cualquier respuesta mejora un problema empeorando el otro.',
         },
       ],
     },

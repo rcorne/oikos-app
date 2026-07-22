@@ -167,6 +167,75 @@ export const unit11: Unit = {
           explanation:
             "Se espera que la respuesta explique la reserva fraccionaria (el banco presta parte del depósito y guarda el resto), la cadena de redepósitos y nuevos préstamos, y la idea de que esto genera dinero adicional en el sistema.",
         },
+        {
+          id: "u11-l1-e5",
+          type: "numeric",
+          difficulty: "media",
+          xp: 15,
+          question:
+            "Un banco central exige un coeficiente de reserva del 20%. Si se hace un depósito inicial de $500.000, ¿cuánto dinero puede llegar a crear el sistema bancario en total, considerando todas las rondas de préstamos?",
+          unitLabel: "$",
+          answer: 2500000,
+          hint: "El multiplicador monetario es 1 dividido por el coeficiente de reserva. Multiplícalo por el depósito inicial.",
+          explanation:
+            "El multiplicador monetario es 1 ÷ 0,20 = 5. Aplicado al depósito inicial: 5 × $500.000 = $2.500.000. Ese es el dinero total que el sistema puede llegar a crear a partir de ese depósito, sumando todas las rondas de préstamos y redepósitos.",
+        },
+        {
+          id: "u11-l1-e6",
+          type: "multiple_choice",
+          difficulty: "facil",
+          xp: 10,
+          question: "Cuando usamos dinero para expresar el precio de todos los bienes y comparar cuánto vale uno respecto de otro, ¿qué función del dinero estamos usando?",
+          options: [
+            { id: "a", text: "Unidad de cuenta: el dinero sirve como medida común para expresar precios y comparar valores" },
+            { id: "b", text: "Medio de cambio, porque lo entregamos al comprar" },
+            { id: "c", text: "Depósito de valor, porque conserva poder de compra en el tiempo" },
+            { id: "d", text: "Reserva fraccionaria" },
+          ],
+          correctOptionId: "a",
+          explanation:
+            "El dinero cumple tres funciones: medio de cambio (lo entregamos en las transacciones), depósito de valor (guarda poder de compra para el futuro) y unidad de cuenta (la medida común en que expresamos los precios). Usar el dinero para poner precio a las cosas y compararlas entre sí corresponde a su función de unidad de cuenta.",
+        },
+        {
+          id: 'u11-l1-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Cantidad de dinero ($ miles de millones)',
+            yLabel: 'Tasa de interés (%)',
+            xMax: 100,
+            yMax: 12,
+            lines: [
+              { points: [{ x: 50, y: 2 }, { x: 50, y: 11 }], color: 'accent', label: 'OM' },
+              { points: [{ x: 10, y: 10 }, { x: 90, y: 2 }], color: 'brand', label: 'DM' },
+            ],
+            markers: [{ x: 50, y: 6, label: 'E', guides: true }],
+            caption: 'Mercado de dinero: oferta monetaria (OM, fijada por el banco central) y demanda de dinero (DM).',
+          },
+          question: 'La oferta monetaria es la recta vertical del gráfico. ¿Cuál es la tasa de interés de equilibrio del mercado de dinero, en porcentaje?',
+          unitLabel: '%',
+          answer: 6,
+          hint: 'La tasa de equilibrio está donde la demanda de dinero cruza la oferta monetaria vertical.',
+          explanation:
+            'La oferta monetaria es vertical porque la fija el banco central, sin depender de la tasa. La demanda de dinero la cruza en el punto E: tasa de 6%. A tasas mayores sobraría dinero (la gente querría menos efectivo del que hay); a tasas menores faltaría.',
+        },
+        {
+          id: 'u11-l1-e6',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: 'Cuando dices "esta bicicleta cuesta $250.000", ¿qué función del dinero estás usando?',
+          options: [
+            { id: 'a', text: 'Unidad de cuenta: el dinero sirve como vara común para expresar precios' },
+            { id: 'b', text: 'Medio de cambio, porque la bicicleta se paga en efectivo' },
+            { id: 'c', text: 'Depósito de valor, porque la bicicleta conserva su precio' },
+            { id: 'd', text: 'Dinero mercancía, porque la bicicleta vale por sí misma' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Expresar el valor de un bien en pesos usa el dinero como unidad de cuenta: la medida común en que la economía cotiza precios, deudas y contratos. El medio de cambio aparece al PAGAR; el depósito de valor, al GUARDAR poder de compra en el tiempo.',
+        },
       ],
     },
     {
@@ -323,6 +392,97 @@ export const unit11: Unit = {
           explanation:
             "Se espera que la respuesta mencione la ecuación M × V = P × Y (o su idea equivalente), la estabilidad relativa de la velocidad, y la conclusión de que un crecimiento del dinero superior al de la producción real genera inflación de largo plazo.",
         },
+        {
+          id: "u11-l2-e5",
+          type: "numeric",
+          difficulty: "media",
+          xp: 15,
+          chart: {
+            xLabel: "Inflación esperada (%)",
+            yLabel: "Tasa nominal (%)",
+            xMax: 11,
+            yMax: 16,
+            lines: [{ points: [{ x: 0, y: 3 }, { x: 10, y: 13 }], color: "brand", label: "i = r + π" }],
+            markers: [{ x: 6, y: 9, label: "A", guides: true }],
+            caption: "Efecto Fisher: la tasa de interés nominal según la inflación esperada, con tasa real r = 3%.",
+          },
+          question:
+            "El gráfico muestra el efecto Fisher para una tasa de interés real del 3%. Según la recta, ¿qué tasa de interés nominal corresponde a una inflación esperada del 6%?",
+          unitLabel: "%",
+          answer: 9,
+          hint: "El efecto Fisher dice que la tasa nominal ≈ tasa real + inflación esperada. Léelo en el punto A.",
+          explanation:
+            "El efecto Fisher establece que la tasa de interés nominal es aproximadamente igual a la tasa real más la inflación esperada: i = r + π. Con r = 3% y π = 6%, la tasa nominal es 3 + 6 = 9%, tal como marca el punto A del gráfico.",
+        },
+        {
+          id: "u11-l2-e6",
+          type: "multiple_choice",
+          difficulty: "media",
+          xp: 15,
+          chart: {
+            xLabel: "Crecimiento del dinero (%)",
+            yLabel: "Inflación de largo plazo (%)",
+            xMax: 12,
+            yMax: 12,
+            lines: [{ points: [{ x: 0, y: 0 }, { x: 10, y: 10 }], color: "accent", label: "π = ΔM" }],
+            markers: [{ x: 8, y: 8, label: "A" }],
+            caption: "Relación de largo plazo entre el crecimiento del dinero y la inflación (producción real constante).",
+          },
+          question:
+            "El gráfico muestra la relación de largo plazo entre el crecimiento de la cantidad de dinero y la inflación, cuando la producción real y la velocidad se mantienen constantes. ¿Qué representa que la recta tenga pendiente 1 (45 grados)?",
+          options: [
+            { id: "a", text: "Que, en el largo plazo, cada punto adicional de crecimiento del dinero se traduce en un punto adicional de inflación" },
+            { id: "b", text: "Que la inflación siempre es menor que el crecimiento del dinero" },
+            { id: "c", text: "Que el dinero no tiene relación con la inflación" },
+            { id: "d", text: "Que la producción real crece al mismo ritmo que el dinero" },
+          ],
+          correctOptionId: "a",
+          explanation:
+            "Según la teoría cuantitativa, si la velocidad y la producción real son constantes, la ecuación M × V = P × Y implica que el nivel de precios crece al mismo ritmo que la cantidad de dinero. La recta de 45° refleja justo eso: cada punto extra de crecimiento monetario se traslada uno a uno a la inflación de largo plazo.",
+        },
+        {
+          id: 'u11-l2-e5',
+          type: 'multiple_choice',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'Cantidad de dinero ($ miles de millones)',
+            yLabel: 'Tasa de interés (%)',
+            xMax: 100,
+            yMax: 12,
+            lines: [
+              { points: [{ x: 50, y: 2 }, { x: 50, y: 11 }], color: 'muted', dashed: true, label: 'OM₁' },
+              { points: [{ x: 70, y: 2 }, { x: 70, y: 11 }], color: 'accent', label: 'OM₂' },
+              { points: [{ x: 10, y: 10 }, { x: 90, y: 2 }], color: 'brand', label: 'DM' },
+            ],
+            markers: [
+              { x: 50, y: 6, label: 'E₁' },
+              { x: 70, y: 4, label: 'E₂' },
+            ],
+            caption: 'El banco central expande la oferta monetaria de OM₁ a OM₂.',
+          },
+          question: 'El banco central aumenta la cantidad de dinero, desplazando la oferta de OM₁ a OM₂. Según el gráfico, ¿qué ocurre con la tasa de interés en el corto plazo?',
+          options: [
+            { id: 'a', text: 'Cae de 6% a 4%: con más dinero disponible, el precio de mantenerlo (la tasa) baja' },
+            { id: 'b', text: 'Sube de 4% a 6%, porque más dinero encarece el crédito' },
+            { id: 'c', text: 'No cambia, porque la tasa la fija el mercado de bienes' },
+            { id: 'd', text: 'Cae a cero de inmediato' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Al correr la oferta monetaria vertical hacia la derecha, el nuevo cruce con la demanda de dinero ocurre a una tasa menor: de 6% (E₁) a 4% (E₂). Esa baja del interés es el primer eslabón del mecanismo por el que la política monetaria expansiva estimula el gasto.',
+        },
+        {
+          id: 'u11-l2-e6',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Según la ecuación cuantitativa (M × V = P × Y), si la cantidad de dinero es M = $200 mil millones y la velocidad de circulación es V = 5, ¿cuál es el valor del PIB nominal (P × Y), en miles de millones?',
+          unitLabel: 'miles de millones',
+          answer: 1000,
+          explanation: 'M × V = P × Y → 200 × 5 = 1.000 miles de millones de PIB nominal.',
+        },
       ],
     },
     {
@@ -469,6 +629,92 @@ export const unit11: Unit = {
             "El impuesto inflación es la pérdida de poder de compra que sufre quien mantiene dinero en efectivo cuando hay inflación: con el mismo número de pesos, se puede comprar cada vez menos, aunque nadie cobre ese 'impuesto' de forma explícita. La hiperinflación, en cambio, es un caso extremo de este mismo problema: casi siempre ocurre porque un gobierno financia un déficit fiscal que no puede cubrir con impuestos ni deuda, y le pide al banco central que imprima el dinero que necesita. Esa expansión descontrolada de la oferta de dinero es la causa de fondo de la hiperinflación, por eso se dice que es, en esencia, un fenómeno monetario.",
           explanation:
             "Se espera que la respuesta defina el impuesto inflación como la pérdida de valor del dinero mantenido por causa de la inflación, y explique que la hiperinflación se origina, fundamentalmente, en una expansión descontrolada de la oferta de dinero, muchas veces para financiar un déficit fiscal.",
+        },
+        {
+          id: "u11-l3-e5",
+          type: "multiple_choice",
+          difficulty: "media",
+          xp: 15,
+          chart: {
+            xLabel: "Mes",
+            yLabel: "Nivel de precios (índice)",
+            xMax: 6.5,
+            yMax: 130,
+            lines: [
+              {
+                points: [
+                  { x: 1, y: 100 },
+                  { x: 2, y: 104 },
+                  { x: 3, y: 109 },
+                  { x: 4, y: 116 },
+                  { x: 5, y: 135 },
+                ],
+                color: "danger",
+                label: "Precios",
+              },
+            ],
+            caption: "Nivel de precios de una economía a lo largo de cinco meses.",
+          },
+          question: "El gráfico muestra el nivel de precios mes a mes. ¿En qué tramo la inflación mensual se aceleró más bruscamente?",
+          options: [
+            { id: "a", text: "Entre el mes 4 y el mes 5, porque la curva sube mucho más empinada que en los tramos anteriores" },
+            { id: "b", text: "Entre el mes 1 y el mes 2, porque es el comienzo" },
+            { id: "c", text: "La inflación fue igual en todos los tramos" },
+            { id: "d", text: "Entre el mes 2 y el mes 3, porque ahí empezó a bajar" },
+          ],
+          correctOptionId: "a",
+          explanation:
+            "La inflación de cada mes es la pendiente del tramo correspondiente: los precios suben +4, +5, +7 y luego +19 puntos. El salto más brusco ocurre entre el mes 4 (116) y el mes 5 (135), donde la curva se empina claramente: ahí la inflación mensual se disparó, una señal típica de una economía que entra en hiperinflación.",
+        },
+        {
+          id: "u11-l3-e6",
+          type: "numeric",
+          difficulty: "media",
+          xp: 15,
+          question:
+            "Una persona mantiene $2.000.000 en efectivo durante un año en el que la inflación es del 8%. ¿Cuánto poder de compra pierde ese dinero por el impuesto inflación, en pesos?",
+          unitLabel: "$",
+          answer: 160000,
+          hint: "El impuesto inflación sobre el efectivo es aproximadamente el monto mantenido multiplicado por la tasa de inflación.",
+          explanation:
+            "El impuesto inflación es la pérdida de poder de compra del dinero mantenido: $2.000.000 × 0,08 = $160.000. Ese es el valor real que se erosiona en el año por tener el dinero en efectivo mientras los precios suben un 8%.",
+        },
+        {
+          id: 'u11-l3-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Inflación esperada (%)',
+            yLabel: 'Tasa nominal (%)',
+            xMax: 11,
+            yMax: 15,
+            lines: [{ points: [{ x: 0, y: 3 }, { x: 10, y: 13 }], color: 'brand', label: 'i = r + π' }],
+            markers: [{ x: 7, y: 10, guides: true }],
+            caption: 'Efecto Fisher con una tasa real constante de 3%.',
+          },
+          question: 'La recta muestra el efecto Fisher con tasa real fija en 3%. Leyendo el gráfico, ¿qué tasa nominal corresponde a una inflación esperada de 7%?',
+          unitLabel: '%',
+          answer: 10,
+          hint: 'Tasa nominal = tasa real + inflación esperada.',
+          explanation:
+            'Por el efecto Fisher, i = r + π. Con r = 3% y π = 7%, la tasa nominal es 3 + 7 = 10%, exactamente lo que marcan las guías del gráfico: las tasas nominales suben uno a uno con la inflación esperada.',
+        },
+        {
+          id: 'u11-l3-e6',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question: '¿Por qué se dice que la inflación actúa como un "impuesto" sobre quienes mantienen dinero en efectivo?',
+          options: [
+            { id: 'a', text: 'Porque erosiona el poder de compra de los saldos en efectivo, transfiriendo recursos hacia quien emite el dinero' },
+            { id: 'b', text: 'Porque el servicio de impuestos cobra un porcentaje por cada billete' },
+            { id: 'c', text: 'Porque los bancos descuentan la inflación de las cuentas corrientes' },
+            { id: 'd', text: 'Porque la inflación solo afecta a quienes tienen deudas' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Si los precios suben 10%, cada billete guardado compra un 10% menos: quien mantiene efectivo pierde poder adquisitivo sin que nadie le cobre formalmente. Cuando un gobierno financia su gasto emitiendo dinero, ese deterioro del efectivo opera como un impuesto implícito — el impuesto inflación.',
         },
       ],
     },

@@ -180,6 +180,42 @@ export const unit10: Unit = {
           explanation:
             'El ahorro nacional es la suma del ahorro privado y el público. Un déficit fiscal significa que el gobierno gasta más de lo que recauda, así que su ahorro público (T − G) se vuelve negativo. Manteniendo el ahorro privado constante, eso reduce el ahorro nacional total y, por lo tanto, los fondos disponibles para inversión.',
         },
+        {
+          id: 'u10-l1-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Fondos ($ miles de millones)',
+            yLabel: 'Tasa de interés (%)',
+            xMax: 90,
+            yMax: 12,
+            lines: [
+              { points: [{ x: 0, y: 2 }, { x: 80, y: 10 }], color: 'accent', label: 'Ahorro' },
+              { points: [{ x: 0, y: 10 }, { x: 80, y: 2 }], color: 'brand', label: 'Inversión' },
+            ],
+            markers: [{ x: 40, y: 6, label: 'E', guides: true }],
+            caption: 'Mercado de fondos prestables: oferta de ahorro y demanda de inversión.',
+          },
+          question: 'Observa el mercado de fondos prestables. ¿Cuál es la tasa de interés de equilibrio, en porcentaje?',
+          unitLabel: '%',
+          answer: 6,
+          hint: 'La tasa de equilibrio está donde la oferta de ahorro cruza a la demanda de inversión.',
+          explanation:
+            'La oferta de ahorro (creciente en la tasa) y la demanda de inversión (decreciente) se cruzan en el punto E: tasa de 6% con $40 mil millones de fondos intermediados, como muestran las guías punteadas.',
+        },
+        {
+          id: 'u10-l1-e6',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'En una economía cerrada, el ingreso es Y = $1.000, el consumo C = $650 y los impuestos netos T = $200 (el gobierno gasta exactamente lo que recauda). ¿Cuánto es el ahorro privado?',
+          unitLabel: '$',
+          answer: 150,
+          hint: 'Ahorro privado = Y − T − C.',
+          explanation: 'Ahorro privado = Y − T − C = 1.000 − 200 − 650 = 150.',
+        },
       ],
     },
     {
@@ -361,6 +397,54 @@ export const unit10: Unit = {
           explanation:
             'Al reducirse el ahorro nacional por el mayor déficit, la oferta de fondos se corre a la izquierda (O₁ → O₂). El nuevo cruce con la demanda de inversión ocurre a una tasa de interés real más alta y con una cantidad de fondos menor. Esa alza de la tasa encarece el financiamiento y desplaza inversión privada: el crowding out.',
         },
+        {
+          id: 'u10-l2-e5',
+          type: 'multiple_choice',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'Fondos ($ miles de millones)',
+            yLabel: 'Tasa de interés (%)',
+            xMax: 90,
+            yMax: 13,
+            lines: [
+              { points: [{ x: 0, y: 2 }, { x: 80, y: 10 }], color: 'muted', dashed: true, label: 'A₁' },
+              { points: [{ x: 0, y: 4 }, { x: 80, y: 12 }], color: 'accent', label: 'A₂' },
+              { points: [{ x: 0, y: 10 }, { x: 80, y: 2 }], color: 'brand', label: 'I' },
+            ],
+            markers: [
+              { x: 40, y: 6, label: 'E₁' },
+              { x: 30, y: 7, label: 'E₂' },
+            ],
+            caption: 'Un déficit fiscal desplaza la oferta de fondos prestables de A₁ a A₂.',
+          },
+          question: 'El gobierno entra en déficit y absorbe parte del ahorro nacional, moviendo la oferta de fondos de A₁ a A₂. Según el gráfico, ¿qué ocurre?',
+          options: [
+            { id: 'a', text: 'La tasa de interés sube de 6% a 7% y la inversión privada cae: el efecto expulsión (crowding out)' },
+            { id: 'b', text: 'La tasa baja y la inversión privada aumenta' },
+            { id: 'c', text: 'Nada cambia, porque el déficit no afecta el mercado de fondos' },
+            { id: 'd', text: 'La tasa sube pero la inversión privada aumenta también' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El déficit reduce el ahorro nacional disponible para prestar: la oferta se desplaza a la izquierda (de A₁ a A₂). El nuevo equilibrio E₂ tiene una tasa más alta (7%) y menos fondos intermediados (30 en vez de 40): parte de la inversión privada queda "expulsada" por el financiamiento del déficit.',
+        },
+        {
+          id: 'u10-l2-e6',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: '¿Cuál de estas instituciones actúa como intermediario financiero, conectando a ahorrantes con inversionistas?',
+          options: [
+            { id: 'a', text: 'Un banco que capta depósitos y otorga créditos a empresas' },
+            { id: 'b', text: 'Un supermercado que vende alimentos' },
+            { id: 'c', text: 'Una fábrica que produce maquinaria' },
+            { id: 'd', text: 'Un servicio de impuestos que recauda tributos' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Los intermediarios financieros —bancos, fondos mutuos, compañías de seguros— canalizan los recursos de quienes ahorran hacia quienes necesitan financiar inversión, cobrando por reunir a ambas partes y administrar el riesgo.',
+        },
       ],
     },
     {
@@ -524,6 +608,52 @@ export const unit10: Unit = {
           hint: 'Compara el rendimiento del proyecto (7%) con la nueva tasa de financiamiento (5%).',
           explanation:
             'A una tasa de 9%, el proyecto (que rinde 7%) no convenía: costaba más financiarlo de lo que rendía. Al bajar la tasa a 5%, el proyecto rinde 7% − 5% = 2 puntos porcentuales por encima de su costo de financiamiento, así que ahora sí es rentable. Por eso tasas más bajas activan más proyectos de inversión.',
+        },
+        {
+          id: 'u10-l3-e5',
+          type: 'case_study',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Fondos ($ miles de millones)',
+            yLabel: 'Tasa de interés (%)',
+            xMax: 90,
+            yMax: 13,
+            lines: [
+              { points: [{ x: 0, y: 4 }, { x: 80, y: 12 }], color: 'muted', dashed: true, label: 'A₁' },
+              { points: [{ x: 0, y: 2 }, { x: 80, y: 10 }], color: 'accent', label: 'A₂' },
+              { points: [{ x: 0, y: 10 }, { x: 80, y: 2 }], color: 'brand', label: 'I' },
+            ],
+            markers: [
+              { x: 30, y: 7, label: 'E₁' },
+              { x: 40, y: 6, label: 'E₂' },
+            ],
+            caption: 'Un incentivo tributario al ahorro desplaza la oferta de fondos de A₁ a A₂.',
+          },
+          scenario:
+            'El gobierno aprueba un beneficio tributario que premia el ahorro de largo plazo de las familias, y la oferta de fondos prestables se desplaza de A₁ a A₂.',
+          question: 'Según el gráfico, ¿cuál es el efecto de esta política sobre el mercado de fondos prestables?',
+          options: [
+            { id: 'a', text: 'La tasa de interés baja de 7% a 6% y la inversión financiada aumenta de 30 a 40' },
+            { id: 'b', text: 'La tasa sube y la inversión cae' },
+            { id: 'c', text: 'La tasa baja pero la inversión también cae' },
+            { id: 'd', text: 'El mercado no cambia, porque el ahorro no depende de los impuestos' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Con más incentivo a ahorrar, a cada tasa hay más fondos ofrecidos: la curva se desplaza a la derecha. El nuevo equilibrio E₂ tiene una tasa menor (6%) y más fondos intermediados (40), lo que abarata y expande la inversión productiva.',
+        },
+        {
+          id: 'u10-l3-e6',
+          type: 'numeric',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'Un proyecto rinde $8 millones al año por cada $100 millones invertidos (8%). Si la tasa de interés de mercado sube de 6% a 9%, ¿cuántos puntos porcentuales por DEBAJO de la nueva tasa queda el retorno del proyecto?',
+          unitLabel: 'puntos',
+          answer: 1,
+          explanation:
+            'El proyecto rinde 8% y la nueva tasa es 9%: queda 9 − 8 = 1 punto porcentual por debajo. Con la tasa antigua (6%) convenía hacerlo; con la nueva, financiarlo cuesta más de lo que rinde y se descarta — así es como la tasa de interés selecciona qué inversiones se realizan.',
         },
       ],
     },
