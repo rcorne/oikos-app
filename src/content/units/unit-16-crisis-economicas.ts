@@ -193,6 +193,22 @@ export const unit16: Unit = {
           explanation:
             'Apalancamiento = activos ÷ capital propio = 500 ÷ 100 = 5 veces. Con ese nivel, una caída de solo 20% en el valor de los activos ($100 millones) borra por completo su capital: por eso el alto apalancamiento amplifica tanto las ganancias como las pérdidas.',
         },
+        {
+          id: 'u16-l1-e7',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: '¿Qué caracteriza a una burbuja especulativa de activos?',
+          options: [
+            { id: 'a', text: 'El precio sube muy por encima de lo que justifican los fundamentos, impulsado por la expectativa de revenderlo aún más caro' },
+            { id: 'b', text: 'El precio sube porque mejoró de verdad la rentabilidad del activo' },
+            { id: 'c', text: 'El precio se mantiene estable durante muchos años' },
+            { id: 'd', text: 'El precio cae de forma sostenida durante una recesión' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'En una burbuja, los compradores adquieren el activo no por los flujos que genera (arriendos, dividendos), sino apostando a que alguien pagará más adelante un precio todavía mayor. Esa dinámica autoalimentada desconecta el precio de sus fundamentos, y se sostiene solo mientras sigan entrando nuevos compradores.',
+        },
       ],
     },
     {

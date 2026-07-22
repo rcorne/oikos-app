@@ -186,83 +186,6 @@ export const unit09: Unit = {
             'El PIB real valora la producción del año corriente a precios del año base: 120 panes × $500 (precio base) = $60.000. Usar el precio nuevo ($600) daría el PIB nominal ($72.000), que mezcla más producción con precios más altos.',
         },
         {
-          id: 'u9-l1-e5',
-          type: 'multiple_choice',
-          difficulty: 'media',
-          xp: 15,
-          chart: {
-            xLabel: 'Año',
-            yLabel: 'PIB real (índice)',
-            xMax: 4.5,
-            yMax: 130,
-            lines: [{ points: [{ x: 1, y: 100 }, { x: 2, y: 110 }, { x: 3, y: 104 }, { x: 4, y: 120 }], color: 'brand', label: 'PIB' }],
-            caption: 'Evolución del PIB real de un país a lo largo de cuatro años.',
-          },
-          question: 'Observando la trayectoria del PIB real del gráfico, ¿entre qué años la economía vivió una recesión?',
-          options: [
-            { id: 'a', text: 'Entre el año 2 y el año 3, porque el PIB real cayó' },
-            { id: 'b', text: 'Entre el año 1 y el año 2, porque el PIB creció' },
-            { id: 'c', text: 'Entre el año 3 y el año 4, porque el PIB se recuperó' },
-            { id: 'd', text: 'En ningún tramo: el PIB siempre creció' },
-          ],
-          correctOptionId: 'a',
-          explanation:
-            'Una recesión es un período de caída de la actividad económica. En el gráfico, el único tramo descendente del PIB real es entre el año 2 (110) y el año 3 (104): ahí la producción total del país se contrajo.',
-        },
-        {
-          id: 'u9-l1-e6',
-          type: 'numeric',
-          difficulty: 'media',
-          xp: 15,
-          question:
-            'Con el método del gasto: consumo $500, inversión $200, gasto de gobierno $150, exportaciones $80 e importaciones $30 (todo en miles de millones). ¿Cuál es el PIB?',
-          unitLabel: 'miles de millones',
-          answer: 900,
-          explanation: 'PIB = C + I + G + (X − M) = 500 + 200 + 150 + (80 − 30) = 900.',
-        },
-      ],
-    },
-    {
-      id: 'u9-l2',
-      title: 'El IPC y la inflación',
-      summary: 'Cómo se construye el índice de precios al consumidor y cómo se calcula la tasa de inflación.',
-      estimatedMinutes: 8,
-      content: [
-        {
-          type: 'heading',
-          text: 'El índice de precios al consumidor',
-        },
-        {
-          type: 'paragraph',
-          text: 'El IPC mide el costo de una canasta fija de bienes y servicios que compra un consumidor representativo, comparado con el costo de esa misma canasta en un año base. A diferencia del PIB, que mide producción, el IPC mide el costo de vida: cuánto cuesta mantener el mismo nivel de consumo a lo largo del tiempo.',
-        },
-        {
-          type: 'formula',
-          label: 'Tasa de inflación entre dos períodos',
-          text: 'Inflación = ((IPC₂ − IPC₁) / IPC₁) × 100',
-        },
-        {
-          type: 'example',
-          title: 'Ejemplo: calculando la inflación',
-          text: 'Si el IPC de un país fue 120 en 2019 y 126 en 2020, la tasa de inflación de 2020 es ((126 − 120) / 120) × 100 = 5%. Esto significa que, en promedio, la misma canasta de consumo costó un 5% más en 2020 que en 2019.',
-        },
-        {
-          type: 'heading',
-          text: 'IPC vs. deflactor del PIB',
-        },
-        {
-          type: 'paragraph',
-          text: 'El deflactor del PIB y el IPC suelen moverse juntos, pero difieren en varios detalles: el IPC usa una canasta fija (la de un consumidor típico) mientras que el deflactor usa una canasta que cambia año a año según lo que efectivamente se produjo; y el IPC incluye bienes importados que los consumidores compran, mientras que el deflactor solo incluye bienes producidos dentro del país.',
-        },
-        {
-          type: 'callout',
-          tone: 'tip',
-          title: 'Salarios reales',
-          text: 'Un salario nominal que sube menos que la inflación implica una pérdida de poder adquisitivo: el salario real (el salario nominal dividido por el nivel de precios) cae aunque el número en el cheque de pago sea más alto.',
-        },
-      ],
-      exercises: [
-        {
           id: 'u9-l2-e1',
           type: 'numeric',
           difficulty: 'facil',
@@ -394,91 +317,6 @@ export const unit09: Unit = {
             'El PIB nominal mezcla dos cosas: más producción y precios más altos. El PIB real aísla solo el cambio en las cantidades, valorándolas a precios de un año base. La brecha entre el crecimiento nominal (8%) y el real (3%) se debe, aproximadamente, a la inflación del período (alrededor de 5 puntos porcentuales).',
         },
         {
-          id: 'u9-l2-e5',
-          type: 'numeric',
-          difficulty: 'media',
-          xp: 15,
-          chart: {
-            xLabel: 'Año',
-            yLabel: 'IPC',
-            xMax: 3.5,
-            yMax: 130,
-            lines: [{ points: [{ x: 1, y: 100 }, { x: 2, y: 110 }, { x: 3, y: 121 }], color: 'brand', label: 'IPC' }],
-            markers: [
-              { x: 2, y: 110, guides: true },
-              { x: 3, y: 121, guides: true },
-            ],
-            caption: 'Índice de precios al consumidor de un país en tres años.',
-          },
-          question: 'Leyendo los valores del IPC en el gráfico, ¿cuál fue la tasa de inflación entre el año 2 y el año 3, en porcentaje?',
-          unitLabel: '%',
-          answer: 10,
-          hint: 'Inflación = (IPC nuevo − IPC anterior) ÷ IPC anterior × 100.',
-          explanation: 'Inflación = (121 − 110) ÷ 110 × 100 = 11 ÷ 110 × 100 = 10%.',
-        },
-        {
-          id: 'u9-l2-e6',
-          type: 'multiple_choice',
-          difficulty: 'facil',
-          xp: 10,
-          question: '¿Por qué el IPC se calcula con una canasta FIJA de bienes y servicios?',
-          options: [
-            { id: 'a', text: 'Para que los cambios del índice reflejen solo variaciones de precios, y no cambios en lo que se compra' },
-            { id: 'b', text: 'Porque los hogares compran siempre exactamente lo mismo' },
-            { id: 'c', text: 'Para incluir también los bienes de inversión de las empresas' },
-            { id: 'd', text: 'Porque así el IPC coincide siempre con el deflactor del PIB' },
-          ],
-          correctOptionId: 'a',
-          explanation:
-            'Si la canasta cambiara cada mes, no sabríamos si el índice varió por los precios o por la composición de las compras. Al fijar la canasta, el IPC aísla el efecto puro de los precios (aunque con el costo de no capturar de inmediato la sustitución entre bienes).',
-        },
-      ],
-    },
-    {
-      id: 'u9-l3',
-      title: 'El desempleo: cómo se mide y qué revela',
-      summary: 'Quién cuenta como desempleado, cómo se calcula la tasa de desempleo, y sus principales causas.',
-      estimatedMinutes: 8,
-      content: [
-        {
-          type: 'heading',
-          text: 'Fuerza laboral y tasa de desempleo',
-        },
-        {
-          type: 'paragraph',
-          text: 'La fuerza laboral está formada por las personas en edad de trabajar que están ocupadas o que están desempleadas —es decir, sin trabajo pero buscando activamente uno—. Quienes no tienen trabajo y no lo están buscando (por ejemplo, estudiantes de tiempo completo o personas jubiladas) quedan fuera de la fuerza laboral y no se consideran desempleados para efectos de esta medición.',
-        },
-        {
-          type: 'formula',
-          label: 'Tasa de desempleo',
-          text: 'Tasa de desempleo = (Desempleados / Fuerza laboral) × 100',
-        },
-        {
-          type: 'example',
-          title: 'Ejemplo: calculando la tasa de desempleo',
-          text: 'En una ciudad hay 1.900 personas ocupadas y 100 personas desempleadas (sin trabajo, buscando activamente). La fuerza laboral es 1.900 + 100 = 2.000 personas. La tasa de desempleo es (100 / 2.000) × 100 = 5%.',
-        },
-        {
-          type: 'callout',
-          tone: 'warning',
-          title: 'El trabajador desalentado',
-          text: 'Alguien que quiere trabajar pero dejó de buscar empleo porque cree que no encontrará nada sale de la fuerza laboral: deja de contar como "desempleado" en las estadísticas, aunque en la práctica siga sin trabajo. Por eso, en recesiones prolongadas, la tasa de desempleo medida a veces subestima el problema real del mercado laboral.',
-        },
-        {
-          type: 'heading',
-          text: 'Tipos de desempleo',
-        },
-        {
-          type: 'list',
-          items: [
-            'Friccional: el tiempo que toma encontrar un empleo adecuado a las propias habilidades (rotación normal del mercado laboral).',
-            'Estructural: desajuste entre las habilidades de los trabajadores y las que exigen los empleos disponibles.',
-            'Cíclico: el que aumenta durante las recesiones y disminuye durante las expansiones económicas.',
-          ],
-        },
-      ],
-      exercises: [
-        {
           id: 'u9-l3-e1',
           type: 'numeric',
           difficulty: 'facil',
@@ -588,45 +426,20 @@ export const unit09: Unit = {
             'El desempleo friccional es el de corto plazo asociado al proceso normal de buscar y encontrar el trabajo adecuado: toma tiempo emparejar a las personas con las vacantes correctas. Es distinto del estructural (desajuste persistente de habilidades) y del cíclico (ligado a las recesiones). Sí cuenta como desempleo, porque está sin trabajo y buscando activamente.',
         },
         {
-          id: 'u9-l3-e5',
-          type: 'numeric',
+          id: 'u9-l3-e7',
+          type: 'multiple_choice',
           difficulty: 'media',
           xp: 15,
-          question:
-            'En un país hay 810.000 personas ocupadas y 90.000 desocupadas buscando trabajo activamente. ¿Cuál es la tasa de desempleo, en porcentaje?',
-          unitLabel: '%',
-          answer: 10,
-          hint: 'La fuerza laboral es la suma de ocupados y desocupados que buscan trabajo.',
-          explanation: 'Fuerza laboral = 810.000 + 90.000 = 900.000. Tasa de desempleo = 90.000 ÷ 900.000 × 100 = 10%.',
-        },
-        {
-          id: 'u9-l3-e6',
-          type: 'case_study',
-          difficulty: 'dificil',
-          xp: 20,
-          chart: {
-            xLabel: 'Año',
-            yLabel: 'PIB (índice)',
-            xMax: 4.5,
-            yMax: 170,
-            lines: [
-              { points: [{ x: 1, y: 100 }, { x: 4, y: 160 }], color: 'brand', label: 'Nominal' },
-              { points: [{ x: 1, y: 100 }, { x: 4, y: 124 }], color: 'accent', dashed: true, label: 'Real' },
-            ],
-            caption: 'PIB nominal y PIB real del mismo país, partiendo de la misma base.',
-          },
-          scenario:
-            'Un ministro celebra que "la economía creció 60% en tres años", citando la línea del PIB nominal del gráfico.',
-          question: '¿Qué muestra la brecha creciente entre las dos líneas del gráfico?',
+          question: 'Una persona dejó de buscar trabajo tras meses sin encontrarlo, aunque le gustaría trabajar. ¿Cómo la clasifica la medición oficial del desempleo?',
           options: [
-            { id: 'a', text: 'Que buena parte del crecimiento nominal es solo inflación: la producción real creció 24%, y el resto es alza de precios' },
-            { id: 'b', text: 'Que el país produjo un 60% más de bienes y servicios reales' },
-            { id: 'c', text: 'Que el PIB real está mal medido, porque siempre debe coincidir con el nominal' },
-            { id: 'd', text: 'Que la inflación fue cero durante los tres años' },
+            { id: 'a', text: 'Fuera de la fuerza laboral: al no buscar activamente, no cuenta como desempleada, lo que puede subestimar el problema real' },
+            { id: 'b', text: 'Como desempleada, porque quiere trabajar' },
+            { id: 'c', text: 'Como ocupada a tiempo parcial' },
+            { id: 'd', text: 'No se la considera parte de la población en edad de trabajar' },
           ],
           correctOptionId: 'a',
           explanation:
-            'El PIB nominal crece por dos motivos mezclados: más producción y precios más altos. El PIB real aísla la producción valorándola a precios constantes: creció de 100 a 124 (24%). La brecha entre ambas líneas —de 124 a 160— corresponde al componente de inflación del crecimiento nominal.',
+            'Para contar como desempleada, una persona debe estar sin trabajo Y buscando activamente. Quien se desanima y deja de buscar sale de la fuerza laboral, lo que puede hacer BAJAR la tasa de desempleo medida aunque la situación laboral empeore. Por eso los "trabajadores desalentados" se siguen aparte.',
         },
       ],
     },
