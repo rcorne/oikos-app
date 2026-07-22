@@ -16,7 +16,7 @@ export const unit06: Unit = {
       id: 'u6-l1',
       title: 'Competencia perfecta: muchas empresas, un solo precio',
       summary: 'Por qué ninguna empresa individual puede influir en el precio, y qué implica eso para su producción y sus beneficios.',
-      estimatedMinutes: 12,
+      estimatedMinutes: 14,
       content: [
         {
           type: 'heading',
@@ -257,13 +257,44 @@ export const unit06: Unit = {
           explanation:
             'Con libre entrada y salida, el beneficio económico converge a cero en el largo plazo, y eso ocurre cuando el precio iguala al mínimo del costo total medio. Si ese mínimo es $18, el precio de largo plazo tenderá a $18.',
         },
+        {
+          id: 'u6-l1-e11',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Una empresa en competencia perfecta vende a $45 por unidad, produce 300 unidades y su costo total medio es de $38 por unidad. ¿Cuál es su beneficio económico total?',
+          unitLabel: '$',
+          answer: 2100,
+          hint: 'Beneficio total = (Precio − Costo medio total) × Cantidad.',
+          explanation: 'Beneficio = ($45 − $38) × 300 = $7 × 300 = $2.100.',
+        },
+        {
+          id: 'u6-l1-e12',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: 'En competencia perfecta, ¿por qué cada empresa individual enfrenta una curva de demanda horizontal (perfectamente elástica)?',
+          options: [
+            {
+              id: 'a',
+              text: 'Porque es tan pequeña frente al mercado que puede vender toda su producción al precio vigente, sin poder influir en él',
+            },
+            { id: 'b', text: 'Porque el gobierno le fija el precio' },
+            { id: 'c', text: 'Porque su producto es muy distinto al de sus competidores' },
+            { id: 'd', text: 'Porque tiene costos marginales constantes' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Cada empresa competitiva es "precio-aceptante": produce una fracción tan pequeña de la oferta total del mercado que no tiene poder para influir en el precio. Puede vender cualquier cantidad que decida producir a ese precio de mercado, por eso su curva de demanda individual es una línea horizontal en ese nivel de precio.',
+        },
       ],
     },
     {
       id: 'u6-l2',
       title: 'Monopolio y poder de mercado',
       summary: 'Qué significa ser el único vendedor, por qué el ingreso marginal cae más rápido que el precio, y qué costo tiene eso para la eficiencia del mercado.',
-      estimatedMinutes: 12,
+      estimatedMinutes: 14,
       content: [
         {
           type: 'heading',
@@ -487,13 +518,114 @@ export const unit06: Unit = {
           explanation:
             'La empresa ya está en su óptimo (IMg = CMg). Producir más la lleva a una zona donde el ingreso marginal de cada unidad adicional cae por debajo de su costo marginal, porque para vender esas unidades tendría que bajar el precio de todas. Vender más no es lo mismo que ganar más: por encima del punto IMg = CMg, cada unidad extra reduce el beneficio.',
         },
+        {
+          id: 'u6-l2-e10',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'Cantidad (Q)',
+            yLabel: 'Precio ($)',
+            xMax: 105,
+            yMax: 110,
+            lines: [
+              { points: [{ x: 0, y: 100 }, { x: 100, y: 0 }], color: 'brand', label: 'D' },
+              { points: [{ x: 0, y: 100 }, { x: 50, y: 0 }], color: 'brand', dashed: true, label: 'IMg' },
+              { points: [{ x: 0, y: 20 }, { x: 90, y: 20 }], color: 'accent', label: 'CMg' },
+            ],
+            markers: [
+              { x: 40, y: 20, label: 'IMg=CMg' },
+              { x: 40, y: 60, label: 'Pm', guides: true },
+            ],
+            caption: 'Monopolista: demanda (D), ingreso marginal (IMg) y costo marginal (CMg).',
+          },
+          question:
+            'El monopolista produce donde IMg = CMg, en Q = 40. Leyendo el gráfico, ¿a qué precio (sobre la curva de demanda) vende esas unidades?',
+          unitLabel: '$',
+          answer: 60,
+          hint: 'El precio de un monopolio se lee sobre la curva de demanda, en la cantidad que decide producir — no sobre la curva de IMg ni de CMg.',
+          explanation:
+            'El monopolista elige Q = 40 porque ahí IMg = CMg = 20. Pero el precio que cobra no es 20: se lee sobre la curva de DEMANDA en esa cantidad, D(40) = 100 − 40 = 60. Por eso el precio de monopolio (60) siempre queda por encima del costo marginal (20).',
+        },
+        {
+          id: 'u6-l2-e11',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Cantidad (Q)',
+            yLabel: 'Precio ($)',
+            xMax: 105,
+            yMax: 110,
+            lines: [
+              { points: [{ x: 0, y: 100 }, { x: 100, y: 0 }], color: 'brand', label: 'D' },
+              { points: [{ x: 0, y: 100 }, { x: 50, y: 0 }], color: 'brand', dashed: true, label: 'IMg' },
+              { points: [{ x: 0, y: 20 }, { x: 90, y: 20 }], color: 'accent', label: 'CMg' },
+            ],
+            markers: [
+              { x: 40, y: 60, label: 'Monopolio' },
+              { x: 80, y: 20, label: 'Competencia' },
+            ],
+            caption: 'Comparación entre el resultado del monopolio y el de competencia perfecta en el mismo mercado.',
+          },
+          question: 'Comparando los dos puntos marcados en el gráfico, ¿qué diferencia al resultado del monopolio del de competencia perfecta en este mismo mercado?',
+          options: [
+            { id: 'a', text: 'El monopolio produce menos (40 frente a 80) y cobra un precio más alto (60 frente a 20)' },
+            { id: 'b', text: 'El monopolio produce más y cobra menos que la competencia perfecta' },
+            { id: 'c', text: 'Ambos producen la misma cantidad, pero a precios distintos' },
+            { id: 'd', text: 'Ambos cobran el mismo precio, pero el monopolio produce menos' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'En competencia perfecta el equilibrio está donde P = CMg (Q = 80, P = 20). El monopolista, en cambio, restringe la producción a Q = 40 —donde IMg = CMg— y cobra un precio mayor, P = 60, leído sobre la demanda. Producir menos y cobrar más es la firma característica del poder de mercado de un monopolio.',
+        },
+        {
+          id: 'u6-l2-e12',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'Cantidad (Q)',
+            yLabel: 'Precio ($)',
+            xMax: 105,
+            yMax: 110,
+            lines: [
+              { points: [{ x: 0, y: 100 }, { x: 100, y: 0 }], color: 'brand', label: 'D' },
+              { points: [{ x: 0, y: 20 }, { x: 90, y: 20 }], color: 'accent', label: 'CMg' },
+            ],
+            regions: [
+              {
+                points: [
+                  { x: 40, y: 60 },
+                  { x: 40, y: 20 },
+                  { x: 80, y: 20 },
+                ],
+                color: 'danger',
+                label: 'PI',
+              },
+            ],
+            caption: 'Región sombreada entre la cantidad de monopolio (40) y la de competencia (80).',
+          },
+          scenario:
+            'Un estudiante señala el triángulo sombreado del gráfico —entre Qm = 40 y Qc = 80— y pregunta qué mide exactamente esa área.',
+          question: '¿Qué representa la región sombreada (PI) del gráfico?',
+          options: [
+            { id: 'a', text: 'La pérdida irrecuperable de eficiencia: el excedente total que se deja de generar porque el monopolio produce menos que el óptimo social' },
+            { id: 'b', text: 'El beneficio extra que obtiene el monopolista por cobrar más caro' },
+            { id: 'c', text: 'El costo fijo del monopolista' },
+            { id: 'd', text: 'El excedente del consumidor que conserva el monopolio' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Entre Qm = 40 y Qc = 80 hay unidades cuyo valor para los consumidores (leído en la curva de demanda) supera su costo marginal de producción, pero el monopolio no las produce porque no le conviene bajar el precio a todos los compradores para vender esas unidades extra. Ese excedente que nunca se genera —ni para el consumidor ni para el productor— es la pérdida irrecuperable de eficiencia del monopolio.',
+        },
       ],
     },
     {
       id: 'u6-l3',
       title: 'Oligopolio, competencia monopolística y teoría de juegos',
       summary: 'Qué pasa cuando las empresas se diferencian un poco, y qué pasa cuando son tan pocas que cada decisión depende de lo que haga la rival.',
-      estimatedMinutes: 12,
+      estimatedMinutes: 14,
       content: [
         {
           type: 'heading',
@@ -717,6 +849,19 @@ export const unit06: Unit = {
           correctOptionId: 'a',
           explanation:
             'En competencia monopolística, la diferenciación permite cobrar un precio superior al costo marginal (hay poder de mercado). Pero la libre entrada hace que, mientras haya beneficios positivos, entren nuevos rivales que le restan clientela a cada empresa, hasta que el precio apenas cubre el costo total medio. En ese equilibrio de largo plazo coexisten P > CMg y beneficio económico de cero, con empresas que operan por debajo de su escala de mínimo costo (capacidad ociosa).',
+        },
+        {
+          id: 'u6-l3-e10',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Dos heladerías rivales compiten en precio. Si ambas mantienen el precio alto, cada una gana $60 millones al año. Si una baja el precio mientras la otra no, la que baja gana $90 millones y la otra solo $20 millones. Si ambas bajan, cada una gana $40 millones. ¿Cuánto pierde una heladería si mantiene el precio alto mientras la rival lo baja, comparado con el escenario en que ambas lo mantienen alto?',
+          unitLabel: '$ millones',
+          answer: 40,
+          hint: 'Compara la ganancia de "ambas altas" con la ganancia de quedarse arriba mientras la otra baja.',
+          explanation:
+            'Si ambas mantienen el precio alto, gana $60 millones. Si se queda con el precio alto mientras la rival lo baja, gana solo $20 millones. La diferencia es $60M − $20M = $40 millones de pérdida: por eso, aunque colusionar (ambas arriba) sería mejor para las dos, cada heladería tiene el incentivo individual de bajar el precio primero — el corazón del dilema del prisionero.',
         },
       ],
     },

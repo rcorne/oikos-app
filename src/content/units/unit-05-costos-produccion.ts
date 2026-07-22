@@ -16,7 +16,7 @@ export const unit05: Unit = {
       id: 'u5-l1',
       title: 'Costos fijos, variables y totales',
       summary: 'Qué gastos se mantienen sin importar cuánto produces, cuáles cambian, y cómo se suman.',
-      estimatedMinutes: 12,
+      estimatedMinutes: 14,
       content: [
         {
           type: 'heading',
@@ -240,6 +240,59 @@ export const unit05: Unit = {
           explanation:
             'Al no imprimir nada, el costo variable cae a cero, pero los compromisos fijos siguen vigentes: CT = CF + CV = 600.000 + 0 = 600.000. El costo total del mes pasado ($1.500.000) no importa para este cálculo.',
         },
+        {
+          id: 'u5-l1-e11',
+          type: 'case_study',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Cantidad (Q)',
+            yLabel: 'Costo (miles de $)',
+            xMax: 9,
+            yMax: 90,
+            lines: [
+              { points: [{ x: 0, y: 40 }, { x: 8, y: 80 }], color: 'brand', label: 'CT' },
+              { points: [{ x: 0, y: 0 }, { x: 8, y: 40 }], color: 'accent', label: 'CV' },
+            ],
+            markers: [{ x: 0, y: 40, label: 'CF' }],
+            caption: 'Costo total (CT) y costo variable (CV) de un taller, en miles de pesos.',
+          },
+          scenario:
+            'Un taller de cerámica graficó su costo total (CT) y su costo variable (CV) para distintos niveles de producción diaria. Ambas rectas resultaron paralelas: suben al mismo ritmo a medida que aumenta la cantidad producida.',
+          question: 'Observando el gráfico, ¿cuál es el costo fijo diario del taller?',
+          options: [
+            {
+              id: 'a',
+              text: '$40 mil: es el valor del CT cuando la producción es cero, y también la distancia vertical constante entre las rectas CT y CV',
+            },
+            { id: 'b', text: '$0, porque la recta del costo variable parte desde el origen' },
+            { id: 'c', text: '$80 mil, porque ese es el valor máximo que alcanza el CT en el gráfico' },
+            { id: 'd', text: 'No se puede determinar sin conocer el precio de venta de cada pieza' },
+          ],
+          correctOptionId: 'a',
+          hint: 'El CF es lo que la empresa gasta incluso con Q = 0: mira dónde corta el CT al eje vertical.',
+          explanation:
+            'Como CT = CF + CV, el costo fijo es la brecha constante entre ambas rectas. En Q = 0 el costo variable es cero, así que el CT arranca exactamente en el CF: el intercepto marcado en $40 mil. Esa misma distancia de $40 mil separa a CT de CV en cualquier nivel de producción (por ejemplo, en Q = 8: 80 − 40 = 40).',
+        },
+        {
+          id: 'u5-l1-e12',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: 'Para una cafetería, ¿cuál de los siguientes pares clasifica correctamente un costo fijo y un costo variable?',
+          options: [
+            {
+              id: 'a',
+              text: 'Fijo: el arriendo mensual del local; variable: el café en grano y la leche que se consumen según cuántas tazas se vendan',
+            },
+            { id: 'b', text: 'Fijo: el café en grano; variable: el arriendo mensual del local' },
+            { id: 'c', text: 'Fijo: los vasos desechables de cada pedido; variable: el seguro anual contra incendios' },
+            { id: 'd', text: 'Ambos son variables, porque todo gasto depende de las ventas del mes' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El arriendo se paga todos los meses sin importar cuántas tazas se vendan: es un costo fijo. El café en grano y la leche se consumen en proporción directa a lo producido, así que son costos variables. Los vasos desechables también son variables, y el seguro anual es fijo, por lo que las demás combinaciones invierten la clasificación.',
+        },
       ],
     },
     {
@@ -447,6 +500,41 @@ export const unit05: Unit = {
           answer: 12000,
           hint: 'El costo medio total es el costo total repartido entre todas las unidades: CTMe = CT / Q.',
           explanation: 'CTMe = CT / Q = 3.000.000 / 250 = 12.000 por par.',
+        },
+        {
+          id: 'u5-l2-e10',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'Cantidad (Q)',
+            yLabel: 'Costo ($ miles)',
+            xMax: 9,
+            yMax: 60,
+            lines: [
+              { points: [{ x: 2, y: 6 }, { x: 8, y: 54 }], color: 'accent', label: 'CMg' },
+              { points: [{ x: 2, y: 60 }, { x: 5, y: 30 }, { x: 8, y: 42 }], color: 'brand', label: 'CTMe' },
+            ],
+            markers: [{ x: 5, y: 30, label: 'mín', guides: true }],
+            caption: 'Costo marginal (CMg) y costo medio total (CTMe) de un taller.',
+          },
+          question: 'Observa dónde el CMg cruza al CTMe. ¿En qué cantidad Q se minimiza el costo medio total?',
+          unitLabel: 'unidades',
+          answer: 5,
+          hint: 'El CTMe está en su mínimo exactamente donde lo cruza el CMg.',
+          explanation:
+            'El costo medio total cae mientras el costo marginal está por debajo de él, y sube cuando el costo marginal lo supera. Por eso el mínimo del CTMe ocurre exactamente donde ambas curvas se cruzan: en Q = 5, con CTMe = CMg = 30 (miles de $).',
+        },
+        {
+          id: 'u5-l2-e11',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'El costo total de producir 6 unidades es $540.000, y el de producir 7 unidades es $610.000. ¿Cuál es el costo marginal de la séptima unidad?',
+          unitLabel: '$',
+          answer: 70000,
+          explanation: 'CMg = CT(7) − CT(6) = $610.000 − $540.000 = $70.000.',
         },
       ],
     },
@@ -669,6 +757,47 @@ export const unit05: Unit = {
           correctOptionId: 'a',
           explanation:
             'En el largo plazo la empresa puede modificar absolutamente todo, incluso construir o cambiar el tamaño de su planta. Como ya no queda ninguna decisión comprometida de antemano, no hay costos fijos: todos los costos pasan a ser variables.',
+        },
+        {
+          id: 'u5-l3-e10',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Cantidad (Q)',
+            yLabel: 'Costo ($ miles)',
+            xMax: 9,
+            yMax: 90,
+            lines: [
+              { points: [{ x: 0, y: 40 }, { x: 8, y: 80 }], color: 'brand', label: 'CT' },
+              { points: [{ x: 0, y: 0 }, { x: 8, y: 40 }], color: 'accent', label: 'CV' },
+            ],
+            caption: 'Costo total (CT) y costo variable (CV) de un taller en el corto plazo.',
+          },
+          question: 'CT y CV son dos rectas paralelas en el gráfico. Leyendo la distancia vertical entre ellas, ¿cuál es el costo fijo del taller, en miles de pesos?',
+          unitLabel: 'miles de $',
+          answer: 40,
+          hint: 'El costo fijo es la distancia vertical constante entre la recta de CT y la de CV (o el valor de CT cuando Q = 0).',
+          explanation:
+            'Como CT = CF + CV, la distancia vertical entre ambas rectas es siempre el costo fijo. En Q = 0 no hay costo variable, así que CT(0) = CF = 40 (miles de $). Esa misma distancia de 40 se mantiene en cualquier otro punto, por eso las dos rectas son paralelas.',
+        },
+        {
+          id: 'u5-l3-e11',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'Una cadena de restaurantes triplica su tamaño (más locales, más personal, más poder de compra con proveedores) y su costo medio de largo plazo por plato SUBE, en vez de bajar, porque coordinar tantos locales se vuelve cada vez más complicado y se generan cuellos de botella administrativos.',
+          question: '¿Qué está experimentando esta cadena de restaurantes?',
+          options: [
+            { id: 'a', text: 'Deseconomías de escala: crecer más allá de cierto tamaño encarece el costo medio de largo plazo' },
+            { id: 'b', text: 'Economías de escala, porque compró más insumos' },
+            { id: 'c', text: 'Un aumento de su costo fijo únicamente' },
+            { id: 'd', text: 'Una mejora en su costo marginal de corto plazo' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Cuando el costo medio de largo plazo SUBE al aumentar la escala de producción, la empresa está en deseconomías de escala: los problemas de coordinación y burocracia de operar a mayor tamaño superan a los ahorros que en principio trae producir más (compras al por mayor, especialización, etc.).',
         },
       ],
     },

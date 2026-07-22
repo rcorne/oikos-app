@@ -16,7 +16,7 @@ export const unit02: Unit = {
       id: 'u2-l1',
       title: 'La demanda: la ley y sus determinantes',
       summary: 'Qué hace que compremos más o menos de algo, y qué mueve la curva completa.',
-      estimatedMinutes: 12,
+      estimatedMinutes: 14,
       content: [
         {
           type: 'heading',
@@ -218,13 +218,63 @@ export const unit02: Unit = {
           explanation:
             'Planteamos 45 = 120 − 5P → 5P = 120 − 45 = 75 → P = 15. Verificación: Qd = 120 − 5(15) = 120 − 75 = 45 unidades.',
         },
+        {
+          id: 'u2-l1-e11',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'Se anuncia de forma creíble que el precio de los automóviles subirá con fuerza el próximo mes. ¿Qué ocurre hoy con la curva de demanda de automóviles?',
+          options: [
+            { id: 'a', text: 'Se desplaza hacia la derecha: los compradores adelantan sus compras antes de la subida esperada' },
+            { id: 'b', text: 'Se desplaza hacia la izquierda: la gente prefiere esperar a que el precio suba' },
+            { id: 'c', text: 'No cambia, porque el precio de hoy sigue siendo el mismo' },
+            { id: 'd', text: 'Solo hay un movimiento a lo largo de la curva de demanda actual' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Las expectativas de precios futuros son un determinante de la demanda. Si se espera que el bien se encarezca, conviene comprarlo ahora: a cualquier precio vigente se demanda más hoy, y la curva de demanda se desplaza hacia la derecha.',
+        },
+        {
+          id: 'u2-l1-e12',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Cantidad (Q)',
+            yLabel: 'Precio ($)',
+            xMax: 100,
+            yMax: 100,
+            lines: [
+              { points: [{ x: 10, y: 70 }, { x: 70, y: 10 }], color: 'muted', dashed: true, label: 'D1' },
+              { points: [{ x: 20, y: 80 }, { x: 90, y: 10 }], color: 'brand', label: 'D2' },
+              { points: [{ x: 10, y: 10 }, { x: 90, y: 90 }], color: 'accent', label: 'O' },
+            ],
+            markers: [
+              { x: 40, y: 40, label: 'E1', guides: true },
+              { x: 50, y: 50, label: 'E2', guides: true },
+            ],
+            caption: 'La demanda se desplaza de D1 (punteada) a D2; la oferta O no cambia.',
+          },
+          question:
+            'Observa el gráfico: la demanda se desplazó de D1 a D2 y la oferta no cambió. Según lo que se lee en los ejes, ¿qué ocurrió con el precio y la cantidad de equilibrio?',
+          options: [
+            { id: 'a', text: 'Ambos aumentaron: el precio pasó de $40 a $50 y la cantidad de 40 a 50 unidades' },
+            { id: 'b', text: 'Ambos cayeron: el precio pasó de $50 a $40 y la cantidad de 50 a 40 unidades' },
+            { id: 'c', text: 'El precio subió pero la cantidad bajó, porque la oferta no cambió' },
+            { id: 'd', text: 'No se puede saber sin conocer las ecuaciones de las curvas' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El desplazamiento de la demanda hacia la derecha (de D1 a D2) mueve el equilibrio a lo largo de la curva de oferta, de E1 a E2. Leyendo las guías punteadas en los ejes: el precio de equilibrio sube de $40 a $50 y la cantidad de 40 a 50 unidades.',
+        },
       ],
     },
     {
       id: 'u2-l2',
       title: 'La oferta: qué mueve a los productores',
       summary: 'Qué hace que las empresas produzcan más o menos, y qué desplaza la curva completa.',
-      estimatedMinutes: 12,
+      estimatedMinutes: 14,
       content: [
         {
           type: 'heading',
@@ -411,6 +461,53 @@ export const unit02: Unit = {
           correctOptionId: 'a',
           explanation:
             'El número de vendedores es un determinante de la oferta del mercado. Al sumar la oferta de más empresas, la cantidad total ofrecida a cada precio aumenta, de modo que la curva de oferta del mercado se desplaza hacia la derecha. Como el precio del bien no ha cambiado, no es un movimiento a lo largo de la curva.',
+        },
+        {
+          id: 'u2-l2-e10',
+          type: 'case_study',
+          difficulty: 'media',
+          xp: 15,
+          scenario:
+            'El precio de mercado de las bicicletas sube de $150.000 a $200.000 por unidad. Sin que cambie ningún otro factor (costos, tecnología o número de fábricas), las fábricas del país responden produciendo y vendiendo más bicicletas que antes.',
+          question: '¿Cómo se describe correctamente esta reacción de los productores?',
+          options: [
+            { id: 'a', text: 'Es un movimiento a lo largo de la curva de oferta: cambió el precio del propio bien, no un determinante' },
+            { id: 'b', text: 'Es un desplazamiento de la curva de oferta hacia la derecha, porque se produce más' },
+            { id: 'c', text: 'Es un desplazamiento de la curva de oferta hacia la izquierda, porque el bien se encareció' },
+            { id: 'd', text: 'Es un desplazamiento de la curva de demanda, porque los compradores pagan más' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Lo único que cambió fue el precio de las propias bicicletas, así que la respuesta de las fábricas es un aumento de la cantidad ofrecida a lo largo de la misma curva de oferta. Solo un cambio en un determinante distinto del precio (insumos, tecnología, impuestos, número de vendedores) desplazaría la curva completa.',
+        },
+        {
+          id: 'u2-l2-e11',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          question:
+            'En un mercado, la demanda es Qd = 70 − 2P y la oferta es Qs = −10 + 3P. ¿A qué precio P la cantidad demandada es exactamente igual a la cantidad ofrecida? (Ese precio es el que en la próxima lección llamaremos precio de equilibrio.)',
+          unitLabel: '$',
+          answer: 16,
+          hint: 'Iguala Qd = Qs y despeja P.',
+          explanation:
+            'Igualando: 70 − 2P = −10 + 3P → 80 = 5P → P = 16. Verificación: Qd = 70 − 2(16) = 38 y Qs = −10 + 3(16) = 38 coinciden.',
+        },
+        {
+          id: 'u2-l2-e12',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: 'Una helada destruye buena parte de la cosecha de naranjas. ¿Qué le ocurre a la curva de oferta de jugo de naranja?',
+          options: [
+            { id: 'a', text: 'Se desplaza hacia la izquierda: a cada precio, hay menos jugo disponible para ofrecer' },
+            { id: 'b', text: 'Se desplaza hacia la derecha, porque escasea y conviene vender más' },
+            { id: 'c', text: 'No cambia, porque el clima no es un determinante de la oferta' },
+            { id: 'd', text: 'Se mueve a lo largo de la misma curva de oferta' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El clima afecta la disponibilidad del insumo principal (las naranjas), lo que reduce la cantidad que los productores pueden ofrecer a cualquier precio. Es un desplazamiento de toda la curva de oferta hacia la izquierda, no un movimiento a lo largo de ella.',
         },
       ],
     },
@@ -606,6 +703,61 @@ export const unit02: Unit = {
           correctOptionId: 'a',
           explanation:
             'Con la demanda constante, un desplazamiento de la oferta hacia la izquierda genera un exceso de demanda al precio anterior: el precio de equilibrio sube y, a lo largo de la curva de demanda, la cantidad de equilibrio baja.',
+        },
+        {
+          id: 'u2-l3-e10',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Cantidad (Q)',
+            yLabel: 'Precio ($)',
+            xMax: 100,
+            yMax: 100,
+            lines: [
+              { points: [{ x: 10, y: 90 }, { x: 90, y: 10 }], color: 'brand', label: 'D' },
+              { points: [{ x: 10, y: 10 }, { x: 90, y: 90 }], color: 'accent', label: 'O' },
+            ],
+            markers: [{ x: 50, y: 50, label: 'E', guides: true }],
+            caption: 'Mercado de un bien: demanda (D) y oferta (O).',
+          },
+          question:
+            'Observa el gráfico. ¿Cuál es el precio de equilibrio de este mercado, en pesos?',
+          unitLabel: '$',
+          answer: 50,
+          hint: 'El equilibrio E está donde se cruzan la demanda y la oferta; lee su valor en el eje vertical.',
+          explanation:
+            'El punto E marca el cruce entre la demanda y la oferta. Siguiendo la línea punteada hacia el eje de precios se lee P* = $50 (y hacia el eje horizontal, Q* = 50 unidades).',
+        },
+        {
+          id: 'u2-l3-e11',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Cantidad (Q)',
+            yLabel: 'Precio ($)',
+            xMax: 100,
+            yMax: 100,
+            lines: [
+              { points: [{ x: 10, y: 90 }, { x: 90, y: 10 }], color: 'brand', label: 'D' },
+              { points: [{ x: 10, y: 10 }, { x: 90, y: 90 }], color: 'accent', label: 'O' },
+              { points: [{ x: 0, y: 70 }, { x: 92, y: 70 }], color: 'danger', label: 'Pmin' },
+            ],
+            markers: [
+              { x: 30, y: 70, label: 'Qd', guides: true },
+              { x: 70, y: 70, label: 'Qs', guides: true },
+              { x: 50, y: 50, label: 'E' },
+            ],
+            caption: 'El gobierno fija un precio mínimo legal (Pmin) por encima del equilibrio E.',
+          },
+          question:
+            'Observa el gráfico: se fija un precio mínimo de $70, por encima del equilibrio. Leyendo las cantidades en el eje horizontal, ¿de qué tamaño es el excedente (Qs − Qd) que se genera a ese precio?',
+          unitLabel: 'unidades',
+          answer: 40,
+          hint: 'Al precio mínimo, lee en el eje horizontal la cantidad demandada (sobre la curva D) y la cantidad ofrecida (sobre la curva O), y réstalas.',
+          explanation:
+            'Al precio mínimo de $70, la demanda solo absorbe Qd = 30 unidades, mientras que los productores quieren vender Qs = 70 unidades. Como el precio no puede bajar hasta el equilibrio E, queda un excedente de 70 − 30 = 40 unidades sin vender.',
         },
       ],
     },

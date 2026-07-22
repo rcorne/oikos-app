@@ -229,6 +229,108 @@ export const unit07: Unit = {
           explanation:
             'El costo externo por tonelada es el costo externo total dividido por la producción: $6.300.000 ÷ 90 = $70.000. Ese es el impuesto pigouviano por tonelada que iguala el costo privado al costo social de cada tonelada, empujando la producción hacia el nivel socialmente eficiente.',
         },
+        {
+          id: 'u7-l1-e11',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'Cantidad (Q)',
+            yLabel: 'Precio ($)',
+            xMax: 66,
+            yMax: 110,
+            lines: [
+              { points: [{ x: 0, y: 100 }, { x: 60, y: 40 }], color: 'brand', label: 'D' },
+              { points: [{ x: 0, y: 10 }, { x: 60, y: 70 }], color: 'accent', label: 'CMgP' },
+              { points: [{ x: 0, y: 40 }, { x: 60, y: 100 }], color: 'danger', label: 'CMgS' },
+            ],
+            markers: [
+              { x: 45, y: 55, label: 'E', guides: true },
+              { x: 30, y: 70, label: 'O', guides: true },
+            ],
+            caption:
+              'Externalidad negativa: demanda (D), costo marginal privado (CMgP) y costo marginal social (CMgS).',
+          },
+          question:
+            'Observa el gráfico. El mercado por sí solo se equilibra en E, pero el óptimo social está en O, donde la demanda cruza el costo marginal social. ¿De cuántos pesos por unidad debería ser el impuesto pigouviano —igual a la distancia vertical entre CMgS y CMgP— para llevar la producción al óptimo social?',
+          unitLabel: '$',
+          answer: 30,
+          hint: 'CMgS y CMgP son paralelas, así que su brecha vertical es la misma en cualquier cantidad. Léela donde sea más fácil: por ejemplo, comparando dónde parte cada recta sobre el eje de precios.',
+          explanation:
+            'Las dos rectas de costo son paralelas: CMgP parte en $10 y CMgS parte en $40, ambas subiendo al mismo ritmo. La distancia vertical entre ellas —el costo externo por unidad— es entonces $40 − $10 = $30 en cualquier cantidad. Un impuesto pigouviano de $30 por unidad eleva el costo privado hasta el costo social y mueve el equilibrio desde E (Q = 45, P = $55) hasta el óptimo social O (Q = 30, P = $70).',
+        },
+        {
+          id: 'u7-l1-e12',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Cantidad (Q)',
+            yLabel: 'Precio ($)',
+            xMax: 66,
+            yMax: 110,
+            lines: [
+              { points: [{ x: 0, y: 100 }, { x: 60, y: 40 }], color: 'brand', label: 'D' },
+              { points: [{ x: 0, y: 20 }, { x: 60, y: 80 }], color: 'accent', label: 'CMgP' },
+              { points: [{ x: 0, y: 40 }, { x: 60, y: 100 }], color: 'danger', label: 'CMgS' },
+            ],
+            markers: [
+              { x: 40, y: 60, label: 'E', guides: true },
+              { x: 30, y: 70, label: 'O', guides: true },
+            ],
+            caption:
+              'Mercado con externalidad negativa: el equilibrio de mercado es E y el óptimo social es O.',
+          },
+          question:
+            'Según el gráfico, ¿cómo se compara la cantidad que produce el mercado por sí solo con la cantidad socialmente óptima, y por qué?',
+          options: [
+            { id: 'a', text: 'El mercado produce 40 unidades y el óptimo social es 30: hay sobreproducción, porque los productores deciden mirando el CMgP, que está por debajo del CMgS' },
+            { id: 'b', text: 'El mercado produce 30 unidades y el óptimo social es 40: hay subproducción, porque el costo externo desincentiva producir' },
+            { id: 'c', text: 'Ambas cantidades son iguales (40 unidades), porque las externalidades no afectan la cantidad de equilibrio' },
+            { id: 'd', text: 'No se puede comparar, porque el óptimo social no aparece en el gráfico' },
+          ],
+          correctOptionId: 'a',
+          hint: 'Baja desde E y desde O hacia el eje horizontal: ¿cuál de los dos puntos corresponde a una cantidad mayor?',
+          explanation:
+            'El mercado se equilibra en E, donde la demanda cruza el costo marginal privado: Q = 40. Pero el óptimo social está en O, donde la demanda cruza el costo marginal social: Q = 30. Como la empresa decide con el CMgP —que ignora el costo externo—, produce 10 unidades de más respecto al óptimo: la sobreproducción típica de una externalidad negativa.',
+        },
+        {
+          id: 'u7-l1-e13',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'Cantidad de árboles (Q)',
+            yLabel: 'Precio ($)',
+            xMax: 66,
+            yMax: 110,
+            lines: [
+              { points: [{ x: 0, y: 80 }, { x: 60, y: 20 }], color: 'brand', label: 'BMgP' },
+              { points: [{ x: 0, y: 100 }, { x: 60, y: 40 }], color: 'success', label: 'BMgS' },
+              { points: [{ x: 0, y: 20 }, { x: 60, y: 80 }], color: 'accent', label: 'CMg' },
+            ],
+            markers: [
+              { x: 30, y: 50, label: 'E', guides: true },
+              { x: 40, y: 60, label: 'O', guides: true },
+            ],
+            caption:
+              'Externalidad positiva: beneficio marginal privado (BMgP), beneficio marginal social (BMgS) y costo marginal (CMg).',
+          },
+          scenario:
+            'Un municipio estudia cuántos árboles plantan los vecinos en sus antejardines. Cada árbol da un beneficio privado a su dueño —sombra y plusvalía de la casa—, pero además entrega un beneficio externo a todo el barrio: aire más limpio y calles más frescas. El gráfico muestra el beneficio marginal privado (BMgP), el beneficio marginal social (BMgS) y el costo marginal de plantar (CMg).',
+          question:
+            '¿Qué muestra el gráfico sobre la cantidad de árboles plantados, y qué política acercaría el resultado al óptimo social?',
+          options: [
+            { id: 'a', text: 'Los vecinos se detienen en E (30 árboles), menos que el óptimo social O (40): hay subproducción; un subsidio de $20 por árbol —la brecha vertical entre BMgS y BMgP— llevaría la cantidad al óptimo' },
+            { id: 'b', text: 'Los vecinos plantan en O (40 árboles), más que el óptimo E (30): hay sobreproducción, y corresponde un impuesto de $20 por árbol' },
+            { id: 'c', text: 'El mercado ya alcanza el óptimo social en E, así que no se necesita ninguna política' },
+            { id: 'd', text: 'El gráfico muestra una externalidad negativa, porque el BMgS está por encima del BMgP' },
+          ],
+          correctOptionId: 'a',
+          hint: 'Cada vecino planta hasta donde su beneficio privado iguala el costo (E). ¿Dónde quedaría la cantidad si se contara también el beneficio para el barrio?',
+          explanation:
+            'Cada vecino decide comparando su beneficio privado con el costo, así que se detiene en E, donde BMgP cruza CMg: 30 árboles. Pero contando el beneficio externo, el óptimo social está en O, donde BMgS cruza CMg: 40 árboles. Hay subproducción de 10 árboles. Como BMgS y BMgP son paralelas con una brecha vertical constante de $20 ($100 − $80 en el eje), un subsidio pigouviano de $20 por árbol eleva el beneficio privado hasta el social y lleva la cantidad al óptimo.',
+        },
       ],
     },
     {
@@ -441,6 +543,47 @@ export const unit07: Unit = {
           explanation:
             'La red de internet comunitaria es un bien público local: no excluible y no rival dentro de su capacidad. Como nadie puede ser dejado sin señal por no pagar, cada vecino tiene incentivos a comportarse como polizón y esperar que otros financien la antena, lo que hace fracasar la colecta voluntaria. La solución típica es un aporte obligatorio —cuota o impuesto local— que elimine la opción de viajar gratis.',
         },
+        {
+          id: 'u7-l2-e10',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'Luminarias',
+            yLabel: 'Beneficio / Costo ($)',
+            xMax: 22,
+            yMax: 55,
+            lines: [
+              { points: [{ x: 0, y: 50 }, { x: 20, y: 0 }], color: 'brand', label: 'BMg social' },
+              { points: [{ x: 0, y: 5 }, { x: 20, y: 45 }], color: 'accent', label: 'CMg' },
+            ],
+            markers: [{ x: 10, y: 25, label: 'óptimo', guides: true }],
+            caption: 'Beneficio marginal social y costo marginal de instalar luminarias en una plaza.',
+          },
+          question: 'Una municipalidad quiere saber cuántas luminarias instalar en una plaza (un bien público). Según el gráfico, ¿cuál es la cantidad socialmente óptima?',
+          unitLabel: 'luminarias',
+          answer: 10,
+          hint: 'El óptimo social ocurre donde el beneficio marginal social iguala al costo marginal.',
+          explanation:
+            'El nivel óptimo de provisión de un bien público es donde el beneficio marginal social (la suma de lo que valora cada vecino la luminaria adicional) iguala al costo marginal de instalarla. En el gráfico, ambas curvas se cruzan en 10 luminarias, con beneficio y costo marginal de $25.',
+        },
+        {
+          id: 'u7-l2-e11',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Un lago de pesca libre (sin dueño ni regulación) es usado por muchos pescadores. Cada uno decide cuánto pescar mirando solo su propio beneficio, sin considerar que reduce la cantidad de peces disponible para los demás. ¿Qué predice la teoría económica que ocurrirá con la población de peces?',
+          options: [
+            { id: 'a', text: 'Se sobreexplotará más allá del nivel sostenible: la tragedia de los comunes, porque nadie internaliza el costo que su pesca impone a los demás' },
+            { id: 'b', text: 'Se mantendrá estable automáticamente, porque el mercado siempre encuentra el equilibrio eficiente' },
+            { id: 'c', text: 'Crecerá sin límite, porque más pescadores generan más ingresos para todos' },
+            { id: 'd', text: 'Ninguna de las anteriores: los recursos comunes no tienen este problema' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Un recurso común es rival (lo que pesca uno no está disponible para otro) pero no excluible (nadie puede impedir el acceso). Cada pescador solo compara su propio beneficio con su propio costo, ignorando que su captura reduce lo disponible para el resto. El resultado agregado es una sobreexplotación por encima del nivel sostenible: la tragedia de los comunes.',
+        },
       ],
     },
     {
@@ -645,6 +788,35 @@ export const unit07: Unit = {
           hint: 'El problema aparece después de firmar el contrato, cuando la conducta que la empresa no puede observar cambia.',
           explanation:
             'Es riesgo moral: el esfuerzo del vendedor no es observable y, con un sueldo puramente fijo, cae después de la contratación porque el trabajador no asume las consecuencias de esforzarse menos. Ligar parte del pago a resultados —comisiones o bonos— alinea sus incentivos con los de la empresa, ya que ahora parte del costo de rendir poco recae sobre él. La selección adversa, en cambio, sería un problema de calidad oculta antes de contratar.',
+        },
+        {
+          id: 'u7-l3-e10',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          question:
+            'En un mercado de bicicletas usadas, el 40% son "buenas" y valen $180.000 para un comprador informado, y el 60% son "limones" (defectuosas) y valen solo $60.000. Como el comprador no puede distinguirlas antes de comprar, ¿cuánto estaría dispuesto a pagar como máximo, en promedio, por una bicicleta cualquiera de este mercado?',
+          unitLabel: '$',
+          answer: 108000,
+          hint: 'Calcula el valor esperado ponderando cada tipo de bicicleta por su probabilidad.',
+          explanation:
+            'Valor esperado = 0,4 × $180.000 + 0,6 × $60.000 = $72.000 + $36.000 = $108.000. Como ese precio está muy por debajo del valor de una bicicleta buena ($180.000), los vendedores de bicicletas buenas tienden a retirarse del mercado, dejando cada vez más limones: el problema clásico de la selección adversa.',
+        },
+        {
+          id: 'u7-l3-e11',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question: 'Una aseguradora nota que, después de contratar un seguro contra robo de bicicletas, algunos clientes dejan de encadenarlas con tanto cuidado como antes. ¿Qué fenómeno describe mejor esta conducta?',
+          options: [
+            { id: 'a', text: 'Riesgo moral: al estar cubiertos, los asegurados asumen menos las consecuencias de un robo y reducen su nivel de cuidado' },
+            { id: 'b', text: 'Selección adversa: la aseguradora atrajo solo a los clientes más descuidados desde el principio' },
+            { id: 'c', text: 'Una externalidad positiva del seguro sobre el resto de los ciclistas' },
+            { id: 'd', text: 'El problema del polizón, porque el seguro es un bien no excluible' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El riesgo moral ocurre cuando, DESPUÉS de firmado un contrato (aquí, el seguro), una de las partes cambia su comportamiento porque ya no asume el costo completo de sus decisiones. Al estar asegurados contra el robo, algunos clientes bajan su nivel de cuidado, sabiendo que la aseguradora cubrirá la pérdida.',
         },
       ],
     },

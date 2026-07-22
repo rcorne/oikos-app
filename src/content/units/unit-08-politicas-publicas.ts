@@ -16,7 +16,7 @@ export const unit08: Unit = {
       id: 'u8-l1',
       title: 'Excedente del consumidor y del productor',
       summary: 'Cómo medir las ganancias que compradores y vendedores obtienen al participar en el mercado, y por qué su suma indica eficiencia.',
-      estimatedMinutes: 12,
+      estimatedMinutes: 14,
       content: [
         {
           type: 'heading',
@@ -258,13 +258,67 @@ export const unit08: Unit = {
           explanation:
             'El excedente del consumidor es 0,5 × 20 × (120 − 80) = 0,5 × 20 × 40 = 400. El excedente del productor es 0,5 × 20 × (80 − 20) = 0,5 × 20 × 60 = 600. El excedente total es la suma de ambos: 400 + 600 = 1.000.',
         },
+        {
+          id: 'u8-l1-e11',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Cantidad (Q)',
+            yLabel: 'Precio ($)',
+            xMax: 85,
+            yMax: 85,
+            lines: [
+              { points: [{ x: 0, y: 80 }, { x: 80, y: 0 }], color: 'brand', label: 'D' },
+              { points: [{ x: 0, y: 20 }, { x: 60, y: 80 }], color: 'accent', label: 'O' },
+            ],
+            regions: [
+              {
+                points: [
+                  { x: 0, y: 50 },
+                  { x: 0, y: 80 },
+                  { x: 30, y: 50 },
+                ],
+                color: 'success',
+                label: 'EC',
+              },
+            ],
+            markers: [{ x: 30, y: 50, guides: true }],
+            caption: 'Excedente del consumidor (EC) en el equilibrio de este mercado.',
+          },
+          question: 'Observa el triángulo sombreado (EC) del gráfico. ¿Cuál es el valor del excedente del consumidor?',
+          unitLabel: '$',
+          answer: 450,
+          hint: 'El área de un triángulo es ½ × base × altura. La base es la cantidad de equilibrio; la altura es la distancia entre el precio máximo de la demanda y el precio de equilibrio.',
+          explanation:
+            'El equilibrio está en Q = 30, P = 50. La demanda parte en $80 cuando Q = 0. El triángulo EC tiene base 30 (la cantidad) y altura 80 − 50 = 30 (la distancia entre el precio máximo que alguien pagaría y el precio de equilibrio). Área = 0,5 × 30 × 30 = 450.',
+        },
+        {
+          id: 'u8-l1-e12',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: '¿Por qué el excedente total (consumidor + productor) se maximiza precisamente en el equilibrio de un mercado competitivo, sin intervención?',
+          options: [
+            {
+              id: 'a',
+              text: 'Porque ahí se transan todas las unidades cuyo valor para el comprador supera el costo de producirlas, y ninguna que no lo cumpla',
+            },
+            { id: 'b', text: 'Porque el gobierno fija el precio en ese punto' },
+            { id: 'c', text: 'Porque en el equilibrio el excedente del consumidor siempre es igual al del productor' },
+            { id: 'd', text: 'Porque en el equilibrio no existen compradores insatisfechos' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'En el equilibrio se producen exactamente las unidades en que la disposición a pagar (leída en la demanda) es mayor o igual al costo marginal de producirlas (leído en la oferta). Producir menos dejaría sin realizar transacciones que generarían excedente; producir más generaría unidades cuyo costo supera su valor. Por eso el equilibrio maximiza el excedente total.',
+        },
       ],
     },
     {
       id: 'u8-l2',
       title: 'Impuestos, incidencia tributaria y pérdida de eficiencia',
       summary: 'Quién termina pagando realmente un impuesto, y por qué introduce una pérdida de eficiencia en el mercado.',
-      estimatedMinutes: 12,
+      estimatedMinutes: 14,
       content: [
         {
           type: 'heading',
@@ -489,13 +543,68 @@ export const unit08: Unit = {
           explanation:
             'La pérdida de eficiencia es el triángulo cuya área es 0,5 × (reducción en la cantidad) × (monto del impuesto). Con el mismo impuesto por unidad, mientras más cae la cantidad transada —como en el mercado B, típicamente más elástico— mayor es la base del triángulo y, por tanto, mayor la pérdida irrecuperable. Por eso gravar mercados muy inelásticos genera menos pérdida de eficiencia.',
         },
+        {
+          id: 'u8-l2-e10',
+          type: 'multiple_choice',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'Cantidad (Q)',
+            yLabel: 'Precio ($)',
+            xMax: 105,
+            yMax: 105,
+            lines: [
+              { points: [{ x: 0, y: 100 }, { x: 100, y: 0 }], color: 'brand', label: 'D' },
+              { points: [{ x: 0, y: 20 }, { x: 80, y: 100 }], color: 'accent', label: 'O' },
+            ],
+            regions: [
+              {
+                points: [
+                  { x: 30, y: 70 },
+                  { x: 30, y: 50 },
+                  { x: 40, y: 60 },
+                ],
+                color: 'danger',
+                label: 'PI',
+              },
+            ],
+            markers: [
+              { x: 30, y: 70, label: 'Pc' },
+              { x: 30, y: 50, label: 'Pv' },
+              { x: 40, y: 60, label: 'E' },
+            ],
+            caption: 'Un impuesto de $20 por unidad reduce la cantidad transada de 40 a 30 y abre una cuña entre Pc y Pv.',
+          },
+          question: '¿Qué representa la región sombreada (PI) entre el equilibrio original (E) y la nueva cantidad transada?',
+          options: [
+            { id: 'a', text: 'La pérdida irrecuperable de eficiencia: el excedente que se deja de generar en las unidades que ya no se transan por el impuesto' },
+            { id: 'b', text: 'La recaudación total del gobierno' },
+            { id: 'c', text: 'El excedente del consumidor que queda después del impuesto' },
+            { id: 'd', text: 'El excedente del productor que queda después del impuesto' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'La recaudación es un rectángulo (cuña del impuesto × cantidad transada), no este triángulo. El triángulo PI corresponde a las unidades que se transaban antes del impuesto (entre Q = 30 y Q = 40) y que dejan de producirse: para ellas, el valor para el comprador seguía superando el costo del vendedor, pero el impuesto vuelve la transacción no rentable. Ese excedente que ya nadie recibe —ni el gobierno, ni comprador, ni vendedor— es la pérdida irrecuperable de eficiencia.',
+        },
+        {
+          id: 'u8-l2-e11',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Un impuesto específico de $20 por unidad reduce la cantidad transada de un mercado de 40 a 30 unidades. ¿Cuál es la recaudación tributaria total del gobierno?',
+          unitLabel: '$',
+          answer: 600,
+          hint: 'La recaudación es el impuesto por unidad multiplicado por la cantidad que efectivamente se sigue transando (con el impuesto ya vigente).',
+          explanation: 'Recaudación = impuesto por unidad × cantidad post-impuesto = $20 × 30 = $600 (usa la cantidad NUEVA de 30, no la original de 40).',
+        },
       ],
     },
     {
       id: 'u8-l3',
       title: 'Análisis costo-beneficio de una política pública',
       summary: 'Cómo evaluar si una política pública conviene a la sociedad, comparando beneficios y costos, y distinguiendo eficiencia de equidad.',
-      estimatedMinutes: 12,
+      estimatedMinutes: 14,
       content: [
         {
           type: 'heading',
@@ -737,6 +846,42 @@ export const unit08: Unit = {
           correctOptionId: 'a',
           explanation:
             'Que el excedente total aumente significa que la política es eficiente: la suma de las ganancias supera la suma de las pérdidas. Pero eso no implica que todos ganen; aquí los consumidores e importadores ganan y los productores locales pierden. Un buen análisis reporta tanto el efecto agregado (eficiencia) como la distribución de ganancias y pérdidas (equidad), y reconoce que la compensación a los perdedores es posible en teoría, pero no ocurre de forma automática.',
+        },
+        {
+          id: 'u8-l3-e10',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Buses subsidiados (por hora)',
+            yLabel: 'Beneficio / Costo marginal ($ millones)',
+            xMax: 44,
+            yMax: 85,
+            lines: [
+              { points: [{ x: 0, y: 80 }, { x: 40, y: 0 }], color: 'brand', label: 'BMg' },
+              { points: [{ x: 0, y: 30 }, { x: 40, y: 30 }], color: 'accent', label: 'CMg' },
+            ],
+            markers: [{ x: 25, y: 30, guides: true }],
+            caption: 'Beneficio marginal social y costo marginal de subsidiar buses adicionales por hora.',
+          },
+          question: 'Un municipio evalúa cuántos buses subsidiar por hora en una ruta. Según el gráfico, ¿cuál es la cantidad óptima según el análisis costo-beneficio?',
+          unitLabel: 'buses',
+          answer: 25,
+          hint: 'La cantidad óptima es donde el beneficio marginal social iguala al costo marginal.',
+          explanation:
+            'Conviene agregar buses mientras el beneficio marginal (tiempo ahorrado, menos autos en la calle) supere al costo marginal del subsidio. Ambas curvas se cruzan en 25 buses por hora, donde BMg = CMg = $30 millones; agregar un bus más allá de ese punto costaría más de lo que aporta en beneficio social.',
+        },
+        {
+          id: 'u8-l3-e11',
+          type: 'numeric',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'Una política de ciclovías tiene un costo total estimado de $60.000 millones, y genera beneficios sociales estimados de $70.000 millones en ahorro de tiempo más $25.000 millones en menor contaminación. ¿Cuál es el beneficio social neto de la política?',
+          unitLabel: '$ millones',
+          answer: 35000,
+          hint: 'Beneficio neto = suma de todos los beneficios − costo total.',
+          explanation: 'Beneficio neto = ($70.000 + $25.000) − $60.000 = $95.000 − $60.000 = $35.000 millones.',
         },
       ],
     },

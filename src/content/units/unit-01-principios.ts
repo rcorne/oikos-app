@@ -16,7 +16,7 @@ export const unit01: Unit = {
       id: 'u1-l1',
       title: 'Escasez, incentivos y pensar en el margen',
       summary: 'Por qué todo tiene un costo y cómo los economistas toman decisiones "un poco a la vez".',
-      estimatedMinutes: 12,
+      estimatedMinutes: 14,
       content: [
         {
           type: 'heading',
@@ -226,13 +226,58 @@ export const unit01: Unit = {
           explanation:
             'El ingreso marginal es $90.000 por bicicleta. La 4ª conviene ($90.000 ≥ $85.000), pero la 5ª ya no ($90.000 < $95.000). Por lo tanto, la producción óptima es 4 bicicletas.',
         },
+        {
+          id: 'u1-l1-e11',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Cantidad (unidades)',
+            yLabel: 'Valor ($)',
+            xMax: 11,
+            yMax: 110,
+            lines: [
+              { points: [{ x: 0, y: 100 }, { x: 10, y: 20 }], color: 'brand', label: 'BMg' },
+              { points: [{ x: 0, y: 20 }, { x: 10, y: 100 }], color: 'accent', label: 'CMg' },
+            ],
+            markers: [{ x: 5, y: 60, label: 'E', guides: true }],
+            caption: 'Beneficio marginal (BMg) decreciente y costo marginal (CMg) creciente.',
+          },
+          question:
+            'Observa el gráfico. Siguiendo la regla marginal (producir mientras el beneficio marginal sea mayor o igual al costo marginal), ¿cuál es la cantidad óptima de unidades?',
+          unitLabel: 'unidades',
+          answer: 5,
+          hint: 'La cantidad óptima está justo donde la curva BMg cruza a la curva CMg; lee su valor en el eje horizontal.',
+          explanation:
+            'A la izquierda del cruce cada unidad extra aporta más beneficio del que cuesta (BMg > CMg); a la derecha ocurre lo contrario. El punto E marca el cruce: siguiendo la guía hacia el eje horizontal se lee la cantidad óptima, 5 unidades (donde BMg = CMg = $60).',
+        },
+        {
+          id: 'u1-l1-e12',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Un jardín infantil empieza a cobrar una multa pequeña a los padres que llegan tarde a buscar a sus hijos. Para sorpresa de todos, los atrasos aumentan en vez de disminuir. ¿Cuál es la mejor explicación económica de este resultado?',
+          options: [
+            {
+              id: 'a',
+              text: 'La multa cambió el incentivo de forma no buscada: llegar tarde pasó a tener un "precio" bajo y conocido, y a muchos padres les resulta más barato pagarlo que esforzarse por llegar a la hora',
+            },
+            { id: 'b', text: 'Los padres no responden a incentivos, así que ninguna multa puede afectar su conducta' },
+            { id: 'c', text: 'La multa es un costo hundido y por eso los padres la ignoran' },
+            { id: 'd', text: 'El resultado es imposible: subir el costo de una acción siempre la reduce' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Los incentivos importan, pero pueden operar en direcciones no buscadas. Antes, llegar tarde tenía un costo "moral" difuso; la multa lo reemplazó por un precio explícito y bajo, y para muchos padres pagar ese precio salió más barato que el esfuerzo de la puntualidad. Cambiar un incentivo casi nunca afecta una sola variable.',
+        },
       ],
     },
     {
       id: 'u1-l2',
       title: 'Costo de oportunidad: el verdadero precio de elegir',
       summary: 'Por qué el costo de una decisión es lo que dejas de hacer, y por qué el pasado no debería importar.',
-      estimatedMinutes: 12,
+      estimatedMinutes: 14,
       content: [
         {
           type: 'heading',
@@ -436,13 +481,42 @@ export const unit01: Unit = {
           explanation:
             'La decisión racional compara solo lo que viene hacia adelante: el costo futuro de reparar ($400.000) contra el beneficio futuro ($300.000). Como el costo supera al beneficio, no conviene reparar. Los $150.000 del mes pasado son un costo hundido y no cambian el cálculo (por eso la opción d, aunque acierta la acción, usa un razonamiento equivocado).',
         },
+        {
+          id: 'u1-l2-e10',
+          type: 'numeric',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'Una diseñadora freelance puede aceptar un encargo de 6 horas por $75.000 en total, o usar esas mismas horas en otro cliente que le paga $12.500 por hora. ¿Cuál es el costo de oportunidad, en pesos, de aceptar el primer encargo?',
+          unitLabel: '$',
+          answer: 75000,
+          explanation:
+            'El costo de oportunidad es el valor de la mejor alternativa a la que renuncia: 6 horas × $12.500 = $75.000 en el otro cliente. Como el encargo aceptado paga exactamente lo mismo ($75.000), ambas opciones tienen igual valor económico, aunque en dinero contante solo una de ellas aparezca como "ingreso".',
+        },
+        {
+          id: 'u1-l2-e11',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Valentina pagó una membresía anual de gimnasio, no reembolsable, y hace tres meses que no quiere ir. ¿Qué le recomienda la economía que haga?',
+          options: [
+            { id: 'a', text: 'Decidir según si ir al gimnasio de aquí en adelante le trae más beneficio que costo, sin considerar lo ya pagado' },
+            { id: 'b', text: 'Seguir yendo obligatoriamente, porque ya pagó la membresía completa' },
+            { id: 'c', text: 'Pedir que le devuelvan el dinero, ya que no reembolsable significa que aún puede recuperarlo' },
+            { id: 'd', text: 'Calcular cuánto le costó cada visita hasta ahora y decidir en base a ese promedio' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El pago de la membresía es un costo hundido: ya se gastó y no se recupera decida lo que decida ahora. La decisión racional hacia adelante solo debe comparar el beneficio futuro de ir al gimnasio contra el costo futuro (tiempo, esfuerzo), ignorando lo ya pagado.',
+        },
       ],
     },
     {
       id: 'u1-l3',
       title: 'Ventaja comparativa y las ganancias del comercio',
       summary: 'Por qué comerciar beneficia a ambas partes, incluso cuando una es mejor produciendo todo.',
-      estimatedMinutes: 12,
+      estimatedMinutes: 14,
       content: [
         {
           type: 'heading',
@@ -634,6 +708,60 @@ export const unit01: Unit = {
           correctOptionId: 'a',
           explanation:
             'El costo de oportunidad de 1 kg de papas para Marcos es 10/5 = 2 kg de tomate; para Lucía es 4/8 = 0,5 kg de tomate. Como Lucía renuncia a menos tomate por cada kg de papas, tiene ventaja comparativa en papas y debe especializarse en ellas, mientras Marcos se concentra en tomates.',
+        },
+        {
+          id: 'u1-l3-e10',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Pan (unidades)',
+            yLabel: 'Queso (kg)',
+            xMax: 45,
+            yMax: 22,
+            lines: [{ points: [{ x: 0, y: 20 }, { x: 40, y: 0 }], color: 'brand', label: 'FPP' }],
+            markers: [
+              { x: 10, y: 15, label: 'A', guides: true },
+              { x: 30, y: 5, label: 'B', guides: true },
+            ],
+            caption: 'Frontera de posibilidades de producción entre pan y queso.',
+          },
+          question:
+            'Observa la frontera de posibilidades de producción (FPP). Si la economía se mueve del punto A al punto B, ¿cuántos kilos de queso cuesta producir esas unidades adicionales de pan?',
+          unitLabel: 'kg',
+          answer: 10,
+          hint: 'Lee cuánto pan se gana y cuánto queso se pierde al pasar de A a B.',
+          explanation:
+            'De A (10 panes, 15 kg de queso) a B (30 panes, 5 kg de queso) el pan aumenta en 20 unidades y el queso cae de 15 a 5 kg, es decir, se sacrifican 10 kg de queso. Ese es el costo de oportunidad de esos 20 panes adicionales.',
+        },
+        {
+          id: 'u1-l3-e11',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Pan (unidades)',
+            yLabel: 'Queso (kg)',
+            xMax: 45,
+            yMax: 22,
+            lines: [{ points: [{ x: 0, y: 20 }, { x: 40, y: 0 }], color: 'brand', label: 'FPP' }],
+            markers: [
+              { x: 10, y: 5, label: 'A' },
+              { x: 20, y: 10, label: 'B' },
+              { x: 35, y: 8, label: 'C' },
+            ],
+            caption: 'Tres combinaciones posibles de producción de pan y queso.',
+          },
+          question: '¿Cuál de los tres puntos representa una combinación ineficiente, que desperdicia recursos?',
+          options: [
+            { id: 'a', text: 'El punto A, porque queda por debajo de la frontera' },
+            { id: 'b', text: 'El punto B, porque queda exactamente sobre la frontera' },
+            { id: 'c', text: 'El punto C, porque queda por fuera de la frontera' },
+            { id: 'd', text: 'Ninguno: los tres son igual de eficientes' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El punto B está sobre la FPP: es eficiente. El punto C está fuera de la frontera: es inalcanzable con los recursos actuales. El punto A está por debajo de la frontera (con 10 panes, la FPP permite hasta 15 kg de queso, no solo 5): esa combinación es ineficiente, porque la economía podría producir más de ambos bienes sin renunciar a nada.',
         },
       ],
     },

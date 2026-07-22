@@ -151,6 +151,35 @@ export const unit10: Unit = {
           explanation:
             'Una buena respuesta explica la identidad ahorro = inversión, define correctamente ahorro privado y ahorro público, y entiende que un déficit fiscal hace negativo al ahorro público.',
         },
+        {
+          id: 'u10-l1-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'En una economía cerrada, el ingreso total (PIB) es $1.000.000 millones, el consumo es $600.000 millones, y el gasto de gobierno es $250.000 millones. ¿Cuál es el ahorro nacional (que en una economía cerrada iguala a la inversión)?',
+          unitLabel: '$ millones',
+          answer: 150000,
+          hint: 'Ahorro nacional = PIB − Consumo − Gasto de gobierno.',
+          explanation:
+            'El ahorro nacional es lo que queda del PIB después del consumo privado y el gasto público: $1.000.000 − $600.000 − $250.000 = $150.000 millones. En una economía cerrada, ese monto es exactamente igual a la inversión.',
+        },
+        {
+          id: 'u10-l1-e6',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: 'Si el gobierno pasa de un presupuesto equilibrado a un déficit fiscal, manteniendo todo lo demás constante, ¿qué le ocurre al ahorro nacional?',
+          options: [
+            { id: 'a', text: 'Disminuye, porque el ahorro público se vuelve negativo y arrastra hacia abajo el ahorro nacional total' },
+            { id: 'b', text: 'Aumenta, porque el gobierno inyecta más gasto en la economía' },
+            { id: 'c', text: 'No cambia, porque el déficit solo afecta al gobierno' },
+            { id: 'd', text: 'Se vuelve exactamente cero' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El ahorro nacional es la suma del ahorro privado y el público. Un déficit fiscal significa que el gobierno gasta más de lo que recauda, así que su ahorro público (T − G) se vuelve negativo. Manteniendo el ahorro privado constante, eso reduce el ahorro nacional total y, por lo tanto, los fondos disponibles para inversión.',
+        },
       ],
     },
     {
@@ -277,6 +306,60 @@ export const unit10: Unit = {
             'En el mercado de fondos prestables, el ahorro nacional actúa como oferta y la inversión como demanda, y la tasa de interés real es el precio que las equilibra: sube si hay más demanda que oferta y baja si hay más oferta que demanda. Cuando el gobierno aumenta su déficit fiscal, el ahorro público cae y con él el ahorro nacional, así que la oferta de fondos prestables se desplaza hacia la izquierda. Eso sube la tasa de interés real de equilibrio, lo que encarece financiar proyectos y termina desplazando parte de la inversión privada, un efecto conocido como crowding out.',
           explanation:
             'Se espera que la respuesta identifique el ahorro como oferta y la inversión como demanda, explique el mecanismo de ajuste de la tasa de interés real, y conecte un mayor déficit fiscal con el desplazamiento de la inversión privada.',
+        },
+        {
+          id: 'u10-l2-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Fondos prestables ($ billones)',
+            yLabel: 'Tasa de interés real (%)',
+            xMax: 100,
+            yMax: 12,
+            lines: [
+              { points: [{ x: 20, y: 2 }, { x: 80, y: 11 }], color: 'accent', label: 'Ahorro (O)' },
+              { points: [{ x: 20, y: 10 }, { x: 80, y: 1 }], color: 'brand', label: 'Inversión (D)' },
+            ],
+            markers: [{ x: 50, y: 6.5, label: 'E', guides: true }],
+            caption: 'Mercado de fondos prestables: oferta de ahorro y demanda de inversión.',
+          },
+          question: 'Observa el mercado de fondos prestables. ¿Cuál es la tasa de interés real de equilibrio?',
+          unitLabel: '%',
+          answer: 6.5,
+          decimals: 1,
+          tolerance: 0.3,
+          hint: 'El equilibrio E está donde la curva de ahorro se cruza con la de inversión; lee la tasa en el eje vertical.',
+          explanation:
+            'La tasa de interés real de equilibrio se lee en el punto E, donde la cantidad de ahorro ofrecida iguala a la inversión demandada. En el gráfico, ese cruce ocurre a una tasa de 6,5% (con $50 billones de fondos prestables).',
+        },
+        {
+          id: 'u10-l2-e6',
+          type: 'multiple_choice',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'Fondos prestables ($ billones)',
+            yLabel: 'Tasa de interés real (%)',
+            xMax: 100,
+            yMax: 12,
+            lines: [
+              { points: [{ x: 30, y: 2 }, { x: 90, y: 11 }], color: 'muted', dashed: true, label: 'O₁' },
+              { points: [{ x: 10, y: 2 }, { x: 70, y: 11 }], color: 'accent', label: 'O₂' },
+              { points: [{ x: 20, y: 10 }, { x: 80, y: 1 }], color: 'brand', label: 'D' },
+            ],
+            caption: 'Un aumento del déficit fiscal desplaza la oferta de fondos de O₁ a O₂.',
+          },
+          question: 'El déficit fiscal aumenta y la oferta de fondos prestables se desplaza de O₁ a O₂ (hacia la izquierda). Según el gráfico, ¿qué le ocurre a la tasa de interés real y a la inversión privada?',
+          options: [
+            { id: 'a', text: 'La tasa de interés real sube y la inversión privada cae: es el efecto crowding out (desplazamiento)' },
+            { id: 'b', text: 'La tasa de interés real baja y la inversión privada sube' },
+            { id: 'c', text: 'La tasa no cambia, solo cae la cantidad transada' },
+            { id: 'd', text: 'La inversión privada sube porque hay más gasto público' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Al reducirse el ahorro nacional por el mayor déficit, la oferta de fondos se corre a la izquierda (O₁ → O₂). El nuevo cruce con la demanda de inversión ocurre a una tasa de interés real más alta y con una cantidad de fondos menor. Esa alza de la tasa encarece el financiamiento y desplaza inversión privada: el crowding out.',
         },
       ],
     },
@@ -410,6 +493,37 @@ export const unit10: Unit = {
             'El ahorro de los hogares depende de su nivel de ingreso, de sus expectativas sobre el futuro (por ejemplo, si temen quedarse sin empleo ahorran más por precaución) y de la tasa de interés real, que premia postergar el consumo. Del lado de las empresas, la tasa de interés real es el costo de financiar un proyecto de inversión: cuando esa tasa baja, proyectos que antes no eran rentables pasan a serlo, así que las empresas invierten más.',
           explanation:
             'Una buena respuesta menciona al menos dos factores del ahorro de los hogares y explica que una tasa de interés real más baja reduce el costo de financiamiento de las empresas, haciendo rentables más proyectos de inversión.',
+        },
+        {
+          id: 'u10-l3-e5',
+          type: 'case_study',
+          difficulty: 'media',
+          xp: 15,
+          scenario:
+            'El gobierno introduce un incentivo tributario que hace más atractivo ahorrar para la jubilación. Como resultado, los hogares deciden ahorrar más a cada nivel de tasa de interés.',
+          question: 'En el mercado de fondos prestables, ¿qué efecto tiene esta política sobre la tasa de interés real de equilibrio y la inversión?',
+          options: [
+            { id: 'a', text: 'La oferta de fondos se desplaza a la derecha: la tasa de interés real baja y la inversión aumenta' },
+            { id: 'b', text: 'La demanda de fondos se desplaza a la derecha: la tasa sube y la inversión cae' },
+            { id: 'c', text: 'No cambia nada, porque el ahorro no afecta la inversión' },
+            { id: 'd', text: 'La tasa sube y la inversión también sube' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Un incentivo que aumenta el ahorro a cada tasa desplaza la oferta de fondos prestables hacia la derecha. Con más ahorro disponible, la tasa de interés real de equilibrio baja, y esa tasa más baja abarata el financiamiento, lo que estimula una mayor inversión.',
+        },
+        {
+          id: 'u10-l3-e6',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Una empresa evalúa un proyecto que rinde un 7% real anual. Si la tasa de interés real a la que puede financiarlo baja de 9% a 5%, ¿el proyecto pasa a ser rentable? Responde con la diferencia, en puntos porcentuales, entre el rendimiento del proyecto y la nueva tasa de financiamiento.',
+          unitLabel: 'puntos',
+          answer: 2,
+          hint: 'Compara el rendimiento del proyecto (7%) con la nueva tasa de financiamiento (5%).',
+          explanation:
+            'A una tasa de 9%, el proyecto (que rinde 7%) no convenía: costaba más financiarlo de lo que rendía. Al bajar la tasa a 5%, el proyecto rinde 7% − 5% = 2 puntos porcentuales por encima de su costo de financiamiento, así que ahora sí es rentable. Por eso tasas más bajas activan más proyectos de inversión.',
         },
       ],
     },

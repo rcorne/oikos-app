@@ -56,11 +56,52 @@ export type Lesson = {
 
 export type Difficulty = 'facil' | 'media' | 'dificil';
 
+/**
+ * Declarative spec for a small economic diagram (supply/demand, AD/AS, cost
+ * curves…). Coordinates are in data units; the renderer scales them to fit.
+ * Colors are semantic tokens resolved against the active theme.
+ */
+export type ChartColor = 'brand' | 'accent' | 'success' | 'danger' | 'muted';
+
+export type ChartPoint = { x: number; y: number };
+
+export type ChartLine = {
+  points: ChartPoint[]; // straight segments between consecutive points
+  color?: ChartColor; // default 'brand'
+  dashed?: boolean;
+  label?: string; // drawn near the last point, e.g. "D", "O", "DA"
+};
+
+export type ChartRegion = {
+  points: ChartPoint[]; // closed polygon, filled translucently
+  color?: ChartColor;
+  label?: string; // drawn at the polygon centroid, e.g. "EC"
+};
+
+export type ChartMarker = {
+  x: number;
+  y: number;
+  label?: string; // e.g. "E", "P*"
+  guides?: boolean; // dashed guide lines from the point to both axes
+};
+
+export type ChartSpec = {
+  xLabel: string; // e.g. "Cantidad (Q)"
+  yLabel: string; // e.g. "Precio (P)"
+  xMax: number; // data domain is 0..xMax
+  yMax: number; // data domain is 0..yMax
+  lines: ChartLine[];
+  regions?: ChartRegion[];
+  markers?: ChartMarker[];
+  caption?: string; // short text under the chart
+};
+
 type BaseExercise = {
   id: string;
   difficulty: Difficulty;
   xp: number;
   hint?: string;
+  chart?: ChartSpec; // optional diagram shown above the question
 };
 
 export type MultipleChoiceOption = {

@@ -16,7 +16,7 @@ export const unit03: Unit = {
       id: 'u3-l1',
       title: 'Elasticidad precio de la demanda',
       summary: 'Cómo medir cuán sensible es la cantidad demandada ante cambios en el precio, y qué la hace más o menos sensible.',
-      estimatedMinutes: 12,
+      estimatedMinutes: 14,
       content: [
         {
           type: 'heading',
@@ -265,13 +265,56 @@ export const unit03: Unit = {
           explanation:
             'Los bienes de lujo, prescindibles y con muchas alternativas de uso del dinero tienden a tener demanda elástica: si sube el precio, es fácil postergar el crucero o gastar en otra cosa, así que la cantidad demandada cae en una proporción mayor que el alza de precio.',
         },
+        {
+          id: 'u3-l1-e11',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Cantidad (Q)',
+            yLabel: 'Precio ($)',
+            xMax: 100,
+            yMax: 90,
+            lines: [
+              { points: [{ x: 40, y: 80 }, { x: 60, y: 20 }], color: 'brand', label: 'D₁' },
+              { points: [{ x: 10, y: 58 }, { x: 90, y: 42 }], color: 'accent', label: 'D₂' },
+            ],
+            markers: [{ x: 50, y: 50, label: 'A' }],
+            caption: 'Dos curvas de demanda distintas que pasan por el mismo punto A.',
+          },
+          question: 'Ambas curvas de demanda pasan por el punto A. ¿Cuál de las dos es más elástica en ese punto?',
+          options: [
+            { id: 'a', text: 'D₁, porque es más empinada' },
+            { id: 'b', text: 'D₂, porque es más plana: ante el mismo cambio de precio, su cantidad reacciona mucho más' },
+            { id: 'c', text: 'Ambas tienen la misma elasticidad, porque se cruzan en el mismo punto' },
+            { id: 'd', text: 'No se puede saber sin conocer los precios en pesos' },
+          ],
+          correctOptionId: 'b',
+          explanation:
+            'Mientras más plana es la curva de demanda en un punto, mayor es su elasticidad: un cambio de precio genera un cambio proporcionalmente mayor en la cantidad. D₂ es visiblemente más plana que D₁, por lo tanto es más elástica en el punto A, aunque ambas pasen exactamente por el mismo punto.',
+        },
+        {
+          id: 'u3-l1-e12',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'El precio de un snack sube de $800 a $1.200 y la cantidad demandada cae de 500 a 300 unidades semanales. Usando la fórmula del punto medio, ¿cuál es la elasticidad precio de la demanda? (usa el valor absoluto)',
+          unitLabel: '',
+          answer: 1.25,
+          decimals: 2,
+          tolerance: 0.05,
+          hint: '%ΔQ = |ΔQ| ÷ promedio de Q; %ΔP = |ΔP| ÷ promedio de P; Ed = %ΔQ ÷ %ΔP.',
+          explanation:
+            '%ΔQ = 200 ÷ 400 = 50%. %ΔP = 400 ÷ 1.000 = 40%. Ed = 50 ÷ 40 = 1,25. Como Ed > 1, la demanda de este snack es elástica.',
+        },
       ],
     },
     {
       id: 'u3-l2',
       title: 'Elasticidad e ingreso total',
       summary: 'Por qué subir el precio no siempre significa recaudar más plata en total, y cómo lo decide la elasticidad.',
-      estimatedMinutes: 12,
+      estimatedMinutes: 14,
       content: [
         {
           type: 'heading',
@@ -497,13 +540,59 @@ export const unit03: Unit = {
           explanation:
             'Con elasticidad unitaria (Ed = 1), el cambio porcentual en la cantidad es igual al cambio porcentual en el precio, así que el efecto precio y el efecto cantidad se compensan casi exactamente. El ingreso total (P × Q) prácticamente no cambia ante una pequeña variación de precio.',
         },
+        {
+          id: 'u3-l2-e10',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'Cantidad (Q)',
+            yLabel: 'Precio ($)',
+            xMax: 100,
+            yMax: 60,
+            lines: [{ points: [{ x: 20, y: 50 }, { x: 90, y: 15 }], color: 'brand', label: 'D' }],
+            regions: [
+              { points: [{ x: 0, y: 0 }, { x: 40, y: 0 }, { x: 40, y: 40 }, { x: 0, y: 40 }], color: 'accent', label: 'IT en A' },
+              { points: [{ x: 0, y: 0 }, { x: 70, y: 0 }, { x: 70, y: 25 }, { x: 0, y: 25 }], color: 'success', label: 'IT en B' },
+            ],
+            markers: [
+              { x: 40, y: 40, label: 'A' },
+              { x: 70, y: 25, label: 'B' },
+            ],
+            caption: 'Ingreso total (P×Q) representado como área, en dos puntos de la misma demanda.',
+          },
+          scenario:
+            'Una tienda baja el precio de un producto y se mueve del punto A (40 unidades a $40) al punto B (70 unidades a $25) sobre su curva de demanda.',
+          question: 'Comparando las áreas de ambos rectángulos en el gráfico, ¿qué pasó con el ingreso total al bajar el precio?',
+          options: [
+            { id: 'a', text: 'El ingreso total subió: de $1.600 en A a $1.750 en B' },
+            { id: 'b', text: 'El ingreso total bajó, porque el precio bajó' },
+            { id: 'c', text: 'El ingreso total se mantuvo exactamente igual' },
+            { id: 'd', text: 'No se puede saber sin más información' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'IT en A = 40 × $40 = $1.600 (área del rectángulo naranjo). IT en B = 70 × $25 = $1.750 (área del rectángulo verde), visiblemente más grande. Aunque el precio bajó, el aumento en la cantidad demandada fue proporcionalmente mayor: esta demanda es elástica en ese tramo, así que bajar el precio aumentó el ingreso total.',
+        },
+        {
+          id: 'u3-l2-e11',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Un cine sube el precio de sus entradas de $4.000 a $4.800 y su ingreso total pasa de $2.000.000 a $2.184.000 semanales. ¿Cuál es el nuevo número de entradas vendidas por semana?',
+          unitLabel: 'entradas',
+          answer: 455,
+          hint: 'El ingreso total es precio × cantidad. Despeja la cantidad usando el nuevo precio.',
+          explanation: 'Cantidad = Ingreso total ÷ Precio = $2.184.000 ÷ $4.800 = 455 entradas.',
+        },
       ],
     },
     {
       id: 'u3-l3',
       title: 'Elasticidad de la oferta, del ingreso y cruzada',
       summary: 'Cómo responden los vendedores a los precios, y cómo el ingreso de los consumidores y el precio de otros bienes mueven la demanda.',
-      estimatedMinutes: 12,
+      estimatedMinutes: 14,
       content: [
         {
           type: 'heading',
@@ -726,6 +815,47 @@ export const unit03: Unit = {
           hint: 'Divide el cambio porcentual en la cantidad por el cambio porcentual en el ingreso, usando promedios como base. El signo importa para interpretar el resultado.',
           explanation:
             'Cambio porcentual en la cantidad: (60 − 40) ÷ ((40 + 60) / 2) = 20 ÷ 50 = 40%. Cambio porcentual en el ingreso: (700.000 − 500.000) ÷ ((500.000 + 700.000) / 2) = 200.000 ÷ 600.000 ≈ 33,3%. Elasticidad ingreso = 40 ÷ 33,3 = 1,2. Como es positiva, el cine es un bien normal; y como además es mayor a 1, se comporta como un bien de lujo para este grupo.',
+        },
+        {
+          id: 'u3-l3-e10',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Cantidad (Q)',
+            yLabel: 'Precio ($)',
+            xMax: 45,
+            yMax: 100,
+            lines: [{ points: [{ x: 30, y: 10 }, { x: 30, y: 90 }], color: 'brand', label: 'D' }],
+            markers: [
+              { x: 30, y: 20, label: 'A', guides: true },
+              { x: 30, y: 50, label: 'B', guides: true },
+            ],
+            caption: 'Demanda perfectamente inelástica de un medicamento sin sustitutos.',
+          },
+          question:
+            'Observa el gráfico: la demanda de este medicamento es una recta vertical. Si el precio sube de $20 (punto A) a $50 (punto B), ¿en cuántas unidades cambia la cantidad demandada?',
+          unitLabel: 'unidades',
+          answer: 0,
+          hint: 'Una curva de demanda vertical significa que la cantidad no depende del precio.',
+          explanation:
+            'Cuando la demanda es perfectamente inelástica (una recta vertical), la cantidad demandada es la misma —30 unidades— sin importar cuánto cambie el precio. El cambio en la cantidad es 0. Esto es típico de bienes sin sustitutos que el consumidor necesita comprar igual, como ciertos medicamentos.',
+        },
+        {
+          id: 'u3-l3-e11',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: '¿Cuál de las siguientes situaciones describe mejor una elasticidad cruzada NEGATIVA entre dos bienes?',
+          options: [
+            { id: 'a', text: 'Sube el precio de las impresoras y baja la cantidad demandada de cartuchos de tinta (son complementos)' },
+            { id: 'b', text: 'Sube el precio del té y sube la cantidad demandada de café (son sustitutos)' },
+            { id: 'c', text: 'Sube el ingreso de los consumidores y sube la cantidad demandada de un bien normal' },
+            { id: 'd', text: 'Sube el precio de un bien y baja la cantidad demandada de ese mismo bien' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'La elasticidad cruzada mide cómo cambia la cantidad demandada de un bien ante un cambio en el precio de OTRO bien. Cuando son complementos (como impresoras y cartuchos), un alza en el precio de uno reduce la demanda del otro: el signo es negativo. Entre sustitutos (como té y café) el signo es positivo, como en la opción b.',
         },
       ],
     },

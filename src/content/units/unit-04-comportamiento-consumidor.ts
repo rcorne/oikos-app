@@ -17,7 +17,7 @@ export const unit04: Unit = {
       title: 'Utilidad marginal y elección racional',
       summary:
         'Cómo modelamos la satisfacción que entrega consumir, y la regla para repartir un presupuesto limitado entre distintos bienes.',
-      estimatedMinutes: 12,
+      estimatedMinutes: 14,
       content: [
         {
           type: 'heading',
@@ -250,6 +250,48 @@ export const unit04: Unit = {
           explanation:
             'La pendiente de la restricción presupuestaria es igual al precio relativo de los dos bienes. Como la pizza ($1.000) cuesta 5 veces lo que cuesta una lata de bebida ($200), para financiar una pizza más hay que resignar 5 latas: ese es su costo de oportunidad, con independencia de las utilidades marginales.',
         },
+        {
+          id: 'u4-l1-e11',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Pizzas',
+            yLabel: 'Bebidas',
+            xMax: 9,
+            yMax: 22,
+            lines: [{ points: [{ x: 0, y: 20 }, { x: 8, y: 0 }], color: 'brand', label: 'Restricción' }],
+            markers: [{ x: 4, y: 10, guides: true }],
+            caption: 'Restricción presupuestaria: ingreso $12.000, pizza $1.500, bebida $600.',
+          },
+          question: 'Observa la restricción presupuestaria del gráfico. Si el consumidor compra 4 pizzas, ¿cuántas bebidas puede comprar con el resto de su presupuesto?',
+          unitLabel: 'bebidas',
+          answer: 10,
+          hint: 'Lee el valor en el eje de bebidas justo sobre x = 4, siguiendo la línea de la restricción.',
+          explanation:
+            'Gastando en 4 pizzas: 4 × $1.500 = $6.000. Del ingreso de $12.000 quedan $6.000, que alcanzan para $6.000 ÷ $600 = 10 bebidas. El punto (4 pizzas, 10 bebidas) cae exactamente sobre la recta de restricción presupuestaria, tal como muestra el gráfico.',
+        },
+        {
+          id: 'u4-l1-e12',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          scenario:
+            'Camilo obtiene una utilidad marginal de 80 utils por su última empanada (precio $800) y de 90 utils por su última bebida (precio $1.200).',
+          question: '¿Está Camilo en su punto óptimo de consumo? ¿Qué debería hacer?',
+          options: [
+            {
+              id: 'a',
+              text: 'No: la UMg por peso de la empanada (0,10) es mayor que la de la bebida (0,075), así que debería comprar más empanadas y menos bebidas',
+            },
+            { id: 'b', text: 'Sí, porque ambas utilidades marginales son positivas' },
+            { id: 'c', text: 'No: debería comprar más bebidas, porque tienen mayor utilidad marginal en utils' },
+            { id: 'd', text: 'Sí, porque la suma de ambas utilidades marginales es la misma en los dos bienes' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Lo relevante no es la utilidad marginal en utils, sino la utilidad marginal POR PESO gastado: empanada = 80 ÷ 800 = 0,10 utils/$; bebida = 90 ÷ 1.200 = 0,075 utils/$. Como la empanada rinde más por peso, Camilo no está en su óptimo: le conviene comprar más empanadas (lo que baja su UMg) y menos bebidas (lo que sube la de bebida) hasta igualar ambas razones.',
+        },
       ],
     },
     {
@@ -257,7 +299,7 @@ export const unit04: Unit = {
       title: 'Sesgos de decisión: pérdidas, anclas y statu quo',
       summary:
         'Tres patrones sistemáticos que alejan nuestras decisiones del ideal racional: la aversión a la pérdida, el anclaje y el apego al statu quo.',
-      estimatedMinutes: 12,
+      estimatedMinutes: 14,
       content: [
         {
           type: 'heading',
@@ -484,6 +526,45 @@ export const unit04: Unit = {
           explanation:
             'Antonia valora más la entrada por el solo hecho de ya tenerla: venderla se siente como una pérdida, y las pérdidas pesan psicológicamente más que las ganancias equivalentes. Por eso exige más para desprenderse de ella de lo que habría estado dispuesta a pagar para adquirirla. Esta brecha entre lo que pedimos por algo que tenemos y lo que pagaríamos por conseguirlo es una manifestación directa de la aversión a la pérdida.',
         },
+        {
+          id: 'u4-l2-e10',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Pizzas',
+            yLabel: 'Bebidas',
+            xMax: 14,
+            yMax: 32,
+            lines: [
+              { points: [{ x: 0, y: 20 }, { x: 8, y: 0 }], color: 'muted', dashed: true, label: 'R₁' },
+              { points: [{ x: 0, y: 30 }, { x: 12, y: 0 }], color: 'brand', label: 'R₂' },
+            ],
+            caption: 'La restricción presupuestaria se desplaza de R₁ a R₂; los precios de ambos bienes no cambian.',
+          },
+          question: 'La restricción presupuestaria pasó de R₁ a R₂, manteniendo los precios de pizza y bebida sin cambios. ¿Qué explica este desplazamiento?',
+          options: [
+            { id: 'a', text: 'Un aumento del ingreso del consumidor: ahora puede comprar más de ambos bienes a los mismos precios' },
+            { id: 'b', text: 'Una baja en el precio de la pizza únicamente' },
+            { id: 'c', text: 'Una baja en el precio de la bebida únicamente' },
+            { id: 'd', text: 'Un cambio en los gustos del consumidor' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'R₂ es paralela a R₁ (mismo precio relativo, misma pendiente) pero más alejada del origen en ambos ejes: el consumidor puede comprar más pizzas Y más bebidas que antes al mismo precio. Eso solo ocurre cuando sube el ingreso disponible; un cambio de precio de un solo bien habría rotado la recta, no desplazado ambos interceptos por igual proporción.',
+        },
+        {
+          id: 'u4-l2-e11',
+          type: 'numeric',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'En una negociación, el vendedor de un auto usado menciona primero un precio de referencia de $8.000.000, aunque el precio de mercado real ronda los $6.400.000. ¿Qué porcentaje más alto es el ancla respecto al precio de mercado?',
+          unitLabel: '%',
+          answer: 25,
+          hint: 'Calcula la diferencia entre el ancla y el precio de mercado, dividida por el precio de mercado.',
+          explanation: '($8.000.000 − $6.400.000) ÷ $6.400.000 = $1.600.000 ÷ $6.400.000 = 0,25 = 25%.',
+        },
       ],
     },
     {
@@ -491,7 +572,7 @@ export const unit04: Unit = {
       title: 'Bienes posicionales y la carrera de gastos',
       summary:
         'Por qué algunos bienes se valoran por comparación con los demás, y cómo eso puede desatar una competencia de gastos que no deja a nadie mejor.',
-      estimatedMinutes: 12,
+      estimatedMinutes: 14,
       content: [
         {
           type: 'heading',
@@ -702,6 +783,47 @@ export const unit04: Unit = {
           correctOptionId: 'a',
           explanation:
             'Como el auto y el tamaño de la casa son bienes posicionales, cuando todas las familias gastan más a la vez, ninguna gana posición relativa: la carrera se anula en el agregado. Peor aún, para financiar esa carrera sacrificaron bienes no posicionales —descanso, tiempo libre, vacaciones— que sí entregaban bienestar real. Esa es la trampa de una cascada de gastos: mucho esfuerzo colectivo que deja a todos, en promedio, igual o peor.',
+        },
+        {
+          id: 'u4-l3-e10',
+          type: 'case_study',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Porciones de torta',
+            yLabel: 'Utilidad total (utils)',
+            xMax: 4.5,
+            yMax: 100,
+            lines: [{ points: [{ x: 0, y: 0 }, { x: 1, y: 50 }, { x: 2, y: 80 }, { x: 3, y: 90 }], color: 'brand', label: 'UT' }],
+            caption: 'Utilidad total obtenida al comer porciones sucesivas de torta.',
+          },
+          scenario: 'Un economista quiere identificar en qué tramo la utilidad marginal de comer torta es más baja.',
+          question: 'Según la forma de la curva de utilidad total, ¿en qué tramo la utilidad marginal es menor?',
+          options: [
+            { id: 'a', text: 'Entre la 2ª y la 3ª porción, porque ahí la curva sube menos empinada que en los tramos anteriores' },
+            { id: 'b', text: 'Entre la 0 y la 1ª porción' },
+            { id: 'c', text: 'Entre la 1ª y la 2ª porción' },
+            { id: 'd', text: 'La utilidad marginal es la misma en los tres tramos' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'La utilidad marginal de cada porción es la pendiente de ese tramo: 1ª porción +50, 2ª porción +30, 3ª porción +10. Las pendientes van cayendo (50 &gt; 30 &gt; 10), lo que se ve en el gráfico como una curva cada vez más plana: la utilidad marginal decreciente es menor en el último tramo, entre la 2ª y la 3ª porción.',
+        },
+        {
+          id: 'u4-l3-e11',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: '¿Cuál de las siguientes opciones es un ejemplo de bien NO posicional, cuyo valor no depende de cuánto tengan los demás?',
+          options: [
+            { id: 'a', text: 'Dormir 8 horas de buen descanso cada noche' },
+            { id: 'b', text: 'El tamaño de la casa comparado con la de los vecinos' },
+            { id: 'c', text: 'Tener el auto más nuevo de la cuadra' },
+            { id: 'd', text: 'Ser el primero del curso en tener cierto celular' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Dormir bien entrega bienestar real sin importar cuánto duerman los demás: es un bien no posicional. En cambio, el tamaño relativo de la casa, tener el auto más nuevo o ser el primero en algo dependen explícitamente de la comparación con otros: son bienes posicionales, cuyo valor cae si los demás alcanzan lo mismo.',
         },
       ],
     },

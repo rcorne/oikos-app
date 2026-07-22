@@ -135,6 +135,56 @@ export const unit09: Unit = {
           explanation:
             'Se espera que la respuesta identifique el concepto de bien final, explique el riesgo de doble conteo, y note que el valor de los insumos ya está incluido en el precio del producto terminado.',
         },
+        {
+          id: 'u9-l1-e5',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Año',
+            yLabel: 'PIB real ($ billones)',
+            xMax: 6.5,
+            yMax: 130,
+            lines: [
+              {
+                points: [
+                  { x: 1, y: 100 },
+                  { x: 2, y: 110 },
+                  { x: 3, y: 118 },
+                  { x: 4, y: 108 },
+                  { x: 5, y: 116 },
+                  { x: 6, y: 125 },
+                ],
+                color: 'brand',
+                label: 'PIB',
+              },
+            ],
+            caption: 'Evolución del PIB real de una economía a lo largo de seis años.',
+          },
+          question: 'Una recesión se define, en forma simplificada, como una caída del PIB real. Según el gráfico, ¿en qué año esta economía entró en recesión?',
+          options: [
+            { id: 'a', text: 'En el año 4, porque el PIB real cayó respecto al año anterior (de 118 a 108)' },
+            { id: 'b', text: 'En el año 2, porque el PIB creció poco' },
+            { id: 'c', text: 'En el año 6, porque es el nivel más alto' },
+            { id: 'd', text: 'En ningún año: el PIB siempre terminó más alto que al inicio' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Una recesión es una caída del PIB real. En el gráfico, el único tramo descendente ocurre entre el año 3 (118) y el año 4 (108): ahí el producto se contrajo. Que el nivel final sea más alto que el inicial no impide que haya habido una recesión en el camino.',
+        },
+        {
+          id: 'u9-l1-e6',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Un país produce solo pan. En el año base produce 100 panes a $500 cada uno. Al año siguiente produce 120 panes, pero el precio subió a $600. ¿Cuál es el PIB REAL del segundo año (valorado a precios del año base)?',
+          unitLabel: '$',
+          answer: 60000,
+          hint: 'El PIB real usa las cantidades del año corriente pero los precios del año base, para aislar el efecto de la inflación.',
+          explanation:
+            'El PIB real valora la producción del año corriente a precios del año base: 120 panes × $500 (precio base) = $60.000. Usar el precio nuevo ($600) daría el PIB nominal ($72.000), que mezcla más producción con precios más altos.',
+        },
       ],
     },
     {
@@ -253,6 +303,60 @@ export const unit09: Unit = {
             'La inflación es un aumento sostenido en el nivel general de precios de la economía. Se mide comparando el IPC —el costo de una canasta fija de bienes— entre dos períodos: la variación porcentual del IPC es la tasa de inflación. Cuando los precios suben más rápido que los ingresos de las personas, su poder adquisitivo cae: con el mismo sueldo, pueden comprar menos que antes.',
           explanation:
             'Una buena respuesta define la inflación como alza sostenida de precios, explica el cálculo a partir del IPC de dos períodos, y conecta la inflación con la pérdida de poder adquisitivo cuando los ingresos no la acompañan.',
+        },
+        {
+          id: 'u9-l2-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Año',
+            yLabel: 'IPC',
+            xMax: 5.5,
+            yMax: 140,
+            lines: [
+              {
+                points: [
+                  { x: 1, y: 100 },
+                  { x: 2, y: 105 },
+                  { x: 3, y: 120 },
+                  { x: 4, y: 126 },
+                ],
+                color: 'accent',
+                label: 'IPC',
+              },
+            ],
+            markers: [
+              { x: 2, y: 105, label: 'A', guides: true },
+              { x: 3, y: 120, label: 'B', guides: true },
+            ],
+            caption: 'Índice de precios al consumidor (IPC) a lo largo de cuatro años.',
+          },
+          question: 'Usando los valores del IPC en el gráfico, ¿cuál fue la tasa de inflación entre el año 2 (IPC = 105) y el año 3 (IPC = 120)? Redondea al entero.',
+          unitLabel: '%',
+          answer: 14,
+          decimals: 0,
+          tolerance: 0.6,
+          hint: 'Inflación = (IPC nuevo − IPC viejo) ÷ IPC viejo × 100.',
+          explanation:
+            'La tasa de inflación es la variación porcentual del IPC: (120 − 105) ÷ 105 × 100 = 15 ÷ 105 × 100 ≈ 14,3%, es decir, aproximadamente 14%. Entre esos dos años los precios subieron alrededor de un 14%.',
+        },
+        {
+          id: 'u9-l2-e6',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'El PIB nominal de un país creció 8% en un año, pero el PIB real solo creció 3%. ¿Qué explica la diferencia entre ambas cifras?',
+          options: [
+            { id: 'a', text: 'La inflación: el PIB nominal incluye el alza de precios, mientras que el real la descuenta; la diferencia (aprox. 5 puntos) refleja el aumento de precios' },
+            { id: 'b', text: 'Un error de medición, porque el PIB nominal y el real siempre deberían coincidir' },
+            { id: 'c', text: 'Que la población creció un 5%' },
+            { id: 'd', text: 'Que las exportaciones cayeron un 5%' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El PIB nominal mezcla dos cosas: más producción y precios más altos. El PIB real aísla solo el cambio en las cantidades, valorándolas a precios de un año base. La brecha entre el crecimiento nominal (8%) y el real (3%) se debe, aproximadamente, a la inflación del período (alrededor de 5 puntos porcentuales).',
         },
       ],
     },
@@ -379,6 +483,35 @@ export const unit09: Unit = {
             'Estar desempleado significa no tener trabajo pero estar buscando uno activamente; en cambio, alguien que no tiene trabajo y tampoco lo está buscando queda fuera de la fuerza laboral y no se cuenta como desempleado en la estadística oficial. Esta distinción importa porque los "trabajadores desalentados" que dejan de buscar trabajo hacen que la tasa de desempleo medida subestime cuánta gente realmente querría trabajar y no tiene empleo.',
           explanation:
             'Se espera que la respuesta distinga claramente ambas categorías y explique la implicación práctica: la tasa de desempleo puede no capturar completamente el problema del mercado laboral.',
+        },
+        {
+          id: 'u9-l3-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'En un país hay 8 millones de personas ocupadas y 2 millones desempleadas (sin trabajo pero buscando activamente). ¿Cuál es la tasa de desempleo, en porcentaje?',
+          unitLabel: '%',
+          answer: 20,
+          hint: 'Tasa de desempleo = desempleados ÷ fuerza laboral × 100. La fuerza laboral es ocupados + desempleados.',
+          explanation:
+            'La fuerza laboral es 8 + 2 = 10 millones. La tasa de desempleo es 2 ÷ 10 × 100 = 20%. Ojo: el denominador es la fuerza laboral (ocupados + desempleados), no la población total.',
+        },
+        {
+          id: 'u9-l3-e6',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: 'Un trabajador que renunció a su empleo y está dedicando dos semanas a buscar uno mejor que se ajuste a sus habilidades, ¿qué tipo de desempleo representa?',
+          options: [
+            { id: 'a', text: 'Desempleo friccional: el que surge del tiempo natural que toma emparejar trabajadores con empleos adecuados' },
+            { id: 'b', text: 'Desempleo estructural, por un desajuste permanente entre habilidades y vacantes' },
+            { id: 'c', text: 'Desempleo cíclico, causado por una recesión' },
+            { id: 'd', text: 'No es desempleo, porque renunció voluntariamente' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El desempleo friccional es el de corto plazo asociado al proceso normal de buscar y encontrar el trabajo adecuado: toma tiempo emparejar a las personas con las vacantes correctas. Es distinto del estructural (desajuste persistente de habilidades) y del cíclico (ligado a las recesiones). Sí cuenta como desempleo, porque está sin trabajo y buscando activamente.',
         },
       ],
     },

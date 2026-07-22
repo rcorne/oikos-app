@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/Button';
 import { Chip } from '@/components/ui/Chip';
 import { Text } from '@/components/ui/Text';
 import { ChoiceExerciseCard } from '@/components/exercises/ChoiceExerciseCard';
+import { ExerciseChart } from '@/components/exercises/ExerciseChart';
 import { ExerciseHeader } from '@/components/exercises/ExerciseHeader';
 import { NumericKeypadCard } from '@/components/exercises/NumericKeypadCard';
 import { OpenEndedAudioCard } from '@/components/exercises/OpenEndedAudioCard';
@@ -158,6 +159,8 @@ export default function ExerciseScreen() {
           <Chip label={unit.title} tone="brand" />
           <Chip label={difficultyLabel[exercise.difficulty]} tone="neutral" />
         </View>
+
+        {exercise.chart && <ExerciseChart spec={exercise.chart} />}
 
         {(exercise.type === 'multiple_choice' || exercise.type === 'case_study') && (
           <ChoiceExerciseCard
