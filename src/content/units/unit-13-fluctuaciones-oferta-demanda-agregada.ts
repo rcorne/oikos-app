@@ -236,6 +236,59 @@ export const unit13: Unit = {
           explanation:
             'Cuando el equilibrio de corto plazo (Y = 90) queda a la DERECHA del PIB potencial (Y = 70), la economía produce por encima de su capacidad sostenible: hay una brecha positiva. Trabajadores y máquinas operan más allá de su nivel normal, y esa presión tiende a acelerar salarios y precios hasta que la economía regresa a su potencial.',
         },
+        {
+          id: 'u13-l1-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'PIB real',
+            yLabel: 'Nivel de precios',
+            xMax: 145,
+            yMax: 145,
+            lines: [
+              { points: [{ x: 30, y: 120 }, { x: 130, y: 20 }], color: 'brand', label: 'DA' },
+              { points: [{ x: 50, y: 20 }, { x: 130, y: 100 }], color: 'accent', label: 'OA' },
+            ],
+            markers: [{ x: 90, y: 60, label: 'E', guides: true }],
+            caption: 'Equilibrio de corto plazo entre demanda agregada (DA) y oferta agregada (OA).',
+          },
+          question: 'Observa el gráfico de oferta y demanda agregada. ¿Cuál es el PIB real de equilibrio?',
+          unitLabel: 'PIB real',
+          answer: 90,
+          hint: 'El equilibrio macroeconómico de corto plazo está donde se cruzan la DA y la OA.',
+          explanation:
+            'El punto E marca el cruce de la demanda agregada con la oferta agregada de corto plazo: PIB real de 90 y nivel de precios de 60, como indican las guías punteadas hacia cada eje.',
+        },
+        {
+          id: 'u13-l1-e6',
+          type: 'multiple_choice',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'PIB real',
+            yLabel: 'Nivel de precios',
+            xMax: 145,
+            yMax: 145,
+            lines: [
+              { points: [{ x: 30, y: 120 }, { x: 130, y: 20 }], color: 'brand', label: 'DA' },
+              { points: [{ x: 50, y: 20 }, { x: 130, y: 100 }], color: 'accent', label: 'OA' },
+              { points: [{ x: 70, y: 15 }, { x: 70, y: 130 }], color: 'muted', label: 'OALP' },
+            ],
+            markers: [{ x: 90, y: 60, label: 'E' }],
+            caption: 'La OALP marca el PIB potencial; el equilibrio de corto plazo E está a su derecha.',
+          },
+          question: 'El equilibrio de corto plazo (PIB = 90) está a la derecha del PIB potencial marcado por la OALP (70). ¿Qué situación describe el gráfico?',
+          options: [
+            { id: 'a', text: 'Una brecha positiva: la economía produce por encima de su potencial y está sobrecalentada, con presiones inflacionarias' },
+            { id: 'b', text: 'Una recesión: la economía produce por debajo de su potencial' },
+            { id: 'c', text: 'Un equilibrio de largo plazo perfecto, sin brechas' },
+            { id: 'd', text: 'Deflación estructural, porque la OALP es vertical' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Cuando el PIB efectivo (90) supera al potencial (70), existe una brecha positiva del producto: los recursos están sobreutilizados, el desempleo cae por debajo de su tasa natural y aparecen presiones al alza en salarios y precios. Con el tiempo la OA de corto plazo se desplaza hacia arriba y la economía retorna al potencial, pero con precios más altos.',
+        },
       ],
     },
     {
@@ -432,6 +485,34 @@ export const unit13: Unit = {
           explanation:
             'Multiplicador = 1 ÷ (1 − 0,75) = 1 ÷ 0,25 = 4. El efecto total sobre el PIB es 4 × $40.000 = $160.000 millones: el gasto inicial se convierte en ingreso de alguien, que consume el 75%, y así sucesivamente en rondas cada vez menores.',
         },
+        {
+          id: 'u13-l2-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'En una economía la propensión marginal a consumir es 0,75. Si el gasto público aumenta en $40 mil millones, ¿en cuánto aumenta el producto según el efecto multiplicador?',
+          unitLabel: 'miles de millones',
+          answer: 160,
+          hint: 'Multiplicador = 1 ÷ (1 − PMC); luego multiplícalo por el aumento del gasto.',
+          explanation: 'Multiplicador = 1 ÷ (1 − 0,75) = 1 ÷ 0,25 = 4. Aumento del producto = 4 × $40 = $160 mil millones.',
+        },
+        {
+          id: 'u13-l2-e6',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: '¿Cuál de estos eventos desplaza la curva de demanda agregada hacia la DERECHA?',
+          options: [
+            { id: 'a', text: 'Un aumento del gasto público en infraestructura' },
+            { id: 'b', text: 'Un alza fuerte del precio internacional del petróleo' },
+            { id: 'c', text: 'Una caída en la confianza de los consumidores' },
+            { id: 'd', text: 'Un aumento generalizado de los salarios nominales' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'La DA se desplaza a la derecha cuando aumenta algún componente del gasto agregado (C, I, G o exportaciones netas) a cada nivel de precios: más gasto público lo hace directamente. Un shock petrolero o un alza de salarios afectan la oferta agregada, y una caída de confianza desplaza la DA hacia la izquierda.',
+        },
       ],
     },
     {
@@ -621,6 +702,51 @@ export const unit13: Unit = {
           correctOptionId: 'a',
           explanation:
             'Un shock negativo de oferta produce estanflación: precios más altos con producto más bajo. A diferencia de un shock de demanda —donde estabilizar precios y producto van de la mano—, aquí las dos metas del banco central entran en conflicto directo: cualquier respuesta mejora un problema empeorando el otro.',
+        },
+        {
+          id: 'u13-l3-e5',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'PIB real',
+            yLabel: 'Nivel de precios',
+            xMax: 145,
+            yMax: 145,
+            lines: [
+              { points: [{ x: 30, y: 120 }, { x: 130, y: 20 }], color: 'muted', dashed: true, label: 'DA₁' },
+              { points: [{ x: 30, y: 100 }, { x: 110, y: 20 }], color: 'brand', label: 'DA₂' },
+              { points: [{ x: 50, y: 20 }, { x: 130, y: 100 }], color: 'accent', label: 'OA' },
+            ],
+            markers: [
+              { x: 90, y: 60, label: 'E₁' },
+              { x: 80, y: 50, label: 'E₂' },
+            ],
+            caption: 'Un shock negativo de demanda desplaza la DA de DA₁ a DA₂.',
+          },
+          scenario:
+            'Una crisis de confianza hace que familias y empresas recorten fuertemente su gasto, desplazando la demanda agregada de DA₁ a DA₂.',
+          question: 'Según el gráfico, ¿qué le ocurre a la economía en el corto plazo?',
+          options: [
+            { id: 'a', text: 'Recesión: el PIB real cae de 90 a 80 y el nivel de precios baja de 60 a 50' },
+            { id: 'b', text: 'El PIB cae pero los precios suben (estanflación)' },
+            { id: 'c', text: 'El PIB y los precios suben juntos' },
+            { id: 'd', text: 'El PIB no cambia; solo bajan los precios' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Un shock negativo de demanda mueve el equilibrio a lo largo de la curva de oferta agregada hacia abajo y a la izquierda: de E₁ (PIB 90, precios 60) a E₂ (PIB 80, precios 50). Caen simultáneamente la producción y el nivel de precios — el patrón típico de una recesión originada en la demanda, a diferencia de un shock de oferta, que hace caer el PIB pero SUBIR los precios.',
+        },
+        {
+          id: 'u13-l3-e6',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Según una curva de Phillips de corto plazo, cada punto porcentual que baja el desempleo por debajo de su tasa natural agrega 1,5 puntos a la inflación. Si el desempleo cae 2 puntos bajo su tasa natural, ¿cuántos puntos porcentuales sube la inflación?',
+          unitLabel: 'puntos',
+          answer: 3,
+          explanation: 'Alza de inflación = 2 puntos de menor desempleo × 1,5 = 3 puntos porcentuales.',
         },
       ],
     },
