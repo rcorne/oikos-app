@@ -199,6 +199,41 @@ export const unit12: Unit = {
           explanation:
             'Δk = inversión − depreciación = $12.000 − $9.000 = $3.000. Mientras la inversión supere a la depreciación, el capital por trabajador sigue creciendo; cuando se igualan, la economía llega a su estado estacionario.',
         },
+        {
+          id: 'u12-l1-e5',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Capital por trabajador (k)',
+            yLabel: 'Producto por trabajador (y)',
+            xMax: 7,
+            yMax: 80,
+            lines: [{ points: [{ x: 0, y: 0 }, { x: 2, y: 40 }, { x: 4, y: 60 }, { x: 6, y: 70 }], color: 'brand', label: 'f(k)' }],
+            caption: 'Función de producción por trabajador de una economía.',
+          },
+          question: 'Cada tramo de la curva f(k) sube menos que el anterior (+40, +20, +10). ¿Qué propiedad del capital refleja esta forma?',
+          options: [
+            { id: 'a', text: 'Rendimientos marginales decrecientes: cada unidad extra de capital aporta menos producto que la anterior' },
+            { id: 'b', text: 'Rendimientos crecientes del capital' },
+            { id: 'c', text: 'Que el capital no afecta la producción' },
+            { id: 'd', text: 'Que la tecnología está empeorando' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'La curva se va aplanando: pasar de 0 a 2 unidades de capital agrega 40 de producto; de 2 a 4 agrega solo 20; y de 4 a 6, apenas 10. Esa concavidad es la firma de los rendimientos marginales decrecientes: acumular capital ayuda, pero cada vez menos.',
+        },
+        {
+          id: 'u12-l1-e6',
+          type: 'numeric',
+          difficulty: 'facil',
+          xp: 10,
+          question:
+            'Una economía produce Y = $2.000 miles de millones y ahorra el 25% de su producto. ¿Cuánto invierte al año, en miles de millones?',
+          unitLabel: 'miles de millones',
+          answer: 500,
+          explanation: 'Inversión = s × Y = 0,25 × 2.000 = 500 miles de millones.',
+        },
       ],
     },
     {
@@ -404,6 +439,46 @@ export const unit12: Unit = {
           explanation:
             'Con más ahorro, a cada nivel de capital se invierte más, así que la curva de inversión se desplaza hacia arriba. El cruce con la recta de depreciación δk ocurre ahora en un capital mayor: k* sube de 6 a 10. El país transita hacia un nuevo estado estacionario con más capital y más producto por trabajador (aunque, a la larga, la tasa de crecimiento vuelve a depender de la tecnología).',
         },
+        {
+          id: 'u12-l2-e5',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'Capital por trabajador (k)',
+            yLabel: 'Inversión / Depreciación',
+            xMax: 13,
+            yMax: 7,
+            lines: [
+              { points: [{ x: 0, y: 0 }, { x: 3, y: 3 }, { x: 8, y: 4 }, { x: 12, y: 4.4 }], color: 'brand', label: 'sf(k)' },
+              { points: [{ x: 0, y: 0 }, { x: 12, y: 6 }], color: 'accent', label: 'δk' },
+            ],
+            markers: [{ x: 8, y: 4, label: 'k*', guides: true }],
+            caption: 'Inversión por trabajador sf(k) y depreciación δk en el modelo de Solow.',
+          },
+          question: 'El estado estacionario ocurre donde la inversión sf(k) iguala a la depreciación δk. Según el gráfico, ¿cuál es el capital por trabajador de estado estacionario k*?',
+          unitLabel: 'unidades',
+          answer: 8,
+          hint: 'Busca dónde se cruzan las dos curvas (fuera del origen).',
+          explanation:
+            'A la izquierda de k* la inversión supera a la depreciación y el capital crece; a la derecha ocurre lo contrario y el capital cae. Las curvas se cruzan en k* = 8, donde la inversión repone exactamente lo que se deprecia (4): ahí el capital por trabajador deja de cambiar.',
+        },
+        {
+          id: 'u12-l2-e6',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question: 'Según el modelo de Solow, ¿qué logra de forma PERMANENTE un aumento en la tasa de ahorro de un país?',
+          options: [
+            { id: 'a', text: 'Un nivel de capital y producto por trabajador más alto en el nuevo estado estacionario, pero no una tasa de crecimiento permanentemente mayor' },
+            { id: 'b', text: 'Una tasa de crecimiento del producto permanentemente más alta' },
+            { id: 'c', text: 'Nada: el ahorro no afecta el estado estacionario' },
+            { id: 'd', text: 'Una caída del producto por trabajador de largo plazo' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Más ahorro eleva la curva de inversión y mueve el estado estacionario a un capital y producto por trabajador mayores: un efecto de NIVEL. Pero por los rendimientos decrecientes, el crecimiento extra se apaga al llegar al nuevo estado estacionario; el crecimiento sostenido de largo plazo requiere progreso tecnológico.',
+        },
       ],
     },
     {
@@ -581,6 +656,56 @@ export const unit12: Unit = {
           hint: 'Regla del 70: años para duplicar ≈ 70 ÷ tasa de crecimiento anual.',
           explanation:
             'La regla del 70 aproxima el tiempo de duplicación: 70 ÷ 2 = 35 años. Pequeñas diferencias sostenidas en la tasa de crecimiento generan enormes diferencias de nivel de vida entre generaciones: a 1% tomaría 70 años; a 4%, solo 17,5.',
+        },
+        {
+          id: 'u12-l3-e5',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'Capital por trabajador (k)',
+            yLabel: 'Inversión / Depreciación',
+            xMax: 13,
+            yMax: 7,
+            lines: [
+              { points: [{ x: 0, y: 0 }, { x: 2, y: 2.4 }, { x: 6, y: 3 }, { x: 12, y: 3.6 }], color: 'muted', dashed: true, label: 's₁f(k)' },
+              { points: [{ x: 0, y: 0 }, { x: 2, y: 3 }, { x: 10, y: 5 }, { x: 12, y: 5.2 }], color: 'brand', label: 's₂f(k)' },
+              { points: [{ x: 0, y: 0 }, { x: 12, y: 6 }], color: 'accent', label: 'δk' },
+            ],
+            markers: [
+              { x: 6, y: 3, label: 'k₁*' },
+              { x: 10, y: 5, label: 'k₂*' },
+            ],
+            caption: 'Un aumento de la tasa de ahorro desplaza la curva de inversión de s₁f(k) a s₂f(k).',
+          },
+          scenario:
+            'Un país implementa una reforma que eleva de forma sostenida su tasa de ahorro, desplazando la curva de inversión hacia arriba, como muestra el gráfico.',
+          question: '¿Qué predice el modelo de Solow según el gráfico?',
+          options: [
+            { id: 'a', text: 'El capital de estado estacionario sube de k₁* = 6 a k₂* = 10: la economía crece durante la transición y se estabiliza en un nivel más alto' },
+            { id: 'b', text: 'El capital de estado estacionario cae, porque ahorrar reduce el consumo' },
+            { id: 'c', text: 'El país crecerá para siempre a una tasa mayor, sin converger a ningún estado estacionario' },
+            { id: 'd', text: 'Nada cambia, porque la depreciación también sube' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Con más ahorro, la curva de inversión cruza a la depreciación más a la derecha: el estado estacionario pasa de k₁* = 6 a k₂* = 10. Durante la transición la economía crece más rápido, pero al llegar al nuevo estado estacionario el crecimiento vuelve a depender solo del progreso tecnológico: el ahorro compra un nivel más alto, no una tasa permanente.',
+        },
+        {
+          id: 'u12-l3-e6',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: 'En el largo plazo, ¿cuál es la única fuente capaz de sostener el crecimiento del producto POR TRABAJADOR según el modelo de Solow?',
+          options: [
+            { id: 'a', text: 'El progreso tecnológico, que eleva continuamente la productividad de capital y trabajo' },
+            { id: 'b', text: 'Acumular capital sin límite, porque su rendimiento nunca decae' },
+            { id: 'c', text: 'El crecimiento de la población' },
+            { id: 'd', text: 'Los déficits fiscales permanentes' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'La acumulación de capital se topa con rendimientos decrecientes y el crecimiento poblacional diluye el capital por trabajador. Solo el progreso tecnológico desplaza la función de producción hacia arriba una y otra vez, sosteniendo el crecimiento del producto por persona en el largo plazo.',
         },
       ],
     },
