@@ -136,6 +136,47 @@ export const unit14: Unit = {
           explanation:
             'Se espera que la respuesta identifique el abaratamiento del crédito, explique el efecto sobre consumo e inversión, y conecte ambos con el aumento de la demanda agregada.',
         },
+        {
+          id: 'u14-l1-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Cantidad de dinero',
+            yLabel: 'Tasa de interés (%)',
+            xMax: 100,
+            yMax: 12,
+            lines: [
+              { points: [{ x: 40, y: 2 }, { x: 40, y: 11 }], color: 'muted', dashed: true, label: 'OM₁' },
+              { points: [{ x: 60, y: 2 }, { x: 60, y: 11 }], color: 'accent', label: 'OM₂' },
+              { points: [{ x: 10, y: 10 }, { x: 90, y: 2 }], color: 'brand', label: 'DM' },
+            ],
+            markers: [{ x: 60, y: 5, label: 'E₂', guides: true }],
+            caption: 'Política monetaria expansiva: la oferta monetaria pasa de OM₁ a OM₂.',
+          },
+          question: 'Tras la expansión monetaria (de OM₁ a OM₂), ¿cuál es la nueva tasa de interés de equilibrio, en porcentaje?',
+          unitLabel: '%',
+          answer: 5,
+          hint: 'Busca dónde la demanda de dinero cruza la nueva oferta monetaria OM₂.',
+          explanation:
+            'Con más dinero en circulación, la oferta vertical se desplaza a la derecha y su cruce con la demanda de dinero ocurre a una tasa menor: 5% en el punto E₂. Esa baja de la tasa abarata el crédito y estimula consumo e inversión.',
+        },
+        {
+          id: 'u14-l1-e6',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: 'Ordena correctamente el mecanismo de transmisión de una política monetaria expansiva:',
+          options: [
+            { id: 'a', text: 'Baja la tasa de interés → se abarata el crédito → suben consumo e inversión → aumenta la demanda agregada' },
+            { id: 'b', text: 'Sube la tasa de interés → se encarece el crédito → aumenta la demanda agregada' },
+            { id: 'c', text: 'Baja la tasa de interés → cae la inversión → baja la demanda agregada' },
+            { id: 'd', text: 'Suben los impuestos → cae el consumo → cae la demanda agregada' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Una política monetaria expansiva aumenta la cantidad de dinero, lo que reduce la tasa de interés. Con crédito más barato, familias y empresas gastan e invierten más, y esa mayor demanda agregada impulsa el producto en el corto plazo. La opción d describe política fiscal, no monetaria.',
+        },
       ],
     },
     {
@@ -280,6 +321,49 @@ export const unit14: Unit = {
           explanation:
             'Se espera que la respuesta distinga el déficit (flujo anual) de la deuda (stock acumulado) y explique la preocupación por la carga de intereses y la sostenibilidad del pago.',
         },
+        {
+          id: 'u14-l2-e5',
+          type: 'multiple_choice',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'PIB real',
+            yLabel: 'Nivel de precios',
+            xMax: 145,
+            yMax: 145,
+            lines: [
+              { points: [{ x: 30, y: 100 }, { x: 110, y: 20 }], color: 'muted', dashed: true, label: 'DA₁' },
+              { points: [{ x: 30, y: 120 }, { x: 130, y: 20 }], color: 'brand', label: 'DA₂' },
+              { points: [{ x: 50, y: 20 }, { x: 130, y: 100 }], color: 'accent', label: 'OA' },
+            ],
+            markers: [
+              { x: 80, y: 50, label: 'E₁' },
+              { x: 90, y: 60, label: 'E₂' },
+            ],
+            caption: 'Un estímulo fiscal desplaza la demanda agregada de DA₁ a DA₂.',
+          },
+          question: 'El gobierno lanza un plan de obras públicas y la DA se desplaza de DA₁ a DA₂. Según el gráfico, ¿qué ocurre en el corto plazo?',
+          options: [
+            { id: 'a', text: 'El PIB real sube de 80 a 90 y el nivel de precios sube de 50 a 60' },
+            { id: 'b', text: 'El PIB sube pero los precios bajan' },
+            { id: 'c', text: 'El PIB y los precios caen' },
+            { id: 'd', text: 'Solo cambian los precios; el PIB queda igual' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Un estímulo fiscal desplaza la DA a la derecha. El nuevo equilibrio se mueve a lo largo de la oferta agregada de corto plazo: aumentan tanto el producto (de 80 a 90) como el nivel de precios (de 50 a 60). Ese es el costo inflacionario de estimular la demanda cuando la OA tiene pendiente positiva.',
+        },
+        {
+          id: 'u14-l2-e6',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Un país tiene una deuda pública de $120.000 millones y un PIB de $400.000 millones. ¿Cuál es su razón deuda/PIB, en porcentaje?',
+          unitLabel: '%',
+          answer: 30,
+          explanation: 'Deuda/PIB = 120.000 ÷ 400.000 × 100 = 30%.',
+        },
       ],
     },
     {
@@ -409,6 +493,52 @@ export const unit14: Unit = {
             'Los rezagos son los tiempos que pasan entre que surge un problema económico y que una política logra corregirlo. Primero está el rezago de reconocimiento, porque los datos económicos tardan en publicarse y confirmar que hay un problema. Luego está el rezago de decisión, el tiempo que toma diseñar y aprobar una respuesta, y el rezago de impacto, el tiempo que esa respuesta tarda en cambiar el comportamiento de hogares y empresas. Como estos rezagos son largos e inciertos, una política puede terminar surtiendo efecto cuando la situación ya cambió, amplificando el ciclo económico en vez de suavizarlo.',
           explanation:
             'Una buena respuesta distingue al menos dos de los tres rezagos (reconocimiento, decisión, impacto) y explica por qué su suma hace riesgoso intentar afinar la economía en tiempo real.',
+        },
+        {
+          id: 'u14-l3-e5',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'Cantidad de dinero',
+            yLabel: 'Tasa de interés (%)',
+            xMax: 100,
+            yMax: 12,
+            lines: [
+              { points: [{ x: 60, y: 2 }, { x: 60, y: 11 }], color: 'muted', dashed: true, label: 'OM₁' },
+              { points: [{ x: 40, y: 2 }, { x: 40, y: 11 }], color: 'accent', label: 'OM₂' },
+              { points: [{ x: 10, y: 10 }, { x: 90, y: 2 }], color: 'brand', label: 'DM' },
+            ],
+            markers: [
+              { x: 60, y: 5, label: 'E₁' },
+              { x: 40, y: 7, label: 'E₂' },
+            ],
+            caption: 'Política monetaria contractiva: la oferta monetaria se reduce de OM₁ a OM₂.',
+          },
+          scenario:
+            'Ante una inflación persistente, el banco central retira liquidez del sistema y la oferta monetaria pasa de OM₁ a OM₂.',
+          question: 'Según el gráfico, ¿qué efecto tiene esta política y cómo afecta a la economía real?',
+          options: [
+            { id: 'a', text: 'La tasa sube de 5% a 7%: el crédito se encarece, la inversión y el consumo se enfrían, y eso reduce la presión inflacionaria' },
+            { id: 'b', text: 'La tasa baja de 7% a 5% y la inversión aumenta' },
+            { id: 'c', text: 'La tasa sube pero la inversión también aumenta' },
+            { id: 'd', text: 'No hay efecto sobre la economía real, solo sobre los precios' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Al reducir la cantidad de dinero, la oferta vertical se desplaza a la izquierda y cruza la demanda de dinero a una tasa mayor (de 5% a 7%). Un crédito más caro desalienta la inversión y el consumo financiado, moderando la demanda agregada y con ella la inflación — al costo de una menor actividad en el corto plazo.',
+        },
+        {
+          id: 'u14-l3-e6',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Una política económica tarda 6 meses en que se reconozca el problema, 3 meses en decidirse y 9 meses en surtir efecto. ¿Cuántos meses transcurren en total desde que aparece el problema hasta que la política actúa?',
+          unitLabel: 'meses',
+          answer: 18,
+          explanation:
+            'Rezago de reconocimiento (6) + rezago de decisión (3) + rezago de impacto (9) = 18 meses. Estos rezagos son la razón principal por la que sintonizar finamente la economía es tan difícil: cuando la política actúa, el problema que buscaba resolver puede haber cambiado.',
         },
       ],
     },
