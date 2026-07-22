@@ -168,6 +168,42 @@ export const unit15: Unit = {
           explanation:
             'Se espera que la respuesta explique la relación entre déficit de cuenta corriente e inversión mayor que ahorro nacional, mencione que la brecha se cubre con financiamiento externo, y conecte los déficits sostenidos con la acumulación de deuda externa y la posición de deudor neto.',
         },
+        {
+          id: 'u15-l1-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Cantidad de dólares',
+            yLabel: 'Tipo de cambio ($/US$)',
+            xMax: 90,
+            yMax: 1200,
+            lines: [
+              { points: [{ x: 10, y: 1000 }, { x: 70, y: 200 } ], color: 'brand', label: 'D US$' },
+              { points: [{ x: 10, y: 200 }, { x: 70, y: 1000 }], color: 'accent', label: 'O US$' },
+            ],
+            markers: [{ x: 40, y: 600, label: 'E', guides: true }],
+            caption: 'Mercado cambiario: oferta y demanda de dólares.',
+          },
+          question: 'Observa el mercado cambiario. ¿Cuál es el tipo de cambio de equilibrio, en pesos por dólar?',
+          unitLabel: '$/US$',
+          answer: 600,
+          hint: 'El tipo de cambio de equilibrio está donde se cruzan la oferta y la demanda de dólares.',
+          explanation:
+            'El cruce de ambas curvas (punto E) determina el tipo de cambio de equilibrio: $600 por dólar, con 40 unidades de divisas transadas, como muestran las guías punteadas.',
+        },
+        {
+          id: 'u15-l1-e6',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Un país exporta $80.000 millones e importa $95.000 millones en bienes y servicios. ¿Cuál es su saldo de exportaciones netas, en millones? (usa signo negativo si hay déficit)',
+          unitLabel: 'millones',
+          answer: -15000,
+          hint: 'Exportaciones netas = exportaciones − importaciones.',
+          explanation: 'XN = 80.000 − 95.000 = −15.000 millones: el país tiene un déficit en su cuenta comercial.',
+        },
       ],
     },
     {
@@ -315,6 +351,54 @@ export const unit15: Unit = {
             'El tipo de cambio nominal es simplemente el precio de una moneda en términos de otra, por ejemplo cuántos pesos cuesta un dólar. El tipo de cambio real, en cambio, ajusta ese número por la diferencia entre el nivel de precios doméstico y el extranjero, y por eso refleja mejor el poder de compra real entre países. Esta distinción importa porque, si los precios domésticos suben más rápido que los externos, el tipo de cambio real se aprecia y los productos nacionales se vuelven relativamente más caros para el resto del mundo, aunque el tipo de cambio nominal no se haya movido, lo que resta competitividad a las exportaciones.',
           explanation:
             'Una buena respuesta distingue claramente el tipo de cambio nominal (precio de una moneda en otra) del real (ajustado por precios relativos), y explica que un tipo de cambio real más apreciado implica menor competitividad exportadora.',
+        },
+        {
+          id: 'u15-l2-e5',
+          type: 'multiple_choice',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'Cantidad de dólares',
+            yLabel: 'Tipo de cambio ($/US$)',
+            xMax: 90,
+            yMax: 1200,
+            lines: [
+              { points: [{ x: 10, y: 1000 }, { x: 70, y: 200 }], color: 'muted', dashed: true, label: 'D₁' },
+              { points: [{ x: 10, y: 1200 }, { x: 70, y: 400 }], color: 'brand', label: 'D₂' },
+              { points: [{ x: 10, y: 200 }, { x: 70, y: 1000 }], color: 'accent', label: 'O US$' },
+            ],
+            markers: [
+              { x: 40, y: 600, label: 'E₁' },
+              { x: 50, y: 733, label: 'E₂' },
+            ],
+            caption: 'Un aumento de la demanda de dólares desplaza la curva de D₁ a D₂.',
+          },
+          question: 'La demanda de dólares aumenta (de D₁ a D₂) porque los inversionistas locales quieren comprar más activos en el extranjero. ¿Qué le ocurre a la moneda local?',
+          options: [
+            { id: 'a', text: 'Se deprecia: se necesitan más pesos para comprar un dólar (el tipo de cambio sube)' },
+            { id: 'b', text: 'Se aprecia: se necesitan menos pesos por dólar' },
+            { id: 'c', text: 'No cambia, porque la oferta de dólares es fija' },
+            { id: 'd', text: 'Se aprecia y además caen las importaciones' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Al aumentar la demanda de dólares, su precio en pesos sube: el tipo de cambio pasa de $600 a más de $700 por dólar. Que se necesiten más pesos por cada dólar significa que el peso perdió valor relativo, es decir, se depreció. Una depreciación abarata las exportaciones del país y encarece sus importaciones.',
+        },
+        {
+          id: 'u15-l2-e6',
+          type: 'multiple_choice',
+          difficulty: 'facil',
+          xp: 10,
+          question: '¿Qué diferencia al tipo de cambio REAL del tipo de cambio nominal?',
+          options: [
+            { id: 'a', text: 'El real ajusta por los precios relativos de ambos países: mide cuántos bienes extranjeros se obtienen por un bien local' },
+            { id: 'b', text: 'El real es el que publican los bancos cada mañana' },
+            { id: 'c', text: 'El real siempre es mayor que el nominal' },
+            { id: 'd', text: 'No hay diferencia: son dos nombres para lo mismo' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'El tipo de cambio nominal es simplemente el precio de una moneda en términos de otra. El real incorpora además los niveles de precios de ambos países, respondiendo a la pregunta económicamente relevante: cuántos bienes del extranjero puedo obtener a cambio de un bien producido localmente. Es el que determina la competitividad de las exportaciones.',
         },
       ],
     },
@@ -469,6 +553,57 @@ export const unit15: Unit = {
             'Con tipo de cambio flotante, cuando el banco central baja la tasa de interés, el capital tiende a salir del país buscando mejores retornos afuera, lo que deprecia la moneda y hace más competitivas las exportaciones netas: ese canal cambiario se suma al estímulo inicial, amplificando el efecto sobre el producto. La política fiscal, en cambio, pierde fuerza: un mayor gasto público financiado con deuda tiende a subir las tasas de interés domésticas, lo que atrae capitales, aprecia la moneda y reduce las exportaciones netas, contrarrestando parte del estímulo fiscal inicial. Este resultado depende de que el tipo de cambio sea flotante; con tipo de cambio fijo, el banco central debe intervenir para sostener la paridad y el resultado se invierte.',
           explanation:
             'Se espera que la respuesta explique el canal cambiario que amplifica la política monetaria bajo flotación, el mecanismo que debilita la política fiscal por la apreciación de la moneda, y que reconozca que esto es específico del régimen de tipo de cambio flotante.',
+        },
+        {
+          id: 'u15-l3-e5',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Exportaciones netas',
+            yLabel: 'Tipo de cambio real',
+            xMax: 90,
+            yMax: 110,
+            lines: [{ points: [{ x: 10, y: 90 }, { x: 70, y: 30 }], color: 'brand', label: 'XN' }],
+            markers: [{ x: 40, y: 60, guides: true }],
+            caption: 'Relación entre el tipo de cambio real y las exportaciones netas.',
+          },
+          question: 'Según el gráfico, ¿cuál es el nivel de exportaciones netas cuando el tipo de cambio real es 60?',
+          unitLabel: 'XN',
+          answer: 40,
+          hint: 'Sigue la línea horizontal desde 60 en el eje vertical hasta cruzar la recta de XN, y baja al eje horizontal.',
+          explanation:
+            'La curva de exportaciones netas es decreciente en el tipo de cambio real: cuando la moneda local se aprecia (tipo de cambio real más alto), los productos nacionales se encarecen frente a los extranjeros y las exportaciones netas caen. En un tipo de cambio real de 60, las XN son 40, según muestran las guías.',
+        },
+        {
+          id: 'u15-l3-e6',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'Exportaciones netas',
+            yLabel: 'Tipo de cambio real',
+            xMax: 90,
+            yMax: 110,
+            lines: [{ points: [{ x: 10, y: 90 }, { x: 70, y: 30 }], color: 'brand', label: 'XN' }],
+            markers: [
+              { x: 40, y: 60, label: 'A' },
+              { x: 20, y: 80, label: 'B' },
+            ],
+            caption: 'La economía se mueve del punto A al punto B sobre la curva de exportaciones netas.',
+          },
+          scenario:
+            'Una fuerte entrada de capitales aprecia la moneda local en términos reales, y la economía se mueve del punto A al punto B del gráfico.',
+          question: '¿Qué consecuencia tiene esta apreciación real para el sector exportador?',
+          options: [
+            { id: 'a', text: 'Las exportaciones netas caen de 40 a 20: los productos locales se encarecen frente a los extranjeros y el sector exportador pierde competitividad' },
+            { id: 'b', text: 'Las exportaciones netas suben, porque una moneda fuerte atrae más compradores' },
+            { id: 'c', text: 'Las exportaciones netas no cambian, porque dependen solo del ingreso externo' },
+            { id: 'd', text: 'Las importaciones caen y las exportaciones suben simultáneamente' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Una apreciación real encarece los bienes nacionales medidos en bienes extranjeros: los compradores externos demandan menos exportaciones y los locales prefieren más importaciones. En el gráfico, el movimiento de A a B a lo largo de la curva muestra la caída de las exportaciones netas de 40 a 20. Ese es el costo típico que enfrenta el sector exportador cuando entran capitales masivamente.',
         },
       ],
     },
