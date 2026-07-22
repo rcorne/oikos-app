@@ -157,6 +157,42 @@ export const unit16: Unit = {
           explanation:
             'Se espera que la respuesta mencione que los bancos prestan la mayoría de los depósitos, distinga solvencia de liquidez, y explique el carácter autocumplido del pánico en una corrida bancaria.',
         },
+        {
+          id: 'u16-l1-e5',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          chart: {
+            xLabel: 'Año',
+            yLabel: 'Precio del activo (índice)',
+            xMax: 5.5,
+            yMax: 220,
+            lines: [{ points: [{ x: 1, y: 100 }, { x: 2, y: 150 }, { x: 3, y: 200 }, { x: 4, y: 110 }, { x: 5, y: 90 }], color: 'brand', label: 'Precio' }],
+            caption: 'Evolución del precio de un activo inmobiliario durante cinco años.',
+          },
+          question: 'Observando la trayectoria del precio del activo, ¿entre qué años estalló la burbuja?',
+          options: [
+            { id: 'a', text: 'Entre el año 3 y el año 4, cuando el precio se desploma de 200 a 110 tras la fase de alza acelerada' },
+            { id: 'b', text: 'Entre el año 1 y el año 2, cuando el precio empieza a subir' },
+            { id: 'c', text: 'Entre el año 2 y el año 3, en el punto más alto de la subida' },
+            { id: 'd', text: 'Entre el año 4 y el año 5, cuando el precio ya venía cayendo' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Una burbuja tiene dos fases: un alza sostenida y desconectada de los fundamentos (años 1 a 3, de 100 a 200) y un colapso abrupto cuando las expectativas se revierten. El desplome más violento —de 200 a 110— ocurre entre los años 3 y 4: ahí estalló la burbuja. La caída posterior (110 a 90) es el ajuste que sigue al estallido.',
+        },
+        {
+          id: 'u16-l1-e6',
+          type: 'numeric',
+          difficulty: 'media',
+          xp: 15,
+          question:
+            'Un inversionista compra activos por $500 millones usando $100 millones de capital propio y el resto con deuda. ¿Cuál es su razón de apalancamiento (activos totales dividido por capital propio)?',
+          unitLabel: 'veces',
+          answer: 5,
+          explanation:
+            'Apalancamiento = activos ÷ capital propio = 500 ÷ 100 = 5 veces. Con ese nivel, una caída de solo 20% en el valor de los activos ($100 millones) borra por completo su capital: por eso el alto apalancamiento amplifica tanto las ganancias como las pérdidas.',
+        },
       ],
     },
     {
@@ -307,6 +343,51 @@ export const unit16: Unit = {
           explanation:
             'Una buena respuesta explica el mecanismo del ataque especulativo y el agotamiento de reservas, y conecta la devaluación con el encarecimiento de la deuda externa denominada en moneda extranjera.',
         },
+        {
+          id: 'u16-l2-e5',
+          type: 'case_study',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'Escenario',
+            yLabel: 'Monto ($ miles de millones)',
+            xMax: 5.5,
+            yMax: 120,
+            lines: [
+              { points: [{ x: 1, y: 100 }, { x: 5, y: 100 }], color: 'brand', label: 'Depósitos' },
+              { points: [{ x: 1, y: 20 }, { x: 5, y: 20 }], color: 'accent', label: 'Reservas' },
+            ],
+            caption: 'Depósitos exigibles a la vista frente a reservas líquidas disponibles de un banco.',
+          },
+          scenario:
+            'Un rumor sobre la salud financiera de un banco lleva a que todos sus depositantes intenten retirar su dinero el mismo día.',
+          question: 'Según el gráfico, ¿por qué el banco no puede responder a todos aunque sea solvente?',
+          options: [
+            { id: 'a', text: 'Porque sus reservas líquidas ($20) son muy inferiores a los depósitos exigibles ($100): el resto está prestado a largo plazo y no puede recuperarse de inmediato' },
+            { id: 'b', text: 'Porque el banco perdió todo su dinero en malas inversiones' },
+            { id: 'c', text: 'Porque la ley le prohíbe devolver depósitos' },
+            { id: 'd', text: 'Porque los depósitos y las reservas son siempre iguales' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'En un sistema de reserva fraccionaria, el banco mantiene líquida solo una fracción de los depósitos ($20 de $100) y presta el resto a plazos largos. Esa transformación de plazos es su función económica, pero lo vuelve vulnerable: si todos retiran a la vez, ni siquiera un banco solvente puede pagar, porque sus activos no son líquidos. De ahí la necesidad de un prestamista de última instancia y del seguro de depósitos.',
+        },
+        {
+          id: 'u16-l2-e6',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question: 'Cuando un banco central actúa como "prestamista de última instancia" durante un pánico bancario, ¿qué problema busca evitar y qué riesgo genera?',
+          options: [
+            { id: 'a', text: 'Evita que bancos solventes quiebren por falta de liquidez, pero genera riesgo moral: los bancos pueden tomar más riesgos esperando el rescate' },
+            { id: 'b', text: 'Evita la inflación, pero genera desempleo' },
+            { id: 'c', text: 'Evita el déficit fiscal, pero aumenta la deuda privada' },
+            { id: 'd', text: 'No genera ningún riesgo: es una política sin costos' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Prestar liquidez de emergencia frena las corridas y evita que instituciones fundamentalmente sanas colapsen por un problema de plazos. Pero si los bancos anticipan ese respaldo, tienen incentivos a asumir riesgos excesivos sabiendo que el costo de un fracaso será compartido: el clásico riesgo moral que justifica acompañar el rescate con regulación y supervisión estrictas.',
+        },
       ],
     },
     {
@@ -456,6 +537,50 @@ export const unit16: Unit = {
             'Las crisis se contagian porque los inversionistas internacionales, al no poder evaluar en detalle cada economía, agrupan a países con vínculos comerciales o financieros parecidos y retiran capital de todos ellos ante la primera señal de problemas en uno. Para reducir esa vulnerabilidad, un país puede mantener reservas internacionales suficientes para cubrir su deuda externa de corto plazo, evitar depender demasiado de deuda en moneda extranjera, y sostener un sistema bancario bien regulado junto con un tipo de cambio que el mercado perciba como creíble.',
           explanation:
             'Se espera que la respuesta explique el mecanismo del contagio entre economías parecidas y mencione al menos dos defensas concretas: reservas adecuadas, deuda externa manejable, regulación bancaria sólida o un tipo de cambio creíble.',
+        },
+        {
+          id: 'u16-l3-e5',
+          type: 'numeric',
+          difficulty: 'dificil',
+          xp: 20,
+          chart: {
+            xLabel: 'PIB real',
+            yLabel: 'Nivel de precios',
+            xMax: 125,
+            yMax: 115,
+            lines: [
+              { points: [{ x: 10, y: 90 }, { x: 100, y: 0 }], color: 'muted', dashed: true, label: 'DA₁' },
+              { points: [{ x: 10, y: 70 }, { x: 80, y: 0 }], color: 'brand', label: 'DA₂' },
+              { points: [{ x: 10, y: 20 }, { x: 90, y: 100 }], color: 'accent', label: 'OA' },
+            ],
+            markers: [
+              { x: 40, y: 50, label: 'E₁' },
+              { x: 30, y: 40, label: 'E₂', guides: true },
+            ],
+            caption: 'Una contracción del crédito desplaza la demanda agregada de DA₁ a DA₂.',
+          },
+          question: 'Tras la crisis financiera, el crédito se contrae y la DA cae de DA₁ a DA₂. Según el gráfico, ¿cuál es el nuevo PIB real de equilibrio?',
+          unitLabel: 'PIB real',
+          answer: 30,
+          hint: 'Busca el nuevo cruce entre DA₂ y la oferta agregada.',
+          explanation:
+            'Con menos crédito disponible, empresas y familias reducen inversión y consumo: la demanda agregada se desplaza a la izquierda. El nuevo equilibrio E₂ tiene un PIB real de 30 (frente a 40 antes) y un nivel de precios menor. Esa caída del producto es el canal por el que una crisis financiera se transmite a la economía real.',
+        },
+        {
+          id: 'u16-l3-e6',
+          type: 'multiple_choice',
+          difficulty: 'media',
+          xp: 15,
+          question: '¿Cuál es el objetivo principal de exigir a los bancos mayores requisitos de capital tras una crisis financiera?',
+          options: [
+            { id: 'a', text: 'Que absorban pérdidas con recursos propios antes de poner en riesgo los depósitos o requerir un rescate público' },
+            { id: 'b', text: 'Que presten más dinero para acelerar la recuperación' },
+            { id: 'c', text: 'Que aumenten sus utilidades en el corto plazo' },
+            { id: 'd', text: 'Que reduzcan las tasas de interés a los clientes' },
+          ],
+          correctOptionId: 'a',
+          explanation:
+            'Más capital propio significa un colchón mayor entre las pérdidas y los depositantes: el banco absorbe los golpes con dinero de sus accionistas antes de comprometer los ahorros del público o exigir fondos fiscales. Reduce el apalancamiento del sistema y, con él, la probabilidad de que un shock se convierta en crisis sistémica — aunque a costa de limitar algo la expansión del crédito.',
         },
       ],
     },
