@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Identifica este sitio dentro de la propiedad GA4 compartida. Debe ir ANTES del contenedor. -->
+  <script>window.dataLayer = window.dataLayer || []; dataLayer.push({ site_name: 'oikos' });</script>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -15,7 +17,9 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-NH1QMS0DP6');
+    // TEMPORAL: retirar este bloque gtag.js en cuanto el contenedor GTM tenga
+    // publicado su tag de GA4, o cada visita se contará dos veces.
+    gtag('config', 'G-NH1QMS0DP6', { site_name: 'oikos' });
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
